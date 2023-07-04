@@ -24,6 +24,14 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        image: {
+            type: DataTypes.JSON,
+            allowNull: false,
+            defaultvalue: {
+                public_id: '',
+                url: ''
+            }
+        },
         width: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -33,10 +41,6 @@ module.exports = (sequelize) => {
             allowNull: false
         },
         category: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        image: {
             type: DataTypes.STRING,
             allowNull: false
         },
