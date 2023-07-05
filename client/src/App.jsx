@@ -130,7 +130,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
       <Routes>
         <Route path='/'/>
         <Route path='/products'/>
@@ -139,8 +139,8 @@ function App() {
         <Route path='/login'/>
         <Route path='/register'/>
       </Routes>
-      <button onClick={a}>a</button>
-    </div>
+      {/* <button onClick={a}>a</button> */}
+    </>
   )
 }
 
