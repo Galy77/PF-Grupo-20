@@ -40,17 +40,17 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        category: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+        // category: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
         stock: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        sku: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    })
+        // sku: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // }
+    }, { timestamps: false })
 };
