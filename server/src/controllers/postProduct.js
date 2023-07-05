@@ -6,7 +6,7 @@ const postProduct = async(req, res) => {
 
     try {
         const result = await cloudinary.uploader.upload(image, {
-            folder: products
+            folder: "products"
         });
 
         const newProduct = {
