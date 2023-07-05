@@ -1,6 +1,10 @@
 import './App.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react'
+import { Routes,Route } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
+import Details from './components/Details/Details'
 import { addOrder,addProduct,addUser,removeOrder,removeProduct,removeUser } from './redux/actions';
 
 
@@ -127,6 +131,14 @@ function App() {
 
   return (
     <div className="App">
+      <Routes>
+        <Route path='/'/>
+        <Route path='/products'/>
+        <Route path='/detail/:id' element={<Details/>}/>
+        <Route path='/cart'/>
+        <Route path='/login'/>
+        <Route path='/register'/>
+      </Routes>
       <button onClick={a}>a</button>
     </div>
   )
