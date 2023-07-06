@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { Routes,Route } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import Details from './components/Details/Details'
+import Cart from './components/Cart/Cart';
 import { addOrder,addProduct,addUser,removeOrder,removeProduct,removeUser } from './redux/actions';
 
 
@@ -135,7 +136,7 @@ function App() {
         <Route path='/'/>
         <Route path='/products'/>
         <Route path='/detail/:id' element={<Details/>}/>
-        <Route path='/cart'/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/login'/>
         <Route path='/register'/>
       </Routes>
