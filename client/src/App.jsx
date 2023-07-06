@@ -36,7 +36,6 @@ function App() {
   const location = useLocation();
 
   return (
-    <>
     <div className="App">
       <NavBar />
       <Routes>
@@ -49,7 +48,6 @@ function App() {
         <Route path='/login'/>
         <Route path='/register'/>
       </Routes>
-    </>
     </div>
   )
 }
