@@ -2,10 +2,12 @@ import './App.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react'
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route, useLocation } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import Details from './components/Details/Details'
 import { addOrder,addProduct,addUser,removeOrder,removeProduct,removeUser } from './redux/actions';
+import Home from './components/Home/Home';
+import NavBar from './components/NavBar/NavBar';
 
 
 function App() {
@@ -129,17 +131,21 @@ function App() {
     console.log(user)
   }
 
+  const location = useLocation();
+
   return (
     <div className="App">
+      <NavBar />
       <Routes>
-        <Route path='/'/>
+        <Route index element={<Home />} />
+        <Route path="*" element={<Home />} />
+        <Route path='/home' element={<Home />}/>
         <Route path='/products'/>
         <Route path='/detail/:id' element={<Details/>}/>
         <Route path='/cart'/>
         <Route path='/login'/>
         <Route path='/register'/>
       </Routes>
-      <button onClick={a}>a</button>
     </div>
   )
 }
