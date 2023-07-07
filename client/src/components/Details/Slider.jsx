@@ -1,5 +1,5 @@
 import "./Slider.css"
-const Slider = () => {
+const Slider = ({images}) => {
     return(
         <>
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -12,10 +12,13 @@ const Slider = () => {
 
                 <div class="carousel-inner">
                     <div class="carousel-item active first">
+                        <img src={images} alt="" />
                     </div>
                     <div class="carousel-item second">
+                        <img src={images} alt="" />
                     </div>
                     <div class="carousel-item third">
+                        <img src={images} alt="" />
                     </div>
                 </div>
 
