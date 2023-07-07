@@ -1,14 +1,17 @@
-const Product = require('../db');
+const { Product } = require('../db');
 const cloudinary = require('../utils/cloudinary');
 
 const postProduct = async(req, res) => {
-    const { name, description, price, higth, image, width, weigth, categoryId, stock  } = req.body;
+
+    const { name, description, price, higth, width, weigth, CategoryId, stock  } = req.body;       
 
     try {
-        const result = await cloudinary.uploader.upload(image, {
+        const image = req.file
+
+        const result = await cloudinary.uploader.upload(image.path, {
             folder: "products"
         });
-
+        
         const newProduct = {
             name,
             description,
@@ -24,14 +27,15 @@ const postProduct = async(req, res) => {
         };
 
         const createProduct = await Product.create(newProduct);
-        await createProduct.addCategory(categoryId)
+        await createProduct.addCategories(CategoryId)
 
-        const allProducts = await Product.findAll()
-        return res.status(200).json(allProducts)
+        return res.status(200).send({ message: 'Register success'})
 
     } catch (error) {
         res.status(404).send({ error: error.message })
     }
 };
 
-module.exports = postProduct;
+module.exports = {
+    postProduct
+};
