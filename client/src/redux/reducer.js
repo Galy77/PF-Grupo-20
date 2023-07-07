@@ -151,10 +151,30 @@ export const reducer = (state = initialState,{type,payload})=>{
             }
         //ORDER
         case ADD_ORDER:
-            return{
-                ...state,
-                orders:[...state.orders,payload]
+
+          const aux = ()=>{
+            if(state.orders.length){
+
+            const match = state.orders.filter(el => el.id == payload.id)
+            const unmatch = state.orders.filter(el => el.id !== payload.id)
+
+            if(match.length) return [...unmatch,...match.map(el =>{
+              return{
+                ...el,
+                cant:el.cant + 1
             }
+          }
+          )]
+            else return [...state.orders,payload]
+
+            }else{
+              return [payload]
+            }
+          }
+          return{
+              ...state,
+              orders: aux()
+          }
             
         case REMOVE_ORDER:
             return{

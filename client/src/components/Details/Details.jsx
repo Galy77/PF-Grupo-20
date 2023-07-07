@@ -11,8 +11,9 @@ const Details = ({}) => {
     const {id} = useParams()
     const products = useSelector(state => state.products);
     const product = products.filter(el => el.id == id).pop()
+    
     const addCart = () => {
-        dispatch(addOrder(product))
+        dispatch(addOrder({...product,cant:1}))
     }
 
 
@@ -38,9 +39,6 @@ const Details = ({}) => {
                         <div class="product-info d-flex flex-column align-items-center">
                             <div class='d-flex justify-content-evenly w-100 align-items-center'>
                                 <div class='d-flex flex-column align-items-start  w-100 '>
-                                    <div>
-                                        <span class="text-little">Sales | +2 sold</span>
-                                    </div>
                                     <Stars rating={product.rating}/>
                                 </div>
                                 <div>
