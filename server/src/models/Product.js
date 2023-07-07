@@ -44,10 +44,14 @@ module.exports = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        // sku: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // }
+        rating: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            validate: {
+                max: 5,
+                min: 1,
+            }
+        }
         
     }, { timestamps: false })
 };

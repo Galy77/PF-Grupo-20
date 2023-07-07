@@ -25,15 +25,15 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        order_date: {
-            type: DataTypes.DATE,
-            allowNull: false
-        },
+        // order_date: {
+        //     type: DataTypes.DATE,
+        //     allowNull: false
+        // },
         order_status: {
             type: DataTypes.STRING,
             allowNull: false
         }
-    }, { timestamps: false })
+    })
 
     return Order;
 };
