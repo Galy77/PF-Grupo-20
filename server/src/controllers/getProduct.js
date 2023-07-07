@@ -1,4 +1,4 @@
-const {Product} = require("../db")
+const {Product, User} = require("../db")
 const {Op} = require("sequelize")
 
 const getProducts = async (req, res) => {
@@ -8,6 +8,7 @@ const getProducts = async (req, res) => {
 
     if (name) {
       request = await Product.findAll({
+        include: User,
         where: {
           name: {
             [Op.iLike]: `%${name}%`,
@@ -15,7 +16,7 @@ const getProducts = async (req, res) => {
         },
       });
     } else {
-      request = await Product.findAll();
+      request = await Product.findAll({ include: User});
     }
 
     res.status(200).json(request);
@@ -31,7 +32,6 @@ const getProductById = async (req, res) => {
     const request = await Product.findByPk(id);
     res.status(200).json(request);
   } catch (error) {
-    console.error('Error al obtener el producto por ID:', error);
     res.status(500).json({ error: 'Error al obtener el producto por ID' });
   }
 };
