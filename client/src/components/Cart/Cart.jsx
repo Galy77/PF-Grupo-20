@@ -3,9 +3,18 @@ import CartCart from "./CartCard"
 import { removeOrder } from "../../redux/actions";
 import { useDispatch,useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { addOrder } from "../../redux/actions";
+import { useEffect, useState } from "react";
+
 const Cart = () => {
     const dispatch = useDispatch()
+    const productosStorage = JSON.parse(localStorage.getItem("productos"))
     const products = useSelector(state => state.orders)
+    if(!products.length){
+        if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
+    }
+  
+
     ///eliminar todas los productos del carrito
     const deleteCart = () => {
         products.map(el => dispatch(removeOrder(el.id)))
@@ -17,20 +26,22 @@ const Cart = () => {
         return acc + numero;
       }, 0));
 
+
     return(
         <>
         <Link to={'/detail/2'}>
             <div>detail/2</div>
         </Link>
-        
         <div class='Cart-Products d-flex justify-content-evenly align-items-start'>
 
 
             <div id='cart-card'class="d-flex flex-column">
                 {
-                    products.map(products => {
-                        return <CartCart products={products}/>
-                    })
+                    
+                    productosStorage? productosStorage.map(productscart => {
+                            return <CartCart products={productscart}/>
+ 
+                    }):''
                 }
 
             </div>

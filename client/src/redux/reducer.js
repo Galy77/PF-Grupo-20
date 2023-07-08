@@ -158,17 +158,27 @@ export const reducer = (state = initialState,{type,payload})=>{
             const match = state.orders.filter(el => el.id == payload.id)
             const unmatch = state.orders.filter(el => el.id !== payload.id)
 
-            if(match.length) return [...unmatch,...match.map(el =>{
-              return{
+            if(match.length){
+
+              let productos = [...unmatch,...match.map(el =>{
+                return{
                 ...el,
                 cant:el.cant + 1
+                }})]
+
+              localStorage.setItem("productos",JSON.stringify(productos))
+
+              return productos
+            }else{
+              let productos = [...state.orders,payload]
+              localStorage.setItem("productos",JSON.stringify(productos))
+              return productos
             }
-          }
-          )]
-            else return [...state.orders,payload]
 
             }else{
-              return [payload]
+              let productos = [payload]
+              localStorage.setItem("productos",JSON.stringify(productos))
+              return productos
             }
           }
           return{
@@ -177,9 +187,14 @@ export const reducer = (state = initialState,{type,payload})=>{
           }
             
         case REMOVE_ORDER:
+            const aux1 = () => {
+              let productos = state.orders.filter(el => el.id !== payload)
+              localStorage.setItem("productos",JSON.stringify(productos))
+              return productos
+            }
             return{
                 ...state,
-                orders: state.orders.filter(el => el.id !== payload)
+                orders: aux1()
             }
 
         default:

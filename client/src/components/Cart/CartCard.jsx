@@ -1,5 +1,16 @@
 import { Link } from "react-router-dom"
+import { removeOrder } from "../../redux/actions";
+import { useDispatch} from "react-redux";
+import { useEffect, useState } from "react";
+
 const CartCart = ({products}) => {
+    const dispatch = useDispatch()
+    const removeCart = () => {
+        dispatch(removeOrder(products.id))
+    }
+    const [cartPersist, setCartPersist] = useState([])
+
+
     return(
         <>
             <div class="list-group-item d-flex">
@@ -23,7 +34,7 @@ const CartCart = ({products}) => {
                 </Link>
 
                 <div class='d-flex align-items-center'>
-                        <i class="bi bi-x-square"></i>
+                        <i onClick={removeCart} class="bi bi-x-square"></i>
                 </div>
             
             </div>
