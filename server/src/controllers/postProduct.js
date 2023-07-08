@@ -3,7 +3,7 @@ const cloudinary = require('../utils/cloudinary');
 
 const postProduct = async(req, res) => {
 
-    const { name, description, price, CategoryId, stock  } = req.body;       
+    const { name, description, price, CategoryId, stock, rating  } = req.body;       
 
     try {
         const image = req.file
@@ -20,7 +20,8 @@ const postProduct = async(req, res) => {
                 public_id: result.public_id,
                 url: result.secure_url
             },
-            stock
+            stock,
+            rating
         };
 
         const createProduct = await Product.create(newProduct);
