@@ -6,21 +6,3 @@
 .carousel-item{
     height: 40vh;
 }
-.first{
-    background:url("https://images.samsung.com/is/image/samsung/p6pim/ar/sm-a045mzkfaro/gallery/ar-galaxy-a04-sm-a045-sm-a045mzkfaro-534153898?$650_519_PNG$") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.second{
-    background:url("https://images.samsung.com/is/image/samsung/p6pim/ar/sm-a045mzkfaro/gallery/ar-galaxy-a04-sm-a045-sm-a045mzkfaro-534153898?$650_519_PNG$") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-.third{
-    background:url("https://images.samsung.com/is/image/samsung/p6pim/ar/sm-a045mzkfaro/gallery/ar-galaxy-a04-sm-a045-sm-a045mzkfaro-534153898?$650_519_PNG$") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}

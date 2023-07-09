@@ -11,6 +11,7 @@
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    padding-top: 5rem;
 }
 
 .list-group-item{
@@ -43,7 +44,7 @@
 }
 #cart-card{
     width: 70vh;
-    margin-top: 5vh;
+    min-height: 60vh;
     margin-right: 5vh;
 }
 #title-price{
@@ -52,12 +53,19 @@
     width: 100%;
     height:11vh;
 }
+
+#aux{
+    width: 50vh;
+    background-color:#46A0E0;
+}
 .total-container{
     width: 50vh;
     height: 60vh;
+    margin-top: 1rem;
     background-color: white;
     border-radius: 10px;
     padding: 0 8vh;
+    position:fixed;
 }
 .price{
     color: #1E4561;
