@@ -14,26 +14,6 @@ import SearchBarProducts from './components/Products/SearchBarProducts/SearchBar
 
 
 function App() {
-  const dispatch = useDispatch()
-  const user = useSelector(state => state.user)
-  const allProducts = useSelector(state => state.products)
-  const user1 = {
-    id:1,
-    fullname:"Edwin Rodriguez Garcia",
-    email:"a20edwin02@gmail.com",
-    password:"12345678",
-    phone:"2974265169",
-    adrees:"Santa Cruz"
-  }
-
-  useEffect(() => {
-    try {
-      dispatch(addUser(user1))
-      dispatch(addProduct(products))
-    } catch (error) {
-      console.error('error al obtener los datos: ',error)
-    }
-  }, []);
 
   const location = useLocation();
 

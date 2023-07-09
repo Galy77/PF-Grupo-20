@@ -18,38 +18,44 @@ const handleChange = (event) => {
 const capital = object.charAt(0).toUpperCase() + object.slice(1); 
 
     return (
-        <div >
-        <Navbar expand="lg" className="bg-body-tertiary">
-        <Container fluid>
         <div>
-            <Navbar.Brand href="/home">Mercado Henry</Navbar.Brand>
-        </div>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <div className={style.container}>
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-            >
-          <Form className="d-flex justify-content-center">
-            <Form.Control
-              onChange={handleChange}
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-              />
-            <Link to={`/products?search=${capital}`}><Button variant="outline-success">Search</Button></Link>
-          </Form>
-            <Nav.Link href="#action2">Ingresar</Nav.Link>
-            <Nav.Link href="#action2">Registrarse</Nav.Link>
-            <Nav.Link href="/cart">🛒</Nav.Link>
-          </Nav>
+          <Navbar id='a'expand="lg">
+            <Container id='container-nav'>
+
+              <div id='brand-container'>
+                <Navbar.Brand href="/home">
+                  Mercado Henry
+                </Navbar.Brand>
               </div>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              {/* <div>
+                <Navbar.Collapse id="navbarScroll">
+                  <Nav
+                    className="me-auto my-2 my-lg-0"
+                    style={{ maxHeight: '100px' }}
+                    navbarScroll
+                  >
+
+                    <Form className="d-flex">
+                      <Form.Control
+                        type="search"
+                        placeholder="Search"
+                        className="me-2 justify-content-center"
+                        aria-label="Search"
+                      />
+                      <Button variant="outline-success">Search</Button>
+                    </Form>
+
+                  </Nav>
+                </Navbar.Collapse>
+              </div> */}
+              <div>
+              <i class="icons bi bi-person"></i>
+              <Link to={'/cart'}>
+                <i class="icons bi bi-cart3"></i>
+              </Link>
+              </div>
+          </Container>
+        </Navbar>
         </div>
     )
 }

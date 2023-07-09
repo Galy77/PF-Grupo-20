@@ -11,18 +11,17 @@ function Home (){
 
     return (
     <>
-        <CreatedCarousel/>
-        <Row xs={1} md={2} expand="lg" className={style.cards}>
+        <CreatedCarousel />
+        <Row xs={1} md={2} className="g-4 m-3 justify-content-center">
         {categories.map((category) => (
-            <Col xs={12} sm={6} md={4} lg={3}>
-                <Card className={style.card}>
-                    <Link to={`/products/${category.name}`}>
-                        <Card.Img variant="top" src={category.img} className={style.img} />
-                        <Card.Body>
-                            <Card.Title className={style.title}>{category.name}</Card.Title>
-                    </Card.Body>
-                    </Link>
-                </Card>
+          <Col md={3}>
+            <Card>
+                <Card.Img variant="top" src={category.img} />
+                <Card.Body>
+                    <Card.Title>{category.name}</Card.Title>
+                </Card.Body>
+            </Card>
+
         </Col>
         ))}
         </Row>
