@@ -51,9 +51,12 @@ const Details = ({}) => {
                                 <p>Lo que tenés que saber de este producto<span>{product.description}</span></p>
                             </div>
                             <div class='d-flex justify-content-end w-100 align-items-end'>
-                                <div class="d-flex">
+                                <div class="d-flex w-100">
 
-                                    <div id="btn">
+                                    <div id="btn" class='d-flex w-100 justify-content-around align-items-center'>
+                                        <h3>
+                                            {`$${product.price}`}
+                                        </h3>
                                         <Link to={`/cart`} onClick={addCart}>
                                             <button type="button" class="btn btn-info"  >
                                                 Add to{` `}

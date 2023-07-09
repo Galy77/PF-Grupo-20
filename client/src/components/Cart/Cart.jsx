@@ -29,9 +29,6 @@ const Cart = () => {
 
     return(
         <>
-        <Link to={'/detail/2'}>
-            <div>detail/2</div>
-        </Link>
         <div class='Cart-Products d-flex justify-content-evenly align-items-start'>
 
 

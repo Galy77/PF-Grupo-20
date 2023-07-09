@@ -14,8 +14,8 @@ const CartCart = ({products}) => {
     return(
         <>
             <div class="list-group-item d-flex">
-                <Link to={`/detail/${products.id}`}>
-                    <div class='x-title d-flex'>
+                <Link to={`/detail/${products.id}`} class='link w-100'>
+                    <div class='img-title d-flex'>
 
                         <img class='imgs-cart' src={products.image} alt="" />
 
@@ -34,7 +34,7 @@ const CartCart = ({products}) => {
                 </Link>
 
                 <div class='d-flex align-items-center'>
-                        <i onClick={removeCart} class="bi bi-x-square"></i>
+                        <i onClick={removeCart} class="x-cart bi bi-x-square"></i>
                 </div>
             
             </div>
