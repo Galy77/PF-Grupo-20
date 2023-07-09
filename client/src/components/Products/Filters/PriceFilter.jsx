@@ -3,7 +3,6 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
-import { setMinPrice } from '../../../redux/actions';
 
 function PriceFilter (props){
     const dispatch = useDispatch()
@@ -21,7 +20,6 @@ function PriceFilter (props){
     }
     
     const handleClick = () => {
-            dispatch(setMinPrice(minPrice()))
     }
 
    
