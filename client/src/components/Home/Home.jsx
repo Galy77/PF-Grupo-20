@@ -9,9 +9,9 @@ function Home (){
     return (
     <>
         <CreatedCarousel />
-        <Row xs={1} md={2} className="g-4 justify-content-center">
+        <Row xs={1} md={2} className="g-4 m-3 justify-content-center">
         {categories.map((category) => (
-          <Col md={5}>
+          <Col md={3}>
             <Card>
                 <Card.Img variant="top" src={category.img} />
                 <Card.Body>
