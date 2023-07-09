@@ -16,10 +16,12 @@ function Home (){
         {categories.map((category) => (
           <Col md={3}>
             <Card>
-                <Card.Img variant="top" src={category.img} />
-                <Card.Body>
-                    <Card.Title>{category.name}</Card.Title>
-                </Card.Body>
+                <Link className={style.text} to={`/products/${category.name}`}>
+                    <Card.Img variant="top" src={category.img} />
+                    <Card.Body>
+                        <Card.Title>{category.name}</Card.Title>
+                    </Card.Body>
+                </Link>
             </Card>
 
         </Col>

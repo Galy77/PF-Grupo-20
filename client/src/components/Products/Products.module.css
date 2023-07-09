@@ -9,6 +9,9 @@
     flex-direction: column;
     background-color: red;
     width: 400px;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -24,5 +27,8 @@
     background-color: #2717db;
 }
 
-.cards{
-}
+/* .cards{
+} */
+
+/* .searchbar{
+} */
