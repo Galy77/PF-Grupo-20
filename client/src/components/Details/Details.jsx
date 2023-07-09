@@ -12,7 +12,7 @@ const Details = ({}) => {
     const {id} = useParams()
     const products = useSelector(state => state.products);
     const product = products.filter(el => el.id == id).pop()
-    
+
     const addCart = () => {
         dispatch(addOrder({...product,cant:1}))
     }
@@ -47,7 +47,6 @@ const Details = ({}) => {
                             </div>
                             <div class='d-flex justify-content-end w-100 align-items-end'>
                                 <div class="d-flex">
-
                                     <div id="btn">
                                         <Link to={`/cart`} onClick={addCart}>
                                             <button type="button" class="btn btn-info"  >
@@ -56,7 +55,6 @@ const Details = ({}) => {
                                             </button>
                                         </Link>    
                                     </div>
-
                                 </div>
                             </div>
                         </div>
