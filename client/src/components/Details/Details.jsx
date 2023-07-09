@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { addOrder } from "../../redux/actions";
+
 const Details = ({}) => {
     const dispatch = useDispatch()
     const {id} = useParams()
@@ -15,17 +16,11 @@ const Details = ({}) => {
     const addCart = () => {
         dispatch(addOrder({...product,cant:1}))
     }
-
-
-
-
-
     return(
         <>
             <div class="container text-center">
                 <div class="row">
                     <div class="col d-flex flex-column justify-content-start align-items-end">
-
                         <div className="product d-flex flex-column align-items-center">
                             <Slider images={product.image}/>
                         </div>
