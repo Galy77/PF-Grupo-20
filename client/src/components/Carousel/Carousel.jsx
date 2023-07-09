@@ -5,11 +5,11 @@ import style from "./Carousel.module.css";
 function CreatedCarousel (){
     const carouselPhotos = useSelector(state => state.carouselPhotos)
     return (
-    <Carousel className={style.carousel}>
+    <Carousel expand="lg">
         {carouselPhotos.map(data => (
-        <Carousel.Item >
+        <Carousel.Item>
         <img
-          className="d-block img-fluid"
+          className="d-block w-100"
           src={data.img}
           alt="First slide"
           />
