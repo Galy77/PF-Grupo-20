@@ -1,4 +1,4 @@
-import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER} from "./actionTypes"
+import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES} from "./actionTypes"
 
 const initialState = {
     user:{},
@@ -152,7 +152,11 @@ export const reducer = (state = initialState,{type,payload})=>{
                 ...state,
                 orders: state.orders.filter(el => el.id !== payload)
             }
-
+        case GET_ALL_CATEGORIES:
+            return{
+              ...state,
+              categories:payload
+            }
         default:
             return{
                 ...state

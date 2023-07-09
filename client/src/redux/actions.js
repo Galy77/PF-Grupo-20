@@ -1,5 +1,5 @@
-import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT } from "./actionTypes";
-
+import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES } from "./actionTypes";
+import axios from "axios";
 /////USER//////
 export const addUser = (user) => {
 
@@ -29,20 +29,23 @@ export const removeUser = (payload) => {
     };
     
 }
-/////PRODUCTS//////
-export const addProduct = (product) => {
 
-   return async(dispatch) => {
+/////PRODUCTS//////
+export function addProduct(productData) {
+   return async function(dispatch) {
      try {
-        return dispatch({
-           type: ADD_PRODUCT,
-           payload: product,
-        })
+       const response = await axios.post('http://localhost:3001/categories/create', productData);
+       dispatch({
+         type: ADD_PRODUCT,
+         payload: response.data
+       });
+       return response.data;
      } catch (error) {
-        console.log(error.message)
+       alert(error);
      }
    };
-}
+ }
+
 
 export const removeProduct = (id) => {
    return async (dispatch) => {
@@ -88,3 +91,18 @@ export const removeOrder = (id) => {
     
 }
 
+
+//---->Categories
+export const getAllCategories = () => {
+   return async function(dispatch){
+      try{
+         const response = await axios.get("http://localhost:3001/categories");
+         return dispatch({
+             type:GET_ALL_CATEGORIES,
+             payload:response.data
+         })
+      }catch(error){
+         alert(error.menssage);
+      }
+   }
+}
