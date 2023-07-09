@@ -1,13 +1,22 @@
-import './NavBar.css'
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-
+import style from "./NavBar.module.css";
 
 function NavBar (){
+const [ object, setObject ] = useState("");
+
+const handleChange = (event) => {
+  const { value } = event.target;
+  setObject(value);
+}
+
+const capital = object.charAt(0).toUpperCase() + object.slice(1); 
+
     return (
         <div>
           <Navbar id='a'expand="lg">
@@ -45,8 +54,6 @@ function NavBar (){
                 <i class="icons bi bi-cart3"></i>
               </Link>
               </div>
-
-
           </Container>
         </Navbar>
         </div>

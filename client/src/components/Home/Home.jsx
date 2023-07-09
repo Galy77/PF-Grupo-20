@@ -3,9 +3,12 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useSelector } from 'react-redux';
 import CreatedCarousel from '../Carousel/Carousel';
+import { Link } from 'react-router-dom';
+import style from "./Home.module.css";
 
 function Home (){
     const categories = useSelector(state => state.categories);
+
     return (
     <>
         <CreatedCarousel />
@@ -18,6 +21,7 @@ function Home (){
                     <Card.Title>{category.name}</Card.Title>
                 </Card.Body>
             </Card>
+
         </Col>
         ))}
         </Row>

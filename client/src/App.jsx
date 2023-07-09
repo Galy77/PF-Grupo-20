@@ -9,6 +9,8 @@ import Cart from './components/Cart/Cart';
 import { addOrder,addProduct,addUser,removeOrder,removeProduct,removeUser } from './redux/actions';
 import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
+import Products from './components/Products/CategoryProducts/Products';
+import SearchBarProducts from './components/Products/SearchBarProducts/SearchBarProducts';
 
 
 function App() {
@@ -22,7 +24,8 @@ function App() {
         <Route index element={<Home />} />
         <Route path="*" element={<Home />} />
         <Route path='/home' element={<Home />}/>
-        <Route path='/products'/>
+        <Route path='/products/:category' element={<Products />}/>
+        <Route path='/products' element={<SearchBarProducts />} />
         <Route path='/detail/:id' element={<Details/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login'/>
