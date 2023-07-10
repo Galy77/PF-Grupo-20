@@ -3,6 +3,12 @@
     background-color: white;
     margin: 0 10px 10px  0 ;
 }
+.title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px; /* Ajusta el ancho deseado */
+}
 .linkProducts{
     text-decoration: none;
     color: black;
