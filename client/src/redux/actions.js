@@ -1,8 +1,8 @@
-import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes";
+import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes";
+import axios from "axios";
 
 /////USER//////
 export const addUser = (user) => {
-
     return async(dispatch) => {
       try {
          return dispatch({
@@ -25,24 +25,40 @@ export const removeUser = (payload) => {
       } catch (error) {
          console.log(error.message);
       }
-
     };
-    
 }
-/////PRODUCTS//////
-export const addProduct = (product) => {
 
-   return async(dispatch) => {
+/////PRODUCTS//////
+export function addProduct(productData) {
+   return async function(dispatch) {
      try {
-        return dispatch({
-           type: ADD_PRODUCT,
-           payload: product,
-        })
+       const formData = new FormData();
+       formData.append('name', productData.name);
+       formData.append('description', productData.description);
+       formData.append('price', productData.price);
+       formData.append('CategoryId', productData.CategoryId);
+       formData.append('stock', productData.stock);
+       formData.append('rating', productData.rating);
+       formData.append('image', productData.image); 
+ 
+       const response = await axios.post('http://localhost:3001/PF/products', formData, {
+         headers: {
+           'Content-Type': 'multipart/form-data', 
+         },
+       });
+ 
+       dispatch({
+         type: ADD_PRODUCT,
+         payload: response.data,
+       });
+ 
+       return response;
      } catch (error) {
-        console.log(error.message)
+       alert(error);
      }
    };
-}
+ }
+
 
 export const removeProduct = (id) => {
    return async (dispatch) => {
@@ -84,8 +100,7 @@ export const removeOrder = (id) => {
          console.log(error.message);
       }
 
-    };
-    
+    };   
 }
 
 /////MAX AND MIN PRICES/////
@@ -117,5 +132,20 @@ export const showAll = (payload) => {
    return {
       type: ALL_FILTER,
       payload
+   }
+}
+
+//---->Categories
+export const getAllCategories = () => {
+   return async function(dispatch){
+      try{
+         const response = await axios.get("http://localhost:3001/PF");
+         return dispatch({
+             type:GET_ALL_CATEGORIES,
+             payload:response.data
+         })
+      }catch(error){
+         alert(error.menssage);
+      }
    }
 }

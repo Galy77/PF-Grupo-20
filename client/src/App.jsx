@@ -4,11 +4,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react'
 import { Routes,Route, useLocation } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
+import { addOrder,addProduct,addUser,removeOrder,removeProduct,removeUser } from './redux/actions';
 import Details from './components/Details/Details'
 import Cart from './components/Cart/Cart';
-import { addOrder,addProduct,addUser,removeOrder,removeProduct,removeUser } from './redux/actions';
 import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
+import Create from './components/Create/Create'
 import Products from './components/Products/CategoryProducts/Products';
 import SearchBarProducts from './components/Products/SearchBarProducts/SearchBarProducts';
 
@@ -18,7 +19,6 @@ function App() {
   const location = useLocation();
 
   return (
-
     <div className="App">
       <NavBar />
       <Routes>
@@ -30,7 +30,8 @@ function App() {
         <Route path='/detail/:id' element={<Details/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login'/>
-        <Route path='/register'/>
+        <Route path='/register'/> 
+        <Route path='/create' element={ <Create /> }/>
       </Routes>
     </div>
   )
