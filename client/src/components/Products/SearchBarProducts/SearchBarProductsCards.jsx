@@ -10,7 +10,7 @@ function SearchBarProductsCards (props) {
             <Card style={{ width: '14rem' }} className={style.cards}>
                 <Card.Img variant="top" src={product.image} />
                 <Card.Body>
-                    <Card.Title>{product.name}</Card.Title>
+                    <Card.Title class='title'>{product.name}</Card.Title>
                     <Card.Text>${product.price}</Card.Text>
                 </Card.Body>
                 <Card.Body class='d-flex justify-content-end'>
