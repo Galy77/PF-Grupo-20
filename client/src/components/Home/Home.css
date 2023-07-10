@@ -1,0 +1,22 @@
+.card{
+    height: 15rem;
+}
+.card-img-top{
+    width: 100%;
+    min-height:170px;
+    max-height:170px;
+}
+.link{
+    color: black;
+    text-decoration: none;
+}
+.cards-container{
+    max-width: 90%;
+    max-height: 80%;
+    margin-top: 2rem;
+}
+.card-container{
+}
+.a{
+    height: 1000px;
+}
