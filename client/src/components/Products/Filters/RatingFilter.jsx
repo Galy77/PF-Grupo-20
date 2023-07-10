@@ -1,36 +1,36 @@
-import Button from 'react-bootstrap/Button';
-import { useSelector } from 'react-redux';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { betterQualified, showAll } from '../../../redux/actions';
 
 function RatingFilter () {
-    const products = useSelector(state => state.products)
-
-    const handleChange=(event)=>{
-
-        const rating = event.target.value;
-        let productsFiltered; 
-        
-        if (rating === "a") {
-            return productsFiltered = products.sort((a, b) => a.rating - b.rating);
-          } else if (rating === "d") {
-            return productsFiltered = products.sort((a, b) => b.rating - a.rating);
-          } else if (rating === "nn"){
-            return productsFiltered;
-          }
-    }
-
-    const handleClick=()=>{
-        console.log("Click");
-    }
+    const [selectedOption, setSelectedOption] = useState(null);
+    const dispatch = useDispatch()
+    
+    const handleOptionSelect = (option) => {
+        setSelectedOption(option);
+        if (option === 'betterQualified') {
+          dispatch(betterQualified(option))
+        } else if (option === 'all') {
+          dispatch(showAll(option))
+        }
+      };
 
     return (
-        <div onChange={handleChange}>
-            <select placeholder="Ordenar por...">
-                <option value="nn">Ordenar por...</option>
-                <option value="a">Mejor Calificadoes</option>
-                <option value="d">Peor Calificados</option>
-            </select>
-            <Button variant="secondary" size="sm" onClick={handleClick}>Aplicar</Button>
-        </div>
+        <Dropdown >
+            <Dropdown.Toggle variant="black" id="dropdown-basic">Rating</Dropdown.Toggle>
+                <Dropdown.Menu >
+                    <Dropdown.Item
+                    active={selectedOption === 'betterQualified'}
+                    onClick={() => handleOptionSelect('betterQualified')}> 
+                    Mejor Calificados</Dropdown.Item>
+                    <Dropdown.Item value="all"
+                    active={selectedOption === 'all'}
+                    onClick={() => handleOptionSelect('all')}>
+                    Todos</Dropdown.Item>
+            </Dropdown.Menu>
+    </Dropdown>
     )
 }
+
 export default RatingFilter;

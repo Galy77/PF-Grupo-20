@@ -6,7 +6,7 @@ function ProductsCards (props) {
     return(
         <>
         <div className={style.cardsContainer}>
-        {props.categoryProducts.map((product) => (
+        {props.categoryProducts.length ? props.categoryProducts?.map((product) => (
             <Card style={{ width: '14rem' }} className={style.cards}>
                 <Card.Img variant="top" src={product.image} />
                 <Card.Body>
@@ -20,7 +20,8 @@ function ProductsCards (props) {
                 <Card.Link href={`/detail/${product.id}`}>Ver más detalles</Card.Link>
             </Card.Body>
         </Card> 
-            ))}
+            )) : <h1 className={style.notFound}>En esta categoria aun no hay productos</h1>
+            }
             </div>
         </>
     )

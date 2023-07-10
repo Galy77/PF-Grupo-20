@@ -13,13 +13,13 @@ const Slider = ({images}) => {
 
                 <div class="carousel-inner">
                     <div class="carousel-item active first">
-                        <img src={images} alt="" />
+                        <img class='img-detail' src={images} alt="" />
                     </div>
                     <div class="carousel-item second">
-                        <img src={images} alt="" />
+                        <img class='img-detail' src={images} alt="" />
                     </div>
                     <div class="carousel-item third">
-                        <img src={images} alt="" />
+                        <img class='img-detail' src={images} alt="" />
                     </div>
                 </div>
 

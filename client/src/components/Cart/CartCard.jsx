@@ -14,8 +14,8 @@ const CartCart = ({products}) => {
     return(
         <>
             <div class="list-group-item d-flex">
-                <Link to={`/detail/${products.id}`}>
-                    <div class='x-title d-flex'>
+                <Link to={`/detail/${products.id}`} class='link w-100'>
+                    <div class='img-title d-flex'>
                         <img class='imgs-cart' src={products.image} alt="" />
                         <div id='title-price' class='d-flex flex-column justify-content-start'>
                             <span>{products.name}</span>
@@ -23,14 +23,14 @@ const CartCart = ({products}) => {
                                 <span class='txt-medium price'>{`$${products.price}`}</span>    
                             </div>
                             <div>
-                                <span class='price'>{`por ${products.cant} unidades son $${Math.round(products.price*products.cant)}`}</span>    
+                                <span class='price little'>{`por ${products.cant} unidades son $${Math.round(products.price*products.cant)}`}</span>    
                             </div>
                         </div>
                     </div>
                 </Link>
 
                 <div class='d-flex align-items-center'>
-                        <i onClick={removeCart} class="bi bi-x-square"></i>
+                        <i onClick={removeCart} class="x-cart bi bi-trash-fill"></i>
                 </div>
             
             </div>
