@@ -40,7 +40,7 @@ module.exports = (sequelize) => {
         allowNull: false,
         validate: {
           max: 5,
-          min: 1,
+          min: 0.5,
         },
       },
     },
