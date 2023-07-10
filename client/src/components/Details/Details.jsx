@@ -29,9 +29,6 @@ const Details = ({}) => {
                         <div className="product d-flex flex-column align-items-center">
                             <Slider images={product.image}/>
                         </div>
-                        <div id='stock'class='d-flex justify-content-center w-100 align-items-end'>
-                            <span class='text-little'>{product.stock} Unidades disponibles</span>
-                        </div>
                     </div>
 
                     <div class="col d-flex justify-content-start">
@@ -51,7 +48,7 @@ const Details = ({}) => {
                                 <p>Lo que tenés que saber de este producto<span>{product.description}</span></p>
                             </div>
                             <div class='d-flex justify-content-end w-100 align-items-end'>
-                                <div class="d-flex w-100">
+                                <div class="d-flex w-100 flex-column">
 
                                     <div id="btn" class='d-flex w-100 justify-content-around align-items-center'>
                                         <h3>
@@ -63,6 +60,10 @@ const Details = ({}) => {
                                                 <i class="bi bi-cart3"></i>
                                             </button>
                                         </Link>    
+                                    </div>
+
+                                    <div id='stock'class='d-flex justify-content-center w-100 align-items-end'>
+                                        <span class='text-little'>{product.stock} Unidades disponibles</span>
                                     </div>
 
                                 </div>
