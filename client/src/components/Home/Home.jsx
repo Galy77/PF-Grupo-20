@@ -7,9 +7,10 @@ import { Link } from 'react-router-dom';
 import style from "./Home.module.css";
 import './Home.css'
 
+
 function Home (){
     const categories = useSelector(state => state.categories);
-
+   
     return (
     <>
         <CreatedCarousel />

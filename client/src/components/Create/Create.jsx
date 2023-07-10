@@ -11,7 +11,6 @@ function Create(){
     const [success, setSuccess] = useState(false);
     useEffect(() => {
         dispatch(getAllCategories());
-        console.log(allCategories);
       }, [dispatch]);
   
     const [input, setInput] = useState({
@@ -67,7 +66,9 @@ function Create(){
 
         if (!/^\d+(\.\d{1,2})?$/.test(input.price)) {
           error.price = "Ingrese un precio válido (número con hasta 2 decimales).";
-        }else if(input.price.trim().length === 0){
+        } else if(input.price <= 0) {
+          error.price = "El precio del producto no puede ser 0 o negativo";
+        } else if(input.price.trim().length === 0){
           error.price = "Ingrese un precio."
         }
 
@@ -117,7 +118,7 @@ function Create(){
           dispatch(addProduct(productData))
           .then((response) => {
               if(response){
-                alert("¡El juego se creó exitosamente!");
+                alert("¡El producto se creó exitosamente!");
                 setSuccess(true); 
                 setInput({
                   name: "",
@@ -128,7 +129,6 @@ function Create(){
                   rating:"",
                   CategoryId:""
                 });
-                alert("todo nashei")
               }
           })
           .catch((error) => {
@@ -173,7 +173,7 @@ function Create(){
               <Form.Group controlId="price">
                 <Form.Label>Precio</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="number"
                   name="price"
                   value={input.price}
                   onChange={handleChange}
@@ -204,7 +204,7 @@ function Create(){
               <Form.Group controlId="stock">
                 <Form.Label>Stock</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="number"
                   name="stock"
                   value={input.stock}
                   onChange={handleChange}
@@ -216,7 +216,7 @@ function Create(){
               <Form.Group controlId="rating">
                 <Form.Label>Puntuación</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="number"
                   name="rating"
                   value={input.rating}
                   onChange={handleChange}

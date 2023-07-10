@@ -55,7 +55,9 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
               <Link to={'/cart'}>
                 <i class="icons bi bi-cart3"></i>
               </Link>
-              <i class="icons bi bi-plus"></i>
+              <Link to={`/create`}>
+                <i class="icons bi bi-plus"></i>
+              </Link>
               </div>
           </Container>
         </Navbar>
