@@ -1,4 +1,4 @@
-const {Product, User} = require("../db")
+const {Product, User, Category} = require("../db")
 const {Op} = require("sequelize")
 
 const getProducts = async (req, res) => {
@@ -8,7 +8,7 @@ const getProducts = async (req, res) => {
 
     if (name) {
       request = await Product.findAll({
-        include: User,
+        include: [User, Category],
         where: {
           name: {
             [Op.iLike]: `%${name}%`,
@@ -16,7 +16,7 @@ const getProducts = async (req, res) => {
         },
       });
     } else {
-      request = await Product.findAll({ include: User});
+      request = await Product.findAll({ include: [User, Category]});
     }
 
     res.status(200).json(request);
