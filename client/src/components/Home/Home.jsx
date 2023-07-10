@@ -39,7 +39,6 @@ function Home (){
             </div>
         </footer>
 
-
     </>
     )
 }

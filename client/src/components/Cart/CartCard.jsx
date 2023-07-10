@@ -16,9 +16,7 @@ const CartCart = ({products}) => {
             <div class="list-group-item d-flex">
                 <Link to={`/detail/${products.id}`} class='link w-100'>
                     <div class='img-title d-flex'>
-
                         <img class='imgs-cart' src={products.image} alt="" />
-
                         <div id='title-price' class='d-flex flex-column justify-content-start'>
                             <span>{products.name}</span>
                             <div class='d-flex justify-content-end w-100'>
@@ -28,8 +26,6 @@ const CartCart = ({products}) => {
                                 <span class='price little'>{`por ${products.cant} unidades son $${Math.round(products.price*products.cant)}`}</span>    
                             </div>
                         </div>
-
-
                     </div>
                 </Link>
 

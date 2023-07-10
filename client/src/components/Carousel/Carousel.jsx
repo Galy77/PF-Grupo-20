@@ -6,9 +6,9 @@ function CreatedCarousel (){
     const carouselPhotos = useSelector(state => state.carouselPhotos)
     return (
       <>
-        <Carousel>
+        <Carousel  >
         {carouselPhotos.map(data => (
-        <Carousel.Item>
+        <Carousel.Item  >
         <img
           class='aa'
           src={data.img}

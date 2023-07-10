@@ -1,4 +1,4 @@
-import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER } from "./actionTypes"
+import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes"
 
 const initialState = {
     user:{},
@@ -120,7 +120,10 @@ const initialState = {
           rating:4.51
         }
       ],
-    orders:[]
+    orders:[],
+    minimumPrice: "",
+    maximumPrice: "",
+    ratingFilterValue: "all"
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
@@ -196,6 +199,30 @@ export const reducer = (state = initialState,{type,payload})=>{
                 ...state,
                 orders: aux1()
             }
+        
+        case MINIMUM_PRICE:
+          return {
+            ...state,
+            minimumPrice: payload
+          }
+
+        case MAXIMUM_PRICE:
+          return {
+            ...state,
+            maximumPrice: payload
+          }
+
+        case BETTER_QUALIFIED_FILTER:
+          return {
+              ...state,
+              ratingFilterValue: payload
+          }
+
+        case ALL_FILTER:
+          return {
+            ...state,
+            ratingFilterValue: payload
+          }
 
         default:
             return{

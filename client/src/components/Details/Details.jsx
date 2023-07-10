@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { addOrder } from "../../redux/actions";
+
 const Details = ({}) => {
     const dispatch = useDispatch()
     const {id} = useParams()
@@ -18,7 +19,6 @@ const Details = ({}) => {
     if(!orders.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
     }
-    
     const addCart = () => {
         dispatch(addOrder({...product,cant:1}))
         alert('producto añadido correctamente al carrito')
@@ -27,11 +27,6 @@ const Details = ({}) => {
     function goBack() {
         window.history.back();
     }
-
-
-
-
-
     return(
         <>
             <div>
@@ -40,7 +35,6 @@ const Details = ({}) => {
             <div class="container text-center">
                 <div class="row">
                     <div class="col d-flex flex-column justify-content-start align-items-end">
-
                         <div className="product d-flex flex-column align-items-center">
                             <Slider images={product.image}/>
                         </div>
@@ -83,7 +77,6 @@ const Details = ({}) => {
                                     <div id='stock'class='d-flex justify-content-center w-100 align-items-end'>
                                         <span class='text-little'>{product.stock} Unidades disponibles</span>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

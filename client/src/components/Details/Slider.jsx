@@ -1,4 +1,5 @@
 import "./Slider.css"
+
 const Slider = ({images}) => {
     return(
         <>

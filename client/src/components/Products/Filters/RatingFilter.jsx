@@ -1,7 +1,36 @@
+import Dropdown from 'react-bootstrap/Dropdown';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { betterQualified, showAll } from '../../../redux/actions';
+
 function RatingFilter () {
+    const [selectedOption, setSelectedOption] = useState(null);
+    const dispatch = useDispatch()
+    
+    const handleOptionSelect = (option) => {
+        setSelectedOption(option);
+        if (option === 'betterQualified') {
+          dispatch(betterQualified(option))
+        } else if (option === 'all') {
+          dispatch(showAll(option))
+        }
+      };
+
     return (
-        <div>
-            
-        </div>
+        <Dropdown >
+            <Dropdown.Toggle variant="black" id="dropdown-basic">Rating</Dropdown.Toggle>
+                <Dropdown.Menu >
+                    <Dropdown.Item
+                    active={selectedOption === 'betterQualified'}
+                    onClick={() => handleOptionSelect('betterQualified')}> 
+                    Mejor Calificados</Dropdown.Item>
+                    <Dropdown.Item value="all"
+                    active={selectedOption === 'all'}
+                    onClick={() => handleOptionSelect('all')}>
+                    Todos</Dropdown.Item>
+            </Dropdown.Menu>
+    </Dropdown>
     )
 }
+
+export default RatingFilter;
