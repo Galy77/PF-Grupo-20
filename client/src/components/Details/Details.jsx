@@ -23,6 +23,10 @@ const Details = ({}) => {
         dispatch(addOrder({...product,cant:1}))
         alert('producto añadido correctamente al carrito')
     }
+    ///goBack
+    function goBack() {
+        window.history.back();
+    }
 
 
 
@@ -30,6 +34,9 @@ const Details = ({}) => {
 
     return(
         <>
+            <div>
+                <i id="prev" class="bi bi-chevron-left d-flex" onClick={goBack}></i>
+            </div>
             <div class="container text-center">
                 <div class="row">
                     <div class="col d-flex flex-column justify-content-start align-items-end">

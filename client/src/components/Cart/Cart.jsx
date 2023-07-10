@@ -25,13 +25,18 @@ const Cart = () => {
     total = Math.round(total.reduce(function(acc, numero) {
         return acc + numero;
       }, 0));
+    ///goBack
+    function goBack() {
+        window.history.back();
+    }
+      
 
 
     return(
         <>
-        {/* <div>
-            <i id="prev" class="bi bi-chevron-left d-flex"></i>
-        </div> */}
+        <div>
+            <i id="prev" class="bi bi-chevron-left d-flex" onClick={goBack}></i>
+        </div>
         <div class='Cart-Products d-flex justify-content-evenly align-items-start'>
 
 

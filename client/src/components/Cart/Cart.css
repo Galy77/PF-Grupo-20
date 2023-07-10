@@ -4,11 +4,12 @@
 .txt-large{
     font-size: 2.7rem;
 }
-/* #prev{
+#prev{
     margin-top: 2rem;
     margin-left: 2rem;
     font-size: 2rem;
-} */
+    cursor: pointer;
+}
 
 /*SECTION CARD*/
 .Cart-Products{
