@@ -1,4 +1,7 @@
+/* eslint-disable no-case-declarations */
+
 import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES} from "./actionTypes"
+
 
 const initialState = {
     user:{},
@@ -25,6 +28,7 @@ const initialState = {
           price: 599.99,
           stock: 50,
           category: "Tecnología",
+          rating:0.1
         },
         {
           id: 2,
@@ -34,6 +38,7 @@ const initialState = {
           price: 399.99,
           stock: 30,
           category: "Tecnología",
+          rating:0.6
         },
         {
           id: 3,
@@ -43,6 +48,7 @@ const initialState = {
           price: 19.99,
           stock: 100,
           category: "Moda",
+          rating:1.4
         },
         {
           id: 4,
@@ -52,6 +58,7 @@ const initialState = {
           price: 49.99,
           stock: 80,
           category: "Moda",
+          rating:1.6
         },
     
         {
@@ -62,6 +69,7 @@ const initialState = {
           price: 299.99,
           stock: 20,
           category: "Muebles",
+          rating:2.1
         },
         {
           id: 6,
@@ -71,6 +79,7 @@ const initialState = {
           price: 599.99,
           stock: 10,
           category: "Muebles",
+          rating:2.7
         },
         {
           id: 7,
@@ -80,6 +89,7 @@ const initialState = {
           price: 29.99,
           stock: 50,
           category: "Hobbies",
+          rating:3.3
         },
         {
           id: 8,
@@ -89,6 +99,7 @@ const initialState = {
           price: 89.99,
           stock: 20,
           category: "Hobbies",
+          rating:3.8
         },
     
         {
@@ -99,6 +110,7 @@ const initialState = {
           price: 14.99,
           stock: 30,
           category: "Hobbies",
+          rating:4.5
         },
         {
           id: 10,
@@ -108,9 +120,9 @@ const initialState = {
           price: 19.99,
           stock: 15,
           category: "Hobbies",
+          rating:4.51
         }
       ],
-    products:[],
     orders:[]
 }
 
@@ -142,21 +154,57 @@ export const reducer = (state = initialState,{type,payload})=>{
             }
         //ORDER
         case ADD_ORDER:
-            return{
-                ...state,
-                orders:[...state.orders,payload]
+
+          const aux = ()=>{
+            if(state.orders.length){
+
+            const match = state.orders.filter(el => el.id == payload.id)
+            const unmatch = state.orders.filter(el => el.id !== payload.id)
+
+            if(match.length){
+
+              let productos = [...unmatch,...match.map(el =>{
+                return{
+                ...el,
+                cant:el.cant + 1
+                }})]
+
+              localStorage.setItem("productos",JSON.stringify(productos))
+
+              return productos
+            }else{
+              let productos = [...state.orders,payload]
+              localStorage.setItem("productos",JSON.stringify(productos))
+              return productos
             }
+
+            }else{
+              let productos = [payload]
+              localStorage.setItem("productos",JSON.stringify(productos))
+              return productos
+            }
+          }
+          return{
+              ...state,
+              orders: aux()
+          }
             
         case REMOVE_ORDER:
+            const aux1 = () => {
+              let productos = state.orders.filter(el => el.id !== payload)
+              localStorage.setItem("productos",JSON.stringify(productos))
+              return productos
+            }
             return{
                 ...state,
-                orders: state.orders.filter(el => el.id !== payload)
+                orders: aux1()
             }
-        case GET_ALL_CATEGORIES:
+          case GET_ALL_CATEGORIES:
             return{
               ...state,
               categories:payload
             }
+
         default:
             return{
                 ...state

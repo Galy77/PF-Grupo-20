@@ -1,0 +1,15 @@
+.aa{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    height: 150%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #BADFF9; /* Cambia el color de fondo a rojo */
+
+}
