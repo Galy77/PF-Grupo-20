@@ -2,10 +2,11 @@ import "./Cart.css"
 import CartCart from "./CartCard"
 import { removeOrder } from "../../redux/actions";
 import { useDispatch,useSelector } from "react-redux";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { addOrder } from "../../redux/actions";
 import { useEffect, useState } from "react";
-
+import {initMercadoPago, Wallet } from "@mercadopago/sdk-react"
 const Cart = () => {
     const dispatch = useDispatch()
     const products = useSelector(state => state.orders)
@@ -81,9 +82,10 @@ const Cart = () => {
                 <div class='total-container d-flex flex-column justify-content-evenly align-items-center'>
                     <span id='total'className="txt-large">TOTAL</span>
                     <span class='txt-large'>{`$${total}`}</span>
-                    <Link to={'https://www.paypal.com/ar/home'}>
-                        <button id="pay">Pay</button>
-                    </Link>
+
+                    <button onClick={handleBuy} id="pay">Pay</button>
+                    {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
+
                     <i onClick={deleteCart} id='trash'class="bi bi-trash-fill"></i>
                 </div>
             </div>

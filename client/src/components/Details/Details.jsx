@@ -56,8 +56,14 @@ const Details = ({}) => {
                                 <h3 id='title'>{product.name}</h3>
                                 <p>Lo que tenés que saber de este producto<span>{product.description}</span></p>
                             </div>
+                            
                             <div class='d-flex justify-content-end w-100 align-items-end'>
                                 <div class="d-flex w-100 flex-column">
+
+                                    <div id='stock'class='d-flex justify-content-evenly w-100 align-items-end'>
+                                        <span class='text-little'>{product.stock} Unidades disponibles</span>
+                                        <input type="text" placeholder="cantidad"/>
+                                    </div>
 
                                     <div id="btn" class='d-flex w-100 justify-content-evenly align-items-center'>
                                         <h3>
@@ -74,9 +80,6 @@ const Details = ({}) => {
                                         </div>
                                     </div>
 
-                                    <div id='stock'class='d-flex justify-content-center w-100 align-items-end'>
-                                        <span class='text-little'>{product.stock} Unidades disponibles</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
