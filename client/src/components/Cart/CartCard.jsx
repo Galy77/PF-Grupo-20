@@ -25,7 +25,7 @@ const CartCart = ({products}) => {
                                 <span class='txt-medium price'>{`$${products.price}`}</span>    
                             </div>
                             <div>
-                                <span class='price'>{`por ${products.cant} unidades son $${Math.round(products.price*products.cant)}`}</span>    
+                                <span class='price little'>{`por ${products.cant} unidades son $${Math.round(products.price*products.cant)}`}</span>    
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@ const CartCart = ({products}) => {
                 </Link>
 
                 <div class='d-flex align-items-center'>
-                        <i onClick={removeCart} class="x-cart bi bi-x-square"></i>
+                        <i onClick={removeCart} class="x-cart bi bi-trash-fill"></i>
                 </div>
             
             </div>

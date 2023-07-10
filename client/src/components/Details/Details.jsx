@@ -10,10 +10,18 @@ const Details = ({}) => {
     const dispatch = useDispatch()
     const {id} = useParams()
     const products = useSelector(state => state.products);
+    const orders = useSelector(state => state.orders);
     const product = products.filter(el => el.id == id).pop()
+
+    const productosStorage = JSON.parse(localStorage.getItem("productos"))
+
+    if(!orders.length){
+        if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
+    }
     
     const addCart = () => {
         dispatch(addOrder({...product,cant:1}))
+        alert('producto añadido correctamente al carrito')
     }
 
 
@@ -50,16 +58,19 @@ const Details = ({}) => {
                             <div class='d-flex justify-content-end w-100 align-items-end'>
                                 <div class="d-flex w-100 flex-column">
 
-                                    <div id="btn" class='d-flex w-100 justify-content-around align-items-center'>
+                                    <div id="btn" class='d-flex w-100 justify-content-evenly align-items-center'>
                                         <h3>
                                             {`$${product.price}`}
                                         </h3>
-                                        <Link to={`/cart`} onClick={addCart}>
-                                            <button type="button" class="btn btn-info"  >
+                                        <div>
+                                        <button type="button"id="buy" class="btn btn-primary"  onClick={addCart}>
+                                                Buy
+                                            </button>
+                                            <button type="button" id="addCart" class="btn btn-info"  onClick={addCart}>
                                                 Add to{` `}
                                                 <i class="bi bi-cart3"></i>
                                             </button>
-                                        </Link>    
+                                        </div>
                                     </div>
 
                                     <div id='stock'class='d-flex justify-content-center w-100 align-items-end'>

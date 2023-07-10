@@ -4,6 +4,11 @@
 .txt-large{
     font-size: 2.7rem;
 }
+/* #prev{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-size: 2rem;
+} */
 
 /*SECTION CARD*/
 .Cart-Products{
@@ -20,13 +25,19 @@
     max-width: 100%;
     min-height: 15vh;
     margin: 0.5rem;
-    border: 1px solid #46A0E0;
+    border: 1px solid black;
     border-left: none;
     border-radius: 10px !important;
+    transition: 0.3s;
+}
+.list-group-item:hover{
+-webkit-box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 }
 
 .imgs-cart{
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     max-width: 25%;
     max-height: 20%;
 }
@@ -35,14 +46,14 @@
     min-height: 15vh;
     padding-right: 0.5rem;
 }
-.bi-x-square{
+.bi-trash-fill{
     font-size: 1.5rem;
     cursor: pointer;
     color: #3B5161;
     transition: color 0.3s;
 }
-.bi-x-square:hover{
-    color: #46A0E0;
+.bi-trash-fill:hover{
+    color: black;
 }
 #cart-card{
     width: 70vh;
@@ -70,17 +81,18 @@
     border-radius: 10px;
     padding: 0 8vh;
     position:fixed;
-    border: 2px solid #46A0E0;
+    border: 2px solid black;
 }
 .price{
-    color: #1E4561;
+    color: black;
     margin-top: 1.5vh;
     font-weight: bold;
 }
 
 /*SECTION BUY*/
 #pay{
-    background-color: #BADFF9;
+    color: white;
+    background-color: black;
     min-width:7rem ;
     min-height:3rem ;
     border-radius: 5px;
@@ -89,7 +101,8 @@
 }
 #pay:hover{
     background-color: white;
-    border: 2px solid #46A0E0;
+    color: black;
+    border: 2px solid black;
 }
 #total{
         color: #1E4561;
@@ -97,7 +110,7 @@
 }
 #trash{
     max-width: 2rem;
-    color: #3B5161;
+    color: black;
     font-size: 3rem;
     cursor: pointer;
     transition: color 0.3s;
@@ -106,5 +119,7 @@
     color: #3B5161;
     font-size: 3rem;
     cursor: pointer;
-    color: #46A0E0;
+}
+.little{
+    font-size: 1rem;
 }

@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 
 const Cart = () => {
     const dispatch = useDispatch()
-    const productosStorage = JSON.parse(localStorage.getItem("productos"))
     const products = useSelector(state => state.orders)
+    const productosStorage = JSON.parse(localStorage.getItem("productos"))
     if(!products.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
     }
@@ -29,6 +29,9 @@ const Cart = () => {
 
     return(
         <>
+        {/* <div>
+            <i id="prev" class="bi bi-chevron-left d-flex"></i>
+        </div> */}
         <div class='Cart-Products d-flex justify-content-evenly align-items-start'>
 
 
