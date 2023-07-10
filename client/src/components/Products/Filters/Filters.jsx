@@ -10,7 +10,7 @@ function Filters (props) {
       <Container fluid className={style.filters}>
         <SearchBar />
         <PriceFilter />
-        <RatingFilter/>
+        <RatingFilter />
       </Container>
     )
 }

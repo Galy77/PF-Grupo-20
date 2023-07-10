@@ -1,3 +1,9 @@
+import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes"
+
+const initialState = {
+    user:{},
+    categories: [{name: "Muebles", img: "https://d2qc4bb64nav1a.cloudfront.net/cdn/13/images/curso-a-distancia-restauracion-muebles_amp_primaria_1_1560503054.jpg"},
+
 /* eslint-disable no-case-declarations */
 /*
   categories: [{name: "Muebles", img: "https://d2qc4bb64nav1a.cloudfront.net/cdn/13/images/curso-a-distancia-restauracion-muebles_amp_primaria_1_1560503054.jpg"},
@@ -124,7 +130,10 @@ const initialState = {
           rating:4.51
         }
       ],
-    orders:[]
+    orders:[],
+    minimumPrice: "",
+    maximumPrice: "",
+    ratingFilterValue: "all"
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
@@ -202,6 +211,31 @@ export const reducer = (state = initialState,{type,payload})=>{
                 ...state,
                 orders: aux1()
             }
+        
+        case MINIMUM_PRICE:
+          return {
+            ...state,
+            minimumPrice: payload
+          }
+
+        case MAXIMUM_PRICE:
+          return {
+            ...state,
+            maximumPrice: payload
+          }
+
+        case BETTER_QUALIFIED_FILTER:
+          return {
+              ...state,
+              ratingFilterValue: payload
+          }
+
+        case ALL_FILTER:
+          return {
+            ...state,
+            ratingFilterValue: payload
+          }
+
             
           case GET_ALL_CATEGORIES:
             return{
@@ -209,6 +243,7 @@ export const reducer = (state = initialState,{type,payload})=>{
               categories:payload
             }
             
+
         default:
             return{
                 ...state
