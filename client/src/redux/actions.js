@@ -1,4 +1,4 @@
-import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT, MINIMUM_PRICE, MAXIMUM_PRICE } from "./actionTypes";
+import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes";
 
 /////USER//////
 export const addUser = (user) => {
@@ -101,5 +101,21 @@ export const maximumPrice = (max) => {
    return {
       type: MAXIMUM_PRICE,
       payload: max
+   }
+}
+
+/////RATING FILTER/////
+
+export const betterQualified = (payload) => {
+   return {
+      type: BETTER_QUALIFIED_FILTER,
+      payload
+   }
+}
+
+export const showAll = (payload) => {
+   return {
+      type: ALL_FILTER,
+      payload
    }
 }

@@ -13,12 +13,18 @@ function PriceFilter (props){
 
     const handleMinPrice = (e) => {
         const { value } = e.target;
-        setMinPrice(value)
+        if(value >= 0){
+            setMinPrice(value)
+        }
+        
     }
     
     const handleMaxPrice = (e) => {
         const { value } = e.target;
-        setMaxPrice(value)
+        if(value > 0){
+            setMaxPrice(value)
+
+        }
     }
     
     const handleOnClick = () => {
@@ -32,11 +38,13 @@ function PriceFilter (props){
             <Form.Control   
             aria-label="minimum"
             placeholder="Minimo"
+            type='number'
             value={minPrice}
             onChange={handleMinPrice}
             />
             <Form.Control 
-            aria-label="maximum" 
+            aria-label="maximum"
+            type='number'
             placeholder="Maximo"
             value={maxPrice}
             onChange={handleMaxPrice}

@@ -1,33 +1,33 @@
 import Dropdown from 'react-bootstrap/Dropdown';
-import style from "../Products.module.css"
-import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { betterQualified, showAll } from '../../../redux/actions';
 
 function RatingFilter () {
-    const products = useSelector(state => state.products)
+    const [selectedOption, setSelectedOption] = useState(null);
+    const dispatch = useDispatch()
+    
+    const handleOptionSelect = (option) => {
+        setSelectedOption(option);
+        if (option === 'betterQualified') {
+          dispatch(betterQualified(option))
+        } else if (option === 'all') {
+          dispatch(showAll(option))
+        }
+      };
 
-    const handleChange= (event) => {
-
-        const rating = event.target.value;
-        let productsFiltered; 
-
-        if (rating === "a") {
-            return productsFiltered = products.sort((a, b) => a.rating - b.rating);
-          } else if (rating === "d") {
-            return productsFiltered = products.sort((a, b) => b.rating - a.rating);
-          } else if (rating === "nn"){
-            return productsFiltered;
-          }
-    }
-
-    const handleClick=()=>{
-        console.log("Click");
-    }
     return (
         <Dropdown >
             <Dropdown.Toggle variant="black" id="dropdown-basic">Rating</Dropdown.Toggle>
-                <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Mejor Calificados</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Todos</Dropdown.Item>
+                <Dropdown.Menu >
+                    <Dropdown.Item
+                    active={selectedOption === 'betterQualified'}
+                    onClick={() => handleOptionSelect('betterQualified')}> 
+                    Mejor Calificados</Dropdown.Item>
+                    <Dropdown.Item value="all"
+                    active={selectedOption === 'all'}
+                    onClick={() => handleOptionSelect('all')}>
+                    Todos</Dropdown.Item>
             </Dropdown.Menu>
     </Dropdown>
     )
