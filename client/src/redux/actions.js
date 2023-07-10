@@ -1,4 +1,4 @@
-import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT } from "./actionTypes";
+import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT, MINIMUM_PRICE, MAXIMUM_PRICE } from "./actionTypes";
 
 /////USER//////
 export const addUser = (user) => {
@@ -86,4 +86,20 @@ export const removeOrder = (id) => {
 
     };
     
+}
+
+/////MAX AND MIN PRICES/////
+
+export const minimumPrice = (min) => {
+   return {
+      type: MINIMUM_PRICE,
+      payload: min
+   }
+}
+
+export const maximumPrice = (max) => {
+   return {
+      type: MAXIMUM_PRICE,
+      payload: max
+   }
 }

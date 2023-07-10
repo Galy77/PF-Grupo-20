@@ -1,30 +1,22 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import style from "../Products.module.css";
 
-function SearchBarProductsCards () {
-    const products = useSelector(state => state.products)
-    const location = useLocation();
-
-    
-    const valor = location.search.split("=").pop();
-    const productsFiltered = products.filter((obj) => obj.name.includes(valor ? valor : null))
-    
-    console.log(productsFiltered)
+function SearchBarProductsCards (props) {
     return (
-        <div>
-            {productsFiltered.length ? productsFiltered.map((product) => (
-            <Card style={{ width: '18rem' }}>
+        <div className={style.cardsContainer}>
+            {props.productsFiltered.length ? props.productsFiltered.map((product) => (
+            <Card style={{ width: '14rem' }} className={style.cards}>
                 <Card.Img variant="top" src={product.image} />
                 <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>{product.description}</Card.Text>
+                    <Card.Text>${product.price}</Card.Text>
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                 </ListGroup>
                 <Card.Body>
-                    <Card.Link href="/home">Ver más detalles</Card.Link>
+                    <Card.Link href={`/detail/${product.id}`}>Ver más detalles</Card.Link>
                 </Card.Body>
             </Card> 
             )) : (<h1>El producto no existe</h1>)}

@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
+import { maximumPrice, minimumPrice } from '../../../redux/actions';
+import style from "../Products.module.css";
 
 function PriceFilter (props){
     const dispatch = useDispatch()
@@ -13,18 +15,19 @@ function PriceFilter (props){
         const { value } = e.target;
         setMinPrice(value)
     }
-
+    
     const handleMaxPrice = (e) => {
         const { value } = e.target;
         setMaxPrice(value)
     }
     
-    const handleClick = () => {
+    const handleOnClick = () => {
+        dispatch(minimumPrice(minPrice))
+        dispatch(maximumPrice(maxPrice))
     }
 
-   
     return (
-        <InputGroup className="mb-3">
+        <InputGroup size='sm' >
             <InputGroup.Text>Precio</InputGroup.Text>
             <Form.Control   
             aria-label="minimum"
@@ -38,7 +41,7 @@ function PriceFilter (props){
             value={maxPrice}
             onChange={handleMaxPrice}
             />
-            <Button variant="secondary" size="sm" onClick={handleClick}>Aplicar</Button>
+            <Button variant="secondary" size="sm" onClick={() => handleOnClick()}>Aplicar</Button>
         </InputGroup>
     )
 }

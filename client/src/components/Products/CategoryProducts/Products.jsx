@@ -10,19 +10,27 @@ function Products (){
     const { category } = useParams();
     const location = useLocation();
     const products = useSelector(state => state.products);
+    const min = useSelector(state => state.minimumPrice);
+    const max = useSelector(state => state.maximumPrice);
 
     const search = location.search.slice(8);
 
     const categoryProducts = products.filter((product) => product.category === category);
-    const searchFilter = categoryProducts.filter((product) => product.name.includes(search));
-
+    const filteredProducts = categoryProducts.filter((product) => {
+        const matchSearch = product.name.includes(search);
+        const matchPrice = (min && max) ? (product.price >= min && product.price <= max) :
+                          (!min && max) ? (product.price <= max) :
+                          (min && !max) ? (product.price >= min) : true;
+        return matchSearch && matchPrice;
+      });
+    
     return (
         <div>
             <CreatedCarousel />
             <div className={style.container}>
                 <Filters />
                 <ProductsCards
-                categoryProducts={search ? searchFilter :categoryProducts}                 
+                categoryProducts={filteredProducts ? filteredProducts :categoryProducts}                 
                 />
             </div>
         </div>
