@@ -7,7 +7,6 @@ import { useLocation } from 'react-router-dom';
 function SearchBarProductsCards () {
     const products = useSelector(state => state.products)
     const location = useLocation();
-
     
     const valor = location.search.split("=").pop();
     const productsFiltered = products.filter((obj) => obj.name.includes(valor ? valor : null))

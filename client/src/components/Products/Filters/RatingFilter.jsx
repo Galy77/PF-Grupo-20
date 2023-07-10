@@ -1,9 +1,6 @@
 import Button from 'react-bootstrap/Button';
-import { useDispatch } from 'react-redux';
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+
 function RatingFilter () {
     const products = useSelector(state => state.products)
 

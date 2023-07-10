@@ -6,7 +6,7 @@
   }
   
   .formContainer {
-    width: 86.8%;
+    width: 70%;
     height: auto;
     padding-top: 20px;
     border-radius: 5px;
@@ -14,6 +14,8 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
+    border: solid black 2px;
+    margin-bottom: 10px;
   }
   .titleInput{
     font-weight: bold;
@@ -23,8 +25,7 @@
   }
  .campo{
   width: 30%;
-  height: 20px;
-  margin: 6px;
+  height: 30px;
  }
   
   button[type="submit"] {
