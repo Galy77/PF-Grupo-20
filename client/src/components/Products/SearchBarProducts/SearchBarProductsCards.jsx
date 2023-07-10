@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useSelector } from 'react-redux';

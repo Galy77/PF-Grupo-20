@@ -9,7 +9,7 @@ import Details from './components/Details/Details'
 import Cart from './components/Cart/Cart';
 import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
-
+import Create from './components/Create/Create'
 import Products from './components/Products/CategoryProducts/Products';
 import SearchBarProducts from './components/Products/SearchBarProducts/SearchBarProducts';
 

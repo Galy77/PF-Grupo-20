@@ -12,8 +12,6 @@ function SearchBar () {
         setInput(value)
     }
 
-    
-
     return (
         <div className={style.searchBar}>
             <Form className="d-flex">

@@ -49,17 +49,21 @@ function Create(){
         }else if(input.description.length < 20 ||input.description.length > 500){
           error.description = "La descripción debe tener entre 20 y 500 caracteres."
         }
-
+        if(input.image === null){
+          error.image = "Ingrese una Imagen.";
+        }
       
-        if (input.rating <= 1 || input.rating >= 5) {
+        if (input.rating <= 1 || input.rating >= 6) {
           error.rating = "Ingrese una calificación válida (entre 1 y 5).";
         }else if(input.rating.trim().length === 0){
           error.rating = "Ingrese una calificación.";
+        }else if (isNaN(parseFloat(input.rating))) {
+          error.rating = "Ingrese un número válido para la calificación.";
         }
 
         if (input.stock <= 0 || input.stock >= 5000) {
             error.stock = "Ingrese stock válido (entre 0 y 5000).";
-        }else if((input.rating.trim().length === 0) ){
+        }else if((input.stock.trim().length === 0) ){
             error.stock = "Ingrese el stock disponible.";
         }
 
@@ -74,6 +78,7 @@ function Create(){
       }
 
     const handleChange = (event) => {
+      
       console.log(event.target.value)
         setInput({
           ...input,
@@ -86,14 +91,14 @@ function Create(){
             [event.target.name]: event.target.value
           })
         );
-        
+        console.log("all Inputs", input);
       }
       
       const handleImageChange = (event) => {
         const file = event.target.files[0];
         setInput({
           ...input,
-          image: file,
+          image: file.name,
         });
     
         setError(
@@ -105,6 +110,7 @@ function Create(){
       };
 
     const handleSubmit = (event) => {
+      console.log("all Inputs", input);
         event.preventDefault();
         if (Object.keys(error).length === 0) {
           alert("todo nashei")
@@ -183,4 +189,4 @@ function Create(){
       </div>
     )
 }
-export default Create
+export default Create;

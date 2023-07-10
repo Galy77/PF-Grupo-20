@@ -1,5 +1,4 @@
 /* eslint-disable no-case-declarations */
-
 import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES} from "./actionTypes"
 
 
@@ -199,6 +198,7 @@ export const reducer = (state = initialState,{type,payload})=>{
                 ...state,
                 orders: aux1()
             }
+            
           case GET_ALL_CATEGORIES:
             return{
               ...state,

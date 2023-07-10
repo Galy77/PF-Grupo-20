@@ -1,4 +1,4 @@
-import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT} from "./actionTypes";
+import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES } from "./actionTypes";
 import axios from "axios";
 /////USER//////
 export const addUser = (user) => {
@@ -93,3 +93,16 @@ export const removeOrder = (id) => {
 
 
 //---->Categories
+export const getAllCategories = () => {
+   return async function(dispatch){
+      try{
+         const response = await axios.get("http://localhost:3001/categories");
+         return dispatch({
+             type:GET_ALL_CATEGORIES,
+             payload:response.data
+         })
+      }catch(error){
+         alert(error.menssage);
+      }
+   }
+}
