@@ -5,7 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import "./NavBar.css"
+import style from "./NavBar.module.css";
+import './NavBar.css'
 
 function NavBar (){
 const [ object, setObject ] = useState("");
@@ -54,6 +55,7 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
               <Link to={'/cart'}>
                 <i class="icons bi bi-cart3"></i>
               </Link>
+              <i class="icons bi bi-plus"></i>
               </div>
           </Container>
         </Navbar>
