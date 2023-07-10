@@ -23,7 +23,7 @@ const postProduct = async(req, res) => {
             stock,
             rating
         };
-
+        console.log(newProduct)
         const createProduct = await Product.create(newProduct);
         await createProduct.addCategories(CategoryId)
 
