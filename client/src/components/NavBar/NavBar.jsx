@@ -44,7 +44,7 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
                         onChange={handleChange}
                         value={object}
                       />
-                      <Link to={`/products?search=${capital}`}><Button variant="outline-success">Search</Button></Link>
+                      <Link to={`/products?search=${capital}`}><Button variant="outline-dark" class='btn btn-dark'>Search</Button></Link>
                     </Form>
 
                   </Nav>
