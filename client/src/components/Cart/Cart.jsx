@@ -26,32 +26,32 @@ const Cart = () => {
         return acc + numero;
       }, 0));
     ///goBack
-            ////MP
-        // const [preferenceId, setPreferenceId] = useState(null)
-        // initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
-        // const createPreference = async () => {
-        //     try {
-        //         const response = await axios.post("http://localhost:3001/PF/create_preference",{
-        //             description:"cart Mercado Henry",
-        //             price:total,
-        //             quantity:1
-        //             // currency_id:"ARS"
-        //         })
-        //         console.log(response)
-        //         const {id} = response.data;
-        //         console.log(id)
-        //         return id
-        //     } catch (error) {
-        //         console.log(error)
-        //         console.log(1)            
-        //     }
-        // }
-        // const handleBuy = async () => {
-        //     const id = await createPreference()
-        //     if(id){
-        //         setPreferenceId(id)
-        //     }
-        // }
+        //MP
+        const [preferenceId, setPreferenceId] = useState(null)
+        initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
+        const createPreference = async () => {
+            try {
+                const response = await axios.post("http://localhost:3001/PF/create_preference",{
+                    description:"cart Mercado Henry",
+                    price:total,
+                    quantity:1
+                    // currency_id:"ARS"
+                })
+                console.log(response)
+                const {id} = response.data;
+                console.log(id)
+                return id
+            } catch (error) {
+                console.log(error)
+                console.log(1)            
+            }
+        }
+        const handleBuy = async () => {
+            const id = await createPreference()
+            if(id){
+                setPreferenceId(id)
+            }
+        }
         ////MP
     function goBack() {
         window.history.back();
