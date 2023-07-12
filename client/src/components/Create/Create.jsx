@@ -9,12 +9,12 @@ function Create(){
     const allCategories = useSelector((state) => state.categories);
 
     const [success, setSuccess] = useState(false);
-    /*
+    
     useEffect(() => {
         dispatch(getAllCategories());
         console.log(allCategories);
       }, [dispatch]);
-    */
+    
     const [input, setInput] = useState({
         name: "",
         description: "",
