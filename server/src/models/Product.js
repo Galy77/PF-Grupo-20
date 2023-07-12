@@ -24,12 +24,8 @@ module.exports = (sequelize) => {
       },
 
       image: {
-        type: DataTypes.JSON,
+        type: DataTypes.STRING,
         allowNull: false,
-        defaultvalue: {
-          public_id: "",
-          url: "",
-        },
       },
       stock: {
         type: DataTypes.INTEGER,
