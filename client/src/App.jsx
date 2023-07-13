@@ -12,6 +12,7 @@ import NavBar from './components/NavBar/NavBar';
 import Create from './components/Create/Create'
 import Products from './components/Products/CategoryProducts/Products';
 import SearchBarProducts from './components/Products/SearchBarProducts/SearchBarProducts';
+import Contact from './components/Contact/Contact';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/home' element={<Home />}/>
         <Route path='/products/:category' element={<Products />}/>
         <Route path='/products' element={<SearchBarProducts />} />
+        <Route path='/contact' element={<Contact />} />
         <Route path='/detail/:id' element={<Details/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/login'/>
