@@ -10,7 +10,7 @@ function CreatedCarousel (){
         {carouselPhotos.map(data => (
         <Carousel.Item  >
         <img
-          class='aa'
+          class='img'
           src={data.img}
           alt="First slide"
           />

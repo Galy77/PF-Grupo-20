@@ -8,15 +8,18 @@ import style from "./Home.module.css";
 import './Home.css'
 
 
+
 function Home (){
+
     const categories = useSelector(state => state.categories);
+
    
     return (
     <>
         <CreatedCarousel />
         <div class='a w-100 d-flex justify-content-center'>
             <div class='cards-container'>
-                <Row xs={1} md={2} className="g-4 m-3 justify-content-center">
+                <Row xs={1} md={2} className="grid-2 g-4 m-3 justify-content-center">
                     {categories.map((category) => (
                             <Col md={3}>
                                 <div class='card-container'>

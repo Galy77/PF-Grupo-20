@@ -2,6 +2,9 @@
     background-color:white;
     max-width:75%;
 }
+.ml-4{
+    margin-left: 1.5rem;
+}
 .row{
     display: flex;
     justify-content: center;
@@ -10,13 +13,17 @@
     height: 500px;
     /* background-color: black; */
 }
-.col{
-    display: flex;
-    color: black;
-    justify-content: center;
-    max-width: 40%;
-    height: 400px;
+.celeste{
+    background-color: aqua;
 }
+.coments{
+min-width: 580px;
+}
+.blue{
+    width: 100%;
+    height: 1000px;
+}
+
 .comments{
     min-width: 100%;
     height: 500px;
@@ -26,18 +33,13 @@
 }
 .stars{
     color:black;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 .product{
     width: 100%;
 }
-.product-info{
-    max-width:90%;
-    margin-top: 1rem;
-    /* background-color: blue; */
-}
 .text-little{
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 #title-description{
     margin: 1rem 0;
@@ -51,7 +53,6 @@
     height: auto;
 }
 #btn{
-    margin-top: 5rem;
     cursor: pointer;
 }
 .bi-heart{
@@ -67,4 +68,29 @@
     border:1px solid black ;
     background-color: black;
     border-radius: 5px 0 0 5px;
+}
+.i-stock{
+    text-align: center;
+}
+.f-size{
+    font-size: 1.2rem;
+    color: rgb(105, 100, 100);
+    font-family: 'Lato', sans-serif;
+}
+.showtext{
+    cursor: pointer;
+}
+.s{
+    font-size: 1rem;
+    background-color: aqua;
+}
+.w-35{
+    width: 10rem;
+}
+.cursor{
+    cursor: pointer;
+}
+.coment-container{
+    height: 90px;
+    overflow: auto;
 }
