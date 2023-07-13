@@ -20,16 +20,16 @@ module.exports = (sequelize) => {
       },
       price: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
 
       image: {
-        type: DataTypes.JSON,
+        type: DataTypes.STRING,
         allowNull: false,
-        defaultvalue: {
-          public_id: "",
-          url: "",
-        },
+        // defaultvalue: {
+        //   public_id: "",
+        //   url: "",
+        // },
       },
       stock: {
         type: DataTypes.INTEGER,
@@ -43,6 +43,10 @@ module.exports = (sequelize) => {
           min: 0.5,
         },
       },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
     },
     { timestamps: false }
   );
