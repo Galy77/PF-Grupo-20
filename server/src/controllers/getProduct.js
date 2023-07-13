@@ -26,13 +26,12 @@ const getProducts = async (req, res) => {
               Math.floor(Math.random() * (maxStock - minStock + 1)) + minStock;
             const randomRatingNumber =
               Math.round(Math.random() * (maxRating - minRating)) + minRating;
-
-              // let valueName = attributes[0].value_name;
-
+            
+            const details = JSON.stringify(attributes);
             const obj = {
               id: i++,
               name: title,
-              description: "xd",
+              details: details,
               price: price,
               image: thumbnail,
               stock: randomStockNumber,
