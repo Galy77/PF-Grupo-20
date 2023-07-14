@@ -24,7 +24,7 @@ export function Login() {
       await login(user.email, user.password);
       setError("");
       if (isGoogleLogin) {
-        navigate("/");
+        navigate("/profile");
       } else {
         window.history.go(-2);
       }
@@ -90,10 +90,13 @@ export function Login() {
         </form>
       ) : (
         <>
+          <h1>Completa los siguentes datos</h1>
+          {console.log("datos que llegaron",user.email,"y",user.name)}
           <Register email={user.email} name={user.name} />
         </>
       )}
 
+      
 
       {!isGoogleLogin ? (
         <>
@@ -111,3 +114,5 @@ export function Login() {
     </div>
   );
 }
+
+

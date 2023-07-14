@@ -32,36 +32,37 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
 
 
   const signup = async (email, password, name, phoneNumber, direction_shipping) => {
-    /*
+    
     const bddUser = {
-      name:name, 
+      full_name:name, 
       email:email, 
       password:password, 
       phone:phoneNumber, 
       direction_shipping:direction_shipping
     }
     console.log(bddUser)
-    */
+    
     try {
       const { user } = await createUserWithEmailAndPassword(auth, email, password);
       await updateProfile(user, {
         displayName: name,
       }); 
-      /*  
-      await dispatch(addUser(bddUser))
-      .then((response)=>{
+      console.log("antes de la bdd",user);
+      const nUser = await dispatch(addUser(bddUser))
+      console.log("despues de la bdd",nUser);
+      /*.then((response)=>{
         if(response){
           alert("user creado en la bdd");
         }
-      })
-      */
+      })*/
+      
       console.log('Usuario registrado exitosamente', user);
     } catch (error) {
       console.error('Error al registrar el usuario:', error);
@@ -77,15 +78,16 @@ export function AuthProvider({ children }) {
       const result = await signInWithPopup(auth, googleProvider);
       const { user } = result;
       const { displayName, email } = user;
-      /*
-      const response = dispatch(getUser(email))
-      if(response){
-        return true;
-      }*/
+      
       console.log("Usuario creado con Google");
       console.log("Nombre:", displayName);
       console.log("Email:", email);
-     
+      
+      const response = dispatch(getUser(email))
+      console.log("response back",JSON.stringify(response))
+      if(response){
+        return true;
+      }
   };
 
   const logout = () => signOut(auth);

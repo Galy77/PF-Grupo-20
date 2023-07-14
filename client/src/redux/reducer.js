@@ -163,7 +163,7 @@ export const reducer = (state = initialState,{type,payload})=>{
           }
         }
         case GET_USER:{
-          const userFiltred = state.allCharactersFav.filter((usr)=> usr.email === payload);
+          const userFiltred = state.users.filter((usr)=> usr.email === payload);
 
           return{
             ...state,

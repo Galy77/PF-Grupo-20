@@ -5,7 +5,8 @@ import axios from "axios";
 export const getAllUsers=()=>{
    return async function(dispatch){
       try{
-         const response = await axios.get("http://localhost:3001/PF/users");
+         const response = await axios.get("http://localhost:3001/PF/user");
+         console.log("Estos son mis users", response)
          return dispatch({
              type:GET_ALL_USERS,
              payload:response.data

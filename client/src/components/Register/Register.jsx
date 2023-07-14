@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { useLocation } from "react-router-dom";
 import './Register.style.css'
+
 export function Register({ email, name }) {
   const { signup } = useAuth();
 
@@ -17,15 +17,13 @@ export function Register({ email, name }) {
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  //const location = useLocation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
       await signup(user.email, user.password, user.name,user.phoneNumber,user.direction_shipping);
-      //const { from } = location.state || { from: { pathname: "/" } };
-      navigate("/");
+      navigate("/profile");
     } catch (error) {
       setError(error.message);
     }
