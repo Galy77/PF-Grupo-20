@@ -59,19 +59,17 @@ const Cart = () => {
     }
       
 
-
+console.log(productosStorage)
     return(
         <>
         <div class='mt-4'>
 
-            <div class='cart-container d-flex justify-content-evenly '>
-                <div id='cart-card'class="d-flex flex-column align-items-center">
+            <div class='cart-container d-flex justify-content-evenly'>
+                <div id='cart-card'class="d-flex flex-column align-items-center cuerpo">
                     {
-                        
-                        productosStorage? productosStorage.map(productscart => {
+                        productosStorage.length? productosStorage.map(productscart => {
                                 return <CartCart products={productscart}/>
-    
-                        }):''
+                        }):<p>No hay productos en tu carrito</p>
                     }
 
                 </div>

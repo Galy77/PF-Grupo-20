@@ -96,7 +96,7 @@ const Details = ({}) => {
 
     return(
         <>
-            <div class="container d-flex flex-column justify-content-start border h1000 mt-4 w-100">
+            <div class="container d-flex flex-column justify-content-start border h1000 mt-4 w-100 cuerpo">
                 <div class=' d-flex flex-column h-50 my-4'>
 
                     <div class="d-flex flex-column justify-content-start align-items-end">

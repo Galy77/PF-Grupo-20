@@ -19,16 +19,16 @@ function Home (){
     return (
     <>
         <CreatedCarousel />
-        <div class='a w-100 d-flex flex-column justify-content-center h-100'>
-            <div class='cards-container'>
+        <div class='w-100 d-flex flex-column justify-content-center align-items-center h-100'>
+            <div class='cuerpo cards-container my-4'>
                 <Row xs={1} md={2} className="grid-2 g-4 m-3 justify-content-center">
-                    {allCategories.map((category) => (
+                    {categories.map((category) => (
 
                             <Col md={3}>
                                 <div class='card-container'>
                                     <Link to={`/products/${category.name}`} class='link'>
                                         <Card class='card'>
-                                            <Card.Img variant="top" /*src={category.img}*/ />
+                                            <Card.Img variant="top" src={category.img} />
                                             <Card.Body>
                                                 <Card.Title>{category.name}</Card.Title>
                                             </Card.Body>
@@ -39,7 +39,6 @@ function Home (){
                     ))}
                 </Row>
             </div>
-            <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
         </div>
 
     </>
