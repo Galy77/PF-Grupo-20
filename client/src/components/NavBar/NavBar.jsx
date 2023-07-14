@@ -52,11 +52,14 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
               </div>
               <div>
               <i class="icons bi bi-person"></i>
-              <Link to={'/cart'}>
-                <i class="icons bi bi-cart3"></i>
+                <Link to={'/cart'}>
+              <i class="icons bi bi-cart3"></i>
               </Link>
               <Link to={`/create`}>
                 <i class="icons bi bi-plus"></i>
+              </Link>
+              <Link to={"/contact"}>
+                <i class="icons bi bi-info-circle"></i>
               </Link>
               </div>
           </Container>

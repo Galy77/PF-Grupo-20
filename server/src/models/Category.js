@@ -3,8 +3,8 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
     sequelize.define('Category', {
         id: {
-            type:DataTypes.INTEGER,
-            autoIncrement: true,
+            type:DataTypes.STRING,
+            // autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
