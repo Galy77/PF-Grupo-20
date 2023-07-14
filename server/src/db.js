@@ -3,7 +3,9 @@ const { Sequelize } = require("sequelize");
 const fs = require('fs');
 const path = require('path');
 
-const sequelize = new Sequelize('postgres://pf:JoZSCTFoPpDDxTwuc6amy663hZq1GUt9@dpg-cil2di95rnuvtgto0omg-a/ecommerce_uhbm', {
+const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
+
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ecommerce`, {
   logging: false, 
   native: false, 
 });
