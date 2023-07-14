@@ -1,6 +1,7 @@
 const { User } = require("../db");
 const postUser = async (req, res) => {
   const { full_name, email, password, phone, direction_shipping } = req.body;
+  console.log("entro", full_name, email, password, phone, direction_shipping )
   try {
     const newUser = {
       full_name,

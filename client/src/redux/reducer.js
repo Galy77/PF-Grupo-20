@@ -23,7 +23,7 @@
 //     ],
 // */
 
-import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER} from "./actionTypes"
+import { GET_ALL_USERS,GET_USER,ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER} from "./actionTypes"
 
 const initialState = {
     user:{},
@@ -148,13 +148,28 @@ const initialState = {
     orders:[],
     minimumPrice: "",
     maximumPrice: "",
-    ratingFilterValue: "all"
+    ratingFilterValue: "all",
+    users:[]
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
     switch (type) {
 
         //USER
+        case GET_ALL_USERS:{
+          return{
+            ...state,
+            users:payload
+          }
+        }
+        case GET_USER:{
+          const userFiltred = state.allCharactersFav.filter((usr)=> usr.email === payload);
+
+          return{
+            ...state,
+            user:userFiltred
+          }
+        }
         case ADD_USER:
             return{
                 ...state,

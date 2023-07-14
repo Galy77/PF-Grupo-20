@@ -1,10 +1,7 @@
 import './App.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { useState, useEffect } from 'react'
-import { Routes,Route, useLocation } from 'react-router-dom';
-import { useDispatch,useSelector } from 'react-redux';
-import { addOrder,addProduct,addUser,removeOrder,removeProduct,removeUser } from './redux/actions';
+import { Routes, Route } from 'react-router-dom';
 import Details from './components/Details/Details'
 import Cart from './components/Cart/Cart';
 import Home from './components/Home/Home';
@@ -12,27 +9,32 @@ import NavBar from './components/NavBar/NavBar';
 import Create from './components/Create/Create'
 import Products from './components/Products/CategoryProducts/Products';
 import SearchBarProducts from './components/Products/SearchBarProducts/SearchBarProducts';
-
+import Profile from './components/Profile/Profile'
+import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
+import { AuthProvider } from "./context/AuthContext";
+import { Register } from './components/Register/Register';
+import { Login } from './components/Login/Login';
 
 function App() {
 
-  const location = useLocation();
-
   return (
     <div className="App">
-      <NavBar />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="*" element={<Home />} />
-        <Route path='/home' element={<Home />}/>
-        <Route path='/products/:category' element={<Products />}/>
-        <Route path='/products' element={<SearchBarProducts />} />
-        <Route path='/detail/:id' element={<Details/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/login'/>
-        <Route path='/register'/> 
-        <Route path='/create' element={ <Create /> }/>
-      </Routes>
+      <AuthProvider>
+        <NavBar />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="*" element={ <Home/> } />
+          <Route path='/home' element={ <Home/> }/>
+          <Route path='/products/:category' element={ <Products/> }/>
+          <Route path='/products' element={ <SearchBarProducts /> } />
+          <Route path='/detail/:id' element= { <Details/> } />
+          <Route path='/cart' element={ <ProtectedRoute> <Cart/> </ProtectedRoute> }/>
+          <Route path='/login' element={ <Login/> } />
+          <Route path='/register' element = {<Register/>} />
+          <Route path='/create' element={ <Create/> }/>
+          <Route path='/profile' element={<ProtectedRoute> <Profile/> </ProtectedRoute>}/>
+        </Routes>
+      </AuthProvider>
     </div>
   )
 }

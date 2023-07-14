@@ -51,7 +51,9 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
                 </Navbar.Collapse>
               </div>
               <div>
-              <i class="icons bi bi-person"></i>
+                <Link to = {'/profile'}>
+                  <i class="icons bi bi-person"></i>
+                </Link>
               <Link to={'/cart'}>
                 <i class="icons bi bi-cart3"></i>
               </Link>

@@ -1,14 +1,35 @@
-import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes";
+import { GET_ALL_USERS,ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER, GET_USER } from "./actionTypes";
 import axios from "axios";
 
 /////USER//////
+export const getAllUsers=()=>{
+   return async function(dispatch){
+      try{
+         const response = await axios.get("http://localhost:3001/PF/users");
+         return dispatch({
+             type:GET_ALL_USERS,
+             payload:response.data
+         })
+      }catch(error){
+         alert(error.menssage);
+      }
+   }
+}
+export const getUser = (email) => {
+   return {
+      type: GET_USER,
+      payload: email
+   }
+}
 export const addUser = (user) => {
     return async(dispatch) => {
-      try {
-         return dispatch({
-            type: ADD_USER,
-            payload: user
-         })
+       try {
+         const response = await axios.post('http://localhost:3001/PF/products', user)
+            dispatch({
+               type: ADD_USER,
+               payload:response.data
+            })
+         return response;
       } catch (error) {
          console.log(error.message)
       }
