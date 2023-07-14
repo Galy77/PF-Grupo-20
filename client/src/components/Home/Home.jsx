@@ -11,19 +11,19 @@ import { useState } from 'react';
 
 
 function Home (){
-    const categories = useSelector(state => state.categories);
-    const [ allCategories, setAllCategories ] = useState([]);
 
-    // const info = axios.get("https://api.mercadolibre.com/sites/MLA/categories")
-    // .then((results) => setAllCategories(results.data))
+    const categories = useSelector(state => state.categories);
+
+    const [ allCategories, setAllCategories ] = useState([]);
 
     return (
     <>
         <CreatedCarousel />
-        <div class='a w-100 d-flex justify-content-center'>
+        <div class='a w-100 d-flex flex-column justify-content-center h-100'>
             <div class='cards-container'>
-                <Row xs={1} md={2} className="g-4 m-3 justify-content-center">
+                <Row xs={1} md={2} className="grid-2 g-4 m-3 justify-content-center">
                     {allCategories.map((category) => (
+
                             <Col md={3}>
                                 <div class='card-container'>
                                     <Link to={`/products/${category.name}`} class='link'>
@@ -39,12 +39,8 @@ function Home (){
                     ))}
                 </Row>
             </div>
+            <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
         </div>
-        <footer>
-            <div>
-                    <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
-            </div>
-        </footer>
 
     </>
     )

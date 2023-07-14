@@ -7,3 +7,19 @@
     text-decoration: none;
     color: black;
 }
+@media (max-width: 751px) {
+    .filter-products{
+        display: flex;
+        flex-direction: column;
+    }
+    ._cardsContainer_12v3n_39{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width: 751px) {
+    .filter-products{
+        display: flex;
+    }
+}

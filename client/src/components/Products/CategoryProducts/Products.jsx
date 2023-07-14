@@ -29,7 +29,7 @@ function Products (){
     return (
         <div>
             <CreatedCarousel />
-            <div className={style.container}>
+            <div className={style.container} class='filter-products'>
                 <Filters />
                 <ProductsCards
                 categoryProducts={filteredProducts ? filteredProducts :categoryProducts}                 
