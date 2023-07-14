@@ -62,31 +62,29 @@ const Cart = () => {
 
     return(
         <>
-        <div>
-            <i id="prev" class="bi bi-chevron-left d-flex" onClick={goBack}></i>
-        </div>
-        <div class='Cart-Products d-flex justify-content-evenly align-items-start'>
+        <div class='mt-4'>
 
+            <div class='cart-container d-flex justify-content-evenly '>
+                <div id='cart-card'class="d-flex flex-column align-items-center">
+                    {
+                        
+                        productosStorage? productosStorage.map(productscart => {
+                                return <CartCart products={productscart}/>
+    
+                        }):''
+                    }
 
-            <div id='cart-card'class="d-flex flex-column">
-                {
-                    
-                    productosStorage? productosStorage.map(productscart => {
-                            return <CartCart products={productscart}/>
- 
-                    }):''
-                }
+                </div>
+                <div id='aux'>
+                    <div class='total-container d-flex flex-column justify-content-evenly align-items-center'>
+                        <span id='total'className="txt-large">TOTAL</span>
+                        <span class='txt-large'>{`$${total}`}</span>
 
-            </div>
-            <div id='aux'>
-                <div class='total-container d-flex flex-column justify-content-evenly align-items-center'>
-                    <span id='total'className="txt-large">TOTAL</span>
-                    <span class='txt-large'>{`$${total}`}</span>
+                        <button onClick={handleBuy} id="pay">Pay</button>
+                        {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
 
-                    <button onClick={handleBuy} id="pay">Pay</button>
-                    {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
-
-                    <i onClick={deleteCart} id='trash'class="bi bi-trash-fill"></i>
+                        <i onClick={deleteCart} id='trash'class="bi bi-trash-fill"></i>
+                    </div>
                 </div>
             </div>
         </div>

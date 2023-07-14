@@ -96,10 +96,10 @@ const Details = ({}) => {
 
     return(
         <>
-            <div class="container d-flex justify-content-start border w-100 blue mt-4">
-                <div class='col-5 d-flex flex-column h-50'>
+            <div class="container d-flex flex-column justify-content-start border h1000 mt-4 w-100">
+                <div class=' d-flex flex-column h-50 my-4'>
 
-                    <div class="col d-flex flex-column justify-content-start align-items-end">
+                    <div class="d-flex flex-column justify-content-start align-items-end">
                         <div className="product d-flex flex-column align-items-center">
                             <Slider images={product.image}/>
                         </div>
@@ -139,7 +139,7 @@ const Details = ({}) => {
 
                     </div>
                 </div>
-                <div class='col-7 h-100'>
+                <div class='h-100'>
 
                     <div class='w-100 mb-5'>
                         <p class='text-start m-4'>{displayText}</p>
@@ -150,32 +150,33 @@ const Details = ({}) => {
                         )}
                     </div>
 
-                    <div class="d-flex flex-column align-items-start h-50">
-                            <div class='mx-4 '>
-                                <h2>Comentarios</h2>
-                            </div>
+                    <div class='mx-4 '>
+                        <h2>Comentarios</h2>
+                    </div>
+                    <div class="d-flex flex-column align-items-start h-50 p-4">
                             {
                                 review? review.map(el => <Reviews stars={el.stars} coment={el.coment}/>):''
                             }  
-                            <div class='h-25 d-flex mx-4 align-items-center border rounded coments'>
-                                <div class='w-50 mx-4 h-100 mt-4'>
-                                    {stars? <Stars rating={stars} />:
-                                    <div>
-                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
-                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
-                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
-                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
-                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
-                                        {/* <Stars rating={stars}/> */}
+                            <div class='h-100 d-flex align-items-center rounded w-100'>
+                                <div class='d-flex align-items-center justify-content-center w-50 h-100'>
+                                    <div class=''>
+                                        {stars? <Stars rating={stars} />:
+                                        <div>
+                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
+                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
+                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
+                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
+                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                                        </div>
+                                        }
+                                        <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
                                     </div>
-                                    }
-                                    <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
                                 </div>
 
-                                <div class='d-flex flex-column'>
-                                    <textarea name="" id="" cols="50" rows="2" placeholder="añade un comentario" class='ml-4 mt-2 text-start' value={coment} onChange={() => handleComent(event)}></textarea>
-                                    <div class='d-flex flex-column align-items-end'>
-                                        <button className="btn btn-primary w-25" onClick={handleReviews}>Enviar</button>
+                                <div class=' d-flex flex-column align-items-center'>
+                                    <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
+                                    <div class='d-flex justify-content-end w-100'>
+                                        <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
                                     </div>
                                 </div>
              

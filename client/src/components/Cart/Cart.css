@@ -45,7 +45,6 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 .img-title{
     width:100%;
     min-height: 15vh;
-    padding-right: 0.5rem;
 }
 .bi-trash-fill{
     font-size: 1.5rem;
@@ -59,7 +58,6 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 #cart-card{
     width: 70vh;
     min-height: 60vh;
-    margin-right: 5vh;
 }
 #title-price{
     padding-right: 1rem;
@@ -74,7 +72,6 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 
 #aux{
     width: 50vh;
-    background-color:#46A0E0;
 }
 .total-container{
     width: 50vh;
@@ -125,4 +122,31 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 }
 .little{
     font-size: 1rem;
+}
+.red{
+    background-color: red;
+}
+@media (max-width: 1033px) {
+    .total-container{
+        position:relative;
+    }
+    .cart-container{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+}
+@media (max-width: 584px) {
+    #cart-card{
+        width: 100%;
+    }
+    .list-group-item{
+        width: 100%;
+    }
+    #aux{
+        max-width: 100%;
+    }
+    .total-container{
+        width: 100%;
+    }
 }
