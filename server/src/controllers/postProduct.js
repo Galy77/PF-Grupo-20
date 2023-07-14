@@ -5,19 +5,19 @@ const postProduct = async (req, res) => {
   const { name, description, price, CategoryId, stock, rating } = req.body;
 
   try {
-    const image = req.files.image[0];
+    const image = req.file;
 
-    const result = await cloudinary.uploader.upload(image.filepath, {
+    const result = await cloudinary.uploader.upload(image.path, {
         folder: 'products'
     });
 
-    const newName = Array.isArray(name) ? name[0] : name;
-    const newDescription = Array.isArray(description) ? description[0] : description;
+    // const newName = Array.isArray(name) ? name[0] : name;
+    // const newDescription = Array.isArray(description) ? description[0] : description;
     const url = result.secure_url;
 
     const newProduct = {
-      name: newName,
-      description: newDescription,
+      name,
+      description,
       price,
       image: url,
       stock,
