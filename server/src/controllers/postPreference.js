@@ -22,7 +22,7 @@ const postPreference = (req, res) => {
                 "failure": "http://localhost:5173/cart",
                 "pending": "http://localhost:5173/cart"
             },
-            notification_url: "https://5585-186-122-60-54.ngrok-free.app/pf/webhook",
+            notification_url: "https://api-market-henry-jczt.onrender.com/pf/webhook",
             auto_return: "approved",
         };
     
