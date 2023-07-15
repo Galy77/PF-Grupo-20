@@ -65,7 +65,7 @@ console.log(productosStorage)
         <div class='mt-4'>
 
             <div class='cart-container d-flex justify-content-evenly'>
-                <div id='cart-card'class="d-flex flex-column align-items-center cuerpo">
+                <div id='cart-card'class="d-flex flex-column align-items-center justify-content-center cuerpo">
                     {
                         productosStorage.length? productosStorage.map(productscart => {
                                 return <CartCart products={productscart}/>
