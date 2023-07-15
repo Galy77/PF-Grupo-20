@@ -5,7 +5,7 @@ const { postProduct } = require("../controllers/postProduct");
 const { postUser } = require("../controllers/postUser");
 const { postPreference } = require("../controllers/postPreference")
 const { postReview } = require("../controllers/postReview")
-const { recieveWebhook } = require("../controllers/paymentController");
+const { handlePaymentUpload } = require("../controllers/paymentController");
 const upload = require("../middleware/multer");
 
 const router = Router();
@@ -20,6 +20,6 @@ router.post("/products", upload.single("image"), postProduct);
 router.post("/create_preference", postPreference);
 router.post("/user", postUser);
 router.post("/review",postReview)
-router.post("/webhook", recieveWebhook);
+router.post("/webhook", handlePaymentUpload);
 
 module.exports = router;
