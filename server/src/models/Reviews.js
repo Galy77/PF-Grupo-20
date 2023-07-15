@@ -1,20 +1,20 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    sequelize.define('Category', {
+    sequelize.define('Reviews', {
         id: {
-            type:DataTypes.STRING,
-            // autoIncrement: true,
+            type:DataTypes.INTEGER,
+            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },
-        name: {
+        stars: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        // description: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // }
+        coment: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     }, { timestamps: false })
 };

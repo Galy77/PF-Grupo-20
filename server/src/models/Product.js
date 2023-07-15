@@ -39,6 +39,10 @@ module.exports = (sequelize) => {
           min: 1,
         },
       },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
     },
     { timestamps: false }
   );
