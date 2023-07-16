@@ -3,6 +3,8 @@ const getCategory = require("../controllers/getCategory");
 const { getProducts, getProductById } = require("../controllers/getProduct");
 const { postProduct } = require("../controllers/postProduct");
 const { postUser } = require("../controllers/postUser");
+const { postContacto } = require("../controllers/postContacto");
+//const { postEmail } = require("../controllers/postEmail");
 
 const upload = require("../middleware/multer");
 
@@ -16,5 +18,7 @@ router.get("/products/:id", getProductById);
 router.post("/products", upload.single("image"), postProduct);
 
 router.post("/user", postUser);
+
+router.post("/contacto", postContacto);
 
 module.exports = router;
