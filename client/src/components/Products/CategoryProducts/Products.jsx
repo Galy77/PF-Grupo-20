@@ -27,27 +27,35 @@ function Products (){
         return matchSearch && matchPrice && matchRating;
     });
 
-    // Paginado
+
+    
+    const [productsToShow , setProductsToShow] = useState(categoryProducts)
+    const [dataProducts, setDataProducts] = useState()
+
     const [page,setPage] = useState(1)
-    let productsQuantity = categoryProducts.length
+
     let productsQuantityToShow = 12
-    let lastPage = Math.ceil(productsQuantity/productsQuantityToShow)
+
+    let lastPage = Math.ceil(productsToShow.length/productsQuantityToShow)
+
     const sliceProducts = (categoryProducts, page) => {
+        if(categoryProducts.length <= productsQuantityToShow) setPage(1)
+        lastPage = Math.ceil(categoryProducts.length/productsQuantityToShow)
         let numToSlice = productsQuantityToShow * page
-        return categoryProducts.slice(numToSlice - productsQuantityToShow,numToSlice)
+        setDataProducts(categoryProducts.slice(numToSlice - productsQuantityToShow,numToSlice))
     }
-    const [productsToShow, setProductsToShow] = useState(sliceProducts(categoryProducts, page))
+
+
 
     const handlePage = (order) => {
-        if(order == 'next'){
-            setPage(page + 1)
-            setProductsToShow(sliceProducts(categoryProducts,page + 1))
-        }else{
-            setPage(page - 1)
-            setProductsToShow(sliceProducts(categoryProducts,page - 1))
-        }
+    if(order == 'next'){
+        setPage(page + 1)
+        sliceProducts(productsToShow,page + 1)
+    }else{
+        setPage(page - 1)
+        sliceProducts(productsToShow,page - 1)
     }
-    // Paginado
+}
 
     return (
         <div class='d-flex flex-column' >
@@ -58,15 +66,26 @@ function Products (){
                     <div class='d-flex flex-column align-items-center w-100 px-4' >
                         <div class='w-100 g-4-products mx-4'>
                                 <ProductsCards
-                                    categoryProducts={filteredProducts ? productsToShow : ''}                 
+                                    categoryProducts={categoryProducts}
+                                    filteredProducts={filteredProducts}
+                                    setProductsToShow={setProductsToShow}
+                                    dataProducts={dataProducts}
+                                    sliceProducts={sliceProducts}
+                                    page={page}
+                                    setPage={setPage}
                                 />
                         </div>
-                        <div class=''>
+                        <div class='d-flex align-items-center'>
                             {
-                                page == 1 ? '': <p class='m-4 border btn btn-primary' onClick={handlePage} >Anterior</p>
+                                page > 1 ? <p class='m-4 border btn btn-primary' onClick={handlePage} >Anterior</p>:''
                             }
                             {
-                                page == lastPage ? '': <p class='m-4 border btn btn-primary' onClick={() => handlePage('next')} >Siguiente</p>
+                                lastPage > 1 ? 
+                                <p  class='p'>{`${page} de ${lastPage}`}</p>:''
+
+                            }
+                            {
+                                page < lastPage ? <p class='m-4 border btn btn-primary' onClick={() => handlePage('next')} >Siguiente</p>:''
                             }
                         </div>
                     </div>
