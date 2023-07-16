@@ -1,5 +1,5 @@
 const { Contacto } = require("../db");
-const { transporter } = require("../controllers/postEmail")
+const transporter = require("../middleware/nodemailer")
 
 const postContacto = async (req, res) => {
   const { name, email, description } = req.body;

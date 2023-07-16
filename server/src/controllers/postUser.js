@@ -1,5 +1,5 @@
 const { User } = require("../db");
-const { transporter } = require("../controllers/postEmail")
+const transporter = require("../middleware/nodemailer")
 
 const postUser = async (req, res) => {
   const { full_name, email, password, phone, direction_shipping } = req.body;
