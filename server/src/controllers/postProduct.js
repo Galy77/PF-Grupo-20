@@ -7,7 +7,7 @@ const postProduct = async(req, res) => {
 
     try {
         const image = req.file
-
+        
         const result = await cloudinary.uploader.upload(image.path, {
             folder: "products"
         });
@@ -16,17 +16,14 @@ const postProduct = async(req, res) => {
             name,
             description,
             price,
-            image: {
-                public_id: result.public_id,
-                url: result.secure_url
-            },
+            image: result.secure_url,
             stock,
             rating
         };
-
+        console.log(newProduct)
         const createProduct = await Product.create(newProduct);
-        await createProduct.addCategories(CategoryId)
-
+        await createProduct.addCategories(CategoryId);
+        
         return res.status(200).send({ message: 'Register success'})
 
     } catch (error) {
