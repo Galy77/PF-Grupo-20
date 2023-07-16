@@ -15,7 +15,7 @@ const postUser = async (req, res) => {
       from: '"Mercado Henry" <pf@gmail.com>', // sender address
       to: newUser.email, // list of receivers
       subject: "Usuario Creado", // Subject line
-      html: "<b>Bienvenido a Ecommerce </b>", // html body
+      html: "<b>Bienvenido a Mercado Henry</b>", // html body
     });
   
     const createUser = await User.create(newUser);
