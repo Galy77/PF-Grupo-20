@@ -8,6 +8,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { addOrder } from "../../redux/actions";
 import Reviews from "./Reviews";
 import axios from "axios";
+import {initMercadoPago, Wallet } from "@mercadopago/sdk-react"
 const Details = ({}) => {
     const dispatch = useDispatch()
     const {id} = useParams()
@@ -65,13 +66,53 @@ const Details = ({}) => {
     /// reviews
     const [review, setReview] = useState()
     const getReviews = async () => {
-        const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
-        console.log(data)
-        setReview(data.reviews)
+        try {
+            const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
+            setReview(data.reviews)
+        } catch (error) {
+            console.log('este producto no tiene reviews')
+        }
     }
     useEffect(() => {
         getReviews()
-    },[]) 
+    },[])
+    //MP
+    const [cantidadProducts, setCantidadProducts] = useState()
+    const [error, setError] = useState()
+    const handleInput = (event) => {
+        let value = event.target.value
+        if(value >= 0 && value <= product.stock){
+            setCantidadProducts(value)
+            setError()
+        } 
+        else setError('ingrese un numero valido')
+    } 
+    const [preferenceId, setPreferenceId] = useState(null)
+    initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
+    const createPreference = async () => {
+        try {
+            const response = await axios.post("http://localhost:3001/PF/create_preference",{
+                description:`${product.name}`,
+                price:product.price,
+                quantity:cantidadProducts ? cantidadProducts : 1
+                // currency_id:"ARS"
+            })
+            console.log(response)
+            const {id} = response.data;
+            console.log(id)
+            return id
+        } catch (error) {
+            console.log(error)
+            console.log(1)            
+        }
+    }
+    const handleBuy = async () => {
+        const id = await createPreference()
+        if(id){
+            setPreferenceId(id)
+        }
+    }
+    ////MP 
 
     const handleReviews = async () => {
         if(!stars||!coment) alert('completa la review')
@@ -119,14 +160,19 @@ const Details = ({}) => {
                             </div>
 
                                 <div id='stock'class='d-flex justify-content-around align-items-center'>
-                                        <input type="text" placeholder={`stock:${product.stock}`} class='text-center w-25 rounded border'/>
+                                    <div class='w-50' >
+                                        <input type="number" placeholder={`stock:${product.stock}`} class='text-center w-25 rounded border' value={cantidadProducts} onChange={handleInput} />
+                                        {
+                                            error? <p class='error'>{error}</p>:''
+                                        }
+                                    </div>
                                     <h3>
                                         {`$${product.price}`}
                                     </h3>
                                 </div>
 
                                 <div id="btn" class='d-flex w-100 justify-content-end align-items-center mt-4'>
-                                        <button type="button"id="buy" class="btn btn-primary"  onClick={addCart}>
+                                        <button type="button"id="buy" class="btn btn-primary"  onClick={handleBuy}>
                                             Buy
                                         </button>
                                         <button type="button" id="addCart" class="btn btn-info"  onClick={addCart}>
@@ -134,6 +180,7 @@ const Details = ({}) => {
                                             <i class="bi bi-cart3"></i>
                                         </button>
                                 </div>
+                                {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
 
                         </div>
 

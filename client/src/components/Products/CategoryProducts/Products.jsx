@@ -41,7 +41,11 @@ function Products (){
     const sliceProducts = (categoryProducts, page) => {
         if(categoryProducts.length <= productsQuantityToShow) setPage(1)
         lastPage = Math.ceil(categoryProducts.length/productsQuantityToShow)
+        if(page > lastPage){
+            setPage(1)
+        }
         let numToSlice = productsQuantityToShow * page
+        
         setDataProducts(categoryProducts.slice(numToSlice - productsQuantityToShow,numToSlice))
     }
 
