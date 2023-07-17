@@ -19,12 +19,12 @@ function Home (){
         dispatch(getAllCategories());
     },[dispatch])
 
-    
+
 
     return (
     <>
         <CreatedCarousel />
-        <div class='a w-100 d-flex justify-content-center'>
+        <div class='a w-100 d-flex flex-column justify-content-center h-100'>
             <div class='cards-container'>
                 <Row xs={1} md={2} className="g-4 m-3 justify-content-center">
                     {categories.map((category) => (
@@ -43,12 +43,8 @@ function Home (){
                     ))}
                 </Row>
             </div>
+            <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
         </div>
-        <footer>
-            <div>
-                    <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
-            </div>
-        </footer>
 
     </>
     )

@@ -6,6 +6,29 @@
     min-height:170px;
     max-height:170px;
 }
+@media (max-width: 767px) {
+    .card{
+      min-width: 244px;
+    }
+  }
+@media (min-width: 500px) and (max-width: 767px) {
+    .card{
+        width: 449px;
+    }
+    .card-container{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (min-width: 767px) and (max-width: 1064px) {
+    .grid-2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .col-md-3{
+        width: 100%;
+    }
+}
 .link{
     color: black;
     text-decoration: none;

@@ -7,9 +7,13 @@
 }
 .icons{
     color: black;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin-right: 2rem;
     cursor: pointer;
+}
+.link{
+    color: black;
+    text-decoration: none;
 }
 #a{
     padding: 0;
@@ -17,4 +21,7 @@
 }
 #brand-container{
     margin-left: 1.7rem;
+}
+.navbar-nav{
+    color: black;
 }

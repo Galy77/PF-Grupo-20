@@ -1,4 +1,4 @@
-.aa{
+.img{
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -8,6 +8,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@media (max-width: 767px) {
+  .img{
+    height:350px;
+  }
+}
+
 .carousel-control-prev,
 .carousel-control-next {
   color: aquamarine;

@@ -1,6 +1,6 @@
-const { Product, User } = require("../db");
-const { Category } = require("../db");
-const { Op } = require("sequelize");
+const {Product, User, Category} = require("../db")
+const {Op} = require("sequelize");
+const Reviews = require("../models/Reviews");
 const axios = require("axios");
 
 const getProducts = async (req, res) => {
@@ -65,7 +65,19 @@ const getProductById = async (req, res) => {
   }
 };
 
+const getReviewByIdProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const request = await Product.findByPk(id);
+    let reviews = await request.getReviews();
+    res.status(200).json({reviews});
+  } catch (error) {
+    res.status(500).json({ error: 'Error al obtener el producto por ID' });
+  }
+};
+
 module.exports = {
   getProductById,
   getProducts,
+  getReviewByIdProduct
 };

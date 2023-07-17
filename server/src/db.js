@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 
-const sequelize = new Sequelize(`postgres://postgres:45411663@localhost/ecommerce`, {
+const sequelize = new Sequelize(`postgres://postgres:admin@localhost/ecommerce`, {
   logging: false, 
   native: false, 
 });
@@ -26,7 +26,7 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { User, Order, Product, Category } = sequelize.models;
+const { User, Order, Product, Category, Reviews } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
@@ -41,6 +41,12 @@ Category.belongsToMany(Product,{through: 'product_category'})
 
 Product.belongsToMany(User,{through: 'product_user'})
 User.belongsToMany(Product,{through: 'product_user'})
+
+
+Product.hasMany(Reviews, { foreignKey: 'id_product' });
+Reviews.belongsTo(Product, { foreignKey: 'id_product' });
+
+
 
 // Diego estuvo aki
 
