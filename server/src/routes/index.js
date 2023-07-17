@@ -4,6 +4,7 @@ const { getProducts, getProductById } = require("../controllers/getProduct");
 const { postProduct } = require("../controllers/postProduct");
 const { postUser } = require("../controllers/postUser");
 const { getFirebaseUser, getUserBDD } = require("../controllers/getUserByEmail");
+const { postUserFirebase } = require("../controllers/postUserFirebase");
 
 
 const upload = require("../middleware/multer");
@@ -21,5 +22,6 @@ router.get("/user/bdd", getUserBDD);
 router.get("/user/firebase", getFirebaseUser);
 
 router.post("/user", postUser);
+router.post("/user/firebase", postUserFirebase);
 
 module.exports = router;
