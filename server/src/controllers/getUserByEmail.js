@@ -1,13 +1,20 @@
-const { User, FirebaseUser } = require('../db');
+const {  FirebaseUser, User } = require('../db');
 
 const getUserBDD = async (req, res) => {
-    const {email, password} = req.body;
+    const { email, password } = req.query;
     try {
-        const userFound = User.find(user => user.email === email && user.password === password);
-        if(userFound) return res.status(200).json(userFound);
-        return res.status(500).send({message:"Usuario no registrado."});
+        const users = await User.findAll();
+        console.log(users)
+        const userFounds = users.find(user => user.email === email && user.password === password);
+        console.log(userFounds)
+        // if (userFound) {
+        //     return res.status(200).json([userFound]);
+        // } else {
+        //     return res.status(500).send({ message: "Usuario no registrado." });
+        // }
+        return res.status(200).json(userFounds)
     } catch (error) {
-        return res.status(400).send(error.message)
+        return res.status(400).send(error.message);
     }
 };
 
@@ -23,8 +30,6 @@ const getFirebaseUser = async(req, res) => {
 };
 
 module.exports = {
-
     getUserBDD,
     getFirebaseUser
-
 };

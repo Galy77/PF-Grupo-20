@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-import { useDispatch, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { getUser } from "../../redux/actions"
 
-export function Login() {
+const Login = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,17 +25,13 @@ export function Login() {
     password: "",
   })
   
-  const handleSubmit = (e) => {
+  useEffect
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-      dispatch(getUser(user));
-      console.log("HANDLE SEND",user)
-      if(usuarioActual){
-        console.log("Action terminada",usuarioActual)
-        if(usuarioActual.password === usuarioActual.password){
-          setCurrentUser(usuarioActual)
-        }
-      }
+      const res = await axios(`http://localhost:3001/PF/user/bdd/?email=${user.email}&password=${user.password}`)
+      console.log(res)
     } catch (error) {
       setError(error.message);
     }
@@ -132,5 +128,16 @@ export function Login() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(Login)
 
 
