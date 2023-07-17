@@ -1,53 +1,70 @@
-import { GET_ALL_USERS,ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER, GET_USER } from "./actionTypes";
+import { 
+   GET_FIREBASEUSER,
+   ADD_ORDER, 
+   ADD_PRODUCT,
+   ADD_USER,
+   REMOVE_ORDER,
+   REMOVE_PRODUCT,
+   GET_ALL_CATEGORIES, 
+   MINIMUM_PRICE, 
+   MAXIMUM_PRICE, 
+   BETTER_QUALIFIED_FILTER, 
+   ALL_FILTER,
+   GET_USER, 
+   LOGOUT_USER
+} from "./actionTypes";
 import axios from "axios";
 
 /////USER//////
-export const getAllUsers=()=>{
-   return async function(dispatch){
-      try{
-         const response = await axios.get("http://localhost:3001/PF/user");
-         console.log("Estos son mis users", response)
-         return dispatch({
-             type:GET_ALL_USERS,
-             payload:response.data
-         })
-      }catch(error){
-         alert(error.menssage);
-      }
-   }
-}
 export const getUser = (email) => {
-   return {
-      type: GET_USER,
-      payload: email
-   }
-}
+   return async (dispatch) => {
+      try {
+         const response = await axios.post('http://localhost:3001/PF/user/bdd', { email: email });
+         console.log("respuesta redux", response);
+         return dispatch({
+            type: GET_USER,
+            payload: response.data
+         });
+      } catch (error) {
+         console.log("Error al obtener el usuario: ", error.message);
+         throw error;
+      }
+   };
+};
+export const getFirebaseUser = (email) => {
+   return async (dispatch) => {
+      try {
+         const response = await axios.post('http://localhost:3001/PF/user/firebase', { email: email });
+         return dispatch({
+            type: GET_FIREBASEUSER,
+            payload: response.data
+         });
+      } catch (error) {
+         console.log("Error al traer el usuario: ", error.message);
+      }
+   };
+};
+
 export const addUser = (user) => {
     return async(dispatch) => {
-       try {
-         const response = await axios.post('http://localhost:3001/PF/products', user)
+      try {
+         const response = await axios.post('http://localhost:3001/PF/user', user)
             dispatch({
                type: ADD_USER,
                payload:response.data
             })
          return response;
       } catch (error) {
-         console.log(error.message)
+         console.log("Error al crear el usuario", error.message)
       }
     };
 }
 
-export const removeUser = (payload) => {
-    return async (dispatch) => {
-      try {
-         return dispatch({
-             type: REMOVE_USER,
-             payload
-         });
-      } catch (error) {
-         console.log(error.message);
-      }
-    };
+export const userLogout = () => {
+   return {
+      type: LOGOUT_USER,
+      payload:{},
+   }
 }
 
 /////PRODUCTS//////
