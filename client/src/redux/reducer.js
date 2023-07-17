@@ -23,10 +23,22 @@
 //     ],
 // */
 
-import { GET_ALL_USERS,GET_USER,ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER} from "./actionTypes"
+import { 
+  GET_USER,
+  ADD_USER,
+  LOGOUT_USER,
+  ADD_PRODUCT,
+  REMOVE_PRODUCT,
+  ADD_ORDER,
+  REMOVE_ORDER,
+  GET_ALL_CATEGORIES, 
+  MINIMUM_PRICE, 
+  MAXIMUM_PRICE, 
+  BETTER_QUALIFIED_FILTER,
+  ALL_FILTER
+} from "./actionTypes"
 
 const initialState = {
-    user:{},
     categories:[{id: 1,name: "Muebles", img: "https://d2qc4bb64nav1a.cloudfront.net/cdn/13/images/curso-a-distancia-restauracion-muebles_amp_primaria_1_1560503054.jpg"},
     {id: 2,name: "Tecnología", img: "https://pcacademia.com/wp-content/uploads/2019/09/precios-de-computadoras.jpg"}, 
     {id: 3,name: "Electrodomesticos", img: "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/12/11-mitos-electrodomesticos-hora-dejes-creerte-2157733.jpg?tf=3840x"}, 
@@ -149,37 +161,38 @@ const initialState = {
     minimumPrice: "",
     maximumPrice: "",
     ratingFilterValue: "all",
-    users:[]
+    user:{}
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
     switch (type) {
 
         //USER
-        case GET_ALL_USERS:{
+        case GET_USER:{
           return{
             ...state,
             users:payload
           }
         }
-        case GET_USER:{
-          const userFiltred = state.users.filter((usr)=> usr.email === payload);
-
-          return{
-            ...state,
-            user:userFiltred
-          }
-        }
         case ADD_USER:
+
+        const auxUser = () => {
+          const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          return userX;
+        }
+        const actUser = state.user
+        console.log("este es mi usuarui actual",actUser)
+        return{
+          ...state,
+          user:auxUser()
+        }
+          
+          
+        case LOGOUT_USER:
+          localStorage.removeItem("usuarioActual");
             return{
                 ...state,
-                user:payload
-            }
-            
-        case REMOVE_USER:
-            return{
-                ...state,
-                user: {}
+                user: payload
             }
 
         //PRODUCT

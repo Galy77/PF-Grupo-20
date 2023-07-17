@@ -10,7 +10,6 @@ import Create from './components/Create/Create'
 import Products from './components/Products/CategoryProducts/Products';
 import SearchBarProducts from './components/Products/SearchBarProducts/SearchBarProducts';
 import Profile from './components/Profile/Profile'
-import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
 import { Register } from './components/Register/Register';
 import { Login } from './components/Login/Login';
@@ -28,11 +27,11 @@ function App() {
           <Route path='/products/:category' element={ <Products/> }/>
           <Route path='/products' element={ <SearchBarProducts /> } />
           <Route path='/detail/:id' element= { <Details/> } />
-          <Route path='/cart' element={ <ProtectedRoute> <Cart/> </ProtectedRoute> }/>
+          <Route path='/cart' element={  <Cart/>  }/>
           <Route path='/login' element={ <Login/> } />
           <Route path='/register' element = {<Register/>} />
           <Route path='/create' element={ <Create/> }/>
-          <Route path='/profile' element={<ProtectedRoute> <Profile/> </ProtectedRoute>}/>
+          <Route path='/profile' element={<Profile/>}/>
         </Routes>
       </AuthProvider>
     </div>

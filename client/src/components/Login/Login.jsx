@@ -1,33 +1,46 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import {Register} from "../Register/Register"
+
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../../redux/actions"
+
 export function Login() {
-  const { login, loginWithGoogle }= useAuth();
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const usuarioLogeado = useSelector((state)=>state.user);
+
+  const { loginWithGoogle,userFr }= useAuth();
   const [isGoogleLogin, setIsGoogleLogin] = useState(false);
   const [requiresCompletion, setRequiresCompletion] = useState(false);
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const [currentUser,setCurrentUser] = useState({});
+  const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
 
   const [user, setUser] = useState({
-    name: "",
     email: "",
     password: "",
-    phoneNumber:"",
-    direction_shipping:"",
-  });
+  })
 
+  useEffect(()=>{
+    //if(usuarioActual){
+      //setCurrentUser(usuarioLogeado)
+    //}
+  },[])
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      await login(user.email, user.password);
-      setError("");
-      if (isGoogleLogin) {
-        navigate("/profile");
-      } else {
-        window.history.go(-2);
+      dispatch(getUser(user));
+      if(usuarioLogeado){
+        if(usuarioLogeado.password === user.password){
+          setCurrentUser(usuarioLogeado)
+        }
       }
+      navigate("/")
     } catch (error) {
       setError(error.message);
     }
@@ -36,22 +49,23 @@ export function Login() {
   const handleChange = ({ target: { value, name } }) =>
     setUser({ ...user, [name]: value });
 
-  const handleGoogleSignin = async () => {
+  /*const handleGoogleSignin = async () => {
     try {
       const requiresCompletion = await loginWithGoogle();
+      setCurrentUser(userFr)
       setRequiresCompletion(requiresCompletion);
       setIsGoogleLogin(true);
     } catch (error) {
       setError(error.message);
     }
   };
-
+*/
   return (
     <div className="container">
       <h1>Iniciar Sesión</h1>
       {error && <p>{error}</p>}
 
-      {!isGoogleLogin && !requiresCompletion ? (
+      {!isGoogleLogin ? (
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
@@ -90,9 +104,8 @@ export function Login() {
         </form>
       ) : (
         <>
-          <h1>Completa los siguentes datos</h1>
+          <h1>Terminar el resgistro</h1>
           {console.log("datos que llegaron",user.email,"y",user.name)}
-          <Register email={user.email} name={user.name} />
         </>
       )}
 
@@ -100,7 +113,7 @@ export function Login() {
 
       {!isGoogleLogin ? (
         <>
-          <button onClick={handleGoogleSignin} className="btn btn-secondary">
+          <button  className="btn btn-secondary">
             <img src="googlelogo.png" alt="GoogleLogo" style={{ width: "30px", height: "30px" }}/>
             Iniciar sesión con Google
             <img src="googlelogo.png" alt="GoogleLogo" style={{ width: "30px", height: "30px" }}/>
