@@ -28,7 +28,7 @@ export function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      dispatch(getUser(user.email,user.password));
+      dispatch(getUser(user));
       console.log("HANDLE SEND",user)
       if(usuarioActual){
         console.log("Action terminada",usuarioActual)

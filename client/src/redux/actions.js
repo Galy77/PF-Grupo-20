@@ -16,10 +16,10 @@ import {
 import axios from "axios";
 
 /////USER//////
-export const getUser = (email, password) => {
+export const getUser = () => {
    return async (dispatch) => {
      try {
-       const response = await axios.get(`http://localhost:3001/PF/user/bdd?email=${email}&password=${password}`);
+       const response = await axios.get(`http://localhost:3001/PF/user/bdd`);
        console.log("respuesta redux", response);
        return dispatch({
          type: GET_USER,
