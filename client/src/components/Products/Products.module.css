@@ -3,18 +3,8 @@
     flex-direction: row;
     margin-top: 10px;
 }
-
-.filters {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 400px;
-    gap: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-right: 200px;
-    margin-left: 10px;
-    text-align: start;
+.filter-container{
+    width: 400px;
 }
 
 .cardsContainer{

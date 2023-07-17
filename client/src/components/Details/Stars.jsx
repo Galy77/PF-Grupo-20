@@ -20,28 +20,36 @@ const Stars = ({rating}) => {
     for (let i = 0; i < starNul; i++) {
         starVoid.push(1)
     }
-       
+    
 
     if(int%1 !== 0) decimals.push(1)
 
+    //
+    const handle = (num) => {
+        console.log(num)
+    }
     return(
+        <>
+
         <div class='stars'>
             {
                 integer.map(el => {
-                    return <i class="bi bi-star-fill"></i>
+                    return <i class="stars cursor bi bi-star-fill"></i>
                 })
             }
             {
                 decimals.map(el => {
-                    return<i class="bi bi-star-half"></i>
+                    return<i class="stars cursor bi bi-star-half"></i>
                 })
             }
             {
                 starVoid.map(el => {
-                    return<i class="bi bi-star"></i>
+                    return<i class="stars cursor bi bi-star"></i>
                 })
             }
         </div>
+
+        </>
     )
 }
 export default Stars
