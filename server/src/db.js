@@ -1,4 +1,3 @@
-require("dotenv").config();
 const { Sequelize } = require("sequelize");
 
 const fs = require('fs');
@@ -26,10 +25,13 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { User, Order, Product, Category, FirebaseUser } = sequelize.models;
+const { User, Order, Product, Category, FirebaseUser, Payments } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+User.hasMany(Payments, { foreignKey: 'id_user' })
+Payments.belongsTo(User, { foreignKey: 'id_user' })
+
 User.hasMany(Order, { foreignKey: 'id_user' })
 Order.belongsTo(User, { foreignKey: 'id_user' })
 
