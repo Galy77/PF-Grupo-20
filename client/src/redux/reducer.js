@@ -26,6 +26,7 @@
 import { 
   GET_USER,
   ADD_USER,
+  ADD_FIREBASEUSER,
   LOGOUT_USER,
   ADD_PRODUCT,
   REMOVE_PRODUCT,
@@ -192,8 +193,19 @@ export const reducer = (state = initialState,{type,payload})=>{
           ...state,
           user:auxUser()
         }
-          
-          
+        case ADD_FIREBASEUSER:
+        const auxUserFirebase = () => {
+          const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          return userX;
+        }
+        const actUser2= state.user
+        console.log("este es mi usuarui actual", actUser2)
+
+        return{
+          ...state,
+          user:auxUserFirebase()
+        }
+       
         case LOGOUT_USER:
           localStorage.removeItem("usuarioActual");
             return{

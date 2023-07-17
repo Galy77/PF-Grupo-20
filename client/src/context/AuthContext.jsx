@@ -26,27 +26,21 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-  const dispatch = useDispatch();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
 
   const loginWithGoogle = async () => {
       const googleProvider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, googleProvider);
 
       const { user } = result;
-      const { displayName, email, accessToken } = user;
+      const { displayName, email } = user;
         
-      console.log("Usuario creado con Google");
+      console.log("Usuario creado con Google", user);
       console.log("Nombre:", displayName);
       console.log("Email:", email);
-      console.log("Token:", accessToken);
-      
-      //const response = dispatch(getUser(email))
-      //if(response){
-       // return true;
-      //}
+
+      return(user);
   };
 
   const logout = () => signOut(auth);
@@ -64,7 +58,7 @@ export function AuthProvider({ children }) {
   return (
     <authContext.Provider
       value={{
-        userFr:user,
+        user,
         logout,
         loading,
         loginWithGoogle,
