@@ -1,21 +1,25 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CreatedCarousel from '../Carousel/Carousel';
 import { Link } from 'react-router-dom';
 import style from "./Home.module.css";
 import axios from "axios"
 import './Home.css'
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { getAllCategories } from '../../redux/actions';
 
 
 function Home (){
     const categories = useSelector(state => state.categories);
-    const [ allCategories, setAllCategories ] = useState([]);
+    const dispatch = useDispatch();
 
-    // const info = axios.get("https://api.mercadolibre.com/sites/MLA/categories")
-    // .then((results) => setAllCategories(results.data))
+    useEffect(() => {
+        dispatch(getAllCategories());
+    },[dispatch])
+
+    
 
     return (
     <>
@@ -23,12 +27,12 @@ function Home (){
         <div class='a w-100 d-flex justify-content-center'>
             <div class='cards-container'>
                 <Row xs={1} md={2} className="g-4 m-3 justify-content-center">
-                    {allCategories.map((category) => (
+                    {categories.map((category) => (
                             <Col md={3}>
                                 <div class='card-container'>
-                                    <Link to={`/products/${category.name}`} class='link'>
+                                    <Link to={`/products/${category.id}`} class='link'>
                                         <Card class='card'>
-                                            <Card.Img variant="top" /*src={category.img}*/ />
+                                            <Card.Img variant="top" src={category.img} />
                                             <Card.Body>
                                                 <Card.Title>{category.name}</Card.Title>
                                             </Card.Body>

@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import style from "./NavBar.module.css";
 import './NavBar.css'
+import CategoriesDropdown from './CategoriesDropdown';
 
 function NavBar (){
 const [ object, setObject ] = useState("");

@@ -6,16 +6,22 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { addOrder } from "../../redux/actions";
+import { getAllProducts } from "../../redux/actions";
 
-const Details = ({}) => {
+const Details = () => {
     const dispatch = useDispatch()
-    const {id} = useParams()
+    const { id } = useParams()
     const products = useSelector(state => state.products);
     const orders = useSelector(state => state.orders);
-    const product = products.filter(el => el.id == id).pop()
+    const flatProducts = products.flat();
+    const product = flatProducts.filter(el => el.id == id).pop();
+
+    useEffect(() => {
+        dispatch(getAllProducts())
+    }, [dispatch])
 
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
-
+    console.log(products)
     if(!orders.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
     }
@@ -36,7 +42,7 @@ const Details = ({}) => {
                 <div class="row">
                     <div class="col d-flex flex-column justify-content-start align-items-end">
                         <div className="product d-flex flex-column align-items-center">
-                            <Slider images={product.image}/>
+                             <Slider images={product.image}/> 
                         </div>
                     </div>
 
@@ -54,7 +60,7 @@ const Details = ({}) => {
                             
                             <div id="title-description">
                                 <h3 id='title'>{product.name}</h3>
-                                <p>Lo que tenés que saber de este producto<span>{product.description}</span></p>
+                                <p>Lo que tenés que saber de este producto<span>{/*product.description*/}</span></p>
                             </div>
                             <div class='d-flex justify-content-end w-100 align-items-end'>
                                 <div class="d-flex w-100 flex-column">

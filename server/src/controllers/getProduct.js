@@ -6,8 +6,8 @@ const axios = require("axios");
 const getProducts = async (req, res) => {
   try {
     const categories = await Category.findAll();
-    let i = 1
-    const data = await Promise.all(
+    const products = await Product.findAll()
+    const data = products.length === 0 ? await Promise.all(
       categories.map(async (category) => {
         const categoryId = category.id;
         const results = await axios.get(
@@ -21,7 +21,7 @@ const getProducts = async (req, res) => {
         const maxRating = 5;
 
         const transformedProducts = products.map(
-          ({ id, title, price, thumbnail, attributes }) => {
+          ({ title, price, thumbnail, attributes }) => {
             const randomStockNumber =
               Math.floor(Math.random() * (maxStock - minStock + 1)) + minStock;
             const randomRatingNumber =
@@ -29,7 +29,7 @@ const getProducts = async (req, res) => {
             
             const details = JSON.stringify(attributes);
             const obj = {
-              id: i++,
+
               name: title,
               details: details,
               price: price,
@@ -44,9 +44,9 @@ const getProducts = async (req, res) => {
 
         const createdProducts = await Product.bulkCreate(transformedProducts);
         await createdProducts.map((product) => product.addCategories(categoryId, { through: "product_category" }));
-        return transformedProducts;
+        return createdProducts;
       })
-    );
+    ) : products;
 
     res.status(200).json(data);
   } catch (error) {
