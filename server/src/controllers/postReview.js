@@ -1,4 +1,5 @@
 const { Reviews, Product } = require("../db");
+
 const postReview = async (req, res) => {
   const { stars, coment, id_product} = req.body;
   try {
