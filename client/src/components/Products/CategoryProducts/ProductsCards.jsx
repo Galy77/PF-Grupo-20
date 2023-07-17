@@ -24,6 +24,7 @@ function ProductsCards (props) {
 
     return(
         <>
+
         {props.dataProducts ? props.dataProducts?.map((product) => (
             <div class='card-products m-4 rounded' >
 
@@ -36,6 +37,7 @@ function ProductsCards (props) {
                 </Card.Link>
 
             </div> 
+
             )) : <h1 className={style.notFound}>En esta categoria aun no hay productos</h1>
             }
         </>
