@@ -1,7 +1,7 @@
 const { User, FirebaseUser } = require('../db');
 
 const getUserBDD = async (req, res) => {
-    const {email, password} = req.query;
+    const {email, password} = req.body;
     try {
         const userFound = User.find(user => user.email === email && user.password === password);
         if(userFound) return res.status(200).json(userFound);
