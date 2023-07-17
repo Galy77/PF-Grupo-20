@@ -3,7 +3,8 @@ const getCategory = require("../controllers/getCategory");
 const { getProducts, getProductById } = require("../controllers/getProduct");
 const { postProduct } = require("../controllers/postProduct");
 const { postUser } = require("../controllers/postUser");
-const { getAllUsers } = require("../controllers/getAllUsers");
+const { getFirebaseUser, getUserBDD } = require("../controllers/getUserByEmail");
+
 
 const upload = require("../middleware/multer");
 
@@ -16,7 +17,9 @@ router.get("/products/:id", getProductById);
 
 router.post("/products", upload.single("image"), postProduct);
 
-router.get("/user", getAllUsers);
+router.get("/user/bdd", getUserBDD);
+router.get("/user/firebase", getFirebaseUser);
+
 router.post("/user", postUser);
 
 module.exports = router;
