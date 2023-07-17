@@ -18,6 +18,7 @@ import axios from "axios";
 /////USER//////
 export const getUser = () => {
    return async (dispatch) => {
+
      try {
        const response = await axios.get(`http://localhost:3001/PF/user/bdd`);
        console.log("respuesta redux", response);
