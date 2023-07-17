@@ -22,12 +22,13 @@ const postProduct = async(req, res) => {
         };
         console.log(newProduct)
         const createProduct = await Product.create(newProduct);
+
         await createProduct.addCategories(CategoryId);
         
-        return res.status(200).send({ message: 'Register success'})
+        return res.status(200).send({message:"success"})
 
     } catch (error) {
-        res.status(404).send({ error: error.message })
+        res.status(404).send(error)
     }
 };
 

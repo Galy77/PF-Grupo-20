@@ -1,6 +1,6 @@
 const mercadopago = require("mercadopago")
 mercadopago.configure({
-    access_token:"TEST-4743047827353853-070813-4c276747a002655f7e652afe39298bfb-609427139",
+    access_token:"TEST-1194489369448577-071110-a76042edb0c499b5794e0c45088b5e07-1420172305",
 })
 
 const postPreference = (req, res) => {

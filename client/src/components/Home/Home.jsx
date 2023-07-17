@@ -1,25 +1,34 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CreatedCarousel from '../Carousel/Carousel';
 import { Link } from 'react-router-dom';
 import style from "./Home.module.css";
 import axios from "axios"
 import './Home.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getAllCategories } from '../../redux/actions';
 
 
 function Home (){
 
-    const categories = useSelector(state => state.categories);
+    const categories = useSelector(state => state.categories)
+    const dispatch = useDispatch()
 
-    const [ allCategories, setAllCategories ] = useState([]);
+    const getCategories = async ()  => {
+        const {data} = await axios('http://localhost:3001/PF');
+        dispatch(getAllCategories(data))
+    }
+
+    useEffect( ()=>{
+        getCategories()
+    },[])
 
     return (
     <>
         <CreatedCarousel />
-        <div class='w-100 d-flex flex-column justify-content-center align-items-center h-100'>
+        <div class='w-100 d-flex flex-column justify-content-center align-items-center'>
             <div class='cuerpo cards-container my-4'>
                 <Row xs={1} md={2} className="grid-2 g-4 m-3 justify-content-center">
                     {categories.map((category) => (
@@ -28,7 +37,7 @@ function Home (){
                                 <div class='card-container'>
                                     <Link to={`/products/${category.name}`} class='link'>
                                         <Card class='card'>
-                                            <Card.Img variant="top" src={category.img} />
+                                            {/* <Card.Img variant="top" src={category.img} /> */}
                                             <Card.Body>
                                                 <Card.Title>{category.name}</Card.Title>
                                             </Card.Body>

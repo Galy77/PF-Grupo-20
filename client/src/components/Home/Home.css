@@ -34,8 +34,9 @@
     text-decoration: none;
 }
 .cards-container{
+    display: flex;
+    flex-direction: column;
     max-width: 90%;
-    max-height: 80%;
     margin-top: 2rem;
 }
 .card-container{

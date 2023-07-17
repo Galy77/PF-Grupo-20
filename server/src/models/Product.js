@@ -14,13 +14,13 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      details: {
-        type: DataTypes.JSON,
+      description: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       price: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
       },
 
       image: {
@@ -32,16 +32,12 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       rating: {
-        type: DataTypes.DOUBLE,
+        type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
           max: 5,
-          min: 0.5,
+          min: 1,
         },
-      },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false
       }
     },
     { timestamps: false }
