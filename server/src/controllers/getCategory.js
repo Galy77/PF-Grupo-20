@@ -11,7 +11,6 @@ const getCategory = async(req, res) => {
         if(category.length === 0){
             const categories = data.map((obj) => {
                 return {
-                    id: obj.id,
                     name: obj.name
                 }
             })
