@@ -9,12 +9,16 @@ export function Profile() {
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   const navigate = useNavigate();
   
-  const { logout, userFr } = useAuth();
+  const { logout, user } = useAuth();
   const [isUser, setIsUser] = useState();
 
   useEffect(() => {
-    setIsUser(userFr || usuarioActual);
-  }, [userFr, usuarioActual]);
+    if(usuarioActual !== {}){
+      setIsUser(usuarioActual);
+    }else{
+      setIsUser(user);
+    }
+  }, [user, usuarioActual]);
 
   const handleLogout = async () => {
     try {

@@ -5,15 +5,35 @@ import { useDispatch,useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addOrder } from "../../redux/actions";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 const Cart = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate();
+    
+    const { user } = useAuth();
+    const [isUser, setIsUser] = useState();
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+
     const products = useSelector(state => state.orders)
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
     if(!products.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
     }
-  
+    
+    useEffect(() => {
+        if(usuarioActual !== {}){
+          setIsUser(usuarioActual);
+        }else{
+          setIsUser(user);
+        }
+      }, [user, usuarioActual]);
+      
+      if (!isUser) {
+        navigate("/login");
+        return null;
+      }
 
     ///eliminar todas los productos del carrito
     const deleteCart = () => {

@@ -3,16 +3,32 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct,getAllCategories } from "../../redux/actions";
 import "../Create/Create.style.css";
 import { Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 function Create(){
     const dispatch = useDispatch();
     const allCategories = useSelector((state) => state.categories);
-
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+    const navigate = useNavigate();
+    
+    const { user } = useAuth();
+    const [isUser, setIsUser] = useState();
+  
     const [success, setSuccess] = useState(false);
     
     useEffect(() => {
-        dispatch(getAllCategories());
-      }, [dispatch]);
+      dispatch(getAllCategories());
+    }, [dispatch]);
+    
+    useEffect(() => {
+      if(usuarioActual !== {}){
+        setIsUser(usuarioActual);
+      }else{
+        setIsUser(user);
+      }
+    }, [user, usuarioActual]);
+
     
     const [input, setInput] = useState({
         name: "",
@@ -34,6 +50,10 @@ function Create(){
         CategoryId:""
     })
 
+    if (!isUser) {
+      navigate("/login");
+      return null;
+    }
     const validate = (input) =>{
       
         let error = {}

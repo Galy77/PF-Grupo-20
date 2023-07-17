@@ -168,10 +168,18 @@ export const reducer = (state = initialState,{type,payload})=>{
     switch (type) {
 
         //USER
+        
         case GET_USER:{
+          const auxUserBDDFound = () => {
+            const userBDD = localStorage.setItem("usuarioActual", JSON.stringify(payload));
+            return userBDD;
+          }
+          const actUser = state.user
+          console.log("este es mi usuario encontrado",actUser)
+
           return{
             ...state,
-            users:payload
+            user:auxUserBDDFound()
           }
         }
         case ADD_USER:

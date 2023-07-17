@@ -52,8 +52,12 @@ export function Register() {
 
     if (input.phone.trim().length === 0) {
       error.phone = "Ingrese un número de teléfono.";
+    } else if (!/^\d+$/.test(input.phone)) {
+      error.phone = "El número de teléfono solo debe contener dígitos.";
     } else if (input.phone.trim().length < 5) {
       error.phone = "El número de teléfono debe tener al menos 5 dígitos.";
+    } else if (/[^\d]/.test(input.phone)) {
+      error.phone = "El número de teléfono no puede contener caracteres especiales.";
     }
 
     if (input.direction_shipping.trim().length === 0) {
@@ -90,7 +94,7 @@ export function Register() {
               full_name: "",
               email: "",
               password: "",
-              phoneNumber: "",
+              phone: "",
               direction_shipping: ""
             });
             navigate("/");
@@ -169,7 +173,7 @@ export function Register() {
             placeholder="*************"
           />
         </div>
-        {error.phoneNumber && <p>{error.phoneNumber}</p>}
+        {error.phone && <p>{error.phone}</p>}
 
         <div className="mb-3">
           <label htmlFor="phone" className="form-label">

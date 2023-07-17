@@ -11,55 +11,52 @@ export function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const usuarioLogeado = useSelector((state)=>state.user);
+  //const { loginWithGoogle, user } = useAuth();
+  //const [requiresCompletion, setRequiresCompletion] = useState(false);
 
-  const { loginWithGoogle,userFr }= useAuth();
   const [isGoogleLogin, setIsGoogleLogin] = useState(false);
-  const [requiresCompletion, setRequiresCompletion] = useState(false);
   const [error, setError] = useState("");
-  const [currentUser,setCurrentUser] = useState({});
+
+  const [ currentUser,setCurrentUser ] = useState({});
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
 
   const [user, setUser] = useState({
     email: "",
     password: "",
   })
-
-  useEffect(()=>{
-    //if(usuarioActual){
-      //setCurrentUser(usuarioLogeado)
-    //}
-  },[])
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
       dispatch(getUser(user));
-      if(usuarioLogeado){
-        if(usuarioLogeado.password === user.password){
-          setCurrentUser(usuarioLogeado)
+      if(usuarioActual){
+        console.log(usuarioActual)
+        if(usuarioActual.password === usuarioActual.password){
+          setCurrentUser(usuarioActual)
         }
       }
-      navigate("/")
     } catch (error) {
       setError(error.message);
     }
   };
 
-  const handleChange = ({ target: { value, name } }) =>
-    setUser({ ...user, [name]: value });
+  const handleChange = ({ target: { value, name } }) => {
+    setUser({ ...user, [name]: value }); 
+  }
 
-  /*const handleGoogleSignin = async () => {
-    try {
-      const requiresCompletion = await loginWithGoogle();
-      setCurrentUser(userFr)
-      setRequiresCompletion(requiresCompletion);
-      setIsGoogleLogin(true);
-    } catch (error) {
-      setError(error.message);
-    }
-  };
-*/
+    /*
+      const handleGoogleSignin = async () => {
+        try {
+          const requiresCompletion = await loginWithGoogle();
+          setCurrentUser(userFr)
+          setRequiresCompletion(requiresCompletion);
+          setIsGoogleLogin(true);
+        } catch (error) {
+          setError(error.message);
+        }
+      };
+    */
+
   return (
     <div className="container">
       <h1>Iniciar Sesión</h1>
@@ -77,7 +74,7 @@ export function Login() {
               id="email"
               className="form-control"
               onChange={handleChange}
-              placeholder="youremail@company.tld"
+              placeholder="youremail@company.com"
               required
             />
           </div>
