@@ -3,11 +3,9 @@ const { Sequelize } = require("sequelize");
 
 const fs = require('fs');
 const path = require('path');
-const {
-  DB_USER, DB_PASSWORD, DB_HOST,
-} = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
+
+const sequelize = new Sequelize(`postgres://postgres:admin@localhost/ecommerce`, {
   logging: false, 
   native: false, 
 });
@@ -28,10 +26,31 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Country } = sequelize.models;
+const { User, Order, Product, Category, Reviews } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+User.hasMany(Order, { foreignKey: 'id_user' })
+Order.belongsTo(User, { foreignKey: 'id_user' })
+
+Product.belongsToMany(Order,{through: 'product_order'})
+Order.belongsToMany(Product,{through: 'product_order'})
+
+Product.belongsToMany(Category,{through: 'product_category'})
+Category.belongsToMany(Product,{through: 'product_category'})
+
+Product.belongsToMany(User,{through: 'product_user'})
+User.belongsToMany(Product,{through: 'product_user'})
+
+
+Product.hasMany(Reviews, { foreignKey: 'id_product' });
+Reviews.belongsTo(Product, { foreignKey: 'id_product' });
+
+
+
+// Diego estuvo aki
+
+
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

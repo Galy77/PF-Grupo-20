@@ -4,14 +4,15 @@ import PriceFilter from "./PriceFilter";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
 import RatingFilter from "./RatingFilter";
+import "../producs.css"
 
 function Filters (props) {
     return (
-      <Container fluid className={style.filters}>
+      <div class='mx-4' >
         <SearchBar />
         <PriceFilter />
         <RatingFilter />
-      </Container>
+      </div>
     )
 }
 
