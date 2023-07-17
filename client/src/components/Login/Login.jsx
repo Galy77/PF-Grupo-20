@@ -17,7 +17,7 @@ export function Login() {
   const [isGoogleLogin, setIsGoogleLogin] = useState(false);
   const [error, setError] = useState("");
 
-  const [ currentUser,setCurrentUser ] = useState({});
+  const [ currentUser, setCurrentUser ] = useState({});
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
 
   const [user, setUser] = useState({
@@ -28,9 +28,10 @@ export function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
-      dispatch(getUser(user));
+      dispatch(getUser(user.email,user.password));
+      console.log("HANDLE SEND",user)
       if(usuarioActual){
-        console.log(usuarioActual)
+        console.log("Action terminada",usuarioActual)
         if(usuarioActual.password === usuarioActual.password){
           setCurrentUser(usuarioActual)
         }
@@ -40,9 +41,14 @@ export function Login() {
     }
   };
 
-  const handleChange = ({ target: { value, name } }) => {
-    setUser({ ...user, [name]: value }); 
-  }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    console.log("handleChange entry",name,value)
+    setUser((prevUser) => ({
+      ...prevUser,
+      [name]: value,
+    }));
+  };
 
     /*
       const handleGoogleSignin = async () => {
@@ -69,13 +75,14 @@ export function Login() {
               Email
             </label>
             <input
+              value={user.email}
               type="email"
               name="email"
               id="email"
               className="form-control"
               onChange={handleChange}
               placeholder="youremail@company.com"
-              required
+              
             />
           </div>
           <div className="mb-3">
@@ -83,13 +90,14 @@ export function Login() {
               Contraseña
             </label>
             <input
+              value={user.password}
               type="password"
               name="password"
               id="password"
               className="form-control"
               onChange={handleChange}
               placeholder="*************"
-              required
+              
             />
           </div>
 

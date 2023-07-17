@@ -166,9 +166,7 @@ const initialState = {
 
 export const reducer = (state = initialState,{type,payload})=>{
     switch (type) {
-
         //USER
-        
         case GET_USER:{
           const auxUserBDDFound = () => {
             const userBDD = localStorage.setItem("usuarioActual", JSON.stringify(payload));
