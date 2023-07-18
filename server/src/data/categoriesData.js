@@ -16,7 +16,7 @@ categoriesData = [
       img: "https://as01.epimg.net/diarioas/imagenes/2022/01/09/actualidad/1641723199_369382_1641723267_noticia_normal_recorte1.jpg"
     },
     {
-      name: "Antigüedades y Colecciones",
+      name: "Antigüedades",
       img: "https://http2.mlstatic.com/D_NQ_NP767510-MLA44229767080_122020-O.webp"
     },
     {
@@ -32,7 +32,7 @@ categoriesData = [
       img: "https://diarioresponsable.com/images/CLARA_2021/unilever_belleza_positiva_dr.png"
     },
     {
-      name: "Celulares y Teléfonos",
+      name: "Celulares",
       img: "https://www.cronista.com/files/image/419/419139/61d3378d218ac.jpg"
     },
     {

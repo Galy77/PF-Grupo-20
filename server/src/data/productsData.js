@@ -1,0 +1,2235 @@
+productsData = [
+        {
+            name: "Taladro inalámbrico",
+            details: "Potente taladro inalámbrico con 18V y 2 baterías incluidas.",
+            price: 129.99,
+            image: "https://d2r9epyceweg5n.cloudfront.net/stores/001/910/172/products/taladro-dowen-pagio-18-v1-3eb370db5e28d39db516615361477571-1024-1024.png",
+            stock: 50,
+            rating: 4.5,
+            category: "Herramientas"
+          },
+          {
+            name: "Juego de llaves de vaso",
+            details: "Juego de llaves de vaso de alta calidad con 20 piezas.",
+            price: 49.99,
+            image: "https://www.dateriumsystem.com/appfiles/clientes/308/catalogo/JUEGO-LLAVES-VASO-1-2--3-8--1-4-171-PIEZAS-ALYCO-170745PRINCIPAL.jpg",
+            stock: 80,
+            rating: 4.2,
+            category: "Herramientas"
+          },
+          {
+            name: "Martillo de carpintero",
+            details: "Martillo de carpintero resistente con mango ergonómico.",
+            price: 24.99,
+            image: "https://bulonfer.vtexassets.com/arquivos/ids/208654-800-800?v=637922733923000000&width=800&height=800&aspect=true",
+            stock: 100,
+            rating: 4.8,
+            category: "Herramientas"
+          },
+          {
+            name: "Cinta métrica",
+            details: "Cinta métrica de 5 metros con bloqueo y medidas en centímetros y pulgadas.",
+            price: 9.99,
+            image: "https://crossmaster.com.ar/wp-content/uploads/9932016.jpg",
+            stock: 120,
+            rating: 4.0,
+            category: "Herramientas"
+          },
+          {
+            name: "Llave ajustable",
+            details: "Llave ajustable de acero con capacidad para múltiples tamaños.",
+            price: 12.99,
+            image: "https://siglo21myh.com.ar/wp-content/uploads/2022/10/llave-ajustable-total-THT101083.jpg",
+            stock: 70,
+            rating: 4.4,
+            category: "Herramientas"
+          },
+          {
+            name: "Sierra de mano",
+            details: "Sierra de mano con dientes afilados para cortes precisos.",
+            price: 18.99,
+            image: "https://cdn.ready-market.com/101/788980ae//Templates/pic/01%20911%20%20wooden%20handle%20hand%20saw.jpg?v=a8dcc9cd",
+            stock: 40,
+            rating: 4.1,
+            category: "Herramientas"
+          },
+          {
+            name: "Juego de destornilladores",
+            details: "Juego de destornilladores magnéticos con puntas intercambiables.",
+            price: 39.99,
+            image: "https://i0.wp.com/www.bultor.com.ar/wp-content/uploads/2019/03/60-060-3.jpg?fit=1031%2C1200&ssl=1",
+            stock: 60,
+            rating: 4.6,
+            category: "Herramientas"
+          },
+          {
+            name: "Nivel de burbuja",
+            details: "Nivel de burbuja de 12 pulgadas para trabajos de nivelación.",
+            price: 15.99,
+            image: "https://sodimac.scene7.com/is/image/SodimacPeru/2481634_01?wid=800&hei=800&qlt=70",
+            stock: 90,
+            rating: 4.3,
+            category: "Herramientas"
+          },
+          {
+            name: "Caja de herramientas",
+            details: "Caja de herramientas resistente con múltiples compartimentos.",
+            price: 49.99,
+            image: "https://www.shope.com.ar/contenido/productos/original/1530910057.jpeg",
+            stock: 25,
+            rating: 4.7,
+            category: "Herramientas"
+          },
+          {
+            name: "Pistola de calor",
+            details: "Pistola de calor para trabajos de secado, decapado y moldeado.",
+            price: 34.99,
+            image: "https://pintureriasagitario.com.ar/wp-content/uploads/2020/08/Pistoladecalor.jpg",
+            stock: 35,
+            rating: 4.2,
+            category: "Herramientas"
+          },
+          {
+            name: "Cepillo eléctrico",
+            details: "Cepillo eléctrico para madera con ajuste de profundidad.",
+            price: 79.99,
+            image: "https://comercialcanogonzalez.com/Views/Front/img/webp/products/255-CEPEL-4-1-2NX-(1).webp",
+            stock: 15,
+            rating: 4.9,
+            category: "Herramientas"
+          },
+          {
+            name: "Juego de brocas",
+            details: "Juego de brocas de titanio para madera, metal y concreto.",
+            price: 29.99,
+            image: "https://www.hilti.com.ar/medias/sys_master/images/h70/h1e/9480192884766.jpg",
+            stock: 50,
+            rating: 4.4,
+            category: "Herramientas"
+          },
+          {
+            name: "Alicate de corte",
+            details: "Alicate de corte con filo endurecido para cortes precisos.",
+            price: 16.99,
+            image: "https://maheroca.com/10400-large_default/alicate-corte-diagonal-con-forro-5-x-1332-urrea-205g.jpg",
+            stock: 75,
+            rating: 4.3,
+            category: "Herramientas"
+          },
+          {
+            name: "Pulidora orbital",
+            details: "Pulidora orbital para trabajos de acabado y pulido.",
+            price: 89.99,
+            image: "https://www.ferreterasanluis.com/uploads/images/full/afc96363422a387e009cb69f1554c3e8.jpg",
+            stock: 20,
+            rating: 4.7,
+            category: "Herramientas"
+          },
+          {
+            name: "Gafas de seguridad",
+            details: "Gafas de seguridad con protección UV y antirrayaduras.",
+            price: 7.99,
+            image: "https://media.rs-online.com/image/upload/w_620,h_413,c_crop,c_pad,b_white,f_auto,q_auto/dpr_auto/v1580236936/F1845939-01.jpg",
+            stock: 100,
+            rating: 4.5,
+            category: "Herramientas"
+          },
+          {
+            name: "Sierra de calar",
+            details: "Sierra de calar con múltiples velocidades y corte orbital.",
+            price: 79.99,
+            image: "https://www.maquituls.es/2492-large_default/sierra-electrica-hecht-1580-800-w.jpg",
+            stock: 30,
+            rating: 4.6,
+            category: "Herramientas"
+          },
+          {
+            name: "Guantes de trabajo",
+            details: "Guantes de trabajo resistentes para proteger las manos.",
+            price: 12.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_977914-MLA48895310647_012022-O.webp",
+            stock: 120,
+            rating: 4.2,
+            category: "Herramientas"
+          },
+          {
+            name: "Juego de puntas para taladro",
+            details: "Juego de puntas para taladro con variedad de tamaños y tipos.",
+            price: 19.99,
+            image: "https://www.herramientaseinhell.com.ar/wp-content/uploads/1-159.jpg",
+            stock: 60,
+            rating: 4.3,
+            category: "Herramientas"
+          },
+          {
+            name: "Llave de tubo",
+            details: "Llave de tubo de alta resistencia para trabajos pesados.",
+            price: 22.99,
+            image: "https://www.reedmfgco.com/assets/Images/Products/Wrenches/Pipe-Wrenches-Heavy-Duty-Straight/02120-RW8-RGB__PadWzEyODAsODQ2LCJGRkZGRkYiLDBd.jpg",
+            stock: 45,
+            rating: 4.1,
+            category: "Herramientas"
+          },
+          {
+            name: "Reloj de bolsillo antiguo",
+            details: "Reloj de bolsillo de finales del siglo XIX con caja de oro y esfera de porcelana.",
+            price: 250,
+            image: "https://cdn.leonardo.ai/users/766dae94-5730-415b-bdc9-9d4eeabaad6c/generations/2db5d0f0-fa37-4c65-b333-464a9f3f2a3a/DreamShaper_v5_crame_un_logo_sobre_un_reloj_de_lujo_Marca_del_1.jpg?w=512",
+            stock: 5,
+            rating: 4.5,
+            category: "Antigüedades"
+          },
+          {
+            name: "Cámara fotográfica vintage",
+            details: "Cámara fotográfica de los años 50 en excelente estado de conservación.",
+            price: 120,
+            image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBhSBX67yGir47dhc719bHf1LXnaS-hJn_nw&usqp=CAU",
+            stock: 3,
+            rating: 4.2,
+            category: "Antigüedades"
+          },
+          {
+            name: "Máquina de escribir antigua",
+            details: "Máquina de escribir portátil de los años 30 con su estuche original.",
+            price: 180,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgdQDtc2a-hI7T66Dn9oGqu-sc3PX2btoqWQ&usqp=CAU",
+            stock: 2,
+            rating: 4.0,
+            category: "Antigüedades"
+          },
+          {
+            name: "Joyero antiguo de plata",
+            details: "Joyero antiguo de plata maciza con detalles grabados a mano.",
+            price: 90,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBPF0ZC7yUCCute6CmzznBF7ftau6jWFLx32Liw-LDhTmp7J2KntYeIUpJzxxcAFy2gAE&usqp=CAU",
+            stock: 8,
+            rating: 4.7,
+            category: "Antigüedades"
+          },
+          {
+            name: "Cuadro al óleo del siglo XVIII",
+            details: "Cuadro al óleo de paisaje campestre pintado por reconocido artista del siglo XVIII.",
+            price: 650,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuYCx3MnxUncuruBnKuEsNSdMlOzmE_d9fQjIsRVk7_uzF-U5ZhBN8krlbBas9jUo5D8s&usqp=CAU",
+            stock: 1,
+            rating: 4.9,
+            category: "Antigüedades"
+          },
+          {
+            name: "Estatuilla de porcelana china",
+            details: "Estatuilla de porcelana china de la dinastía Qing, representando una figura de Buda.",
+            price: 380,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyKZTm5b8V3mQx8gCuwA2UkRvCHPIqQ5jhAg&usqp=CAU",
+            stock: 4,
+            rating: 4.3,
+            category: "Antigüedades"
+          },
+          {
+            name: "Silla de madera tallada",
+            details: "Silla antigua de madera tallada a mano con detalles ornamentales en respaldo y patas.",
+            price: 200,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnPMJrNrs1yUEaKk2A5Et4n7WuILmRJ0WS_w&usqp=CAU",
+            stock: 6,
+            rating: 4.1,
+            category: "Antigüedades"
+          },
+          {
+            name: "Radio antiguo de válvulas",
+            details: "Radio antiguo de los años 40 con diseño retro y funcionamiento en perfecto estado.",
+            price: 300,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC5Kb-BeW2Sxjjg0xWlPkdn_a78sLM3lzoTw&usqp=CAU",
+            stock: 2,
+            rating: 4.4,
+            category: "Antigüedades"
+          },
+          {
+            name: "Vajilla de porcelana inglesa",
+            details: "Vajilla de porcelana fina de la marca inglesa con más de 100 años de antigüedad.",
+            price: 550,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRetnPZosBZU6pQu6YTnWlBZnob4CDMwLRqQ&usqp=CAU",
+            stock: 3,
+            rating: 4.6,
+            category: "Antigüedades"
+          },
+          {
+            name: "Gramófono antiguo",
+            details: "Gramófono de los años 20 con bocina de metal y mecanismo de cuerda original.",
+            price: 420,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7FwMQOL7QmaklqPwzHHSu9oz91pGtfz6QeQ&usqp=CAU",
+            stock: 2,
+            rating: 4.2,
+            category: "Antigüedades"
+          },
+          {
+            name: "Mesa de centro estilo Art Deco",
+            details: "Mesa de centro antigua de estilo Art Deco con superficie de vidrio y patas de metal.",
+            price: 320,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA1azTl_vc7DjWmE8aS6-eR9ck9wMCQz__nQ&usqp=CAU",
+            stock: 4,
+            rating: 4.0,
+            category: "Antigüedades"
+          },
+          {
+            name: "Abanico de seda pintado a mano",
+            details: "Abanico antiguo de seda natural con ilustraciones pintadas a mano.",
+            price: 80,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0CVAWTBrA30Y3MNfJfJS1H8Cmp2_IuhtuDQ&usqp=CAU",
+            stock: 10,
+            rating: 4.3,
+            category: "Antigüedades"
+          },
+          {
+            name: "Juego de té de porcelana francesa",
+            details: "Juego de té antiguo de porcelana francesa con decoraciones florales y borde dorado.",
+            price: 280,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScfTlC4CO3El46lEfquh6L9R0fjhRFsjD-Eg&usqp=CAU",
+            stock: 3,
+            rating: 4.7,
+            category: "Antigüedades"
+          },
+          {
+            name: "Cofre de madera tallada",
+            details: "Cofre antiguo de madera tallada con herrajes de metal y diseño intrincado.",
+            price: 180,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBdGWOD5oah4LPnOta6a95bAkis6S7zusuuw&usqp=CAU",
+            stock: 5,
+            rating: 4.1,
+            category: "Antigüedades"
+          },
+          {
+            name: "Escultura de bronce",
+            details: "Escultura antigua de bronce que representa una figura femenina en postura elegante.",
+            price: 480,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHMxwOcdYPiBeaYNh8-OprFRIMbUoz9oc8g&usqp=CAU",
+            stock: 1,
+            rating: 4.6,
+            category: "Antigüedades"
+          },
+          {
+            name: "Reloj de pared antiguo",
+            details: "Reloj de pared antiguo con mecanismo de cuerda y marcadores numéricos romanos.",
+            price: 350,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbUFBMhvxPZ9xT1sB12GcRYvYSXe5VXX50KA&usqp=CAU",
+            stock: 3,
+            rating: 4.4,
+            category: "Antigüedades"
+          },
+          {
+            name: "Muñeca de porcelana antigua",
+            details: "Muñeca de porcelana antigua con ropa y accesorios originales de la época.",
+            price: 150,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI5fnioeHemqy--YK4NqYfkPQjpLW40tIplw&usqp=CAU",
+            stock: 7,
+            rating: 4.2,
+            category: "Antigüedades"
+          },
+          {
+            name: "iPhone 12",
+            details: "Pantalla Super Retina XDR de 6.1 pulgadas, chip A14 Bionic, cámara dual de 12 MP, iOS 14",
+            price: 999.99,
+            image: "https://m.media-amazon.com/images/I/81LmL94PUvS._AC_UY218_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Celulares"
+          },
+          {
+            name: "Samsung Galaxy S21",
+            details: "Pantalla Dynamic AMOLED de 6.2 pulgadas, Exynos 2100, cámara triple de 12 MP, Android 11",
+            price: 899.99,
+            image: "https://m.media-amazon.com/images/I/41dhRyu0bjL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+            stock: 5,
+            rating: 4.2,
+            category: "Celulares"
+          },
+          {
+            name: "Google Pixel 6",
+            details: "Pantalla Full HD+ de 6.4 pulgadas, chip Google Tensor, cámara dual de 50 MP, Android 12",
+            price: 799.99,
+            image: "https://m.media-amazon.com/images/I/71ee+5V4ZRL._AC_SY300_SX300_.jpg",
+            stock: 8,
+            rating: 4.7,
+            category: "Celulares"
+          },
+          {
+            name: "OnePlus 9 Pro",
+            details: "Pantalla Fluid AMOLED de 6.7 pulgadas, Snapdragon 888, cámara triple de 48 MP, OxygenOS",
+            price: 899.99,
+            image: "https://m.media-amazon.com/images/I/31EEx3Rz0hL._AC_SX466_.jpg",
+            stock: 3,
+            rating: 4.6,
+            category: "Celulares"
+          },
+          {
+            name: "Xiaomi Mi 11",
+            details: "Pantalla AMOLED de 6.81 pulgadas, Snapdragon 888, cámara triple de 108 MP, MIUI 12",
+            price: 799.99,
+            image: "https://m.media-amazon.com/images/I/51eruI2visL._AC_UY327_FMwebp_QL65_.jpg",
+            stock: 6,
+            rating: 4.4,
+            category: "Celulares"
+          },
+          {
+            name: "Huawei P40 Pro",
+            details: "Pantalla OLED de 6.58 pulgadas, Kirin 990, cámara cuádruple de 50 MP, EMUI 10.1",
+            price: 899.99,
+            image: "https://m.media-amazon.com/images/I/61zxeQ9uzbL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 2,
+            rating: 4.3,
+            category: "Celulares"
+          },
+          {
+            name: "Sony Xperia 1 III",
+            details: "Pantalla OLED de 6.5 pulgadas, Snapdragon 888, cámara triple de 12 MP, Android 11",
+            price: 1099.99,
+            image: "https://m.media-amazon.com/images/I/61LYUoaWW4L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 4,
+            rating: 4.8,
+            category: "Celulares"
+          },
+          {
+            name: "Motorola Edge+",
+            details: "Pantalla OLED de 6.7 pulgadas, Snapdragon 865, cámara triple de 108 MP, Android 10",
+            price: 999.99,
+            image: "https://m.media-amazon.com/images/I/719AhptKyQL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 7,
+            rating: 4.2,
+            category: "Celulares"
+          },
+          {
+            name: "LG Wing",
+            details: "Pantalla OLED de 6.8 pulgadas, Snapdragon 765G, cámara triple de 64 MP, Android 10",
+            price: 899.99,
+            image: "https://m.media-amazon.com/images/I/81ndkcaLl6L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 1,
+            rating: 4.1,
+            category: "Celulares"
+          },
+          {
+            name: "Nokia 9 PureView",
+            details: "Pantalla pOLED de 5.99 pulgadas, Snapdragon 845, cámara penta de 12 MP, Android 9",
+            price: 699.99,
+            image: "nokia9pureview.jpg",
+            stock: 9,
+            rating: 4.0,
+            category: "Celulares"
+          },
+          {
+            name: "BlackBerry Key2",
+            details: "Pantalla IPS LCD de 4.5 pulgadas, Snapdragon 660, cámara dual de 12 MP, Android 8.1",
+            price: 699.99,
+            image: "https://m.media-amazon.com/images/I/71CA1PuE32L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 3,
+            rating: 4.0,
+            category: "Celulares"
+          },
+          {
+            name: "Samsung Galaxy Z Fold 3",
+            details: "Pantalla Dynamic AMOLED 2X de 7.6 pulgadas, Snapdragon 888, cámara triple de 12 MP, Android 11",
+            price: 1799.99,
+            image: "https://m.media-amazon.com/images/I/41chjlrOv-L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 5,
+            rating: 4.7,
+            category: "Celulares"
+          },
+          {
+            name: "iPhone SE (2020)",
+            details: "Pantalla Retina HD de 4.7 pulgadas, chip A13 Bionic, cámara de 12 MP, iOS 14",
+            price: 399.99,
+            image: "https://m.media-amazon.com/images/I/71E5zB1qbIL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 12,
+            rating: 4.3,
+            category: "Celulares"
+          },
+          {
+            name: "Google Pixel 5a",
+            details: "Pantalla OLED de 6.34 pulgadas, chip Snapdragon 765G, cámara dual de 12 MP, Android 12",
+            price: 449.99,
+            image: "https://m.media-amazon.com/images/I/71iWrX6dYEL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 7,
+            rating: 4.5,
+            category: "Celulares"
+          },
+          {
+            name: "OnePlus Nord 2",
+            details: "Pantalla AMOLED de 6.43 pulgadas, chip MediaTek Dimensity 1200, cámara triple de 50 MP, OxygenOS",
+            price: 499.99,
+            image: "https://m.media-amazon.com/images/I/41qpuDjaKrL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 6,
+            rating: 4.4,
+            category: "Celulares"
+          },
+          {
+            name: "Xiaomi Redmi Note 10 Pro",
+            details: "Pantalla Super AMOLED de 6.67 pulgadas, chip Snapdragon 732G, cámara cuádruple de 108 MP, MIUI 12",
+            price: 329.99,
+            image: "https://m.media-amazon.com/images/I/51UyTHwP6wL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 15,
+            rating: 4.6,
+            category: "Celulares"
+          },
+          {
+            name: "Motorola Moto G Power (2021)",
+            details: "Pantalla IPS LCD de 6.6 pulgadas, chip Snapdragon 662, cámara triple de 48 MP, Android 10",
+            price: 249.99,
+            image: "https://m.media-amazon.com/images/I/81ShWwPt90L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 9,
+            rating: 2.5,
+            category:"Celulares"
+          },
+          {
+            name: "Cubierta para Volante de Cuero",
+            details: "Cubierta suave y cómoda para volantes de coche.",
+            price: 24.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_640096-MLV48293057811_112021-O.webp",
+            stock: 100,
+            rating: 4.7,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Soporte Magnético para Teléfono",
+            details: "Soporte para teléfono que se adhiere fácilmente al tablero del automóvil.",
+            price: 15.99,
+            image: "https://sistemasrjd.com/3657-home_default/soporte-magn%C3%A9tico-para-tel%C3%A9fono-inteligente-f3.jpg",
+            stock: 80,
+            rating: 4.5,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Kit de Emergencia para Automóvil",
+            details: "Incluye herramientas y suministros básicos para situaciones de emergencia en carretera.",
+            price: 49.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_879802-MLV51629757934_092022-O.webp",
+            stock: 30,
+            rating: 4.8,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Tapetes para Automóvil Resistentes al Agua",
+            details: "Tapetes de goma resistentes para proteger el interior del vehículo de líquidos y suciedad.",
+            price: 34.99,
+            image: "https://www.elnuevoherald.com/guiasdecompra/_next/image?url=https%3A%2F%2Fnh.revoousandbox.com%2Fguiasdecompra%2Fwp-content%2Fuploads%2F2022%2F09%2Fmotor-trek.jpg&w=640&q=75",
+            stock: 60,
+            rating: 4.6,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Cámara de Visión Trasera",
+            details: "Cámara para ayudar en las maniobras y estacionamiento del automóvil.",
+            price: 89.99,
+            image: "https://m.media-amazon.com/images/I/51DwHQfP+yS._AC_UF894,1000_QL80_.jpg",
+            stock: 50,
+            rating: 4.4,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Set de Limpiadores para Coche",
+            details: "Conjunto de productos para limpiar y dar brillo al exterior e interior del vehículo.",
+            price: 39.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_810584-CBT51068660810_082022-O.webp",
+            stock: 70,
+            rating: 4.3,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Almohada de Viaje para Reposacabezas",
+            details: "Almohada ergonómica para apoyar el cuello durante los viajes en coche.",
+            price: 21.99,
+            image: "https://m.media-amazon.com/images/I/81KcNg8Mo1L._AC_UF894,1000_QL80_.jpg",
+            stock: 90,
+            rating: 4.6,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Organizador de Maletero Plegable",
+            details: "Mantén el maletero ordenado con este organizador plegable.",
+            price: 29.99,
+            image: "https://m.media-amazon.com/images/I/81llVwxwUXS._AC_UF894,1000_QL80_.jpg",
+            stock: 40,
+            rating: 4.2,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Cargador Inalámbrico para Automóvil",
+            details: "Cargador inalámbrico compatible con diversos modelos de teléfonos.",
+            price: 32.99,
+            image: "https://gossipvehiculo.com/wp-content/uploads/2021/09/imagen-destacada-10.jpg",
+            stock: 60,
+            rating: 4.7,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Organizador de Asiento para Niños",
+            details: "Organizador con bolsillos para mantener juguetes y artículos de niños ordenados.",
+            price: 18.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_811429-MLA51841099106_102022-O.webp",
+            stock: 50,
+            rating: 4.5,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Fundas de Asiento Transpirables",
+            details: "Fundas de asiento que protegen y ventilan los asientos del coche.",
+            price: 59.99,
+            image: "https://m.media-amazon.com/images/I/81cwSa3C-2L._AC_UF894,1000_QL80_.jpg",
+            stock: 70,
+            rating: 4.4,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Luces LED para Ruedas",
+            details: "Luces LED que se acoplan a las ruedas para dar un efecto visual llamativo.",
+            price: 22.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_788359-MLV46367375939_062021-O.webp",
+            stock: 100,
+            rating: 4.8,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Bocina de Aire para Automóvil",
+            details: "Bocina potente con sonido de aire comprimido para alertar a otros conductores.",
+            price: 45.99,
+            image: "https://m.media-amazon.com/images/I/51eSQQkRIDL._AC_UF894,1000_QL80_.jpg",
+            stock: 30,
+            rating: 4.6,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Protector de Parachoques Trasero",
+            details: "Protector adhesivo para el parachoques trasero del automóvil.",
+            price: 12.99,
+            image: "https://m.media-amazon.com/images/I/61TRKVsZWsL.jpg",
+            stock: 80,
+            rating: 4.3,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Espejo Retrovisor con Cámara Dashcam",
+            details: "Espejo retrovisor con cámara de grabación para registrar el trayecto.",
+            price: 129.99,
+            image: "https://m.media-amazon.com/images/I/41hGgjj16gL._SL500_.jpg",
+            stock: 20,
+            rating: 4.7,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Desodorante de Aire para Automóvil",
+            details: "Desodorante con fragancias refrescantes para el interior del coche.",
+            price: 8.99,
+            image: "https://images-na.ssl-images-amazon.com/images/I/81PqJQz7IJL._AC_UL210_SR210,210_.jpg",
+            stock: 120,
+            rating: 4.5,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Alfombrillas para Reposabrazos",
+            details: "Almohadilla para reposabrazos del coche para mayor comodidad.",
+            price: 14.99,
+            image: "https://m.media-amazon.com/images/I/61P85XWE-IL._AC_UF894,1000_QL80_.jpg",
+            stock: 90,
+            rating: 4.4,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Adaptador Bluetooth para el Coche",
+            details: "Adaptador para conectar dispositivos Bluetooth al sistema de audio del automóvil.",
+            price: 29.99,
+            image: "https://imagenes.elpais.com/resizer/mXT5kosnj7EExuVF3yUiB4-rbnE=/414x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/46LFIAN3GRAQXJKZOXYFKVB72I.jpg",
+            stock: 50,
+            rating: 4.8,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Cobertor para Asientos de Cuero",
+            details: "Protector para asientos de cuero que evita el desgaste y daños.",
+            price: 37.99,
+            image: "https://m.media-amazon.com/images/I/71hL1XBEt0L._AC_UF894,1000_QL80_.jpg",
+            stock: 40,
+            rating: 4.6,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Parasol para Parabrisas",
+            details: "Parasol plegable para mantener el interior del coche fresco en días calurosos.",
+            price: 19.99,
+            image: "https://m.media-amazon.com/images/I/61usGI8lAbL._AC_UF894,1000_QL80_.jpg",
+            stock: 60,
+            rating: 4.3,
+            category: "accesorios para Vehículos"
+          },
+          {
+            name: "Fertilizante NPK 10-20-10",
+            details: "Fertilizante balanceado para estimular el crecimiento y desarrollo de las plantas.",
+            price: 25.99,
+            image: "https://imagens.mfrural.com.br/mfrural-produtos-us/379781-690977-71802754-npk-20-10-10-com-ureia-em-gel-20-litros-.jpg",
+            stock: 50,
+            rating: 4.7,
+            category: "Agro"
+          },
+          {
+            name: "Semillas de Maíz Híbridas",
+            details: "Semillas de maíz híbridas de alta calidad y rendimiento para cultivo comercial.",
+            price: 18.99,
+            image: "https://img.agriexpo.online/es/images_ag/photo-m2/184530-14833977.jpg",
+            stock: 80,
+            rating: 4.5,
+            category: "Agro"
+          },
+          {
+            name: "Insecticida para Cultivos",
+            details: "Insecticida de amplio espectro para proteger los cultivos de plagas dañinas.",
+            price: 32.99,
+            image: "https://www.adama.com/colombia/sites/adama_colombia/files/styles/product_teaser_desktop/public/product-images/FrascoFicha_Malathion57EC_010919.jpg?h=393e69fd&itok=RC8xhrHq",
+            stock: 60,
+            rating: 4.8,
+            category: "Agro"
+          },
+          {
+            name: "Abono Orgánico",
+            details: "Abono natural enriquecido con nutrientes para mejorar la fertilidad del suelo.",
+            price: 27.99,
+            image: "https://mexico.infoagro.com/wp-content/uploads/2017/04/abonos-organicos.jpg",
+            stock: 70,
+            rating: 4.6,
+            category: "Agro"
+          },
+          {
+            name: "Semillas de Tomate Cherry",
+            details: "Semillas de tomate cherry para cultivo en huertos y macetas.",
+            price: 12.99,
+            image: "https://c8.alamy.com/compes/bk758f/las-semillas-de-tomate-cherry-bk758f.jpg",
+            stock: 90,
+            rating: 4.4,
+            category: "Agro"
+          },
+          {
+            name: "Herbicida Selectivo",
+            details: "Herbicida para eliminar malas hierbas sin dañar los cultivos.",
+            price: 22.99,
+            image: "https://www.adama.com/colombia/sites/adama_colombia/files/styles/product_header_image_desktop/public/2021-09/FRASCOS%20TAMAN%CC%83O%20COLOMBIA_Mesa%20de%20trabajo%201%20copia%2080.png?itok=eEjdn7hI",
+            stock: 40,
+            rating: 4.3,
+            category: "Agro"
+          },
+          {
+            name: "Riego por Goteo Automático",
+            details: "Sistema de riego por goteo para optimizar el consumo de agua en los cultivos.",
+            price: 89.99,
+            image: "https://cdn.portalfruticola.com/2016/12/riegoporgoteoautomatico-1024x512.jpg",
+            stock: 30,
+            rating: 4.6,
+            category: "Agro"
+          },
+          {
+            name: "Semillas de Girasol",
+            details: "Semillas de girasol aptas para consumo humano o para alimento de aves.",
+            price: 9.99,
+            image: "https://elpoderdelconsumidor.org/wp-content/uploads/2018/01/semillas-d-girasol.jpg",
+            stock: 100,
+            rating: 4.2,
+            category: "Agro"
+          },
+          {
+            name: "Fungicida Biológico",
+            details: "Fungicida ecológico para prevenir y controlar enfermedades fúngicas en las plantas.",
+            price: 29.99,
+            image: "https://portal.andina.pe/EDPfotografia/Thumbnail/2013/07/18/000214253W.jpg",
+            stock: 50,
+            rating: 4.7,
+            category: "Agro"
+          },
+          {
+            name: "Semillas de Zanahoria",
+            details: "Semillas de zanahoria ideales para cultivar en huertos familiares.",
+            price: 7.99,
+            image: "https://st4.depositphotos.com/1006789/20317/i/450/depositphotos_203173498-stock-photo-carrot-seeds-and-carrots.jpg",
+            stock: 120,
+            rating: 4.5,
+            category: "Agro"
+          },
+          {
+            name: "Acelerador de Crecimiento",
+            details: "Producto para estimular el crecimiento y desarrollo temprano de las plántulas.",
+            price: 14.99,
+            image: "https://m.media-amazon.com/images/I/71nvRvjcutL.jpg",
+            stock: 60,
+            rating: 4.4,
+            category: "Agro"
+          },
+          {
+            name: "Malla de Sombra",
+            details: "Malla de sombra para proteger los cultivos del exceso de sol y reducir la evaporación.",
+            price: 19.99,
+            image: "https://i2.wp.com/www.agrohuerto.com/wp-content/uploads/2020/01/sombreado-de-cultivos.jpg?fit=600%2C400&ssl=1",
+            stock: 80,
+            rating: 4.8,
+            category: "Agro"
+          },
+          {
+            name: "Semillas de Papaya",
+            details: "Semillas de papaya para cultivo de árboles frutales en climas cálidos.",
+            price: 6.99,
+            image: "https://imgmedia.larepublica.pe/640x377/larepublica/migration/images/XM35CWG7PND4ZN6BMVBD27XGJ4.webp",
+            stock: 40,
+            rating: 4.6,
+            category: "Agro"
+          },
+          {
+            name: "Trampa para Moscas de la Fruta",
+            details: "Trampa adhesiva para capturar moscas de la fruta y proteger cosechas.",
+            price: 8.99,
+            image: "https://myfarmdelivery.com/wp-content/uploads/2020/08/914cf2dd203fd9fbd1299eda5fb53e6c-1.jpg",
+            stock: 70,
+            rating: 4.3,
+            category: "Agro"
+          },
+          {
+            name: "Semillas de Lechuga",
+            details: "Semillas de lechuga de diferentes variedades para cultivo en espacios reducidos.",
+            price: 10.99,
+            image: "https://www.antderground.com/wp-content/uploads/2019/10/semillas-de-lechuga-para-hormigas.jpg",
+            stock: 90,
+            rating: 4.7,
+            category: "Agro"
+          },
+          {
+            name: "Malla Antipájaros",
+            details: "Malla para proteger los cultivos de aves y evitar daños en los frutos.",
+            price: 13.99,
+            image: "https://www.macoglass.com/wp-content/uploads/2016/05/luz_de_mallas_antipajaros.jpg",
+            stock: 30,
+            rating: 4.5,
+            category: "Agro"
+          },
+          {
+            name: "Fertilizante de Liberación Lenta",
+            details: "Fertilizante que libera gradualmente nutrientes para una nutrición prolongada.",
+            price: 34.99,
+            image: "https://c8.alamy.com/compes/cp82dk/granulos-de-fertilizante-de-lenta-liberacion-de-planta-cp82dk.jpg",
+            stock: 90,
+            rating: 4.4,
+            category: "Agro"
+          },
+          {
+            name: "Semillas de Sandía",
+            details: "Semillas de sandía para cultivo de frutas grandes y jugosas.",
+            price: 11.99,
+            image: "https://c8.alamy.com/compes/2dba5p7/semillas-de-sandia-secas-en-una-tabla-de-madera-2dba5p7.jpg",
+            stock: 50,
+            rating: 4.8,
+            category: "Agro"
+          },
+          {
+            name: "Fertilizante para Cactus",
+            details: "Fertilizante específico para cactus y suculentas en macetas.",
+            price: 7.99,
+            image: "https://m.media-amazon.com/images/I/81EKSkFScmL.jpg",
+            stock: 60,
+            rating: 4.6,
+            category: "Agro"
+          },
+          {
+            name: "Semillas de Pepino",
+            details: "Semillas de pepino para cultivo en invernaderos o huertos.",
+            price: 9.99,
+            image: "https://previews.123rf.com/images/magadesigns/magadesigns1702/magadesigns170200024/74089680-c%C3%A1mara-dispar%C3%B3-sobre-fondo-de-semillas-de-pepino.jpg",
+            stock: 120,
+            rating: 4.3,
+            category: "Agro"
+          },
+          {
+            name: "Café Colombiano Supremo",
+            details: "Café de alta calidad con sabor suave y notas frutales.",
+            price: 15.99,
+            image: "https://itengoo.com/wp-content/uploads/2020/03/0007874200823_A.jpg",
+            stock: 50,
+            rating: 4.8,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Chocolate Negro 70% Cacao",
+            details: "Tableta de chocolate negro con intenso sabor a cacao y notas afrutadas.",
+            price: 8.99,
+            image: "https://lacasadelbacalao.com.mx/cdn/shop/products/CC31.jpg?v=1665602758",
+            stock: 100,
+            rating: 4.6,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Vino Tinto Cabernet Sauvignon",
+            details: "Vino tinto seco con cuerpo y aroma a frutas negras y especias.",
+            price: 24.99,
+            image: "https://media.biomercados.com.ve/media/catalog/product/cache/e540f384a080f24e28b55100b319ca3a/0/1/011727_11.jpeg",
+            stock: 70,
+            rating: 4.7,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Aceite de Oliva Extra Virgen",
+            details: "Aceite de oliva de primera calidad, prensado en frío y sin aditivos.",
+            price: 19.99,
+            image: "https://images-na.ssl-images-amazon.com/images/I/61t0dg1bJuL._AC_UL600_SR600,600_.jpg",
+            stock: 120,
+            rating: 4.5,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Té Verde Matcha en Polvo",
+            details: "Té verde matcha japonés en polvo para preparar bebidas y postres.",
+            price: 29.99,
+            image: "https://images-na.ssl-images-amazon.com/images/I/91Ds4O2kqpL._AC_UL600_SR600,600_.jpg",
+            stock: 60,
+            rating: 4.9,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Whisky Escocés Single Malt",
+            details: "Whisky escocés de malta envejecido con sabores ahumados y especiados.",
+            price: 49.99,
+            image: "https://hips.hearstapps.com/hmg-prod/images/macallan-12-anos-whisky-1617701221.jpg",
+            stock: 30,
+            rating: 4.7,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Miel de Abeja Pura",
+            details: "Miel 100% natural, sin aditivos ni conservantes, recolectada de colmenas.",
+            price: 12.99,
+            image: "https://ucanr.edu/blogs/alimentos//blogfiles/14598_original.jpg",
+            stock: 90,
+            rating: 4.4,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Galletas de Avena y Pasas",
+            details: "Galletas saludables elaboradas con avena, pasas y miel.",
+            price: 6.99,
+            image: "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F21%2F2017%2F04%2F19%2Fgalletas-de-avena-con-pasas-y-nuez-2000.jpg",
+            stock: 80,
+            rating: 4.3,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Cerveza Artesanal IPA",
+            details: "Cerveza artesanal India Pale Ale con notas cítricas y amargor equilibrado.",
+            price: 9.99,
+            image: "https://www.clarin.com/img/2020/08/18/PY22-FZSu_1256x620__2.jpg#1628113269253",
+            stock: 110,
+            rating: 4.6,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Queso Gouda Ahumado",
+            details: "Queso gouda ahumado con textura cremosa y sabor ahumado distintivo.",
+            price: 14.99,
+            image: "https://c8.alamy.com/compes/2bnj3r3/gran-rebanada-de-queso-gouda-ahumado-sobre-fondo-blanco-2bnj3r3.jpg",
+            stock: 40,
+            rating: 4.8,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Café de Origen Etíope",
+            details: "Café de origen etíope con notas florales y afrutadas.",
+            price: 17.99,
+            image: "https://cafeselaguiladelcaribe.com/wp-content/uploads/2020/03/CO-etiopia.png",
+            stock: 65,
+            rating: 4.5,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Pasta de Trigo Integral",
+            details: "Pasta de trigo integral orgánica, rica en fibra y nutrientes.",
+            price: 5.99,
+            image: "https://previews.123rf.com/images/bwf211/bwf2111606/bwf211160600062/59153867-un-plato-de-fusilli-de-pasta-de-trigo-integral-org%C3%A1nico-en-un-recipiente-blanco-desbordante.jpg",
+            stock: 150,
+            rating: 4.4,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Salsa de Tomate Casera",
+            details: "Salsa de tomate elaborada con tomates frescos y especias.",
+            price: 3.99,
+            image: "https://images.ecestaticos.com/hzIFKXjUmFRm0aIIUI-Hc3brnYI=/110x26:1959x1413/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fb9b%2Fb5e%2Fc33%2Fb9bb5ec338d8e58d885599a7bb8e76cf.jpg",
+            stock: 200,
+            rating: 4.7,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Cerveza de Trigo Alemana",
+            details: "Cerveza de trigo alemana con sabor suave y notas a plátano y clavo.",
+            price: 11.99,
+            image: "https://c8.alamy.com/compes/j11d4e/coleccion-de-aleman-schofferhofer-franziskaner-y-erdinger-cerveza-de-trigo-aislado-sobre-un-fondo-blanco-j11d4e.jpg",
+            stock: 55,
+            rating: 4.6,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Mermelada de Frutos Rojos",
+            details: "Mermelada artesanal con una mezcla de frutos rojos frescos.",
+            price: 7.99,
+            image: "https://cdn7.kiwilimon.com/ss_secreto/277/960x640/277.jpg.jpg",
+            stock: 75,
+            rating: 4.3,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Aceitunas Rellenas de Queso Azul",
+            details: "Aceitunas rellenas de queso azul, ideales para aperitivos.",
+            price: 9.99,
+            image: "https://m.media-amazon.com/images/I/91c-JsEmXBL.jpg",
+            stock: 85,
+            rating: 4.5,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Cerveza Artesanal Stout",
+            details: "Cerveza artesanal Stout con sabores a café, chocolate y maltas tostadas.",
+            price: 13.99,
+            image: "https://m.media-amazon.com/images/I/618HuXFdrnL.jpg",
+            stock: 45,
+            rating: 4.7,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Té de Hierbas Relajante",
+            details: "Infusión de hierbas para relajarse y disfrutar de un momento tranquilo.",
+            price: 6.99,
+            image: "https://m.media-amazon.com/images/I/71EzdJs1xNL._AC_UF1000,1000_QL80_.jpg",
+            stock: 95,
+            rating: 4.4,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Chocolate con Leche y Avellanas",
+            details: "Chocolate con leche relleno de crema de avellanas.",
+            price: 10.99,
+            image: "https://i0.wp.com/212global.com/wp-content/uploads/2023/07/61a694ca4f1abdd16726b5f8_thumbnail-1.png?fit=706%2C700&ssl=1",
+            stock: 65,
+            rating: 4.8,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Galletas de Chocolate",
+            details: "Galletas de chocolate crujientes y deliciosas.",
+            price: 4.99,
+            image: "https://recetasdecocina.elmundo.es/wp-content/uploads/2022/11/galletas-de-chocolate-receta-facil.jpg",
+            stock: 120,
+            rating: 4.6,
+            category: "Alimentos y Bebidas"
+          },
+          {
+            name: "Collar para Perros Reflectante",
+            details: "Collar ajustable con material reflectante para mayor visibilidad en la oscuridad.",
+            price: 12.99,
+            image: "https://m.media-amazon.com/images/I/71WS6+P5zZL.jpg",
+            stock: 50,
+            rating: 4.8,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Juguete de Peluche para Perros",
+            details: "Juguete de peluche suave y resistente para masticar y jugar.",
+            price: 9.99,
+            image: "https://images-na.ssl-images-amazon.com/images/I/71X-XnLRf+L._AC_UL600_SR600,600_.jpg",
+            stock: 100,
+            rating: 4.6,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Rascador para Gatos",
+            details: "Rascador de sisal para mantener las uñas de tu gato en buen estado.",
+            price: 19.99,
+            image: "https://m.media-amazon.com/images/I/71xwj6EPC3L._AC_UF1000,1000_QL80_.jpg",
+            stock: 80,
+            rating: 4.7,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Acuario de Vidrio",
+            details: "Acuario de vidrio con capacidad para varios peces y plantas acuáticas.",
+            price: 39.99,
+            image: "https://m.media-amazon.com/images/I/81zydijpu-L._AC_UF1000,1000_QL80_.jpg",
+            stock: 70,
+            rating: 4.5,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Comedero para Gatos Doble",
+            details: "Comedero doble para gatos con soporte antideslizante y tazones de acero inoxidable.",
+            price: 16.99,
+            image: "https://m.media-amazon.com/images/I/71r1H-CyHeL._AC._SR360,460.jpg",
+            stock: 60,
+            rating: 4.9,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Cepillo para Perros y Gatos",
+            details: "Cepillo de cerdas suaves para cepillar el pelaje de perros y gatos.",
+            price: 11.99,
+            image: "https://images-eu.ssl-images-amazon.com/images/I/61g8Dzq195L._AC_UL600_SR600,600_.jpg",
+            stock: 90,
+            rating: 4.7,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Caseta para Perros",
+            details: "Caseta resistente y aislada para brindar un refugio cómodo a tu perro.",
+            price: 79.99,
+            image: "https://m.media-amazon.com/images/I/71L0UIEEVcL.jpg",
+            stock: 30,
+            rating: 4.4,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Arenero para Gatos con Tamiz",
+            details: "Arenero para gatos con sistema de tamizado para facilitar la limpieza.",
+            price: 29.99,
+            image: "https://static.zoomalia.com/prod_img/45644/la_4381651cf0d2f737d7adeab84d339dbabd31534434976.jpg",
+            stock: 70,
+            rating: 4.3,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Juguete Interactivo para Perros",
+            details: "Juguete dispensador de comida para estimular la mente y el instinto de tu perro.",
+            price: 14.99,
+            image: "https://imagenes.elpais.com/resizer/n3wvCmkBES3qzO-eJbdwkhmMOys=/414x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/NGW4TM7U6BGU3DS4CDWVO26MRQ.png",
+            stock: 50,
+            rating: 4.6,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Correa para Perros con Amortiguador",
+            details: "Correa para perros con amortiguador para reducir tirones y proteger tus manos.",
+            price: 22.99,
+            image: "https://images-na.ssl-images-amazon.com/images/I/71BAgKH+KzL._AC_UL600_SR600,600_.jpg",
+            stock: 60,
+            rating: 4.8,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Casa para Hamster",
+            details: "Casa de madera con varios niveles para hamsters y pequeños roedores.",
+            price: 18.99,
+            image: "https://m.media-amazon.com/images/I/71ujs3Bm6IL.jpg",
+            stock: 40,
+            rating: 4.5,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Transportín para Gatos",
+            details: "Transportín cómodo y seguro para viajar con tu gato.",
+            price: 34.99,
+            image: "https://images.hola.com/imagenes/seleccion/20230404229429/mejores-transportines-gatos/1-230-148/transportin-gato-m.jpg",
+            stock: 50,
+            rating: 4.4,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Terrario para Reptiles",
+            details: "Terrario de vidrio para alojar reptiles como serpientes y lagartos.",
+            price: 49.99,
+            image: "https://images-eu.ssl-images-amazon.com/images/I/618OL3I2KyL._AC_UL600_SR600,600_.jpg",
+            stock: 35,
+            rating: 4.7,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Bandeja para Comida de Pájaros",
+            details: "Bandeja resistente para colocar comida y agua para pájaros en tu jardín.",
+            price: 9.99,
+            image: "https://i.pinimg.com/236x/db/57/24/db5724d31d5735f6cb34abba07c594fd.jpg",
+            stock: 75,
+            rating: 4.5,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Arnés para Conejos",
+            details: "Arnés ajustable para sacar a pasear a tu conejo de forma segura.",
+            price: 8.99,
+            image: "https://m.media-amazon.com/images/I/81uZ-um0GiL.jpg",
+            stock: 55,
+            rating: 4.6,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Comedero Automático para Pájaros",
+            details: "Dispensador de comida automático para aves pequeñas y loros.",
+            price: 12.99,
+            image: "https://m.media-amazon.com/images/I/616cfpwC2-L.jpg",
+            stock: 65,
+            rating: 4.8,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Corral Plegable para Cachorros",
+            details: "Corral portátil y plegable para cachorros y pequeños animales.",
+            price: 26.99,
+            image: "https://images-na.ssl-images-amazon.com/images/I/61PF3uCY9zL._AC_UL330_SR330,330_.jpg",
+            stock: 45,
+            rating: 4.7,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Juguete para Pájaros con Campanas",
+            details: "Juguete colgante con campanas para entretener a tus pájaros.",
+            price: 6.99,
+            image: "https://m.media-amazon.com/images/I/61P5T4b3XKL.jpg",
+            stock: 80,
+            rating: 4.3,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Cama Suave para Gatos",
+            details: "Cama suave y acogedora para que tu gato descanse cómodamente.",
+            price: 14.99,
+            image: "https://m.media-amazon.com/images/I/61cbsk-5+yL.jpg",
+            stock: 70,
+            rating: 4.5,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Comedero para Peces con Temporizador",
+            details: "Comedero automático con temporizador para peces de acuario.",
+            price: 16.99,
+            image: "https://m.media-amazon.com/images/I/71dDw-trgWL._AC_UF350,350_QL80_.jpg",
+            stock: 40,
+            rating: 4.6,
+            category: "Animales y Mascotas"
+          },
+          {
+            name: "Laptop HP Pavilion",
+            details: "Procesador Intel Core i5, 8 GB de RAM, 512 GB de almacenamiento, pantalla de 15.6 pulgadas",
+            price: 899.99,
+            image: "https://m.media-amazon.com/images/I/71fjcZ+C0GL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Computación"
+          },
+          {
+            name: "MacBook Pro (2021)",
+            details: "Procesador M1 de Apple, 16 GB de RAM, 1 TB de almacenamiento, pantalla Retina de 13.3 pulgadas",
+            price: 1999.99,
+            image: "https://m.media-amazon.com/images/I/61vUjJbr62L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 5,
+            rating: 4.8,
+            category: "Computación"
+          },
+          {
+            name: "Lenovo ThinkPad X1 Carbon",
+            details: "Procesador Intel Core i7, 16 GB de RAM, 512 GB de almacenamiento, pantalla de 14 pulgadas",
+            price: 1599.99,
+            image: "https://m.media-amazon.com/images/I/51p8RwmfwFL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 3,
+            rating: 4.7,
+            category: "Computación"
+          },
+          {
+            name: "Dell XPS 13",
+            details: "Procesador Intel Core i7, 16 GB de RAM, 1 TB de almacenamiento, pantalla InfinityEdge de 13.4 pulgadas",
+            price: 1699.99,
+            image: "https://m.media-amazon.com/images/I/711p7z6qrGL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 8,
+            rating: 4.6,
+            category: "Computación"
+          },
+          {
+            name: "Acer Predator Helios 300",
+            details: "Procesador Intel Core i7, 16 GB de RAM, 1 TB de almacenamiento, pantalla de 15.6 pulgadas",
+            price: 1399.99,
+            image: "https://m.media-amazon.com/images/I/812f3mAY78L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 6,
+            rating: 4.4,
+            category: "Computación"
+          },
+          {
+            name: "Asus ROG Zephyrus G14",
+            details: "Procesador AMD Ryzen 9, 16 GB de RAM, 1 TB de almacenamiento, pantalla de 14 pulgadas",
+            price: 1499.99,
+            image: "https://m.media-amazon.com/images/I/71sq9bNTBpL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 4,
+            rating: 4.6,
+            category: "Computación"
+          },
+          {
+            name: "Microsoft Surface Laptop 4",
+            details: "Procesador Intel Core i5, 8 GB de RAM, 256 GB de almacenamiento, pantalla táctil de 13.5 pulgadas",
+            price: 1299.99,
+            image: "https://m.media-amazon.com/images/I/71CsRDaBVyL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 7,
+            rating: 4.3,
+            category: "Computación"
+          },
+          {
+            name: "HP Envy 27",
+            details: "Procesador Intel Core i7, 16 GB de RAM, 1 TB de almacenamiento, pantalla IPS de 27 pulgadas",
+            price: 1799.99,
+            image: "https://m.media-amazon.com/images/I/71CsRDaBVyL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 2,
+            rating: 4.5,
+            category: "Computación"
+          },
+          {
+            name: "Apple iMac (2021)",
+            details: "Procesador M1 de Apple, 16 GB de RAM, 1 TB de almacenamiento, pantalla Retina 5K de 27 pulgadas",
+            price: 2299.99,
+            image: "https://m.media-amazon.com/images/I/810fvfQP+iL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 3,
+            rating: 4.9,
+            category: "Computación"
+          },
+          {
+            name: "Dell Alienware Aurora R12",
+            details: "Procesador Intel Core i9, 32 GB de RAM, 1 TB de almacenamiento, tarjeta gráfica NVIDIA RTX 3080",
+            price: 2999.99,
+            image: "https://m.media-amazon.com/images/I/71dcevn75rL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 1,
+            rating: 4.7,
+            category: "Computación"
+          },
+          {
+            name: "Lenovo Yoga C940",
+            details: "Procesador Intel Core i7, 16 GB de RAM, 1 TB de almacenamiento, pantalla táctil de 14 pulgadas",
+            price: 1399.99,
+            image: "https://m.media-amazon.com/images/I/71g8uHRaQTL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 5,
+            rating: 4.4,
+            category: "Computación"
+          },
+          {
+            name: "Acer Aspire 5",
+            details: "Procesador AMD Ryzen 5, 8 GB de RAM, 256 GB de almacenamiento, pantalla de 15.6 pulgadas",
+            price: 599.99,
+            image: "https://m.media-amazon.com/images/I/71fjcZ+C0GL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 9,
+            rating: 4.2,
+            category: "Computación"
+          },
+          {
+            name: "Asus VivoBook S15",
+            details: "Procesador Intel Core i5, 8 GB de RAM, 512 GB de almacenamiento, pantalla de 15.6 pulgadas",
+            price: 799.99,
+            image: "https://m.media-amazon.com/images/I/71ZaDpdA6lL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 7,
+            rating: 4.3,
+            category: "Computación"
+          },
+          {
+            name: "Microsoft Surface Pro 7",
+            details: "Procesador Intel Core i5, 8 GB de RAM, 256 GB de almacenamiento, pantalla táctil de 12.3 pulgadas",
+            price: 999.99,
+            image: "surfacepro7.jpg",
+            stock: 12,
+            rating: 4.4,
+            category: "Computación"
+          },
+          {
+            name: "HP Omen Obelisk",
+            details: "Procesador Intel Core i7, 16 GB de RAM, 512 GB de almacenamiento, tarjeta gráfica NVIDIA RTX 3060",
+            price: 1699.99,
+            image: "https://m.media-amazon.com/images/I/71wRgrGB9bL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 6,
+            rating: 4.5,
+            category: "Computación"
+          },
+          {
+            name: "Dell Inspiron 15",
+            details: "Procesador Intel Core i5, 8 GB de RAM, 512 GB de almacenamiento, pantalla de 15.6 pulgadas",
+            price: 799.99,
+            image: "https://m.media-amazon.com/images/I/81hQAP6lGxL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 8,
+            rating: 4.2,
+            category: "Computación"
+          },
+          {
+            name: "Apple Mac Mini (2021)",
+            details: "Procesador M1 de Apple, 8 GB de RAM, 512 GB de almacenamiento",
+            price: 899.99,
+            image: "https://m.media-amazon.com/images/I/81VbWDN53oL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 4,
+            rating: 1.5,
+            category: "Computación"
+          },
+          {
+            name: "Set de lápices de dibujo",
+            details: "Set de lápices de diferentes durezas ideales para dibujo artístico y técnico.",
+            price: 15,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDLNuzfxGBg83UoLlSGMQkYduJoVzuQLNJCw&usqp=CAU",
+            stock: 10,
+            rating: 4.5,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Libro de pintura al óleo",
+            details: "Libro guía con técnicas y consejos para la pintura al óleo, incluye ejercicios prácticos.",
+            price: 25,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsT8N45JdLnoG7k6ICzwraw3b0Cvj9Bhsdkg&usqp=CAU",
+            stock: 5,
+            rating: 4.2,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Caja de acuarelas profesionales",
+            details: "Caja de acuarelas con colores vivos y pigmentos de alta calidad para artistas profesionales.",
+            price: 50,
+            image: "https://m.media-amazon.com/images/I/71Cw-UwGZYL._AC_UL400_.jpg",
+            stock: 3,
+            rating: 4.8,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Bloc de dibujo para bocetos",
+            details: "Bloc de papel de alta calidad para bocetos y dibujos preliminares, tamaño A4.",
+            price: 10,
+            image: "https://m.media-amazon.com/images/I/81ntwJyizkL._AC_UL400_.jpg",
+            stock: 15,
+            rating: 4.4,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Set de pinceles para acrílico",
+            details: "Set de pinceles de diferentes formas y tamaños para pintura acrílica, cerdas sintéticas.",
+            price: 20,
+            image: "https://m.media-amazon.com/images/I/81ovuq8o5mL._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.6,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Tijeras de costura profesional",
+            details: "Tijeras de costura de acero inoxidable de alta calidad para cortes precisos en telas.",
+            price: 12,
+            image: "https://m.media-amazon.com/images/I/71UMcGc9eRL._AC_UL400_.jpg",
+            stock: 6,
+            rating: 4.3,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Set de marcadores de colores",
+            details: "Set de marcadores de colores variados para dibujo y rotulación, punta fina.",
+            price: 18,
+            image: "https://m.media-amazon.com/images/I/81tP3Oi62ZL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.1,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Libreta de apuntes",
+            details: "Libreta de apuntes con tapa dura y páginas en blanco, tamaño de bolsillo.",
+            price: 5,
+            image: "https://m.media-amazon.com/images/I/81pOPer1eIL._AC_UL400_.jpg",
+            stock: 20,
+            rating: 4.0,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Caja de hilos de bordar",
+            details: "Caja de hilos de colores surtidos para bordado y costura, incluye agujas.",
+            price: 8,
+            image: "https://m.media-amazon.com/images/I/710q0CK-PGL._AC_UL400_.jpg",
+            stock: 4,
+            rating: 4.7,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Set de lápices de colores",
+            details: "Set de lápices de colores de alta calidad para dibujo y coloreado, incluye sacapuntas.",
+            price: 15,
+            image: "https://m.media-amazon.com/images/I/81TlNqOb+pL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Revista de arte contemporáneo",
+            details: "Revista trimestral que presenta las últimas tendencias y artistas del arte contemporáneo.",
+            price: 7,
+            image: "https://m.media-amazon.com/images/I/91x0VRKuXgL._AC_UY218_.jpg",
+            stock: 12,
+            rating: 4.3,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Cinta adhesiva decorativa",
+            details: "Rollo de cinta adhesiva decorativa con patrones y diseños variados.",
+            price: 3,
+            image: "https://m.media-amazon.com/images/I/41dQmUs4uiL._AC_UL400_.jpg",
+            stock: 15,
+            rating: 4.1,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Papel para acuarela",
+            details: "Bloque de papel para acuarela de alta calidad, textura adecuada para la técnica.",
+            price: 12,
+            image: "https://m.media-amazon.com/images/I/71zYIzy1KeL._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.6,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Set de ganchillos de crochet",
+            details: "Set de ganchillos de diferentes tamaños para tejido de crochet, mango ergonómico.",
+            price: 10,
+            image: "https://m.media-amazon.com/images/I/815HEtZvlkL._AC_UL400_.jpg",
+            stock: 6,
+            rating: 4.2,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Cuaderno de caligrafía",
+            details: "Cuaderno con ejercicios de caligrafía para mejorar la escritura y la técnica.",
+            price: 8,
+            image: "https://m.media-amazon.com/images/I/61TRMIDNTEL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.0,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Set de pinceles para acuarela",
+            details: "Set de pinceles de diferentes tamaños y formas para pintura acuarela, cerdas suaves.",
+            price: 22,
+            image: "https://m.media-amazon.com/images/I/81nUpD9G6OL._AC_UL400_.jpg",
+            stock: 7,
+            rating: 4.4,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Libro de técnicas de bordado",
+            details: "Libro con instrucciones detalladas y patrones de bordado para diferentes estilos.",
+            price: 18,
+            image: "https://m.media-amazon.com/images/I/51W+5NGp4HL._AC_UY218_.jpg",
+            stock: 5,
+            rating: 4.7,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Set de marcadores de arte",
+            details: "Set de marcadores de colores vibrantes y duraderos para ilustración y arte.",
+            price: 28,
+            image: "https://m.media-amazon.com/images/I/91dc5sKc-BL._AC_UL400_.jpg",
+            stock: 9,
+            rating: 4.6,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Bloc de papel de calco",
+            details: "Bloc de papel de calco para copiar y transferir dibujos con precisión.",
+            price: 6,
+            image: "https://m.media-amazon.com/images/I/71SHbx-qwVL._AC_UL400_.jpg",
+            stock: 12,
+            rating: 4.3,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Caja de lápices de grafito",
+            details: "Caja de lápices de grafito de diferentes durezas para dibujo artístico.",
+            price: 12,
+            image: "https://m.media-amazon.com/images/I/81yb+HGKXrL._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.5,
+            category: "Arte Librería y Mercería"
+          },
+          {
+            name: "Neumáticos para automóvil",
+            details: "Juego de 4 neumáticos para automóvil, tamaño 205/55 R16, modelo de alto rendimiento.",
+            price: 400,
+            image: "https://m.media-amazon.com/images/I/61gs3i9BX3L._AC_UY218_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Casco de motocicleta",
+            details: "Casco de motocicleta de alta calidad, certificado de seguridad, tamaño ajustable.",
+            price: 120,
+            image: "https://m.media-amazon.com/images/I/615iFa-uVVL._AC_UL400_.jpg",
+            stock: 5,
+            rating: 4.2,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Llantas deportivas",
+            details: "Juego de 4 llantas deportivas para automóvil, diseño moderno, tamaño 18 pulgadas.",
+            price: 800,
+            image: "https://m.media-amazon.com/images/I/71qhGm1bJbL._AC_UY218_.jpg",
+            stock: 3,
+            rating: 4.8,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Batería de automóvil",
+            details: "Batería de automóvil de 12V, capacidad de arranque de alta potencia, duradera y confiable.",
+            price: 150,
+            image: "https://m.media-amazon.com/images/I/61lTc0F9PZL._AC_UY218_.jpg",
+            stock: 15,
+            rating: 4.4,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Kit de herramientas para automóvil",
+            details: "Kit de herramientas esenciales para automóvil, incluye destornilladores, alicates y más.",
+            price: 50,
+            image: "https://m.media-amazon.com/images/I/81pJ6wJXHGL._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.6,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Cubierta para motocicleta",
+            details: "Cubierta protectora para motocicleta, resistente al agua y los rayos UV, tamaño XL.",
+            price: 40,
+            image: "https://m.media-amazon.com/images/I/51bfH8PUjPL._AC_UL400_.jpg",
+            stock: 6,
+            rating: 4.3,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Aceite para motor de automóvil",
+            details: "Aceite sintético para motor de automóvil, grado de viscosidad 5W-30, botella de 5 litros.",
+            price: 35,
+            image: "https://m.media-amazon.com/images/I/71l-tImypYL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.1,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Chaqueta de cuero para motocicleta",
+            details: "Chaqueta de cuero genuino para motocicleta, resistente al viento y a la abrasión, tallas disponibles.",
+            price: 200,
+            image: "https://m.media-amazon.com/images/I/71Tzkg33ILL._AC_UL400_.jpg",
+            stock: 20,
+            rating: 4.0,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Alarma de seguridad para automóvil",
+            details: "Alarma de seguridad para automóvil con sensor de movimiento y control remoto.",
+            price: 80,
+            image: "https://m.media-amazon.com/images/I/41xBjvCAtgL._AC_UL400_.jpg",
+            stock: 4,
+            rating: 4.7,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Escape deportivo para motocicleta",
+            details: "Escape deportivo de acero inoxidable para motocicleta, mejora el rendimiento y el sonido.",
+            price: 250,
+            image: "https://m.media-amazon.com/images/I/61-UiEZrMTL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Aspiradora portátil para automóvil",
+            details: "Aspiradora portátil de mano para automóvil, potente succión y accesorios incluidos.",
+            price: 30,
+            image: "https://m.media-amazon.com/images/I/51BNKU-Kt1L._AC_UY218_.jpg",
+            stock: 12,
+            rating: 4.3,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Candado de seguridad para motocicleta",
+            details: "Candado de seguridad para motocicleta con cuerpo de acero y mecanismo resistente.",
+            price: 20,
+            image: "https://m.media-amazon.com/images/I/81ukhDYchqL._AC_UL400_.jpg",
+            stock: 15,
+            rating: 4.1,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Kit de pulido de automóvil",
+            details: "Kit de pulido y abrillantado para automóvil, incluye compuestos y almohadillas.",
+            price: 60,
+            image: "https://m.media-amazon.com/images/I/61d2DOhT4cL._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.6,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Cargador de batería para automóvil",
+            details: "Cargador de batería automático y portátil para automóvil, protección contra sobrecarga.",
+            price: 70,
+            image: "https://m.media-amazon.com/images/I/61b+iI5AvFL._AC_UL400_.jpg",
+            stock: 6,
+            rating: 4.2,
+            category: "Autos, Motos y Otros"
+          },{
+            name: "Cámara de tablero para automóvil",
+            details: "Cámara de tablero para automóvil con grabación en alta definición, visión nocturna y pantalla LCD.",
+            price: 90,
+            image: "https://m.media-amazon.com/images/I/715P7dVsXOL._AC_UY218_.jpg",
+            stock: 10,
+            rating: 4.4,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Kit de limpieza para motocicleta",
+            details: "Kit de limpieza y mantenimiento para motocicleta, incluye productos especializados.",
+            price: 25,
+            image: "https://m.media-amazon.com/images/I/71CvuyBGD+L._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.7,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Faros LED para automóvil",
+            details: "Par de faros LED para automóvil, alta potencia y eficiencia energética.",
+            price: 150,
+            image: "https://m.media-amazon.com/images/I/71ysmeW2tzL._AC_UL400_.jpg",
+            stock: 9,
+            rating: 4.6,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Candado de disco para motocicleta",
+            details: "Candado de disco para motocicleta con alarma y sensor de movimiento.",
+            price: 30,
+            image: "https://m.media-amazon.com/images/I/71W861U7PgL._AC_UL400_.jpg",
+            stock: 12,
+            rating: 4.3,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Kit de pulido de motocicleta",
+            details: "Kit de pulido y abrillantado para motocicleta, restaura el brillo y elimina arañazos.",
+            price: 50,
+            image: "https://m.media-amazon.com/images/I/71uRn1IJuhL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Limpiador de frenos",
+            details: "Limpiador de frenos de alto rendimiento, elimina la suciedad y los residuos de los frenos.",
+            price: 15,
+            image: "https://m.media-amazon.com/images/I/615hDLVtUWL._AC_UL400_.jpg",
+            stock: 15,
+            rating: 4.2,
+            category: "Autos, Motos y Otros"
+          },
+          {
+            name: "Globos de colores",
+            details: "Paquete de 50 globos de látex surtidos",
+            price: 9.99,
+            image: "https://holadecodistribuidora.com/wp-content/uploads/2022/03/qwertyt.jpg",
+            stock: 100,
+            rating: 4.5,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Antifaces brillantes",
+            details: "Paquete de 10 antifaces brillantes de diferentes colores",
+            price: 14.99,
+            image: "https://bemydance.com/wp-content/uploads/2023/02/Antifaz-liso-colores.jpg",
+            stock: 30,
+            rating: 4.2,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Diademas divertidas",
+            details: "Paquete de 5 diademas con accesorios divertidos",
+            price: 12.99,
+            image: "https://i.etsystatic.com/9105221/r/il/8d8403/1983544783/il_1140xN.1983544783_otge.jpg",
+            stock: 20,
+            rating: 4.7,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Pulseras luminosas",
+            details: "Pack de 50 pulseras luminosas en diferentes colores",
+            price: 19.99,
+            image: "https://www.tuyyoshop.com/wp-content/uploads/pulsera-fluor-para-boda.jpg",
+            stock: 50,
+            rating: 4.4,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Sombreros de fiesta",
+            details: "Paquete de 10 sombreros de fiesta de colores vivos",
+            price: 24.99,
+            image: "https://fiestasycumples.com/wp-content/uploads/2011/01/conos-sombreros.jpg",
+            stock: 25,
+            rating: 4.1,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Confeti de colores",
+            details: "Paquete de confeti de papel multicolor",
+            price: 7.99,
+            image: "https://previews.123rf.com/images/dimarik16/dimarik161909/dimarik16190900215/130368664-piezas-de-confeti-de-colores-yacen-sobre-fondo-blanco.jpg",
+            stock: 40,
+            rating: 4.3,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Banderines decorativos",
+            details: "Guirnalda de banderines decorativos de papel",
+            price: 12.99,
+            image: "https://m.media-amazon.com/images/I/618RfjJKtkL._AC_SX522_.jpg",
+            stock: 15,
+            rating: 4.6,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Piñata",
+            details: "Piñata de cartón en forma de estrella",
+            price: 19.99,
+            image: "https://m.media-amazon.com/images/I/51FfnIxYcYL._AC_SX522_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Hucha de cerdito",
+            details: "Hucha de cerámica en forma de cerdito para regalos",
+            price: 9.99,
+            image: "https://m.media-amazon.com/images/I/71X9daAhYkL._SL1500_.jpg",
+            stock: 30,
+            rating: 4.3,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Velas de cumpleaños",
+            details: "Paquete de 24 velas de colores para pasteles de cumpleaños",
+            price: 5.99,
+            image: "https://m.media-amazon.com/images/I/61SrXUXcqpL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+            stock: 50,
+            rating: 4.7,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Maracas de plástico",
+            details: "Par de maracas de plástico para fiestas",
+            price: 7.99,
+            image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/227/019/products/www-mundocreativo-com-ar-31-44233cd9d67086e2c016432937354122-640-0.png",
+            stock: 20,
+            rating: 4.6,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Gafas divertidas",
+            details: "Pack de 10 gafas divertidas con diferentes diseños",
+            price: 14.99,
+            image: "https://i.ebayimg.com/images/g/~DsAAOSwImRYmvH5/s-l1600.png",
+            stock: 25,
+            rating: 4.4,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Gorros de fiesta",
+            details: "Pack de 10 gorros de fiesta con diseños variados",
+            price: 19.99,
+            image: "https://m.media-amazon.com/images/I/51-DBxsgdbL._AC_SL1200_.jpg",
+            stock: 15,
+            rating: 4.3,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Collares de fiesta",
+            details: "Pack de 10 collares de fiesta brillantes",
+            price: 12.99,
+            image: "collares.jpg",
+            stock: 20,
+            rating: 4.5,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Cañón de confeti",
+            details: "Cañón de confeti de aire comprimido",
+            price: 9.99,
+            image: "https://joinet.com/wp-content/uploads/2022/10/AF0337-595x595.png",
+            stock: 30,
+            rating: 4.2,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Servilletas de colores",
+            details: "Paquete de 50 servilletas de papel en colores vibrantes",
+            price: 6.99,
+            image: "http://papeleraelportal.com.ar/wp-content/uploads/2018/03/servilletas-color.png",
+            stock: 50,
+            rating: 4.7,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Pajitas de colores",
+            details: "Pack de 50 pajitas de papel en colores variados",
+            price: 7.99,
+            image: "https://chinalandia.es/15920-large_default/pajitas-20-colores-pastel.jpg",
+            stock: 40,
+            rating: 4.6,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Vasos de plástico",
+            details: "Pack de 50 vasos de plástico desechables",
+            price: 9.99,
+            image: "https://d2r9epyceweg5n.cloudfront.net/stores/462/517/products/captura-de-pantalla-2019-05-20-a-las-15-28-421-99145b95fb320dc3a015583777228860-1024-1024.png",
+            stock: 30,
+            rating: 4.4,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Sombreros de papel",
+            details: "Pack de 10 sombreros de papel para fiestas",
+            price: 5.99,
+            image: "https://roblox.fandom.com/es/wiki/Cat%C3%A1logo:Paper_Hat?file=Paper.png",
+            stock: 20,
+            rating: 4.3,
+            category: "Souvenirs, Cotillón y Fiestas"
+          },
+          {
+            name: "Palillos de cóctel",
+            details: "Pack de 100 palillos de cóctel con decoraciones",
+            price: 4.99,
+            image: "https://previews.123rf.com/images/goldfinch4ever/goldfinch4ever1702/goldfinch4ever170200084/74175288-palillos-de-dientes-palitos-de-c%C3%B3ctel-en-blanco.jpg",
+            stock: 100,
+            rating: 4.5,
+            category: "Souvenirs, Cotillón y Fiestas"
+          }, 
+          {
+            name: "Secadora de cabello profesional",
+            details: "Secadora de cabello de ionic technology con múltiples ajustes de temperatura y velocidad.",
+            price: 50,
+            image: "https://m.media-amazon.com/images/I/81y5l57-mbL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Plancha alisadora de cabello",
+            details: "Plancha alisadora de cabello con placas de cerámica, temperatura ajustable y apagado automático.",
+            price: 35,
+            image: "https://m.media-amazon.com/images/I/817chOCchRL._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.3,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Cepillo eléctrico de limpieza facial",
+            details: "Cepillo eléctrico de limpieza facial con cerdas suaves y múltiples modos de limpieza.",
+            price: 25,
+            image: "https://m.media-amazon.com/images/I/81+C5WXau5L._AC_UL400_.jpg",
+            stock: 12,
+            rating: 4.6,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Maquinilla de afeitar desechable",
+            details: "Paquete de 10 maquinillas de afeitar desechables con hojas de acero inoxidable.",
+            price: 8,
+            image: "https://m.media-amazon.com/images/I/81Ytq3MVVTL._AC_UL400_.jpg",
+            stock: 15,
+            rating: 4.2,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Crema hidratante facial",
+            details: "Crema hidratante facial con SPF 30, fórmula no grasa y de rápida absorción.",
+            price: 20,
+            image: "https://m.media-amazon.com/images/I/61Ysey21R1L._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.4,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Perfume femenino",
+            details: "Perfume femenino con notas florales y cítricas, duradero y elegante.",
+            price: 60,
+            image: "https://m.media-amazon.com/images/I/815uXFWSeWL._AC_UL400_.jpg",
+            stock: 6,
+            rating: 4.7,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Cortadora de barba y cabello",
+            details: "Cortadora de barba y cabello con múltiples peines guía y cuchillas de acero inoxidable.",
+            price: 30,
+            image: "https://m.media-amazon.com/images/I/81i63uHCpZL._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.1,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Esmalte de uñas",
+            details: "Esmalte de uñas de larga duración, variedad de colores y acabado brillante.",
+            price: 12,
+            image: "https://m.media-amazon.com/images/I/41q3z+oOsGL._AC_UL400_.jpg",
+            stock: 20,
+            rating: 4.0,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Kit de maquillaje profesional",
+            details: "Kit de maquillaje completo con sombras de ojos, labiales, bases y brochas.",
+            price: 70,
+            image: "https://m.media-amazon.com/images/I/81OfB1fbpkL._AC_UL400_.jpg",
+            stock: 4,
+            rating: 4.7,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Crema para manos y cuerpo",
+            details: "Crema hidratante para manos y cuerpo, fórmula enriquecida con vitaminas y extractos naturales.",
+            price: 15,
+            image: "https://m.media-amazon.com/images/I/81m0IatKW+L._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Máscara de pestañas",
+            details: "Máscara de pestañas voluminizadora, a prueba de agua y de larga duración.",
+            price: 18,
+            image: "https://m.media-amazon.com/images/I/51p45PnEjnL._AC_UL400_.jpg",
+            stock: 6,
+            rating: 4.3,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Gel de baño relajante",
+            details: "Gel de baño con aroma relajante, fórmula suave y pH balanceado para todo tipo de piel.",
+            price: 10,
+            image: "https://m.media-amazon.com/images/I/81RnYAEDc+L._AC_UL400_.jpg",
+            stock: 12,
+            rating: 4.1,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Cepillo para el cabello",
+            details: "Cepillo para desenredar el cabello sin causar daños ni tirones.",
+            price: 8,
+            image: "https://m.media-amazon.com/images/I/614-N1OLK3L._AC_UL400_.jpg",
+            stock: 15,
+            rating: 4.5,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Loción corporal hidratante",
+            details: "Loción corporal hidratante con ingredientes naturales y aroma fresco.",
+            price: 15,
+            image: "https://m.media-amazon.com/images/I/61XpSiRo8DL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.2,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Kit de manicura y pedicura",
+            details: "Kit de herramientas para manicura y pedicura, incluye cortaúñas, limas y empujadores de cutícula.",
+            price: 25,
+            image: "https://m.media-amazon.com/images/I/61HQO3OgVXL._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4,
+            category:"Belleza y Cuidado Personal"
+          },
+          {
+            name: "Sistema de depilación láser",
+            details: "Sistema de depilación láser en casa, seguro y efectivo para eliminar el vello no deseado.",
+            price: 200,
+            image: "https://m.media-amazon.com/images/I/61rrsmX6fUL._AC_UL400_.jpg",
+            stock: 5,
+            rating: 4.4,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Perfume masculino",
+            details: "Perfume masculino con notas amaderadas y especiadas, ideal para uso diario o eventos especiales.",
+            price: 70,
+            image: "https://m.media-amazon.com/images/I/51qi0tUpx3L._AC_UL400_.jpg",
+            stock: 8,
+            rating: 4.2,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Exfoliante facial",
+            details: "Exfoliante facial suave pero efectivo, elimina las células muertas y deja la piel renovada.",
+            price: 25,
+            image: "https://m.media-amazon.com/images/I/71eK0jULmVL._AC_UL400_.jpg",
+            stock: 12,
+            rating: 4.6,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Cepillo dental eléctrico",
+            details: "Cepillo dental eléctrico con tecnología de oscilación y pulsación para una limpieza profunda.",
+            price: 40,
+            image: "https://m.media-amazon.com/images/I/6191DBxNZIL._AC_UL400_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "Aceite de argán para el cabello",
+            details: "Aceite de argán natural para nutrir y dar brillo al cabello, apto para todo tipo de cabello.",
+            price: 15,
+            image: "https://example.com/images/argan-oil.jpg",
+            stock: 15,
+            rating: 4.3,
+            category: "Belleza y Cuidado Personal"
+          },
+          {
+            name: "PlayStation 5",
+            details: "Consola de videojuegos de última generación con disco SSD de 825 GB, capacidad de reproducción 4K",
+            price: 499.99,
+            image: "https://m.media-amazon.com/images/I/51JIgN-64UL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Xbox Series X",
+            details: "Consola de videojuegos de última generación con disco SSD de 1 TB, capacidad de reproducción 4K",
+            price: 499.99,
+            image: "https://m.media-amazon.com/images/I/61-eM38ZdtL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 8,
+            rating: 4.7,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Nintendo Switch",
+            details: "Consola híbrida que se puede utilizar tanto en modo de sobremesa como portátil, con Joy-Cons desmontables",
+            price: 299.99,
+            image: "https://m.media-amazon.com/images/I/71QMz4m-yJL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 12,
+            rating: 4.8,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "PlayStation 4 Pro",
+            details: "Consola de videojuegos con disco duro de 1 TB, capacidad de reproducción 4K",
+            price: 399.99,
+            image: "https://m.media-amazon.com/images/I/41VJTbzeGjL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 5,
+            rating: 4.3,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Xbox One X",
+            details: "Consola de videojuegos con disco duro de 1 TB, capacidad de reproducción 4K",
+            price: 399.99,
+            image: "https://m.media-amazon.com/images/I/61OlUajqbAL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 6,
+            rating: 4.2,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Nintendo Switch Lite",
+            details: "Versión más portátil de la Nintendo Switch, solo en modo portátil, no desmontable",
+            price: 199.99,
+            image: "https://m.media-amazon.com/images/I/41j9SmkiqEL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 10,
+            rating: 4.6,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "PlayStation 5 Digital Edition",
+            details: "Versión sin unidad de disco de la PlayStation 5, todo es digital y descargable",
+            price: 399.99,
+            image: "https://m.media-amazon.com/images/I/51OyWvdZraL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 4,
+            rating: 4.4,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Xbox Series S",
+            details: "Versión más compacta y económica de la Xbox Series X, capacidad de reproducción 1440p",
+            price: 299.99,
+            image: "https://m.media-amazon.com/images/I/514zlD+6d+L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 7,
+            rating: 4.5,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Nintendo 3DS XL",
+            details: "Consola portátil con pantalla 3D, compatible con juegos de Nintendo DS y 3DS",
+            price: 199.99,
+            image: "https://m.media-amazon.com/images/I/71Ku97e-AFL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 3,
+            rating: 4.1,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "PlayStation Vita",
+            details: "Consola portátil con pantalla táctil OLED, compatible con juegos descargables y físicos",
+            price: 249.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_656694-MLA45746990550_042021-O.webp",
+            stock: 2,
+            rating: 4.0,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Xbox 360",
+            details: "Consola de videojuegos de la generación anterior, compatible con juegos físicos y descargables",
+            price: 199.99,
+            image: "https://m.media-amazon.com/images/I/318fKHAkAkS._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 6,
+            rating: 4.0,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Nintendo Wii U",
+            details: "Consola de videojuegos con controlador GamePad con pantalla táctil, compatible con juegos de Wii",
+            price: 299.99,
+            image: "wiiu.jpg",
+            stock: 3,
+            rating: 4.0,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "PlayStation VR",
+            details: "Dispositivo de realidad virtual para PlayStation 4, incluye auriculares y cámara",
+            price: 299.99,
+            image: "https://m.media-amazon.com/images/I/41Lx7odhhGL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 5,
+            rating: 4.2,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Xbox Kinect",
+            details: "Dispositivo de detección de movimiento para la Xbox 360, permite jugar sin un controlador tradicional",
+            price: 99.99,
+            image: "https://m.media-amazon.com/images/I/519dNtJ1emL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 2,
+            rating: 4.1,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Nintendo Classic Mini: Super Nintendo Entertainment System",
+            details: "Réplica en miniatura de la consola Super Nintendo, preinstalada con varios juegos clásicos",
+            price: 79.99,
+            image: "https://m.media-amazon.com/images/I/51OnIFgH4eL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 9,
+            rating: 4.6,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "PlayStation Classic",
+            details: "Réplica en miniatura de la consola original de PlayStation, preinstalada con varios juegos clásicos",
+            price: 99.99,
+            image: "https://m.media-amazon.com/images/I/61HJeA6L-SS._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 4,
+            rating: 4.3,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Xbox Game Pass Ultimate",
+            details: "Suscripción mensual que brinda acceso a una amplia biblioteca de juegos de Xbox en consolas y PC",
+            price: 14.99,
+            image: "https://m.media-amazon.com/images/I/811X7aoUtsL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 15,
+            rating: 4.7,
+            category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Nintendo Switch Pro Controller",
+            details: "Controlador adicional para la Nintendo Switch, diseño ergonómico y batería recargable",
+            price: 69.99,
+            image: "https://m.media-amazon.com/images/I/61xhzvDIRKL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 8,
+            rating: 4.4,
+            category: "Consolas y Videojuegos"
+          }
+]
+
+module.exports = productsData;
