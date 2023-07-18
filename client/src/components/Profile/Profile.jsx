@@ -13,7 +13,7 @@ export function Profile() {
   const [isUser, setIsUser] = useState();
 
   useEffect(() => {
-    if(usuarioActual !== {}){
+    if(usuarioActual){
       setIsUser(usuarioActual);
     }else{
       setIsUser(user);
@@ -22,12 +22,9 @@ export function Profile() {
 
   const handleLogout = async () => {
     try {
-      if (!isUser) {
         await logout();
-      } else {
         dispatch(userLogout());
-      }
-      navigate("/");
+        navigate("/");
     } catch (error) {
       console.error(error.message);
     }

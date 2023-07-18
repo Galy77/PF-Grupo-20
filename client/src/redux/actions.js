@@ -20,19 +20,22 @@ import axios from "axios";
 export const getUser = (user) => {
    return async (dispatch) => {
      try {
-       const response = await axios.get(`http://localhost:3001/PF/user/bdd?email=${user.email}&password=${user.password}`);
-       console.log("respuesta redux usuario encontrado", response.data);
-       return dispatch({
+       const response = await axios.get(
+         `http://localhost:3001/PF/user/bdd?email=${user.email}&password=${user.password}`
+       );
+       const payload = response.data;
+       localStorage.setItem("usuarioActual", JSON.stringify(payload));
+       dispatch({
          type: GET_USER,
-         payload: response.data,
+         payload: payload,
        });
      } catch (error) {
        console.log("Error al obtener el usuario: ", error.message);
        throw error;
      }
    };
-}
-
+ };
+ 
 export const getFirebaseUser = (email) => {
    return async (dispatch) => {
       try {

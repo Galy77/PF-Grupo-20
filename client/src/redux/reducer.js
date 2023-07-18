@@ -168,21 +168,15 @@ const initialState = {
 export const reducer = (state = initialState,{type,payload})=>{
     switch (type) {
         //USER
-        case GET_USER:{
-          const auxUserBDDFound = () => {
-            const userBDD = localStorage.setItem("usuarioActual", JSON.stringify(payload));
-            return userBDD;
+        case GET_USER: {
+            localStorage.setItem("usuarioActual", JSON.stringify(payload));
+            return {
+              ...state,
+              user: payload,
+            };
           }
-          const actUser = state.user
-          console.log("este es mi usuario encontrado",actUser)
 
-          return{
-            ...state,
-            user:auxUserBDDFound()
-          }
-        }
         case ADD_USER:
-
         const auxUser = () => {
           const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
           return userX;
@@ -199,7 +193,7 @@ export const reducer = (state = initialState,{type,payload})=>{
           return userX;
         }
         const actUser2= state.user
-        console.log("este es mi usuarui actual", actUser2)
+        console.log("este es mi usuario actual", actUser2)
 
         return{
           ...state,

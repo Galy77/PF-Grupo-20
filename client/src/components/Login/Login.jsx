@@ -21,28 +21,27 @@ export function Login() {
 
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      dispatch(getUser(cUser));
-      console.log("HANDLE SEND",cUser)
-      if(usuarioActual){
-        console.log("Action terminada",usuarioActual)
-        if(usuarioActual.password === usuarioActual.password){
-          setCurrentUser(usuarioActual)
-          navigate("/");
-        }
-      }
+      await dispatch(getUser(cUser));
+      navigate("/");
     } catch (error) {
-      alert("Autenticacion fallida")
+      alert("Autenticación fallida");
       setError(error.message);
     }
   };
-
+  useEffect(() => {
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+    if (usuarioActual) {
+      navigate("/");
+    }else{
+      navigate("/login");
+    }
+  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log("handleChange entry",name,value)
     setUser((prevUser) => ({
       ...prevUser,
       [name]: value,
