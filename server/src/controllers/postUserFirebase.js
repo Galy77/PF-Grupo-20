@@ -1,10 +1,9 @@
 const { FirebaseUser } = require("../db");
 
 const postUserFirebase = async (req, res) => {
-  const { name, email } = req.body;
+  const { displayName, email } = req.body;
 
   try {
-
     const existingUser = await FirebaseUser.findOne({
       where: { email },
     });
@@ -14,7 +13,7 @@ const postUserFirebase = async (req, res) => {
     }
 
     const newUser = {
-      name,
+      name:displayName,
       email,
     };
     const createUser = await FirebaseUser.create(newUser);

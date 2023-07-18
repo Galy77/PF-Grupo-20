@@ -3,7 +3,6 @@ import {
    ADD_ORDER, 
    ADD_PRODUCT,
    ADD_USER,
-   ADD_FIREBASEUSER,
    REMOVE_ORDER,
    REMOVE_PRODUCT,
    GET_ALL_CATEGORIES, 
@@ -17,21 +16,22 @@ import {
 import axios from "axios";
 
 /////USER//////
-export const getUser = (user) => {
+export const getUser = () => {
    return async (dispatch) => {
+
      try {
-       const response = await axios.get(`http://localhost:3001/PF/user/bdd?email=${user.email}&password=${user.password}`);
-       console.log("respuesta redux usuario encontrado", response.data);
+       const response = await axios.get(`http://localhost:3001/PF/user/bdd`);
+       console.log("respuesta redux", response);
        return dispatch({
          type: GET_USER,
-         payload: response.data,
+         payload: payload,
        });
      } catch (error) {
        console.log("Error al obtener el usuario: ", error.message);
        throw error;
      }
    };
-}
+ };
 
 export const getFirebaseUser = (email) => {
    return async (dispatch) => {
@@ -60,20 +60,6 @@ export const addUser = (user) => {
          console.log("Error al crear el usuario", error.message)
       }
     };
-}
-export const addFirebaseUser = (user) => {
-   return async(dispatch) => {
-     try {
-        const response = await axios.post('http://localhost:3001/PF/user/firebase', user)
-           dispatch({
-              type: ADD_FIREBASEUSER,
-              payload:response.data
-           })
-        return response;
-     } catch (error) {
-        console.log("Error al crear el usuario", error.message)
-     }
-   };
 }
 
 export const userLogout = () => {

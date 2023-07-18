@@ -22,14 +22,13 @@ function Create(){
     }, [dispatch]);
     
     useEffect(() => {
-      if(usuarioActual !== {}){
+      if(usuarioActual !== null){
         setIsUser(usuarioActual);
       }else{
         setIsUser(user);
       }
     }, [user, usuarioActual]);
-
-    
+      
     const [input, setInput] = useState({
         name: "",
         description: "",
@@ -49,11 +48,11 @@ function Create(){
         rating:"",
         CategoryId:""
     })
-
     if (!isUser) {
       navigate("/login");
       return null;
     }
+
     const validate = (input) =>{
       
         let error = {}

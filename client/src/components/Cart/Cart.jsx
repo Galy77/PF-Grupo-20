@@ -18,7 +18,7 @@ const Cart = () => {
     const [isUser, setIsUser] = useState();
 
     useEffect(() => {
-        if(usuarioActual !== {}){
+        if(usuarioActual){
           setIsUser(usuarioActual);
         }else{
           setIsUser(user);
