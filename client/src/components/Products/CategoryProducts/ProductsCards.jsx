@@ -16,8 +16,8 @@ function ProductsCards (props) {
                 <Card.Text>${product.price}</Card.Text>
                 </Card.Body>
                 
-            {/* <ListGroup className="list-group-flush">
-            </ListGroup> */}
+            <ListGroup className="list-group-flush">
+            </ListGroup>
             <Card.Body class='d-flex justify-content-end'>
             <button class='btns btn btn-dark'>
                 <Card.Link href={`/detail/${product.id}`} class='linkProducts'>details</Card.Link>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { addOrder } from "../../redux/actions";
+import { addOrder, getProductById } from "../../redux/actions";
 import { getAllProducts } from "../../redux/actions";
 import Reviews from "./Reviews";
 import axios from "axios";
@@ -13,17 +13,16 @@ import axios from "axios";
 const Details = () => {
     const dispatch = useDispatch()
     const { id } = useParams()
-    const products = useSelector(state => state.products);
+    const product = useSelector(state => state.detailProducts);
     const orders = useSelector(state => state.orders);
-    const flatProducts = products.flat();
-    const product = flatProducts.filter(el => el.id == id).pop();
 
     useEffect(() => {
-        dispatch(getAllProducts())
-    }, [dispatch])
+        dispatch(getProductById(id))
+    }, [dispatch, product])
 
+    console.log(product)
+    
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
-    console.log(products)
     if(!orders.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
     }
