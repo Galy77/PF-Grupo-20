@@ -102,3 +102,4 @@ function Home (){
 }
 
 export default Home;
+//este es un respaldo del front
