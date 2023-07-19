@@ -13,15 +13,15 @@ import axios from "axios";
 const Details = () => {
     const dispatch = useDispatch()
     const { id } = useParams()
-    const product = useSelector(state => state.detailProducts);
+    const product = useSelector(state => state.detailProduct);
     const orders = useSelector(state => state.orders);
-
+    
     useEffect(() => {
         dispatch(getProductById(id))
-    }, [dispatch, product])
-
-    console.log(product)
+    }, [dispatch])
     
+    console.log(product)
+
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
     if(!orders.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
@@ -39,7 +39,7 @@ const Details = () => {
     const toggleExpanded = () => {
       setIsExpanded(!isExpanded);
     };
-    let text = 'It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the, though the transition does limit overflow'
+    let text = product.details
     let maxLength = 300
     let displayText = text;
     if (!isExpanded && text.length > maxLength) {

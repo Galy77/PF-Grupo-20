@@ -2229,6 +2229,654 @@ productsData = [
             stock: 8,
             rating: 4.4,
             category: "Consolas y Videojuegos"
+          },
+          {
+            name: "Lavadora de carga frontal",
+            details: "Lavadora eficiente con capacidad para 8 kg de ropa.",
+            price: 449.99,
+            image: "https://m5a4e6a2.rocketcdn.me/wp-content/uploads/2018/04/GFW450SPKDGUS800x800.jpg",
+            stock: 30,
+            rating: 4.5,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Refrigerador con congelador",
+            details: "Refrigerador espacioso con capacidad de 400 litros.",
+            price: 699.99,
+            image: "https://www.lg.com/mx/images/refrigeradores/md07518649/gallery/mz-01.jpg",
+            stock: 25,
+            rating: 4.7,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Horno eléctrico",
+            details: "Horno eléctrico con capacidad de 60 litros y convección.",
+            price: 299.99,
+            image: "https://www.necxus.com.ar/products_image/10879/1000x1000_1.jpg",
+            stock: 40,
+            rating: 4.3,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Aspiradora sin bolsa",
+            details: "Aspiradora potente sin bolsa con filtro HEPA.",
+            price: 129.99,
+            image: "https://images.philips.com/is/image/philipsconsumer/a9a8b3f81b7f4b8c968cad1401118896?$jpglarge$&wid=960",
+            stock: 60,
+            rating: 4.6,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Cafetera automática",
+            details: "Cafetera con molinillo integrado y capacidad para 12 tazas.",
+            price: 89.99,
+            image: "https://brunettihermanos.com.ar/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/c/a/cafetera_automatica_kat100b_02_5.jpg",
+            stock: 40,
+            rating: 4.3,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Licuadora de alta potencia",
+            details: "Licuadora con motor de 1000W y jarra de vidrio.",
+            price: 69.99,
+            image: "https://encryptehttps://falabella.scene7.com/is/image/Falabella/7427793_1?wid=800&hei=800&qlt=70d-tbn0.gstatic.com/images?q=tbn:ANd9GcTob6yyD_EDm4hKcuh5aH5kLTuoho8nHSsmqwMH5YkMH6MEiMXKUl3X4oqujniJDzWsKjc&usqp=CAU",
+            stock: 35,
+            rating: 4.2,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Plancha de vapor",
+            details: "Plancha de vapor con suela de cerámica y sistema antigoteo.",
+            price: 39.99,
+            image: "https://static.cotodigital3.com.ar/sitios/fotos/full/00544100/00544104.jpg?3.0.157a",
+            stock: 70,
+            rating: 4.1,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Robot aspirador",
+            details: "Robot aspirador inteligente con mapeo y función de fregado.",
+            price: 299.99,
+            image: "https://www.lidl.es/media/product/0/0/5/2/0/6/8/robot-aspirador-friegasuelos-zoom--1.jpg",
+            stock: 15,
+            rating: 4.8,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Hervidor de agua eléctrico",
+            details: "Hervidor de agua con apagado automático y capacidad de 1.7 litros.",
+            price: 24.99,
+            image: "https://www.cafeslabrasilena.es/wp-content/uploads/2021/12/hervidora_bordum_blanca_1.jpg",
+            stock: 80,
+            rating: 4.0,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Tostadora de pan",
+            details: "Tostadora con múltiples niveles de tostado y bandeja recogemigas.",
+            price: 29.99,
+            image: "https://microglobalpromos.com.ar/2023/img/032023/TOATW21WP_2.jpg",
+            stock: 90,
+            rating: 4.3,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Batidora de mano",
+            details: "Batidora de mano con accesorios para mezclar y picar.",
+            price: 54.99,
+            image: "https://images.fravega.com/f1000/4ad40b0cc4f1c2cd5a4c54e6be07ff19.jpg",
+            stock: 55,
+            rating: 4.5,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Freidora de aire",
+            details: "Freidora de aire saludable con capacidad de 4 litros.",
+            price: 79.99,
+            image: "https://chedrauimx.vtexassets.com/arquivos/ids/15704511/53891147378_00.jpg?v=638229677950100000",
+            stock: 25,
+            rating: 4.6,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Máquina de pan",
+            details: "Máquina de pan automática con múltiples programas.",
+            price: 119.99,
+            image: "https://trespatitascom.files.wordpress.com/2018/07/mc3a1quina-de-pan-atma-con-baguetines.jpg",
+            stock: 30,
+            rating: 4.4,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Báscula de cocina",
+            details: "Báscula de cocina digital con precisión de gramo.",
+            price: 19.99,
+            image: "https://orbegozo.com/wp-content/uploads/2019/03/bascula-cocina-orbegozo-PC-3100_1.jpg",
+            stock: 70,
+            rating: 4.0,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Ventilador de torre",
+            details: "Ventilador de torre oscilante con control remoto.",
+            price: 64.99,
+            image: "https://www.rodo.com.ar/media/catalog/product/cache/855090a5c67e45b26c9e0d345e7592dc/3/4/346942_1.jpg",
+            stock: 40,
+            rating: 4.3,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Exprimidor de cítricos",
+            details: "Exprimidor eléctrico para cítricos con capacidad de 1 litro.",
+            price: 27.99,
+            image: "https://jumboargentina.vtexassets.com/arquivos/ids/530803/Exprimidor-De-Citricos-Nex-Cje7501-1-29964.jpg?v=636912402472900000",
+            stock: 65,
+            rating: 4.2,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Despachador de agua",
+            details: "Despachador de agua fría y caliente con botones de seguridad.",
+            price: 99.99,
+            image: "https://www.costco.com.mx/medias/sys_master/products/h8a/h63/11038195286046.jpg",
+            stock: 20,
+            rating: 4.7,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Batidora de pie",
+            details: "Batidora de pie con tazón de acero inoxidable.",
+            price: 89.99,
+            image: "https://petenattiar.vtexassets.com/arquivos/ids/209946/BATIDORA-PHILIPS-DE-PIE-HR7912-90-CON-BOWL.jpg?v=637932534579970000",
+            stock: 30,
+            rating: 4.5,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Plancha de ropa",
+            details: "Plancha de ropa a vapor con base cerámica y sistema antigoteo.",
+            price: 49.99,
+            image: "https://t8u6c2z7.stackpathcdn.com/~/media/LatinAmerica/BlackAndDecker/Imagenes/Producto_High_Res/Garment/IR7014AR/IR7014AR_1.jpg",
+            stock: 50,
+            rating: 4.4,
+            category: "Electrodomésticos"
+          },
+          {
+            name: "Altavoz Bluetooth",
+            details: "Altavoz portátil Bluetooth con graves potentes y batería de larga duración.",
+            price: 79.99,
+            image: "https://eloutput.com/wp-content/uploads/2021/06/altavoz-bluetooth-potente-5.jpg",
+            stock: 50,
+            rating: 4.5,
+            category: "Audio y Video"
+          },
+          {
+            name: "Televisor 4K",
+            details: "Televisor 4K con pantalla de 65 pulgadas y tecnología de imagen HDR.",
+            price: 1299.99,
+            image: "https://www.lg.com/ar/images/televisores/md07529757/gallery/UN7310-2-1600x1062.jpg",
+            stock: 30,
+            rating: 4.7,
+            category: "Audio y Video"
+          },
+          {
+            name: "Auriculares inalámbricos",
+            details: "Auriculares inalámbricos con cancelación de ruido y estuche de carga.",
+            price: 149.99,
+            image: "https://cdn.lacasadelascarcasas.es/1068058-large_default/auriculares-inalambricos-premium-lcdlc.jpg",
+            stock: 80,
+            rating: 4.5,
+            category: "Audio y Video"
+          },
+          {
+            name: "Barra de sonido",
+            details: "Barra de sonido con subwoofer inalámbrico para una experiencia de cine en casa.",
+            price: 199.99,
+            image: "https://i.blogs.es/3522c5/sony-ht-sd40-pivot/original.jpeg",
+            stock: 40,
+            rating: 4.3,
+            category: "Audio y Video"
+          },
+          {
+            name: "Proyector HD",
+            details: "Proyector HD con conectividad HDMI y altavoces integrados.",
+            price: 299.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_851904-MLA54195107828_032023-F.jpg",
+            stock: 35,
+            rating: 4.2,
+            category: "Audio y Video"
+          },
+          {
+            name: "Reproductor de Blu-ray",
+            details: "Reproductor de Blu-ray con soporte para contenido en 3D y conectividad Wi-Fi.",
+            price: 89.99,
+            image: "https://www.sony.com.ar/image/66a17d586573b9067371ec19fc6a500a?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9",
+            stock: 70,
+            rating: 4.4,
+            category: "Audio y Video"
+          },
+          {
+            name: "Cámara de acción",
+            details: "Cámara de acción resistente al agua con grabación en 4K y estabilización de imagen.",
+            price: 199.99,
+            image: "https://www.dzoom.org.es/wp-content/uploads/2018/08/portada-sacar-partido-camaras-accion-deportivas-gopro.jpg",
+            stock: 15,
+            rating: 4.8,
+            category: "Audio y Video"
+          },
+          {
+            name: "Micrófono USB",
+            details: "Micrófono USB con cancelación de ruido para grabaciones y transmisiones.",
+            price: 59.99,
+            image: "https://www.digitarinformatica.com.ar/wp-content/uploads/2021/08/Microfono-USB-Trust-GXT-252-Emita-USB-con-brazo-4-1.jpg",
+            stock: 90,
+            rating: 4.0,
+            category: "Audio y Video"
+          },
+          {
+            name: "Auriculares con cable",
+            details: "Auriculares con cable de alta fidelidad y cómodos almohadillas.",
+            price: 39.99,
+            image: "https://m.media-amazon.com/images/I/61Zyh6nXu2L.jpg",
+            stock: 50,
+            rating: 4.3,
+            category: "Audio y Video"
+          },
+          {
+            name: "Bocina portátil",
+            details: "Bocina portátil con luces LED y opción de conectar múltiples dispositivos.",
+            price: 69.99,
+            image: "https://agenciaswayonline.com/wp-content/uploads/2021/10/AWS600BT3.jpg",
+            stock: 55,
+            rating: 4.5,
+            category: "Audio y Video"
+          },
+          {
+            name: "Cámara de videovigilancia",
+            details: "Cámara de videovigilancia con visión nocturna y detección de movimiento.",
+            price: 79.99,
+            image: "https://uss.com.ar/sitio/wp-content/uploads/2023/02/Camara-de-seguridad-mejor-camara-de-videovigilancia-USS-Seguridad-integral-argentina.jpg",
+            stock: 25,
+            rating: 4.6,
+            category: "Audio y Video"
+          },
+          {
+            name: "Amplificador de audio",
+            details: "Amplificador de audio estéreo con múltiples entradas y controles de tono.",
+            price: 129.99,
+            image: "https://www.tustecnologiastuc.com/wp-content/uploads/WhatsApp-Image-2023-01-24-at-14.48.00.jpeg",
+            stock: 30,
+            rating: 4.4,
+            category: "Audio y Video"
+          },
+          {
+            name: "Reproductor de vinilos",
+            details: "Reproductor de vinilos con altavoces incorporados y conectividad Bluetooth.",
+            price: 199.99,
+            image: "https://i.ytimg.com/vi/tmvzLutwMVA/maxresdefault.jpg",
+            stock: 70,
+            rating: 4.0,
+            category: "Audio y Video"
+          },
+          {
+            name: "Auriculares con cancelación de ruido",
+            details: "Auriculares inalámbricos con cancelación de ruido activa y cómodas almohadillas.",
+            price: 249.99,
+            image: "https://s1.eestatic.com/2020/11/27/elandroidelibre/el_androide_libre_539208578_180281468_1200x900.jpg",
+            stock: 20,
+            rating: 4.7,
+            category: "Audio y Video"
+          },
+          {
+            name: "Reproductor de CD",
+            details: "Reproductor de CD con función de reproducción aleatoria y pantalla LCD.",
+            price: 59.99,
+            image: "https://images.philips.com/is/image/PhilipsConsumer/AZ1017_55-IMS-es_AR?$jpglarge$&wid=960",
+            stock: 40,
+            rating: 4.3,
+            category: "Audio y Video"
+          },
+          {
+            name: "Proyector de cine en casa",
+            details: "Proyector de cine en casa con resolución Full HD y gran brillo.",
+            price: 599.99,
+            image: "https://mediaserver.goepson.com/ImConvServlet/imconv/3ab08ad47b933dacbf7a9ed50dd837cac5250de7/1200Wx1200H?use=banner&hybrisId=B2C&assetDescr=PowerLiteHomeCinema3710_01",
+            stock: 6,
+            rating: 1.0,
+            category: "Audio y Video"
+          },
+          {
+            name: "Juego de sábanas",
+            details: "Juego de sábanas de algodón para cama matrimonial.",
+            price: 39.99,
+            image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/241/075/products/10691-bb472897db4530284016657692481954-640-0.webp",
+            stock: 50,
+            rating: 4.5,
+            category: "Hogar"
+          },
+          {
+            name: "Almohadas de plumas",
+            details: "Almohadas suaves y cómodas rellenas de plumas de ganso.",
+            price: 29.99,
+            image: "https://www.bedtime.com.ar/img_productos/almohadas-almohada-pluma-standard-duvet-plus-2-06131144.webp",
+            stock: 40,
+            rating: 4.7,
+            category: "Hogar"
+          },
+          {
+            name: "Set de ollas y sartenes",
+            details: "Set de ollas y sartenes antiadherentes de acero inoxidable.",
+            price: 89.99,
+            image: "https://goldeenhogar.com/cdn/shop/products/IMG_20220414_014607.jpg?v=1649899769",
+            stock: 30,
+            rating: 4.3,
+            category: "Hogar"
+          },
+          {
+            name: "Cubiertos de acero inoxidable",
+            details: "Cubiertos de acero inoxidable para 6 personas.",
+            price: 49.99,
+            image: "https://www.potiershome.com.ar/imagenes/productos/2023-06/7624-ok1.jpg",
+            stock: 60,
+            rating: 4.6,
+            category: "Hogar"
+          },
+          {
+            name: "Set de toallas",
+            details: "Set de toallas de baño suaves y absorbentes.",
+            price: 24.99,
+            image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/102/037/products/super-host21-eaa143dce8d34a025215918976355332-640-0.jpg",
+            stock: 70,
+            rating: 4.4,
+            category: "Hogar"
+          },
+          {
+            name: "Cortinas opacas",
+            details: "Cortinas opacas para bloquear la luz y preservar la privacidad.",
+            price: 34.99,
+            image: "https://www.cortinarte.com/blog/wp-content/uploads/2019/03/CORTINAS-OPACAS-PARA-DORMIR-2.jpg",
+            stock: 25,
+            rating: 4.8,
+            category: "Hogar"
+          },
+          {
+            name: "Cepillo y recogedor",
+            details: "Cepillo y recogedor para limpiar superficies.",
+            price: 12.99,
+            image: "https://www.soyvisual.org/sites/default/files/styles/facebook_og/public/images/photos/escoba_y_recogedor.jpg?itok=1jw0j1iG",
+            stock: 80,
+            rating: 4.2,
+            category: "Hogar"
+          },
+          {
+            name: "Organizador de armario",
+            details: "Organizador de armario con varios compartimentos.",
+            price: 19.99,
+            image: "https://www.ordenencasa.shop/wp-content/uploads/2016/11/COS4207-organizador-de-bolsos-orden-en-casa-scaled.jpg",
+            stock: 40,
+            rating: 4.3,
+            category: "Hogar"
+          },
+          {
+            name: "Caja de almacenamiento",
+            details: "Caja de almacenamiento de tela con tapa.",
+            price: 16.99,
+            image: "https://www.naturehike.com.ar/img/articulos/2020/12/caja_de_almacenamiento_plegable_40l_4_imagen5.jpg",
+            stock: 55,
+            rating: 4.5,
+            category: "Hogar"
+          },
+          {
+            name: "Perchero de pie",
+            details: "Perchero de pie con espacio para abrigos y sombreros.",
+            price: 29.99,
+            image: "https://www.morph.com.ar/pub/media/catalog/product/cache/c249fbb42cf583b1a8cf6f6bd1b7b4b4/p/e/percheronegro.jpg",
+            stock: 65,
+            rating: 4.2,
+            category: "Hogar"
+          },
+          {
+            name: "Cojines decorativos",
+            details: "Cojines decorativos para sofá o cama.",
+            price: 19.99,
+            image: "https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto,w_820/v1574259723/content-items/003/423/987/7D3484D0-3CA0-4261-8F89-74B0A8F3E8B9-original.jpeg?1574259723",
+            stock: 30,
+            rating: 4.7,
+            category: "Hogar"
+          },
+          {
+            name: "Set de velas aromáticas",
+            details: "Set de velas aromáticas con diferentes fragancias.",
+            price: 24.99,
+            image: "https://www.gavia.com.ar/wp-content/uploads/2022/06/image2-velas-bl-copia.jpg",
+            stock: 50,
+            rating: 4.6,
+            category: "Hogar"
+          },
+          {
+            name: "Espejo de cuerpo entero",
+            details: "Espejo de cuerpo entero para el dormitorio o vestidor.",
+            price: 79.99,
+            image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/520/176/products/espejo-cuerpo-entero-con-aire1-24504865324f5c383f16294821264929-640-0.jpg",
+            stock: 15,
+            rating: 4.8,
+            category: "Hogar"
+          },
+          {
+            name: "Cesto de ropa sucia",
+            details: "Cesto de ropa sucia plegable y con asas.",
+            price: 14.99,
+            image: "https://www.elmueble.com/medio/2019/10/21/3-cesto-ropa-sucia-de-ratan-en-ikea_b4e4b951_1063x1063.jpg",
+            stock: 35,
+            rating: 4.4,
+            category: "Hogar"
+          },
+          {
+            name: "Jarrón decorativo",
+            details: "Jarrón de cerámica decorativo para flores.",
+            price: 29.99,
+            image: "https://www.elmueble.com/medio/2022/10/24/centro-de-mesa-con-jarrones-de-ceramica-00534436_e8e8f0d9_600x600.jpg",
+            stock: 40,
+            rating: 4.5,
+            category: "Hogar"
+          },
+          {
+            name: "Reloj de pared",
+            details: "Reloj de pared con diseño moderno.",
+            price: 39.99,
+            image: "https://d2r9epyceweg5n.cloudfront.net/stores/179/546/products/reloj_pared_metal_h041-c5e3a8fe1f0a24ad9e15736794303725-1024-1024.png",
+            stock: 20,
+            rating: 4.3,
+            category: "Hogar"
+          },
+          {
+            name: "Manta suave",
+            details: "Manta suave y cálida para el sofá.",
+            price: 34.99,
+            image: "https://http2.mlstatic.com/D_NQ_NP_897141-MLA49949375262_052022-O.webp",
+            stock: 45,
+            rating: 4.7,
+            category: "Hogar"
+          },
+          {
+            name: "Juego de baño",
+            details: "Juego de baño con dispensador de jabón, vaso y porta cepillos.",
+            price: 22.99,
+            image: "https://www.okko.com.ar/5159-large_default/set-de-bano-4-piezas-dispenser-porta-cepillo-vaso-y-jabonera-plastico-gris.jpg",
+            stock: 30,
+            rating: 4.2,
+            category: "Hogar"
+          },
+          {
+            name: "Planta artificial",
+            details: "Planta artificial para decorar interiores sin necesidad de riego.",
+            price: 19.99,
+            image: "https://blancostore.com.ar/wp-content/uploads/maceta-naranjo-jazmin-orange-25-cm-1.jpg",
+            stock: 60,
+            rating: 4.5,
+            category: "Hogar"
+          },
+          {
+            name: "Bicicleta de montaña",
+            details: "Bicicleta de montaña de alta resistencia con suspensión completa y cuadro de aleación",
+            price: 999.99,
+            image: "https://m.media-amazon.com/images/I/81r-xQ3NsCL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Cinta de correr",
+            details: "Cinta de correr eléctrica con varias configuraciones de velocidad e inclinación",
+            price: 899.99,
+            image: "https://m.media-amazon.com/images/I/51EafmNmwEL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 5,
+            rating: 4.2,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Pelota de fútbol",
+            details: "Pelota de fútbol oficial de tamaño estándar, ideal para entrenamiento y partidos",
+            price: 19.99,
+            image: "https://m.media-amazon.com/images/I/61niNqsMCeL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 50,
+            rating: 4.8,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Raqueta de tenis",
+            details: "Raqueta de tenis de alta calidad, diseñada para jugadores de nivel intermedio y avanzado",
+            price: 149.99,
+            image: "https://m.media-amazon.com/images/I/719nhu2Qu2L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 8,
+            rating: 4.7,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Balón de baloncesto",
+            details: "Balón de baloncesto oficial de tamaño estándar, construido con materiales duraderos",
+            price: 29.99,
+            image: "https://m.media-amazon.com/images/I/91yPRgTsV4L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 20,
+            rating: 4.4,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Mancuernas ajustables",
+            details: "Set de mancuernas ajustables con discos intercambiables, ideal para entrenamientos en casa",
+            price: 149.99,
+            image: "https://m.media-amazon.com/images/I/618S1s0LgtL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 6,
+            rating: 4.6,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Colchoneta de yoga",
+            details: "Colchoneta de yoga de alta densidad con superficie antideslizante y acolchado cómodo",
+            price: 49.99,
+            image: "https://m.media-amazon.com/images/I/71mnNRjcSQL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 15,
+            rating: 4.7,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Banda de resistencia",
+            details: "Set de bandas de resistencia de diferentes niveles, ideal para entrenamientos de fuerza y rehabilitación",
+            price: 29.99,
+            image: "https://m.media-amazon.com/images/I/61Lq8VUUt6L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 20,
+            rating: 4.5,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Guantes de boxeo",
+            details: "Guantes de boxeo profesionales hechos de cuero sintético, disponibles en diferentes pesos",
+            price: 69.99,
+            image: "https://m.media-amazon.com/images/I/81xtqSgNrqL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 8,
+            rating: 4.3,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Tabla de surf",
+            details: "Tabla de surf de alta calidad, ideal para surfistas de nivel intermedio y avanzado",
+            price: 699.99,
+            image: "https://m.media-amazon.com/images/I/71lPp6SPEDL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 3,
+            rating: 4.8,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Pesa rusa (Kettlebell)",
+            details: "Pesa rusa de hierro fundido con agarre cómodo, ideal para entrenamientos de fuerza y acondicionamiento físico",
+            price: 39.99,
+            image: "https://m.media-amazon.com/images/I/81-Q252hNGL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 10,
+            rating: 4.4,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Bicicleta estática",
+            details: "Bicicleta estática para ejercicios cardiovasculares en casa, con pantalla LCD y ajuste de resistencia",
+            price: 499.99,
+            image: "https://m.media-amazon.com/images/I/713mGBuX8-L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 5,
+            rating: 4.2,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Balón medicinal",
+            details: "Balón medicinal de alta resistencia para entrenamientos de fuerza y acondicionamiento",
+            price: 59.99,
+            image: "https://m.media-amazon.com/images/I/812-47QVL6L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 15,
+            rating: 4.6,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Patines en línea",
+            details: "Patines en línea ajustables con ruedas de alta calidad, ideales para actividades recreativas y ejercicio",
+            price: 89.99,
+            image: "https://m.media-amazon.com/images/I/71MbB6H5POL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 8,
+            rating: 4.3,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Monitor de actividad",
+            details: "Monitor de actividad física y seguimiento de ritmo cardíaco, compatible con aplicaciones de fitness",
+            price: 99.99,
+            image: "https://m.media-amazon.com/images/I/710-INR3QUL._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 20,
+            rating: 4.5,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Tabla de equilibrio",
+            details: "Tabla de equilibrio para entrenamiento de core y mejora del equilibrio, con superficie antideslizante",
+            price: 49.99,
+            image: "https://m.media-amazon.com/images/I/61vD+6eJC2L._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 12,
+            rating: 4.4,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Máquina de remo",
+            details: "Máquina de remo para ejercicios cardiovasculares y de fortalecimiento muscular",
+            price: 999.99,
+            image: "https://m.media-amazon.com/images/I/61iKUvSdKxL._AC_UL960_FMwebp_QL65_.jpg",
+            stock: 3,
+            rating: 4.7,
+            category: "Deportes y Fitness"
+          },
+          {
+            name: "Pistola de masaje muscular",
+            details: "Pistola de masaje muscular para aliviar la tensión y mejorar la recuperación después del ejercicio",
+            price: 149.99,
+            image: "https://m.media-amazon.com/images/I/714CwDBNH4S._AC_UL480_FMwebp_QL65_.jpg",
+            stock: 6,
+            rating: 2.5,
+            category:"Deportes y Fitness"
           }
 ]
 

@@ -29,7 +29,7 @@ function Home (){
                     {categories.map((category) => (
                             <Col md={3}>
                                 <div class='card-container'>
-                                    <Link to={`/products/${category.id}`} class='link'>
+                                    <Link to={`/products/${category.name}`} class='link'>
                                         <Card class='card'>
                                             <Card.Img variant="top" /*src={category.img}*/ />
                                             <Card.Body>

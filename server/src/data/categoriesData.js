@@ -48,11 +48,11 @@ categoriesData = [
       img: "https://2356021.fs1.hubspotusercontent-na1.net/hubfs/2356021/areas%20de%20un%20gimnasio.webp"
     },
     {
-      name: "Electrodomésticos y Aires Ac.",
+      name: "Electrodomésticos",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdy50q1pV8ZPhkGevaIhAJ3hc-X_TPZj0gyg&usqp=CAU"
     },
     {
-      name: "Electrónica, Audio y Video",
+      name: "Audio y Video",
       img: "https://mundocdistribuciones.com/wp-content/uploads/2019/10/Electr%C3%B3nica-Audio-y-Video-1-2.jpg"
     },
     {

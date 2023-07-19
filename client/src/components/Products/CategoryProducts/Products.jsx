@@ -21,9 +21,8 @@ function Products (){
     }, [dispatch])
 
     const search = location.search.slice(8);
-    const flatProducts = products.flat();
     
-    const categoryProducts = flatProducts.filter((product) => product.category === category);
+    const categoryProducts = products.filter((product) => product.category === category);
     const filteredProducts = categoryProducts.filter((product) => {
         const matchSearch = product.name.includes(search);
         const matchPrice = (min && max) ? (product.price >= min && product.price <= max) :
