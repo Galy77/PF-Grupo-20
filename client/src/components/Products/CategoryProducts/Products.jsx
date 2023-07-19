@@ -19,11 +19,23 @@ function Products (){
 
     useEffect(() => {
         dispatch(getAllProducts())
-    }, [dispatch])
+    }, [])
 
     const search = location.search.slice(8);
+    const data = products.map(el => {
+        return{
+            id:el.id,
+            details:el.details,
+            image:el.image,
+            name:el.name,
+            price:el.price,
+            rating:el.rating,
+            stock:el.stock,
+            category:el.Categories[0].name
+        }
+    })
     
-    const categoryProducts = products.filter((product) => product.category === category);
+    const categoryProducts = data.filter((product) => product.category === category);
     const filteredProducts = categoryProducts.filter((product) => {
         const matchSearch = product.name.includes(search);
         const matchPrice = (min && max) ? (product.price >= min && product.price <= max) :
@@ -32,44 +44,13 @@ function Products (){
         const matchRating = (ratingFilterValue === "all") || (ratingFilterValue === "betterQualified" && product.rating >= 3);
         return matchSearch && matchPrice && matchRating;
     });
-
-
-    
-    const [productsToShow , setProductsToShow] = useState(categoryProducts)
-    const [dataProducts, setDataProducts] = useState()
-
-    const [page,setPage] = useState(1)
-
-    let productsQuantityToShow = 12
-
-    let lastPage = Math.ceil(productsToShow.length/productsQuantityToShow)
-
-    const sliceProducts = (categoryProducts, page) => {
-        if(categoryProducts.length <= productsQuantityToShow) setPage(1)
-        lastPage = Math.ceil(categoryProducts.length/productsQuantityToShow)
-        if(page > lastPage){
-            setPage(1)
-        }
-        let numToSlice = productsQuantityToShow * page
-        
-        setDataProducts(categoryProducts.slice(numToSlice - productsQuantityToShow,numToSlice))
-    }
-
-
-
-    const handlePage = (order) => {
-    if(order == 'next'){
-        setPage(page + 1)
-        sliceProducts(productsToShow,page + 1)
-    }else{
-        setPage(page - 1)
-        sliceProducts(productsToShow,page - 1)
-    }
+const a = () => {
+    console.log(categoryProducts)
 }
-
     return (
         <div class='d-flex flex-column' >
             <CreatedCarousel />
+            <button onClick={a}>a</button>
 
                 <div class='filter-products d-flex my-4'>
                     <Filters />
@@ -78,25 +59,12 @@ function Products (){
                                 <ProductsCards
                                     categoryProducts={categoryProducts}
                                     filteredProducts={filteredProducts}
-                                    setProductsToShow={setProductsToShow}
-                                    dataProducts={dataProducts}
-                                    sliceProducts={sliceProducts}
-                                    page={page}
-                                    setPage={setPage}
+                                    // setProductsToShow={setProductsToShow}
+                                    // dataProducts={dataProducts}
+                                    // sliceProducts={sliceProducts}
+                                    // page={page}
+                                    // setPage={setPage}
                                 />
-                        </div>
-                        <div class='d-flex align-items-center'>
-                            {
-                                page > 1 ? <p class='m-4 border btn btn-primary' onClick={handlePage} >Anterior</p>:''
-                            }
-                            {
-                                lastPage > 1 ? 
-                                <p  class='p'>{`${page} de ${lastPage}`}</p>:''
-
-                            }
-                            {
-                                page < lastPage ? <p class='m-4 border btn btn-primary' onClick={() => handlePage('next')} >Siguiente</p>:''
-                            }
                         </div>
                     </div>
                 </div>

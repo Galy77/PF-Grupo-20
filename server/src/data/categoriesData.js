@@ -60,7 +60,7 @@ categoriesData = [
       img: "https://definicion.de/wp-content/uploads/2010/06/herramienta-1.jpg"
     },
     {
-      name: "Hogar, Muebles y Jardín",
+      name: "Hogar",
       img: "https://media.admagazine.com/photos/618a625090c4ec9a52ca0f33/master/w_1600%2Cc_limit/81384.jpg"
     },
     {

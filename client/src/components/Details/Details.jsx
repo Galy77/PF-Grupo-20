@@ -63,19 +63,6 @@ const Details = ({}) => {
     /// stars dropdown
     /// reviews
     const [review, setReview] = useState()
-
-    const getReviews = async () => {
-        try {
-            const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
-            setReview(data.reviews)
-        } catch (error) {
-            console.log('este producto no tiene reviews')
-        }
-    }
-    useEffect(() => {
-        getReviews()
-        console.log(product)
-    },[])
     //MP
     const [cantidadProducts, setCantidadProducts] = useState()
     const [error, setError] = useState()
@@ -236,7 +223,6 @@ const Details = ({}) => {
                         </div>
                     </div>
                 </div>
-            </div>
         </>
     )
 }

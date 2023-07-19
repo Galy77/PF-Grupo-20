@@ -1,4 +1,4 @@
-const { Category } = require('../db');
+const { Category , Product} = require('../db');
 const axios = require("axios");
 const categoriesData = require("../data/categoriesData")
 
@@ -26,4 +26,6 @@ const getCategory = async(req, res) => {
     }
 };
 
-module.exports = getCategory;
+module.exports = {
+    getCategory
+};

@@ -31,10 +31,6 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
       rating: {
         type: DataTypes.DOUBLE,
         allowNull: false,
