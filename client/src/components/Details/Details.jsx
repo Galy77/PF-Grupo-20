@@ -15,12 +15,19 @@ const Details = () => {
     const { id } = useParams()
     const product = useSelector(state => state.detailProduct);
     const orders = useSelector(state => state.orders);
-    
+    const getReviews = async () => {
+        const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
+        console.log(data)
+        setReview(data.reviews)
+    }
+
     useEffect(() => {
         dispatch(getProductById(id))
-    }, [dispatch])
+        getReviews()
+    },[]) 
     
-    console.log(product)
+
+    
 
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
     if(!orders.length){
@@ -30,26 +37,8 @@ const Details = () => {
         dispatch(addOrder({...product,cant:1}))
         alert('producto añadido correctamente al carrito')
     }
-    ///goBack
-    function goBack() {
-        window.history.back();
-    }
-    /// ver mas...
-    const [isExpanded, setIsExpanded] = useState(false);
-    const toggleExpanded = () => {
-      setIsExpanded(!isExpanded);
-    };
-    let text = product.details
-    let maxLength = 300
-    let displayText = text;
-    if (!isExpanded && text.length > maxLength) {
-      displayText = text.substring(0, maxLength) + '...';
-    }
-    /// ver mas...
 
 
-
- 
     /// stars dropdown
     const [stars, setStars] = useState(null)
 
@@ -70,14 +59,7 @@ const Details = () => {
     /// stars dropdown
     /// reviews
     const [review, setReview] = useState()
-    const getReviews = async () => {
-        const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
-        console.log(data)
-        setReview(data.reviews)
-    }
-    useEffect(() => {
-        getReviews()
-    },[]) 
+
 
     const handleReviews = async () => {
         if(!stars||!coment) alert('completa la review')
@@ -147,12 +129,7 @@ const Details = () => {
                 <div class='h-100'>
 
                     <div class='w-100 mb-5'>
-                        <p class='text-start m-4'>{displayText}</p>
-                        {text.length > maxLength && (
-                            <span onClick={toggleExpanded} class='showtext text-end w-100'>
-                            {isExpanded ? 'Mostrar menos' : 'Mostrar más...'}
-                            </span>
-                        )}
+                        <p class='text-start m-4'>{product.details}</p>
                     </div>
 
                     <div class='mx-4 '>
