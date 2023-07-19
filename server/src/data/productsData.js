@@ -3940,7 +3940,196 @@ productsData = [
             stock: 12,
             rating: 4.3,
             category: "Ropa y Accesorios"
-          }
-]
+          },
+          {
+            name: "Vinilo de la banda XYZ",
+            details: "Edición especial en vinilo del último álbum de la banda XYZ",
+            price: 29.99,
+            image: "https://3.bp.blogspot.com/-wIeFTtxnfOA/TdM7EgkxErI/AAAAAAAAAuc/cGia4vhTNaw/s1600/danger-mouse-daniele-luppi-rome.jpg",
+            stock: 20,
+            rating: 4.7,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película ABC",
+            details: "Versión extendida con escenas eliminadas y documentales adicionales",
+            price: 14.99,
+            image: "https://2.bp.blogspot.com/-JPqFire1lls/TfELHA76x0I/AAAAAAAAHrc/hUr5m8EEOPo/s1600/Thurston%252BMoore%252B-%252BDemolished%252BThoughts%252B%25255B2011%25255D-front.jpg",
+            stock: 15,
+            rating: 4.2,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD recopilatorio de los mejores éxitos",
+            details: "Recopilación de los mejores éxitos de diversos artistas",
+            price: 9.99,
+            image: "https://2.bp.blogspot.com/-1vZhyD66NxE/TY5B7apAwuI/AAAAAAAAAes/50DavXOkksU/s1600/The+Joy+Formidable+-+The+Big+Roar+%25282011%2529.jpg",
+            stock: 30,
+            rating: 4.5,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie XYZ",
+            details: "Colección completa de la serie XYZ en alta definición",
+            price: 39.99,
+            image: "https://cdn.pigeonsandplanes.com/wp-content/uploads/2011/09/Neon-Indian-Era-Extra%C3%B1a.jpg",
+            stock: 10,
+            rating: 4.8,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD de la banda ABC",
+            details: "Álbum debut de la banda ABC con 12 canciones originales",
+            price: 12.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/07/Grian-Chatten.jpg",
+            stock: 25,
+            rating: 4.4,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película XYZ",
+            details: "Edición especial con contenido adicional y comentarios del director",
+            price: 19.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/07/Nothing-But-Thieves.jpg",
+            stock: 18,
+            rating: 4.6,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie ABC",
+            details: "Temporadas 1-5 de la serie ABC en alta definición",
+            price: 59.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Triangulo-de-Amor-Bizarro.jpg",
+            stock: 5,
+            rating: 4.3,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Vinilo de la banda PQR",
+            details: "Edición limitada en vinilo del álbum más reciente de la banda PQR",
+            price: 34.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Swans.jpg",
+            stock: 12,
+            rating: 4.9,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película DEF",
+            details: "Versión remasterizada con contenido extra y subtítulos en varios idiomas",
+            price: 16.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Gideo.jpg",
+            stock: 20,
+            rating: 4.1,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD de la banda XYZ",
+            details: "Álbum en CD con las mejores canciones de la banda XYZ",
+            price: 10.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Squid.jpg",
+            stock: 30,
+            rating: 4.7,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie DEF",
+            details: "Temporadas 1-3 de la serie DEF en calidad de alta definición",
+            price: 49.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Clutch.jpg",
+            stock: 8,
+            rating: 4.5,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Vinilo de la banda ABC",
+            details: "Edición especial en vinilo del álbum clásico de la banda ABC",
+            price: 27.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Rufus-Wainwright.jpg",
+            stock: 15,
+            rating: 4.4,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película PQR",
+            details: "Versión director's cut con escenas eliminadas y comentarios del elenco",
+            price: 21.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Sparks-1.jpg",
+            stock: 10,
+            rating: 4.6,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD recopilatorio de los 80s",
+            details: "Recopilación de éxitos de los años 80 en un CD",
+            price: 9.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Noel-Gallagher.jpg",
+            stock: 35,
+            rating: 4.3,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie PQR",
+            details: "Temporadas 1-2 de la serie PQR en alta definición",
+            price: 39.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Florent-y-yo-1.jpg",
+            stock: 7,
+            rating: 4.7,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Vinilo de la banda DEF",
+            details: "Edición limitada en vinilo del álbum más reciente de la banda DEF",
+            price: 32.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Bunbury.jpg",
+            stock: 11,
+            rating: 4.8,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película XYZ",
+            details: "Edición especial con documentales y material adicional",
+            price: 18.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Ladytron.jpg",
+            stock: 13,
+            rating: 4.5,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD de la banda PQR",
+            details: "Álbum en CD con nuevas canciones de la banda PQR",
+            price: 11.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Guadalupe-Plata.jpg",
+            stock: 28,
+            rating: 4.6,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie ABC",
+            details: "Temporadas 1-4 de la serie ABC en alta definición",
+            price: 54.99,
+            image: "abc_bluray.jpg",
+            stock: 6,
+            rating: 4.2,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Vinilo de la banda XYZ",
+            details: "Edición especial en vinilo del álbum clásico de la banda XYZ",
+            price: 28.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Charlie-Cunningham.jpg",
+            stock: 16,
+            rating: 4.6,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película ABC",
+            details: "Versión remasterizada con contenido extra y subtítulos en varios idiomas",
+            price: 17.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Yung-Beef.jpg",
+            stock: 14,
+            rating: 4.3,
+            category: "Música, Películas y Series"
+            }
+  ]
 
 module.exports = productsData;

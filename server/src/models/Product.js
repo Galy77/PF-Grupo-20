@@ -14,7 +14,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      description: {
+      details: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -30,6 +30,10 @@ module.exports = (sequelize) => {
       stock: {
         type: DataTypes.INTEGER,
         allowNull: false,
+      },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false
       },
       rating: {
         type: DataTypes.DOUBLE,
