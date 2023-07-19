@@ -20,7 +20,7 @@ const Details = () => {
         dispatch(getProductById(id))
     }, [dispatch])
     
-    console.log(product)
+    console.log("este es mi console de details", product)
 
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
     if(!orders.length){

@@ -13,7 +13,7 @@ const initialState = {
     minimumPrice: "",
     maximumPrice: "",
     ratingFilterValue: "all",
-    detailProduct: {}
+    detailProduct: []
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
