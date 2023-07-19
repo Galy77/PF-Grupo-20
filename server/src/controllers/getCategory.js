@@ -11,7 +11,8 @@ const getCategory = async(req, res) => {
         if(category.length === 0){
             const categories = data.map((obj) => {
                 return {
-                    name: obj.name
+                    name: obj.name,
+                    image: obj.img
                 }
             })
 

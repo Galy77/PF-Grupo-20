@@ -2877,6 +2877,1069 @@ productsData = [
             stock: 6,
             rating: 2.5,
             category:"Deportes y Fitness"
+          },
+          {
+            name: "Guitarra eléctrica",
+            details: "Una guitarra eléctrica es un instrumento musical de cuerda pulsada, que utiliza pastillas magnéticas para convertir las vibraciones de las cuerdas en señales eléctricas.",
+            price: 1000,
+            image: "https://www.prebeat.co.uk/images/encore-blaster-e60-electric-guitar-gloss-red-p3652-12656_image.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Bajo eléctrico",
+            details: "Un bajo eléctrico es un instrumento musical de cuerda pulsada, que utiliza pastillas magnéticas para convertir las vibraciones de las cuerdas en señales eléctricas.",
+            price: 500,
+            image: "https://ddmusic.ph/wp-content/uploads/2020/04/ASPIRE-ELECTRIC-BASS-GUITAR-BO4-PB-RED.jpg",
+            stock: 5,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Batería",
+            details: "Una batería es un instrumento musical de percusión, que se compone de una variedad de instrumentos, incluyendo platillos, tambores y accesorios.",
+            price: 1000,
+            image: "https://www.cdiscount.com/pdt2/3/2/2/1/350x350/TEM6414970387322.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Piano",
+            details: "Un piano es un instrumento musical de cuerda percutida, que se compone de una serie de cuerdas tensas que se golpean con martillos.",
+            price: 5000,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLGCNTP7URh3AFFj60s6oReuO3U9UL7Z8Gyxo9M_lwomgoEw5Bf9XEoOQxLETOluRzEG8&usqp=CAU",
+            stock: 5,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Órgano",
+            details: "Un órgano es un instrumento musical de viento, que se compone de una serie de tubos que se hacen vibrar por aire comprimido.",
+            price: 10000,
+            image: "https://i.multisononline.com/77178-large_default/hammond-b3-mk2-classic.jpg",
+            stock: 5,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Flauta",
+            details: "Una flauta es un instrumento musical de viento de madera, que utiliza una boquilla y una serie de agujeros para producir sonido.",
+            price: 100,
+            image: "https://solomusica.com.ar/sm2020/3182-large_default/yamaha-yrs-23-flauta-dulce.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Trompeta",
+            details: "Una trompeta es un instrumento musical de viento-metal, que utiliza una boquilla y una serie de pistones para producir sonido.",
+            price: 200,
+            image: "https://solomusica.com.ar/sm2020/6267-home_default/trompeta-yamaha-ytr-2330.jpg",
+            stock: 10,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Trombón",
+            details: "Un trombón es un instrumento musical de viento-metal, que utiliza una boquilla y un tubo móvil para producir sonido.",
+            price: 300,
+            image: "https://www.heavenimagenes.com/heavencommerce/5765a4f8-445b-48f8-889e-9378aee05156/images/v2/LEXINGTON/1811051135406683_01_medium.jpg",
+            stock: 10,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Saxofón",
+            details: "Un saxofón es un instrumento musical de viento-metal, que utiliza una boquilla y una serie de llaves para producir sonido.",
+            price: 400,
+            image: "https://multisononline.com/blog/wp-content/uploads/2021/02/saxo-tenor.jpg",
+            stock: 10,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Tuba",
+            details: "Una tuba es un instrumento musical de viento-metal, que utiliza una boquilla y un tubo largo y curvado para producir sonido.",
+            price: 500,
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Tuba_%28brasswind%29.jpg/1200px-Tuba_%28brasswind%29.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Flauta dulce",
+            details: "Una flauta dulce es un instrumento musical de viento de madera, que utiliza una boquilla y una serie de agujeros para producir sonido.",
+            price: 50,
+            image: "https://tiendafeedback.com.ar/41560-large_default/flauta-dulce-alto-en-fa-yamaha-yra312biii-barroca-c-fundab.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Ocarina",
+            details: "Una ocarina es un instrumento musical de viento de cerámica, que utiliza una boquilla y una serie de agujeros para producir sonido.",
+            price: 100,
+            image: "https://images.tcdn.com.br/img/img_prod/848479/ocarina_12_furos_abs_wood_1483_1_5f7791d1bb006770491a7d09ae84061d.jpg",
+            stock: 10,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Timbal",
+            details: "Un timbal es un instrumento musical de percusión, que utiliza una cabeza de tambor tensada que se golpea con baquetas.",
+            price: 200,
+            image: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Timbalesy_HLTBR-1011_firmy_Hayman_cropped.jpg",
+            stock: 10,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Platillo",
+            details: "Un platillo es un instrumento musical de percusión, que utiliza dos platillos metálicos que se golpean entre sí.",
+            price: 300,
+            image: "https://productos.mjmusic.com.ar/images/41422X.jpg",
+            stock: 10,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Tambor de bombo",
+            details: "Un tambor de bombo es un instrumento musical de percusión, que utiliza una cabeza de tambor tensada que se golpea con baquetas.",
+            price: 400,
+            image: "https://3.bp.blogspot.com/-BU35kuBeNMA/TlVAnkeQ5SI/AAAAAAAAABA/M-0IacWxols/w1200-h630-p-k-no-nu/bom+1.jpg",
+            stock: 10,
+            rating: 4,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Violin",
+            details: "Un violín es un instrumento musical de cuerda frotada, que utiliza un arco para frotar las cuerdas.",
+            price: 500,
+            image: "https://solomusica.com.ar/sm2020/6606-large_default/violin-yamaha-v5sa-44.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Viola",
+            details: "Una viola es un instrumento musical de cuerda frotada, que es más grande que un violín y tiene un sonido más grave.",
+            price: 600,
+            image: "https://m.media-amazon.com/images/I/41GfKA1X4PL._AC_UF894,1000_QL80_.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Violoncello",
+            details: "Un violonchelo es un instrumento musical de cuerda frotada, que es más grande que una viola y tiene un sonido aún más grave.",
+            price: 700,
+            image: "https://productos.mjmusic.com.ar/thumb/00000000MC60154457083mc601544_800x800.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Contrabajo",
+            details: "Un contrabajo es el instrumento musical de cuerda frotada más grande, y tiene un sonido muy grave.",
+            price: 800,
+            image: "https://www.ecomusicweb.com/wp-content/uploads/2019/09/MB6072.png",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Clavecín",
+            details: "Un clavicémbalo es un instrumento musical de teclado, que se toca pulsando las teclas.",
+            price: 900,
+            image: "https://rdv-files.nyc3.cdn.digitaloceanspaces.com/pub/html/files_html/2/2/8/000502282.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Instrumentos Musicales"
+          },
+          {
+            name: "Aros de oro amarillo de 14 quilates",
+            details: "Estos aros de oro amarillo de 14 quilates son el regalo perfecto para cualquier ocasión. Están hechos de oro de alta calidad y están disponibles en una variedad de tamaños.",
+            price: 200,
+            image: "https://www.zales.com/productimages/processed/V-20505398_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Collar de oro blanco de 14 quilates con colgante de corazón",
+            details: "Este collar de oro blanco de 14 quilates con colgante de corazón es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está disponible en una variedad de longitudes.",
+            price: 300,
+            image: "https://www.zales.com/productimages/processed/V-20560691_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Reloj de pulsera de acero inoxidable con esfera negra",
+            details: "Este reloj de pulsera de acero inoxidable con esfera negra es un reloj clásico que nunca pasa de moda. Está hecho de materiales de alta calidad y está disponible en una variedad de tamaños.",
+            price: 400,
+            image: "https://www.zales.com/productimages/processed/V-20027771_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Pulsera de oro amarillo de 14 quilates con dije de estrella",
+            details: "Esta pulsera de oro amarillo de 14 quilates con dije de estrella es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            price: 500,
+            image: "https://www.zales.com/productimages/processed/V-20495638_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Aretes de plata esterlina con diamantes",
+            details: "Estos aretes de plata esterlina con diamantes son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de plata de alta calidad y están adornados con diamantes de alta calidad.",
+            price: 600,
+            image: "https://www.zales.com/productimages/processed/V-20012024_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+            {
+            name: "Anillo de oro amarillo de 14 quilates con solitario de diamante",
+            details: "Este anillo de oro amarillo de 14 quilates con solitario de diamante es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está adornado con un diamante de alta calidad.",
+            price: 1000,
+            image: "https://www.zales.com/productimages/processed/V-15748494_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Collar de oro blanco de 14 quilates con colgante de perla",
+            details: "Este collar de oro blanco de 14 quilates con colgante de perla es una pieza elegante que es perfecta para cualquier ocasión. Está hecho de oro de alta calidad y está adornado con una perla de alta calidad.",
+            price: 1500,
+            image: "https://www.zales.com/productimages/processed/V-20049793_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Reloj de pulsera de oro rosa de 18 quilates con esfera blanca",
+            details: "Este reloj de pulsera de oro rosa de 18 quilates con esfera blanca es un reloj clásico que nunca pasa de moda. Está hecho de materiales de alta calidad y está disponible en una variedad de tamaños.",
+            price: 2000,
+            image: "https://www.zales.com/productimages/processed/V-20050926_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Pulsera de oro rosa de 18 quilates con dije de corazón",
+            details: "Esta pulsera de oro rosa de 18 quilates con dije de corazón es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            price: 2500,
+            image: "https://www.zales.com/productimages/processed/V-20143370_0_260.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Aretes de diamantes de oro blanco de 14 quilates",
+            details: "Estos aretes de diamantes de oro blanco de 14 quilates son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de oro de alta calidad y están adornados con diamantes de alta calidad.",
+            price: 3000,
+            image: "https://www.zales.com/productimages/processed/V-17068131_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Anillo de compromiso de oro amarillo de 14 quilates con diamante de corte princesa",
+            details: "Este anillo de compromiso de oro amarillo de 14 quilates con diamante de corte princesa es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está adornado con un diamante de alta calidad.",
+            price: 5000,
+            image: "https://www.zales.com/productimages/processed/V-19613603_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Collar de oro blanco de 14 quilates con colgante de esmeralda",
+            details: "Este collar de oro blanco de 14 quilates con colgante de esmeralda es una pieza elegante que es perfecta para cualquier ocasión. Está hecho de oro de alta calidad y está adornado con una esmeralda de alta calidad.",
+            price: 7000,
+            image: "https://www.zales.com/productimages/processed/V-20560676_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Reloj de pulsera de oro rosa de 18 quilates con esfera azul",
+            details: "Este reloj de pulsera de oro rosa de 18 quilates con esfera azul es un reloj clásico que nunca pasa de moda. Está hecho de materiales de alta calidad y está disponible en una variedad de tamaños.",
+            price: 10000,
+            image: "https://www.zales.com/productimages/processed/V-20308233_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Pulsera de oro rosa de 18 quilates con dije de estrella",
+            details: "Esta pulsera de oro rosa de 18 quilates con dije de estrella es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            price: 15000,
+            image: "https://www.zales.com/productimages/processed/V-20353281_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Aretes de diamantes de oro blanco de 14 quilates con oro rosa",
+            details: "Estos aretes de diamantes de oro blanco de 14 quilates con oro rosa son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de oro de alta calidad y están adornados con diamantes de alta calidad.",
+            price: 20000,
+            image: "https://www.zales.com/productimages/processed/V-20340349_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Anillo de compromiso de oro amarillo de 14 quilates con diamante de corte marquise",
+            details: "Este anillo de compromiso de oro amarillo de 14 quilates con diamante de corte marquise es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está adornado con un diamante de alta calidad.",
+            price: 25000,
+            image: "https://www.zales.com/productimages/processed/V-20359916_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Collar de oro blanco de 14 quilates con colgante de rubí",
+            details: "Este collar de oro blanco de 14 quilates con colgante de rubí es una pieza elegante que es perfecta para cualquier ocasión. Está hecho de oro de alta calidad y está adornado con un rubí de alta calidad.",
+            price: 30000,
+            image: "https://www.zales.com/productimages/processed/V-20560688_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Reloj de pulsera de oro rosa de 18 quilates con esfera roja",
+            details: "Este reloj de pulsera de oro rosa de 18 quilates con esfera roja es un reloj clásico que nunca pasa de moda. Está hecho de materiales de alta calidad y está disponible en una variedad de tamaños.",
+            price: 35000,
+            image: "https://www.zales.com/productimages/processed/V-20321198_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Pulsera de oro rosa de 18 quilates con dije de corazón",
+            details: "Esta pulsera de oro rosa de 18 quilates con dije de corazón es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            price: 40000,
+            image: "https://www.zales.com/productimages/processed/V-19981053_0_800.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Aretes de diamantes de oro blanco de 14 quilates con oro amarillo",
+            details: "Estos aretes de diamantes de oro blanco de 14 quilates con oro amarillo son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de oro de alta calidad y están adornados con diamantes de alta calidad.",
+            price: 45000,
+            image: "https://www.zales.com/productimages/processed/V-20559489_0_260.jpg?pristine=true",
+            stock: 10,
+            rating: 5,
+            category: "Joyas y Relojes"
+          },
+          {
+            name: "Juego de mesa Monopoly",
+            details: "Monopoly es un juego de mesa clásico que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en ir a la bancarrota. Para hacerlo, los jugadores deben comprar, vender y negociar propiedades, construir casas y hoteles, y cobrar alquiler a sus oponentes.",
+            price: 50,
+            image: "https://mundojuguete.vteximg.com.br/arquivos/ids/167424-778-788/FOTO-Monopoly-Argentina.jpg?v=637293838976970000",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Juego de mesa Scrabble",
+            details: "Scrabble es un juego de mesa de letras que ha sido disfrutado por familias durante generaciones. El objetivo del juego es obtener la mayor cantidad de puntos al formar palabras con las letras que se le dan. Los jugadores pueden colocar sus letras en una cuadrícula de 15x15, y pueden usar fichas de bonificación para obtener puntos adicionales.",
+            price: 40,
+            image: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Tablero_de_ScrabbleIMG_20201008_175354.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Juego de mesa Risk",
+            details: "Risk es un juego de mesa de estrategia que ha sido disfrutado por familias durante generaciones. El objetivo del juego es conquistar el mundo. Los jugadores pueden lanzar dados para mover sus ejércitos, y pueden atacar y conquistar territorios enemigos.",
+            price: 60,
+            image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/050/305/products/juego-risk1-caf7af66bb239c777e15888878465945-1024-1024.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Juego de mesa Cluedo",
+            details: "Cluedo es un juego de mesa de misterio que ha sido disfrutado por familias durante generaciones. El objetivo del juego es descubrir quién asesinó a Mr. Boddy, dónde ocurrió el asesinato, y con qué arma. Los jugadores pueden mover sus fichas por el tablero, y pueden interrogar a otros jugadores para obtener pistas.",
+            price: 30,
+            image: "https://i.blogs.es/6d4d88/cluedo/1366_2000.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Juego de mesa Pictionary",
+            details: "Pictionary es un juego de mesa de dibujo que ha sido disfrutado por familias durante generaciones. El objetivo del juego es hacer que sus compañeros de equipo adivinen las palabras que están dibujando. Los jugadores pueden dibujar en una pizarra, y pueden usar gestos para ayudar a sus compañeros de equipo a adivinar las palabras.",
+            price: 20,
+            image: "https://kinderlandar.vtexassets.com/arquivos/ids/157627/11020159_1.jpg?v=638049176875230000",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },{
+            name: "Juego de mesa Twister",
+            details: "Twister es un juego de fiesta que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en caer. Los jugadores deben girar una rueda que les dice qué parte del cuerpo deben colocar en qué punto del tablero.",
+            price: 25,
+            image: "https://apioverde.com/cdn/shop/products/D_958786-MLA31042240967_062019-B_1024x1024.jpg?v=1662141269",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Juego de mesa Jenga",
+            details: "Jenga es un juego de destreza que ha sido disfrutado por familias durante generaciones. El objetivo del juego es quitar bloques de una torre sin que la torre se caiga. Los jugadores pueden quitar bloques de la parte inferior de la torre, uno por uno.",
+            price: 15,
+            image: "https://cdnlaol.laanonimaonline.com/webapp_webp/images/productos/b/0000013000/13290.webp",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Juego de mesa Connect 4",
+            details: "Connect 4 es un juego de estrategia que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en conectar cuatro de sus fichas en una fila, columna o diagonal. Los jugadores pueden colocar sus fichas en la parte inferior de la cuadrícula.",
+            price: 10,
+            image: "https://http2.mlstatic.com/D_NQ_NP_814379-MLA70304220767_072023-O.webp",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Juego de mesa Candyland",
+            details: "Candyland es un juego de suerte que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en llegar al final del tablero. Los jugadores se turnan para tirar un dado y moverse su ficha por el tablero.",
+            price: 15,
+            image: "https://m.media-amazon.com/images/I/91yUG40gv0L._AC_SL1500_.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Juego de mesa Chutes and Ladders",
+            details: "Chutes and Ladders es un juego de suerte que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en llegar al final del tablero. Los jugadores se turnan para tirar un dado y moverse su ficha por el tablero.",
+            price: 20,
+            image: "https://m.media-amazon.com/images/I/91QLD-DzaOL._AC_UF894,1000_QL80_.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+           {
+            name: "Barbie",
+            details: "Barbie es una muñeca que ha sido popular entre las niñas durante generaciones. Barbie viene en una variedad de estilos y profesiones, y es una excelente manera para que las niñas exploren sus sueños.",
+            price: 20,
+            image: "https://www.soscomputacion.com.ar/15449-thickbox_default/muneca-barbie-con-vestido-brillante-mattel-original.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Hot Wheels",
+            details: "Hot Wheels son autos de juguete que han sido populares entre los niños durante generaciones. Hot Wheels vienen en una variedad de estilos y colores, y son una excelente manera para que los niños exploren su creatividad.",
+            price: 10,
+            image: "https://m.media-amazon.com/images/I/71Us2XS68KL._AC_UF894,1000_QL80_.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Lego",
+            details: "Lego son bloques de construcción que han sido populares entre los niños durante generaciones. Lego vienen en una variedad de estilos y colores, y son una excelente manera para que los niños exploren su creatividad y habilidades motoras finas.",
+            price: 20,
+            image: "https://m.media-amazon.com/images/I/81F4BHJ6tdL._AC_SL1500_.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Play-Doh",
+            details: "Play-Doh es una masa para modelar que ha sido popular entre los niños durante generaciones. Play-Doh viene en una variedad de colores, y es una excelente manera para que los niños exploren su creatividad y habilidades motoras finas.",
+            price: 15,
+            image: "https://http2.mlstatic.com/D_NQ_NP_872156-MLA48353260656_112021-O.webp",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Puzzle",
+            details: "Los rompecabezas son un tipo de juego que ha sido popular entre las personas de todas las edades durante generaciones. Los rompecabezas vienen en una variedad de tamaños y dificultades, y son una excelente manera para que las personas de todas las edades exploren su paciencia y habilidades visuales.",
+            price: 10,
+            image: "https://http2.mlstatic.com/D_NQ_NP_732734-MLA70458982241_072023-O.webp",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Coche de juguete",
+            details: "Un coche de juguete es un vehículo de juguete que se utiliza para el entretenimiento. Los coches de juguete suelen estar hechos de plástico, metal o madera, y pueden ser impulsados por motores, pilas o manualmente. Los coches de juguete pueden ser utilizados por niños de todas las edades, y pueden ser una forma divertida de aprender sobre los coches y el transporte.",
+            price: 10,
+            image: "https://http2.mlstatic.com/D_NQ_NP_798868-MLA50998849643_082022-O.webp",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Muñeca",
+            details: "Una muñeca es una figura humana que se utiliza para el entretenimiento. Las muñecas suelen estar hechas de plástico, tela o madera, y pueden representar a personas reales o personajes ficticios. Las muñecas pueden ser utilizadas por niños de todas las edades, y pueden ser una forma divertida de aprender sobre la gente y el mundo.",
+            price: 20,
+            image: "https://thumbs.dreamstime.com/b/la-sonrisa-sienta-mu%C3%B1eca-de-trapo-linda-aislada-101484296.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Bloques de construcción",
+            details: "Los bloques de construcción son un tipo de juguete que se utiliza para construir estructuras. Los bloques de construcción suelen estar hechos de plástico, madera o ladrillo, y pueden ser de diferentes tamaños, formas y colores. Los bloques de construcción pueden ser utilizados por niños de todas las edades, y pueden ser una forma divertida de aprender sobre la arquitectura y la ingeniería.",
+            price: 20,
+            image: "https://m.media-amazon.com/images/I/71mnsQS0n1L._AC_SL1500_.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Masa para modelar",
+            details: "La masa para modelar es un tipo de material que se utiliza para crear objetos. La masa para modelar suele estar hecha de arcilla, plastilina o Play-Doh, y puede ser de diferentes colores. La masa para modelar puede ser utilizada por niños de todas las edades, y puede ser una forma divertida de aprender sobre el arte y el diseño.",
+            price: 15,
+            image: "https://http2.mlstatic.com/D_NQ_NP_755977-MLA50892143394_072022-O.webp",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Rompecabezas",
+            details: "Un rompecabezas es un tipo de juego que se utiliza para armar una imagen. Los rompecabezas suelen estar hechos de cartón o madera, y pueden ser de diferentes tamaños y dificultades. Los rompecabezas pueden ser utilizados por personas de todas las edades, y pueden ser una forma divertida de aprender sobre la paciencia y las habilidades visuales.",
+            price: 10,
+            image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/583/555/products/1639362597634-011-aba02fc3d4e89c09b216395992815433-640-0.png",
+            stock: 10,
+            rating: 5,
+            category: "Juegos y Juguetes"
+          },
+          {
+            name: "Harry Potter y la piedra filosofal",
+            details: "La piedra filosofal es la primera novela de la serie de Harry Potter escrita por J.K. Rowling. Fue publicada en 1997 y sigue la historia de Harry Potter, un joven mago que descubre su herencia mágica en su undécimo cumpleaños. Harry comienza su primer año en el Colegio Hogwarts de Magia y Hechicería, donde aprende a utilizar magia y hace amigos con Ron Weasley y Hermione Granger. Los tres amigos se embarcan en una aventura para detener al malvado mago Lord Voldemort, que está tratando de robar la Piedra Filosofal, un objeto que le otorgaría la inmortalidad.",
+            price: 20,
+            image: "https://static.wikia.nocookie.net/esharrypotter/images/9/9a/Harry_Potter_y_la_Piedra_Filosofal_Portada_Espa%C3%B1ol.PNG/revision/latest?cb=20151020165725",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "El Señor de los Anillos: La comunidad del anillo",
+            details: "El Señor de los Anillos: La comunidad del anillo es la primera novela de la trilogía de El Señor de los Anillos escrita por J.R.R. Tolkien. Fue publicada en 1954 y sigue la historia de Frodo Bolsón, un hobbit que se embarca en una misión para destruir el Anillo Único, un poderoso artefacto creado por el Señor Oscuro Sauron. Frodo es acompañado por un grupo de amigos, incluyendo a Samsagaz Gamyi, Merry Brandigamo, Pippin Tuk, Aragorn, Legolas, Gimli, Boromir y Gandalf. La comunidad viaja a través de la Tierra Media, enfrentándose a muchos peligros en el camino.",
+            price: 30,
+            image: "https://images.bajalibros.com/-0OLedXhmjEEjmVpkidlVeZbV2w=/fit-in/292x446/filters:fill(f8f8f8):quality(90):format(webp)/d2d6tho5fth6q4.cloudfront.net/extast1586699_2b4b6e5405275933adb2a1180ea8750212b3b3f6.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "El Hobbit",
+            details: "El Hobbit es una novela escrita por J.R.R. Tolkien. Fue publicada en 1937 y sigue la historia de Bilbo Bolsón, un hobbit que se embarca en una aventura con un grupo de enanos para reclamar su tesoro de un dragón llamado Smaug. Bilbo se encuentra con muchos peligros en el camino, pero también aprende mucho sobre sí mismo y sobre el valor de la amistad.",
+            price: 20,
+            image: "https://images.cdn1.buscalibre.com/fit-in/360x360/c6/cc/c6cc0d544da7e4c54e0ae464d7ffcbcd.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "El principito",
+            details: "El principito es una novela corta escrita por Antoine de Saint-Exupéry. Fue publicada en 1943 y sigue la historia de un joven príncipe que abandona su pequeño asteroide para viajar a través del universo, conociendo a diferentes personajes y aprendiendo sobre el amor, la amistad y la pérdida.",
+            price: 20,
+            image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/El_principito.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "El diario de Ana Frank",
+            details: "El diario de Ana Frank es un diario escrito por Ana Frank, una niña judía que se escondió con su familia de los nazis durante la Segunda Guerra Mundial. El diario fue publicado en 1947 y es uno de los documentos históricos más importantes del Holocausto.",
+            price: 20,
+            image: "https://images.cdn3.buscalibre.com/fit-in/360x360/43/57/4357f08f2ff8f21cbcc70910075d0960.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "La Biblia",
+            details: "La Biblia es el libro sagrado del judaísmo y el cristianismo. Es una colección de textos sagrados que incluyen historias, leyes, profecías y poemas. La Biblia ha sido traducida a muchos idiomas y es el libro más leído del mundo.",
+            price: 20,
+            image: "https://verbodivino.es/documentos/libros/3993.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "El Corán",
+            details: "El Corán es el libro sagrado del islam. Es una colección de revelaciones que el profeta Mahoma recibió de Dios. El Corán es considerado por los musulmanes como la palabra literal de Dios y es la base de su fe.",
+            price: 20,
+            image: "https://libreriacalledelibros.com/wp-content/uploads/2021/12/el-coran-pluton.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "El Talmud",
+            details: "El Talmud es una colección de comentarios y discusiones sobre la ley judía. Es considerado por los judíos como la segunda parte de la Torá, la primera parte siendo el Pentateuco. El Talmud es una fuente importante de la ley judía y también contiene información sobre la historia, la filosofía y la ética judías.",
+            price: 20,
+            image: "https://upload.wikimedia.org/wikipedia/commons/3/38/Talmud_set.JPG",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "Watchmen",
+            details: "Watchmen es una serie de historietas creada por Alan Moore y Dave Gibbons, publicada originalmente en los Estados Unidos por DC Comics. La serie se desarrolla en un mundo alternativo donde los superhéroes existen, pero son vistos como figuras peligrosas e indeseables. La historia sigue a un grupo de superhéroes retirados que deben volver a reunirse para detener una conspiración que podría destruir el mundo.",
+            price: 20,
+            image: "https://d2r9epyceweg5n.cloudfront.net/stores/057/977/products/watchmen-cov-3ra-ed1-d2909b9e9da955652416205191241657-640-0.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "The Dark Knight Returns",
+            details: "The Dark Knight Returns es una miniserie de historietas creada por Frank Miller y Klaus Janson, publicada originalmente en los Estados Unidos por DC Comics. La serie se desarrolla en un mundo alternativo donde Batman ha regresado del retiro para luchar contra el crimen. La historia sigue a Batman mientras se enfrenta a un nuevo grupo de villanos, incluyendo a Two-Face, The Joker y The Scarecrow.",
+            price: 20,
+            image: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2019%2F09%2Fdark-knight-returns-golden-child_1-2000.jpg&q=60",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "Sin City",
+            details: "Sin City es una serie de historietas creada por Frank Miller, publicada originalmente en los Estados Unidos por Dark Horse Comics. Las historias se desarrollan en una ciudad ficticia llamada Sin City, que es un lugar de violencia, corrupción y crimen. Las historias siguen a un grupo de personajes, incluyendo a Marv, Dwight, Nancy y Hartigan, mientras se enfrentan a los peligros de Sin City.",
+            price: 20,
+            image: "https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/9928/9788416905744.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "Preacher",
+            details: "Preacher es una serie de historietas creada por Garth Ennis y Steve Dillon, publicada originalmente en los Estados Unidos por Vertigo Comics. La historia sigue a Jesse Custer, un predicador que es poseído por un ángel y un demonio. Custer, junto con su novia Tulip y su amigo Cassidy, se embarcan en una cruzada para encontrar a Dios y reclamar su venganza.",
+            price: 20,
+            image: "https://upload.wikimedia.org/wikipedia/en/a/a8/Preacher56.png",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "V for Vendetta",
+            details: "V for Vendetta es una serie de historietas creada por Alan Moore y David Lloyd, publicada originalmente en los Estados Unidos por DC Comics. La historia se desarrolla en un mundo alternativo donde el Reino Unido está gobernado por un fascista. V, un misterioso vigilante, comienza una campaña de terrorismo para derrocar al gobierno.",
+            price: 20,
+            image: "https://2.bp.blogspot.com/-Xfx31h_t2q4/Uk9OrYVNoxI/AAAAAAAAlDY/bwh5hKQD_4g/s1600/vforvendetta.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "The Sandman",
+            details: "The Sandman es una serie de historietas creada por Neil Gaiman, publicada originalmente en los Estados Unidos por DC Comics. La historia sigue a Morfeo, el Rey de los Sueños, mientras se embarca en una serie de aventuras a través de los sueños y la realidad.",
+            price: 20,
+            image: "https://4.bp.blogspot.com/-ZYhgOmSKUlc/Uk6Ml13grRI/AAAAAAAAk84/TaMQP-tH0OI/s1600/the_sandman_los_eternos_Quitely.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "The Walking Dead",
+            details: "The Walking Dead es una serie de historietas creada por Robert Kirkman, Tony Moore y Charlie Adlard, publicada originalmente en los Estados Unidos por Image Comics.",
+            price: 20,
+            image: "https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/17025/9789877245516.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "Saga",
+            details: "Saga es una serie de historietas creada por Brian K. Vaughan y Fiona Staples.",
+            price: 20,
+            image: "https://www.planetadelibros.com.ar/usuaris/libros/fotos/360/m_libros/359470_portada_saga-n-10_brian-kvaughan_202206091008.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "Maus",
+            details: "Maus es una serie de historietas creada por Art Spiegelman, publicada originalmente en los Estados Unidos por Pantheon Books.",
+            price: 20,
+            image: "https://contentv2.tap-commerce.com/v2/file/50366/1172/9789873650383.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "Persepolis",
+            details: "Persepolis es una serie de historietas creada por Marjane Satrapi, publicada originalmente en Francia. La historia se desarrolla en Irán y sigue la vida de Marjane Satrapi, desde su infancia hasta su adolescencia.",
+            price: 20,
+            image: "https://historiaycomic.files.wordpress.com/2014/09/libro_1362099657.jpg",
+            stock: 10,
+            rating: 5,
+            category: "Libros, Revistas y Comics"
+          },
+          {
+            name: "Termómetro digital",
+            details: "Termómetro digital para medir la temperatura corporal",
+            price: 19.99,
+            image: "https://previews.123rf.com/images/semenovigor/semenovigor1402/semenovigor140200004/26024518-instrumento-term%C3%B3metro-digital-para-medir-la-temperatura.jpg",
+            stock: 10,
+            rating: 4.5,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Mascarillas desechables",
+            details: "Paquete de 50 mascarillas desechables de tres capas",
+            price: 14.99,
+            image: "https://farmaciaschilespa.cl/wp-content/uploads/2022/09/mascarilla.jpg",
+            stock: 50,
+            rating: 4.2,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Kit de primeros auxilios",
+            details: "Kit completo de primeros auxilios para emergencias",
+            price: 39.99,
+            image: "https://www.vittal.com.ar/wp-content/uploads/2019/09/primeros-auxilios.jpg",
+            stock: 5,
+            rating: 4.7,
+            category: "Salud y Equipamiento Médico"
+          },
+        
+        
+          {
+            name: "Silla de ruedas plegable",
+            details: "Silla de ruedas plegable con marco de acero resistente",
+            price: 179.99,
+            image: "https://www.silfab.com.ar/media/catalog/product/cache/1/image/767x767/9df78eab33525d08d6e5fb8d27136e95/s/1/s1105-pl_1.jpg",
+            stock: 3,
+            rating: 4.4,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Muletas ajustables",
+            details: "Par de muletas ajustables para apoyo y movilidad",
+            price: 34.99,
+            image: "https://cdn1.coppel.com/images/catalog/pm/7427833-1.jpg",
+            stock: 8,
+            rating: 4.1,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Monitor de presión arterial",
+            details: "Monitor digital de presión arterial con brazalete",
+            price: 49.99,
+            image: "https://perfar.com.pe/wp-content/uploads/2022/11/monitor-de-presion-arterial.jpg",
+            stock: 15,
+            rating: 4.3,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Nebulizador portátil",
+            details: "Nebulizador portátil para tratamientos respiratorios",
+            price: 59.99,
+            image: "https://ortopediagorgo.com.ar/wp-content/uploads/2020/12/NB-810_1.jpg",
+            stock: 7,
+            rating: 4.6,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Saturador de oxígeno",
+            details: "Saturador de oxígeno para medir la saturación de oxígeno en sangre",
+            price: 29.99,
+            image:  "https://oximetro.com.mx/wp-content/uploads/2014/07/causas-lectura-erronea-de-oximetro.jpg",
+            stock: 12,
+            rating: 4.5,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Andador para adultos",
+            details: "Andador plegable con ruedas y asiento",
+            price: 89.99,
+            image: "https://www.silfab.com.ar/media/catalog/product/cache/1/image/767x767/9df78eab33525d08d6e5fb8d27136e95/a/3/a3015_1.jpg",
+            stock: 6,
+            rating: 4.3,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Báscula digital",
+            details: "Báscula digital para medir el peso corporal",
+            price: 24.99,
+            image: "https://m.media-amazon.com/images/I/51h6JAlrhZL._SL1500_.jpg",
+            stock: 9,
+            rating: 4.7,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Silla de ducha",
+            details: "Silla de ducha con respaldo y apoyabrazos",
+            price: 49.99,
+            image: "https://m.media-amazon.com/images/I/71sYUAnKVgS._AC_SL1500_.jpg",
+            stock: 4,
+            rating: 4.6,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Orinal portátil",
+            details: "Orinal portátil con tapa y asa",
+            price: 14.99,
+            image: "https://m.media-amazon.com/images/I/71jtoI9E81L._SL1500_.jpg",
+            stock: 17,
+            rating: 4.4,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Apósitos adhesivos",
+            details: "Paquete de 100 apósitos adhesivos surtidos",
+            price: 9.99,
+            image: "https://m.media-amazon.com/images/I/61w-KiyjKaS._AC_SL1500_.jpg",
+            stock: 25,
+            rating: 4.3,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Silla de masaje",
+            details: "Silla de masaje plegable y portátil",
+            price: 199.99,
+            image: "https://m.media-amazon.com/images/I/61sdkT23dAL._AC_SL1500_.jpg",
+            stock: 10,
+            rating: 4.7,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Aparato de electroterapia",
+            details: "Aparato de electroterapia para aliviar el dolor muscular",
+            price: 129.99,
+            image: "https://m.media-amazon.com/images/I/81qMdQiqQBL._SL1500_.jpg",
+            stock: 6,
+            rating: 4.5,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Férula de muñeca",
+            details: "Férula de muñeca ajustable para lesiones y recuperación",
+            price: 19.99,
+            image: "https://m.media-amazon.com/images/I/81HgS1KWxNL._SL1500_.jpg",
+            stock: 14,
+            rating: 4.2,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Tensiómetro de muñeca",
+            details: "Tensiómetro digital de muñeca para medir la presión arterial",
+            price: 39.99,
+            image: "https://m.media-amazon.com/images/I/71AHiYsqXAL._AC_SL1500_.jpg",
+            stock: 8,
+            rating: 4.7,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Silla de dentista",
+            details: "Silla de dentista ajustable con reposacabezas",
+            price: 799.99,
+            image: "https://m.media-amazon.com/images/I/41WvX9gHBdL.jpg",
+            stock: 3,
+            rating: 4.4,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Lámpara de examen médico",
+            details: "Lámpara de examen médico con luz LED",
+            price: 129.99,
+            image: "https://m.media-amazon.com/images/I/41LN99kyOFL._SL1095_.jpg",
+            stock: 9,
+            rating: 4.6,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Estetoscopio",
+            details: "Estetoscopio de alta calidad para auscultación médica",
+            price: 59.99,
+            image: "https://m.media-amazon.com/images/I/71SEj0oKaRL._AC_SL1500_.jpg",
+            stock: 4,
+            rating: 4.3,
+            category: "Salud y Equipamiento Médico"
+          },
+          {
+            name: "Camiseta de algodón",
+            details: "Camiseta de manga corta de algodón suave",
+            price: 12.99,
+            image: "https://m.media-amazon.com/images/I/71HuLCyNNhL._AC_UX466_.jpg",
+            stock: 20,
+            rating: 4.5,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Vaqueros ajustados",
+            details: "Vaqueros ajustados de estilo clásico",
+            price: 39.99,
+            image: "https://m.media-amazon.com/images/I/615wYH9socL._AC_UX466_.jpg",
+            stock: 15,
+            rating: 4.2,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Zapatillas deportivas",
+            details: "Zapatillas deportivas cómodas y transpirables",
+            price: 59.99,
+            image: "https://m.media-amazon.com/images/I/410-L0vF3+L._AC_UY500_.jpg",
+            stock: 10,
+            rating: 4.7,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Vestido de verano",
+            details: "Vestido de verano ligero y elegante",
+            price: 29.99,
+            image: "https://m.media-amazon.com/images/I/71UNw2RpReL._AC_UY500_.jpg",
+            stock: 8,
+            rating: 4.4,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Bolso de cuero",
+            details: "Bolso de cuero genuino con múltiples compartimentos",
+            price: 89.99,
+            image: "https://m.media-amazon.com/images/I/81En6kGipfL._AC_UY535_.jpg",
+            stock: 5,
+            rating: 4.1,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Gafas de sol",
+            details: "Gafas de sol con montura de acetato y protección UV",
+            price: 19.99,
+            image: "https://m.media-amazon.com/images/I/51Z70N4StTL._AC_UX466_.jpg",
+            stock: 12,
+            rating: 4.3,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Sombrero de paja",
+            details: "https://m.media-amazon.com/images/I/81l2WMmI91L._AC_UX466_.jpg",
+            price: 14.99,
+            image: "sombrero.jpg",
+            stock: 18,
+            rating: 4.6,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Pantalones cortos",
+            details: "Pantalones cortos de tela ligera y cómoda",
+            price: 19.99,
+            image: "https://m.media-amazon.com/images/I/719Xa4kjdbS._AC_UY500_.jpg",
+            stock: 14,
+            rating: 4.5,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Reloj de pulsera",
+            details: "Reloj de pulsera con correa de cuero y diseño elegante",
+            price: 69.99,
+            image: "https://m.media-amazon.com/images/I/81SkKZjDDyL._AC_UY500_.jpg",
+            stock: 6,
+            rating: 4.3,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Bufanda de lana",
+            details: "Bufanda de lana suave y abrigada",
+            price: 24.99,
+            image: "https://m.media-amazon.com/images/I/91Y29WxiqHL._AC_UY500_.jpg",
+            stock: 9,
+            rating: 4.7,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Chaqueta de cuero",
+            details: "Chaqueta de cuero genuino con estilo vintage",
+            price: 149.99,
+            image: "https://m.media-amazon.com/images/I/916KQ85hcCS._AC_UY500_.jpg",
+            stock: 4,
+            rating: 4.6,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Blusa de seda",
+            details: "Blusa de seda suave y ligera",
+            price: 34.99,
+            image: "https://m.media-amazon.com/images/I/71c4lpWQgnL._AC_UY500_.jpg",
+            stock: 11,
+            rating: 4.4,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Billetera de cuero",
+            details: "Billetera de cuero genuino con múltiples compartimentos",
+            price: 39.99,
+            image: "https://m.media-amazon.com/images/I/71TgzTZNSvL._AC_UX466_.jpg",
+            stock: 13,
+            rating: 4.2,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Pulsera de plata",
+            details: "Pulsera de plata esterlina con diseño elegante",
+            price: 49.99,
+            image: "https://m.media-amazon.com/images/I/71FeQwGq4rL._AC_UX575_.jpg",
+            stock: 7,
+            rating: 4.8,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Calcetines de algodón",
+            details: "Calcetines de algodón suave y transpirable (paquete de 5)",
+            price: 12.99,
+            image: "https://m.media-amazon.com/images/I/91SJqdQMpHL._AC_UX679_.jpg",
+            stock: 20,
+            rating: 4.5,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Gorra deportiva",
+            details: "Gorra deportiva ajustable con logo bordado",
+            price: 14.99,
+            image: "https://m.media-amazon.com/images/I/71xEQ8tZtnL._AC_UX679_.jpg",
+            stock: 15,
+            rating: 4.2,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Cinturón de cuero",
+            details: "Cinturón de cuero genuino con hebilla clásica",
+            price: 29.99,
+            image: "https://m.media-amazon.com/images/I/71Gfs4yKvBL._AC_UX385_.jpg",
+            stock: 10,
+            rating: 4.7,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Vestido de fiesta",
+            details: "Vestido de fiesta elegante y sofisticado",
+            price: 79.99,
+            image: "https://m.media-amazon.com/images/I/61KtqFf8y9L._AC_UY500_.jpg",
+            stock: 8,
+            rating: 4.4,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Traje de baño",
+            details: "https://m.media-amazon.com/images/I/716B8syj13L._AC_UY500_.jpg",
+            price: 39.99,
+            image: "traje-bano.jpg",
+            stock: 5,
+            rating: 4.1,
+            category: "Ropa y Accesorios"
+          },
+          {
+            name: "Pajarita de seda",
+            details: "Pajarita de seda con diseño elegante y ajustable",
+            price: 24.99,
+            image: "https://m.media-amazon.com/images/I/71fCRZTzpDL._AC_SX466._SX._UX._SY._UY_.jpg",
+            stock: 12,
+            rating: 4.3,
+            category: "Ropa y Accesorios"
           }
 ]
 

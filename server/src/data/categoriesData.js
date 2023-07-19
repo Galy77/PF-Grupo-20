@@ -64,7 +64,7 @@ categoriesData = [
       img: "https://media.admagazine.com/photos/618a625090c4ec9a52ca0f33/master/w_1600%2Cc_limit/81384.jpg"
     },
     {
-      name: "Instrumentos Musicles",
+      name: "Instrumentos Musicales",
       img: "https://www.elfinanciero.com.mx/resizer/KmztX7EtED6nwEhERiawZ8T8xD8=/400x267/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/IEUM66UOW5ET3LSESPXRUULXU4.jpg"
     },
     {
