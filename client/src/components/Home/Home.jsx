@@ -1,20 +1,24 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CreatedCarousel from '../Carousel/Carousel';
 import { Link } from 'react-router-dom';
 import style from "./Home.module.css";
 import axios from "axios"
 import './Home.css'
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { getAllCategories } from '../../redux/actions';
 
 
 function Home (){
-
     const categories = useSelector(state => state.categories);
+    const dispatch = useDispatch();
 
-    const [ allCategories, setAllCategories ] = useState([]);
+    useEffect(() => {
+        dispatch(getAllCategories());
+    },[dispatch])
+
 
     return (
     <>
@@ -23,7 +27,6 @@ function Home (){
             <div class='cuerpo cards-container my-4'>
                 <Row xs={1} md={2} className="grid-2 g-4 m-3 justify-content-center">
                     {categories.map((category) => (
-
                             <Col md={3}>
                                 <div class='card-container'>
                                     <Link to={`/products/${category.name}`} class='link'>

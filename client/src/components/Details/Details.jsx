@@ -5,19 +5,35 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { addOrder } from "../../redux/actions";
+import { addOrder, getProductById } from "../../redux/actions";
+import { getAllProducts } from "../../redux/actions";
 import Reviews from "./Reviews";
 import axios from "axios";
 import {initMercadoPago, Wallet } from "@mercadopago/sdk-react"
+
 const Details = ({}) => {
     const dispatch = useDispatch()
-    const {id} = useParams()
-    const products = useSelector(state => state.products);
+    const { id } = useParams()
+    const product = useSelector(state => state.detailProduct);
     const orders = useSelector(state => state.orders);
-    const product = products.filter(el => el.id == id).pop()
+    const getReviews = async () => {
+        const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
+        console.log(data)
+        setReview(data.reviews)
+    }
+
+    useEffect(() => {
+        dispatch(getProductById(id))
+        getReviews()
+    },[]) 
+    
+
+    
+
+    console.log("este es mi console de details", product)
+
 
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
-
     if(!orders.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
     }
@@ -25,26 +41,8 @@ const Details = ({}) => {
         dispatch(addOrder({...product,cant:1}))
         alert('producto añadido correctamente al carrito')
     }
-    ///goBack
-    function goBack() {
-        window.history.back();
-    }
-    /// ver mas...
-    const [isExpanded, setIsExpanded] = useState(false);
-    const toggleExpanded = () => {
-      setIsExpanded(!isExpanded);
-    };
-    let text = 'It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the, though the transition does limit overflow'
-    let maxLength = 300
-    let displayText = text;
-    if (!isExpanded && text.length > maxLength) {
-      displayText = text.substring(0, maxLength) + '...';
-    }
-    /// ver mas...
 
 
-
- 
     /// stars dropdown
     const [stars, setStars] = useState(null)
 
@@ -65,6 +63,7 @@ const Details = ({}) => {
     /// stars dropdown
     /// reviews
     const [review, setReview] = useState()
+
     const getReviews = async () => {
         try {
             const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
@@ -154,7 +153,7 @@ const Details = ({}) => {
 
                     <div class="d-flex flex-column justify-content-start align-items-end">
                         <div className="product d-flex flex-column align-items-center">
-                            <Slider images={product.image}/>
+                             <Slider images={product.image}/> 
                         </div>
                     </div>
 
@@ -170,7 +169,6 @@ const Details = ({}) => {
                                     <Stars rating={product.rating}/>
                                 </div>
                             </div>
-
                                 <div id='stock'class='d-flex justify-content-around align-items-center'>
                                     <div class='w-50' >
                                         <input type="number" placeholder={`stock:${product.stock}`} class='text-center w-25 rounded border' value={cantidadProducts} onChange={handleInput} />
@@ -197,16 +195,12 @@ const Details = ({}) => {
                         </div>
 
                     </div>
-                    <div class=' d-flex flex-column'>
+                </div>
+                <div class='h-100'>
 
-                        <div class='w-100 mb-5'>
-                            <p class='text-start m-4'>{displayText}</p>
-                            {text.length > maxLength && (
-                                <span onClick={toggleExpanded} class='showtext text-end w-100'>
-                                {isExpanded ? 'Mostrar menos' : 'Mostrar más...'}
-                                </span>
-                            )}
-                        </div>
+                    <div class='w-100 mb-5'>
+                        <p class='text-start m-4'>{product.details}</p>
+                    </div>
 
                         <div class='mx-4 '>
                             <h2>Comentarios</h2>
