@@ -17,29 +17,29 @@ function Products (){
     const max = useSelector(state => state.maximumPrice);
     const ratingFilterValue = useSelector(state => state.ratingFilterValue)
 
-    useEffect(() => {
-        dispatch(getAllProducts())
-    }, [dispatch])
-
+    
     const search = location.search.slice(8);
     
     const categoryProducts = products.filter((product) => product.category === category);
     const filteredProducts = categoryProducts.filter((product) => {
         const matchSearch = product.name.includes(search);
         const matchPrice = (min && max) ? (product.price >= min && product.price <= max) :
-            (!min && max) ? (product.price <= max) :
-            (min && !max) ? (product.price >= min) : true;
+        (!min && max) ? (product.price <= max) :
+        (min && !max) ? (product.price >= min) : true;
         const matchRating = (ratingFilterValue === "all") || (ratingFilterValue === "betterQualified" && product.rating >= 3);
         return matchSearch && matchPrice && matchRating;
     });
-
-
     
     const [productsToShow , setProductsToShow] = useState(categoryProducts)
     const [dataProducts, setDataProducts] = useState()
+    
+    useEffect(() => {
+        dispatch(getAllProducts())
+        setDataProducts(productsToShow)
+    }, [dispatch, productsToShow])
 
     const [page,setPage] = useState(1)
-
+    
     let productsQuantityToShow = 12
 
     let lastPage = Math.ceil(productsToShow.length/productsQuantityToShow)

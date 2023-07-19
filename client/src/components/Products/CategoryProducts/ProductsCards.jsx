@@ -5,23 +5,22 @@ import '../producs.css'
 import { useEffect, useState } from 'react';
 
 function ProductsCards (props) {
-    let products = []
+    let products = [];
 
     if(props.categoryProducts.length == props.filteredProducts.length){
     
         products = props.categoryProducts
     }else{
-  
+
         products = props.filteredProducts
     }
 
     useEffect(() => {
         props.sliceProducts(products,props.page)
-        props.setProductsToShow(products)
-    },[products])
+        // props.setProductsToShow(products)
+    },[props.page])
 
-
-
+    console.log(props.dataProducts)
     return(
         <>
         {props.dataProducts ? props.dataProducts?.map((product) => (

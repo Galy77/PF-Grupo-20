@@ -19,7 +19,6 @@ function Home (){
         dispatch(getAllCategories());
     },[dispatch])
 
-
     return (
     <>
         <CreatedCarousel />
@@ -31,7 +30,7 @@ function Home (){
                                 <div class='card-container'>
                                     <Link to={`/products/${category.name}`} class='link'>
                                         <Card class='card'>
-                                            <Card.Img variant="top" src={category.img} />
+                                            <Card.Img variant="top" src={category.image} />
                                             <Card.Body>
                                                 <Card.Title>{category.name}</Card.Title>
                                             </Card.Body>
