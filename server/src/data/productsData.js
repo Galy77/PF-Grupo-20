@@ -483,7 +483,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_640096-MLV48293057811_112021-O.webp",
             stock: 100,
             rating: 4.7,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Soporte Magnético para Teléfono",
@@ -492,7 +492,7 @@ productsData = [
             image: "https://sistemasrjd.com/3657-home_default/soporte-magn%C3%A9tico-para-tel%C3%A9fono-inteligente-f3.jpg",
             stock: 80,
             rating: 4.5,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Kit de Emergencia para Automóvil",
@@ -501,7 +501,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_879802-MLV51629757934_092022-O.webp",
             stock: 30,
             rating: 4.8,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Tapetes para Automóvil Resistentes al Agua",
@@ -510,7 +510,7 @@ productsData = [
             image: "https://www.elnuevoherald.com/guiasdecompra/_next/image?url=https%3A%2F%2Fnh.revoousandbox.com%2Fguiasdecompra%2Fwp-content%2Fuploads%2F2022%2F09%2Fmotor-trek.jpg&w=640&q=75",
             stock: 60,
             rating: 4.6,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Cámara de Visión Trasera",
@@ -519,7 +519,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/51DwHQfP+yS._AC_UF894,1000_QL80_.jpg",
             stock: 50,
             rating: 4.4,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Set de Limpiadores para Coche",
@@ -528,7 +528,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_810584-CBT51068660810_082022-O.webp",
             stock: 70,
             rating: 4.3,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Almohada de Viaje para Reposacabezas",
@@ -537,7 +537,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81KcNg8Mo1L._AC_UF894,1000_QL80_.jpg",
             stock: 90,
             rating: 4.6,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Organizador de Maletero Plegable",
@@ -546,7 +546,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81llVwxwUXS._AC_UF894,1000_QL80_.jpg",
             stock: 40,
             rating: 4.2,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Cargador Inalámbrico para Automóvil",
@@ -555,7 +555,7 @@ productsData = [
             image: "https://gossipvehiculo.com/wp-content/uploads/2021/09/imagen-destacada-10.jpg",
             stock: 60,
             rating: 4.7,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Organizador de Asiento para Niños",
@@ -564,7 +564,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_811429-MLA51841099106_102022-O.webp",
             stock: 50,
             rating: 4.5,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Fundas de Asiento Transpirables",
@@ -573,7 +573,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81cwSa3C-2L._AC_UF894,1000_QL80_.jpg",
             stock: 70,
             rating: 4.4,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Luces LED para Ruedas",
@@ -582,7 +582,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_788359-MLV46367375939_062021-O.webp",
             stock: 100,
             rating: 4.8,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Bocina de Aire para Automóvil",
@@ -591,7 +591,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/51eSQQkRIDL._AC_UF894,1000_QL80_.jpg",
             stock: 30,
             rating: 4.6,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Protector de Parachoques Trasero",
@@ -600,7 +600,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/61TRKVsZWsL.jpg",
             stock: 80,
             rating: 4.3,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Espejo Retrovisor con Cámara Dashcam",
@@ -609,7 +609,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/41hGgjj16gL._SL500_.jpg",
             stock: 20,
             rating: 4.7,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Desodorante de Aire para Automóvil",
@@ -618,7 +618,7 @@ productsData = [
             image: "https://images-na.ssl-images-amazon.com/images/I/81PqJQz7IJL._AC_UL210_SR210,210_.jpg",
             stock: 120,
             rating: 4.5,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Alfombrillas para Reposabrazos",
@@ -627,7 +627,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/61P85XWE-IL._AC_UF894,1000_QL80_.jpg",
             stock: 90,
             rating: 4.4,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Adaptador Bluetooth para el Coche",
@@ -636,7 +636,7 @@ productsData = [
             image: "https://imagenes.elpais.com/resizer/mXT5kosnj7EExuVF3yUiB4-rbnE=/414x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/46LFIAN3GRAQXJKZOXYFKVB72I.jpg",
             stock: 50,
             rating: 4.8,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Cobertor para Asientos de Cuero",
@@ -645,7 +645,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/71hL1XBEt0L._AC_UF894,1000_QL80_.jpg",
             stock: 40,
             rating: 4.6,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Parasol para Parabrisas",
@@ -654,7 +654,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/61usGI8lAbL._AC_UF894,1000_QL80_.jpg",
             stock: 60,
             rating: 4.3,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Fertilizante NPK 10-20-10",
@@ -903,7 +903,7 @@ productsData = [
             name: "Galletas de Avena y Pasas",
             details: "Galletas saludables elaboradas con avena, pasas y miel.",
             price: 6.99,
-            image: "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F21%2F2017%2F04%2F19%2Fgalletas-de-avena-con-pasas-y-nuez-2000.jpg",
+            image: "https://assets.elgourmet.com/wp-content/uploads/2023/03/cooki_lg91oLQjnwTD8XNvRqYI2MEdO34xct.png",
             stock: 80,
             rating: 4.3,
             category: "Alimentos y Bebidas"
@@ -948,7 +948,7 @@ productsData = [
             name: "Salsa de Tomate Casera",
             details: "Salsa de tomate elaborada con tomates frescos y especias.",
             price: 3.99,
-            image: "https://images.ecestaticos.com/hzIFKXjUmFRm0aIIUI-Hc3brnYI=/110x26:1959x1413/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fb9b%2Fb5e%2Fc33%2Fb9bb5ec338d8e58d885599a7bb8e76cf.jpg",
+            image: "https://www.pequerecetas.com/wp-content/uploads/2010/06/salsa-de-tomate-casera.jpg",
             stock: 200,
             rating: 4.7,
             category: "Alimentos y Bebidas"
@@ -2279,7 +2279,7 @@ productsData = [
             name: "Licuadora de alta potencia",
             details: "Licuadora con motor de 1000W y jarra de vidrio.",
             price: 69.99,
-            image: "https://encryptehttps://falabella.scene7.com/is/image/Falabella/7427793_1?wid=800&hei=800&qlt=70d-tbn0.gstatic.com/images?q=tbn:ANd9GcTob6yyD_EDm4hKcuh5aH5kLTuoho8nHSsmqwMH5YkMH6MEiMXKUl3X4oqujniJDzWsKjc&usqp=CAU",
+            image: "https://m.media-amazon.com/images/I/51A5Scll+IL._AC_SL1000_.jpg",
             stock: 35,
             rating: 4.2,
             category: "Electrodomésticos"
@@ -3087,7 +3087,7 @@ productsData = [
           },
           {
             name: "Pulsera de oro amarillo de 14 quilates con dije de estrella",
-            details: "Esta pulsera de oro amarillo de 14 quilates con dije de estrella es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            details: "Esta pulsera de oro amarillo de 14 quilates con dije de estrella es una pieza delicada que es perfecta para cualquier ocasión.",
             price: 500,
             image: "https://www.zales.com/productimages/processed/V-20495638_0_260.jpg?pristine=true",
             stock: 10,
@@ -3114,7 +3114,7 @@ productsData = [
           },
           {
             name: "Collar de oro blanco de 14 quilates con colgante de perla",
-            details: "Este collar de oro blanco de 14 quilates con colgante de perla es una pieza elegante que es perfecta para cualquier ocasión. Está hecho de oro de alta calidad y está adornado con una perla de alta calidad.",
+            details: "Este collar de oro blanco de 14 quilates con colgante de perla es una pieza elegante que es perfecta para cualquier ocasión.",
             price: 1500,
             image: "https://www.zales.com/productimages/processed/V-20049793_0_260.jpg?pristine=true",
             stock: 10,
@@ -3132,7 +3132,7 @@ productsData = [
           },
           {
             name: "Pulsera de oro rosa de 18 quilates con dije de corazón",
-            details: "Esta pulsera de oro rosa de 18 quilates con dije de corazón es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            details: "Esta pulsera de oro rosa de 18 quilates con dije de corazón es una pieza delicada que es perfecta para cualquier ocasión.",
             price: 2500,
             image: "https://www.zales.com/productimages/processed/V-20143370_0_260.jpg",
             stock: 10,
@@ -3150,7 +3150,7 @@ productsData = [
           },
           {
             name: "Anillo de compromiso de oro amarillo de 14 quilates con diamante de corte princesa",
-            details: "Este anillo de compromiso de oro amarillo de 14 quilates con diamante de corte princesa es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está adornado con un diamante de alta calidad.",
+            details: "Este anillo de compromiso de oro amarillo de 14 quilates con diamante de corte princesa es una pieza clásica que nunca pasa de moda.",
             price: 5000,
             image: "https://www.zales.com/productimages/processed/V-19613603_0_260.jpg?pristine=true",
             stock: 10,
@@ -3159,7 +3159,7 @@ productsData = [
           },
           {
             name: "Collar de oro blanco de 14 quilates con colgante de esmeralda",
-            details: "Este collar de oro blanco de 14 quilates con colgante de esmeralda es una pieza elegante que es perfecta para cualquier ocasión. Está hecho de oro de alta calidad y está adornado con una esmeralda de alta calidad.",
+            details: "Este collar de oro blanco de 14 quilates con colgante de esmeralda es una pieza elegante que es perfecta para cualquier ocasión.",
             price: 7000,
             image: "https://www.zales.com/productimages/processed/V-20560676_0_260.jpg?pristine=true",
             stock: 10,
@@ -3177,7 +3177,7 @@ productsData = [
           },
           {
             name: "Pulsera de oro rosa de 18 quilates con dije de estrella",
-            details: "Esta pulsera de oro rosa de 18 quilates con dije de estrella es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            details: "Esta pulsera de oro rosa de 18 quilates con dije de estrella es una pieza delicada que es perfecta para cualquier ocasión.",
             price: 15000,
             image: "https://www.zales.com/productimages/processed/V-20353281_0_260.jpg?pristine=true",
             stock: 10,
@@ -3186,7 +3186,7 @@ productsData = [
           },
           {
             name: "Aretes de diamantes de oro blanco de 14 quilates con oro rosa",
-            details: "Estos aretes de diamantes de oro blanco de 14 quilates con oro rosa son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de oro de alta calidad y están adornados con diamantes de alta calidad.",
+            details: "Estos aretes de diamantes de oro blanco de 14 quilates con oro rosa son una pieza elegante que es perfecta para cualquier ocasión.",
             price: 20000,
             image: "https://www.zales.com/productimages/processed/V-20340349_0_260.jpg?pristine=true",
             stock: 10,
@@ -3195,7 +3195,7 @@ productsData = [
           },
           {
             name: "Anillo de compromiso de oro amarillo de 14 quilates con diamante de corte marquise",
-            details: "Este anillo de compromiso de oro amarillo de 14 quilates con diamante de corte marquise es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está adornado con un diamante de alta calidad.",
+            details: "Este anillo de compromiso de oro amarillo de 14 quilates con diamante de corte marquise es una pieza clásica que nunca pasa de moda.",
             price: 25000,
             image: "https://www.zales.com/productimages/processed/V-20359916_0_260.jpg?pristine=true",
             stock: 10,
@@ -3231,7 +3231,7 @@ productsData = [
           },
           {
             name: "Aretes de diamantes de oro blanco de 14 quilates con oro amarillo",
-            details: "Estos aretes de diamantes de oro blanco de 14 quilates con oro amarillo son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de oro de alta calidad y están adornados con diamantes de alta calidad.",
+            details: "Estos aretes de diamantes de oro blanco de 14 quilates con oro amarillo son una pieza elegante que es perfecta para cualquier ocasión.",
             price: 45000,
             image: "https://www.zales.com/productimages/processed/V-20559489_0_260.jpg?pristine=true",
             stock: 10,
@@ -3240,7 +3240,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Monopoly",
-            details: "Monopoly es un juego de mesa clásico que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en ir a la bancarrota. Para hacerlo, los jugadores deben comprar, vender y negociar propiedades, construir casas y hoteles, y cobrar alquiler a sus oponentes.",
+            details: "Monopoly es un juego de mesa clásico que ha sido disfrutado por familias durante generaciones.",
             price: 50,
             image: "https://mundojuguete.vteximg.com.br/arquivos/ids/167424-778-788/FOTO-Monopoly-Argentina.jpg?v=637293838976970000",
             stock: 10,
@@ -3249,7 +3249,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Scrabble",
-            details: "Scrabble es un juego de mesa de letras que ha sido disfrutado por familias durante generaciones. El objetivo del juego es obtener la mayor cantidad de puntos al formar palabras con las letras que se le dan. Los jugadores pueden colocar sus letras en una cuadrícula de 15x15, y pueden usar fichas de bonificación para obtener puntos adicionales.",
+            details: "Scrabble es un juego de mesa de letras que ha sido disfrutado por familias durante generaciones.",
             price: 40,
             image: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Tablero_de_ScrabbleIMG_20201008_175354.jpg",
             stock: 10,
@@ -3258,7 +3258,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Risk",
-            details: "Risk es un juego de mesa de estrategia que ha sido disfrutado por familias durante generaciones. El objetivo del juego es conquistar el mundo. Los jugadores pueden lanzar dados para mover sus ejércitos, y pueden atacar y conquistar territorios enemigos.",
+            details: "Risk es un juego de mesa de estrategia que ha sido disfrutado por familias durante generaciones.",
             price: 60,
             image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/050/305/products/juego-risk1-caf7af66bb239c777e15888878465945-1024-1024.jpg",
             stock: 10,
@@ -3267,7 +3267,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Cluedo",
-            details: "Cluedo es un juego de mesa de misterio que ha sido disfrutado por familias durante generaciones. El objetivo del juego es descubrir quién asesinó a Mr. Boddy, dónde ocurrió el asesinato, y con qué arma. Los jugadores pueden mover sus fichas por el tablero, y pueden interrogar a otros jugadores para obtener pistas.",
+            details: "Cluedo es un juego de mesa de misterio que ha sido disfrutado por familias durante generaciones.",
             price: 30,
             image: "https://i.blogs.es/6d4d88/cluedo/1366_2000.jpg",
             stock: 10,
@@ -3276,7 +3276,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Pictionary",
-            details: "Pictionary es un juego de mesa de dibujo que ha sido disfrutado por familias durante generaciones. El objetivo del juego es hacer que sus compañeros de equipo adivinen las palabras que están dibujando. Los jugadores pueden dibujar en una pizarra, y pueden usar gestos para ayudar a sus compañeros de equipo a adivinar las palabras.",
+            details: "Pictionary es un juego de mesa de dibujo que ha sido disfrutado por familias durante generaciones.",
             price: 20,
             image: "https://kinderlandar.vtexassets.com/arquivos/ids/157627/11020159_1.jpg?v=638049176875230000",
             stock: 10,
@@ -3284,7 +3284,7 @@ productsData = [
             category: "Juegos y Juguetes"
           },{
             name: "Juego de mesa Twister",
-            details: "Twister es un juego de fiesta que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en caer. Los jugadores deben girar una rueda que les dice qué parte del cuerpo deben colocar en qué punto del tablero.",
+            details: "Twister es un juego de fiesta que ha sido disfrutado por familias durante generaciones. ",
             price: 25,
             image: "https://apioverde.com/cdn/shop/products/D_958786-MLA31042240967_062019-B_1024x1024.jpg?v=1662141269",
             stock: 10,
@@ -3293,7 +3293,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Jenga",
-            details: "Jenga es un juego de destreza que ha sido disfrutado por familias durante generaciones. El objetivo del juego es quitar bloques de una torre sin que la torre se caiga. Los jugadores pueden quitar bloques de la parte inferior de la torre, uno por uno.",
+            details: "Jenga es un juego de destreza que ha sido disfrutado por familias durante generaciones.",
             price: 15,
             image: "https://cdnlaol.laanonimaonline.com/webapp_webp/images/productos/b/0000013000/13290.webp",
             stock: 10,
@@ -3302,7 +3302,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Connect 4",
-            details: "Connect 4 es un juego de estrategia que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en conectar cuatro de sus fichas en una fila, columna o diagonal. Los jugadores pueden colocar sus fichas en la parte inferior de la cuadrícula.",
+            details: "Connect 4 es un juego de estrategia que ha sido disfrutado por familias durante generaciones.",
             price: 10,
             image: "https://http2.mlstatic.com/D_NQ_NP_814379-MLA70304220767_072023-O.webp",
             stock: 10,
@@ -3311,7 +3311,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Candyland",
-            details: "Candyland es un juego de suerte que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en llegar al final del tablero. Los jugadores se turnan para tirar un dado y moverse su ficha por el tablero.",
+            details: "Candyland es un juego de suerte que ha sido disfrutado por familias durante generaciones. ",
             price: 15,
             image: "https://m.media-amazon.com/images/I/91yUG40gv0L._AC_SL1500_.jpg",
             stock: 10,
@@ -3320,7 +3320,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Chutes and Ladders",
-            details: "Chutes and Ladders es un juego de suerte que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en llegar al final del tablero. Los jugadores se turnan para tirar un dado y moverse su ficha por el tablero.",
+            details: "Chutes and Ladders es un juego de suerte que ha sido disfrutado por familias durante generaciones.",
             price: 20,
             image: "https://m.media-amazon.com/images/I/91QLD-DzaOL._AC_UF894,1000_QL80_.jpg",
             stock: 10,
@@ -3338,7 +3338,7 @@ productsData = [
           },
           {
             name: "Hot Wheels",
-            details: "Hot Wheels son autos de juguete que han sido populares entre los niños durante generaciones. Hot Wheels vienen en una variedad de estilos y colores, y son una excelente manera para que los niños exploren su creatividad.",
+            details: "Hot Wheels son autos de juguete que han sido populares entre los niños durante generaciones.",
             price: 10,
             image: "https://m.media-amazon.com/images/I/71Us2XS68KL._AC_UF894,1000_QL80_.jpg",
             stock: 10,
@@ -3347,7 +3347,7 @@ productsData = [
           },
           {
             name: "Lego",
-            details: "Lego son bloques de construcción que han sido populares entre los niños durante generaciones. Lego vienen en una variedad de estilos y colores, y son una excelente manera para que los niños exploren su creatividad y habilidades motoras finas.",
+            details: "Lego son bloques de construcción que han sido populares entre los niños durante generaciones.",
             price: 20,
             image: "https://m.media-amazon.com/images/I/81F4BHJ6tdL._AC_SL1500_.jpg",
             stock: 10,
@@ -3356,7 +3356,7 @@ productsData = [
           },
           {
             name: "Play-Doh",
-            details: "Play-Doh es una masa para modelar que ha sido popular entre los niños durante generaciones. Play-Doh viene en una variedad de colores, y es una excelente manera para que los niños exploren su creatividad y habilidades motoras finas.",
+            details: "Play-Doh es una masa para modelar que ha sido popular entre los niños durante generaciones.",
             price: 15,
             image: "https://http2.mlstatic.com/D_NQ_NP_872156-MLA48353260656_112021-O.webp",
             stock: 10,
@@ -3365,7 +3365,7 @@ productsData = [
           },
           {
             name: "Puzzle",
-            details: "Los rompecabezas son un tipo de juego que ha sido popular entre las personas de todas las edades durante generaciones. Los rompecabezas vienen en una variedad de tamaños y dificultades, y son una excelente manera para que las personas de todas las edades exploren su paciencia y habilidades visuales.",
+            details: "Los rompecabezas son un tipo de juego que ha sido popular entre las personas de todas las edades durante generaciones.",
             price: 10,
             image: "https://http2.mlstatic.com/D_NQ_NP_732734-MLA70458982241_072023-O.webp",
             stock: 10,
@@ -3374,7 +3374,7 @@ productsData = [
           },
           {
             name: "Coche de juguete",
-            details: "Un coche de juguete es un vehículo de juguete que se utiliza para el entretenimiento. Los coches de juguete suelen estar hechos de plástico, metal o madera, y pueden ser impulsados por motores, pilas o manualmente. Los coches de juguete pueden ser utilizados por niños de todas las edades, y pueden ser una forma divertida de aprender sobre los coches y el transporte.",
+            details: "Un coche de juguete es un vehículo de juguete que se utiliza para el entretenimiento.",
             price: 10,
             image: "https://http2.mlstatic.com/D_NQ_NP_798868-MLA50998849643_082022-O.webp",
             stock: 10,
@@ -3383,7 +3383,7 @@ productsData = [
           },
           {
             name: "Muñeca",
-            details: "Una muñeca es una figura humana que se utiliza para el entretenimiento. Las muñecas suelen estar hechas de plástico, tela o madera, y pueden representar a personas reales o personajes ficticios. Las muñecas pueden ser utilizadas por niños de todas las edades, y pueden ser una forma divertida de aprender sobre la gente y el mundo.",
+            details: "Una muñeca es una figura humana que se utiliza para el entretenimiento.",
             price: 20,
             image: "https://thumbs.dreamstime.com/b/la-sonrisa-sienta-mu%C3%B1eca-de-trapo-linda-aislada-101484296.jpg",
             stock: 10,
@@ -3392,7 +3392,7 @@ productsData = [
           },
           {
             name: "Bloques de construcción",
-            details: "Los bloques de construcción son un tipo de juguete que se utiliza para construir estructuras. Los bloques de construcción suelen estar hechos de plástico, madera o ladrillo, y pueden ser de diferentes tamaños, formas y colores. Los bloques de construcción pueden ser utilizados por niños de todas las edades, y pueden ser una forma divertida de aprender sobre la arquitectura y la ingeniería.",
+            details: "Los bloques de construcción son un tipo de juguete que se utiliza para construir estructuras.",
             price: 20,
             image: "https://m.media-amazon.com/images/I/71mnsQS0n1L._AC_SL1500_.jpg",
             stock: 10,
@@ -3401,7 +3401,7 @@ productsData = [
           },
           {
             name: "Masa para modelar",
-            details: "La masa para modelar es un tipo de material que se utiliza para crear objetos. La masa para modelar suele estar hecha de arcilla, plastilina o Play-Doh, y puede ser de diferentes colores. La masa para modelar puede ser utilizada por niños de todas las edades, y puede ser una forma divertida de aprender sobre el arte y el diseño.",
+            details: "La masa para modelar es un tipo de material que se utiliza para crear objetos.",
             price: 15,
             image: "https://http2.mlstatic.com/D_NQ_NP_755977-MLA50892143394_072022-O.webp",
             stock: 10,
@@ -3410,7 +3410,7 @@ productsData = [
           },
           {
             name: "Rompecabezas",
-            details: "Un rompecabezas es un tipo de juego que se utiliza para armar una imagen. Los rompecabezas suelen estar hechos de cartón o madera, y pueden ser de diferentes tamaños y dificultades. Los rompecabezas pueden ser utilizados por personas de todas las edades, y pueden ser una forma divertida de aprender sobre la paciencia y las habilidades visuales.",
+            details: "Un rompecabezas es un tipo de juego que se utiliza para armar una imagen.",
             price: 10,
             image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/583/555/products/1639362597634-011-aba02fc3d4e89c09b216395992815433-640-0.png",
             stock: 10,
@@ -3419,7 +3419,7 @@ productsData = [
           },
           {
             name: "Harry Potter y la piedra filosofal",
-            details: "La piedra filosofal es la primera novela de la serie de Harry Potter escrita por J.K. Rowling. Fue publicada en 1997 y sigue la historia de Harry Potter, un joven mago que descubre su herencia mágica en su undécimo cumpleaños. Harry comienza su primer año en el Colegio Hogwarts de Magia y Hechicería, donde aprende a utilizar magia y hace amigos con Ron Weasley y Hermione Granger. Los tres amigos se embarcan en una aventura para detener al malvado mago Lord Voldemort, que está tratando de robar la Piedra Filosofal, un objeto que le otorgaría la inmortalidad.",
+            details: "La piedra filosofal es la primera novela de la serie de Harry Potter escrita por J.K. Rowling.",
             price: 20,
             image: "https://static.wikia.nocookie.net/esharrypotter/images/9/9a/Harry_Potter_y_la_Piedra_Filosofal_Portada_Espa%C3%B1ol.PNG/revision/latest?cb=20151020165725",
             stock: 10,
@@ -3428,7 +3428,7 @@ productsData = [
           },
           {
             name: "El Señor de los Anillos: La comunidad del anillo",
-            details: "El Señor de los Anillos: La comunidad del anillo es la primera novela de la trilogía de El Señor de los Anillos escrita por J.R.R. Tolkien. Fue publicada en 1954 y sigue la historia de Frodo Bolsón, un hobbit que se embarca en una misión para destruir el Anillo Único, un poderoso artefacto creado por el Señor Oscuro Sauron. Frodo es acompañado por un grupo de amigos, incluyendo a Samsagaz Gamyi, Merry Brandigamo, Pippin Tuk, Aragorn, Legolas, Gimli, Boromir y Gandalf. La comunidad viaja a través de la Tierra Media, enfrentándose a muchos peligros en el camino.",
+            details: "El Señor de los Anillos: La comunidad del anillo es la primera novela de la trilogía de El Señor de los Anillos escrita por J.R.R. Tolkien.",
             price: 30,
             image: "https://images.bajalibros.com/-0OLedXhmjEEjmVpkidlVeZbV2w=/fit-in/292x446/filters:fill(f8f8f8):quality(90):format(webp)/d2d6tho5fth6q4.cloudfront.net/extast1586699_2b4b6e5405275933adb2a1180ea8750212b3b3f6.jpg",
             stock: 10,
@@ -3437,7 +3437,7 @@ productsData = [
           },
           {
             name: "El Hobbit",
-            details: "El Hobbit es una novela escrita por J.R.R. Tolkien. Fue publicada en 1937 y sigue la historia de Bilbo Bolsón, un hobbit que se embarca en una aventura con un grupo de enanos para reclamar su tesoro de un dragón llamado Smaug. Bilbo se encuentra con muchos peligros en el camino, pero también aprende mucho sobre sí mismo y sobre el valor de la amistad.",
+            details: "El Hobbit es una novela escrita por J.R.R. Tolkien.",
             price: 20,
             image: "https://images.cdn1.buscalibre.com/fit-in/360x360/c6/cc/c6cc0d544da7e4c54e0ae464d7ffcbcd.jpg",
             stock: 10,
@@ -3446,7 +3446,7 @@ productsData = [
           },
           {
             name: "El principito",
-            details: "El principito es una novela corta escrita por Antoine de Saint-Exupéry. Fue publicada en 1943 y sigue la historia de un joven príncipe que abandona su pequeño asteroide para viajar a través del universo, conociendo a diferentes personajes y aprendiendo sobre el amor, la amistad y la pérdida.",
+            details: "El principito es una novela corta escrita por Antoine de Saint-Exupéry.",
             price: 20,
             image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/El_principito.jpg",
             stock: 10,
@@ -3455,7 +3455,7 @@ productsData = [
           },
           {
             name: "El diario de Ana Frank",
-            details: "El diario de Ana Frank es un diario escrito por Ana Frank, una niña judía que se escondió con su familia de los nazis durante la Segunda Guerra Mundial. El diario fue publicado en 1947 y es uno de los documentos históricos más importantes del Holocausto.",
+            details: "El diario de Ana Frank es un diario escrito por Ana Frank, una niña judía que se escondió con su familia de los nazis durante la Segunda Guerra Mundial.",
             price: 20,
             image: "https://images.cdn3.buscalibre.com/fit-in/360x360/43/57/4357f08f2ff8f21cbcc70910075d0960.jpg",
             stock: 10,
@@ -3464,7 +3464,7 @@ productsData = [
           },
           {
             name: "La Biblia",
-            details: "La Biblia es el libro sagrado del judaísmo y el cristianismo. Es una colección de textos sagrados que incluyen historias, leyes, profecías y poemas. La Biblia ha sido traducida a muchos idiomas y es el libro más leído del mundo.",
+            details: "La Biblia es el libro sagrado del judaísmo y el cristianismo.",
             price: 20,
             image: "https://verbodivino.es/documentos/libros/3993.jpg",
             stock: 10,
@@ -3473,7 +3473,7 @@ productsData = [
           },
           {
             name: "El Corán",
-            details: "El Corán es el libro sagrado del islam. Es una colección de revelaciones que el profeta Mahoma recibió de Dios. El Corán es considerado por los musulmanes como la palabra literal de Dios y es la base de su fe.",
+            details: "El Corán es el libro sagrado del islam. Es una colección de revelaciones que el profeta Mahoma recibió de Dios.",
             price: 20,
             image: "https://libreriacalledelibros.com/wp-content/uploads/2021/12/el-coran-pluton.jpg",
             stock: 10,
@@ -3482,7 +3482,7 @@ productsData = [
           },
           {
             name: "El Talmud",
-            details: "El Talmud es una colección de comentarios y discusiones sobre la ley judía. Es considerado por los judíos como la segunda parte de la Torá, la primera parte siendo el Pentateuco. El Talmud es una fuente importante de la ley judía y también contiene información sobre la historia, la filosofía y la ética judías.",
+            details: "El Talmud es una colección de comentarios y discusiones sobre la ley judía. Es considerado por los judíos como la segunda parte de la Torá, la primera parte siendo el Pentateuco.",
             price: 20,
             image: "https://upload.wikimedia.org/wikipedia/commons/3/38/Talmud_set.JPG",
             stock: 10,
@@ -3491,7 +3491,7 @@ productsData = [
           },
           {
             name: "Watchmen",
-            details: "Watchmen es una serie de historietas creada por Alan Moore y Dave Gibbons, publicada originalmente en los Estados Unidos por DC Comics. La serie se desarrolla en un mundo alternativo donde los superhéroes existen, pero son vistos como figuras peligrosas e indeseables. La historia sigue a un grupo de superhéroes retirados que deben volver a reunirse para detener una conspiración que podría destruir el mundo.",
+            details: "Watchmen es una serie de historietas creada por Alan Moore y Dave Gibbons, publicada originalmente en los Estados Unidos por DC Comics.",
             price: 20,
             image: "https://d2r9epyceweg5n.cloudfront.net/stores/057/977/products/watchmen-cov-3ra-ed1-d2909b9e9da955652416205191241657-640-0.jpg",
             stock: 10,
@@ -3500,7 +3500,7 @@ productsData = [
           },
           {
             name: "The Dark Knight Returns",
-            details: "The Dark Knight Returns es una miniserie de historietas creada por Frank Miller y Klaus Janson, publicada originalmente en los Estados Unidos por DC Comics. La serie se desarrolla en un mundo alternativo donde Batman ha regresado del retiro para luchar contra el crimen. La historia sigue a Batman mientras se enfrenta a un nuevo grupo de villanos, incluyendo a Two-Face, The Joker y The Scarecrow.",
+            details: "The Dark Knight Returns es una miniserie de historietas creada por Frank Miller y Klaus Janson, publicada originalmente en los Estados Unidos por DC Comics.",
             price: 20,
             image: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2019%2F09%2Fdark-knight-returns-golden-child_1-2000.jpg&q=60",
             stock: 10,
@@ -3509,7 +3509,7 @@ productsData = [
           },
           {
             name: "Sin City",
-            details: "Sin City es una serie de historietas creada por Frank Miller, publicada originalmente en los Estados Unidos por Dark Horse Comics. Las historias se desarrollan en una ciudad ficticia llamada Sin City, que es un lugar de violencia, corrupción y crimen. Las historias siguen a un grupo de personajes, incluyendo a Marv, Dwight, Nancy y Hartigan, mientras se enfrentan a los peligros de Sin City.",
+            details: "Sin City es una serie de historietas creada por Frank Miller, publicada originalmente en los Estados Unidos por Dark Horse Comics.",
             price: 20,
             image: "https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/9928/9788416905744.jpg",
             stock: 10,
@@ -3518,7 +3518,7 @@ productsData = [
           },
           {
             name: "Preacher",
-            details: "Preacher es una serie de historietas creada por Garth Ennis y Steve Dillon, publicada originalmente en los Estados Unidos por Vertigo Comics. La historia sigue a Jesse Custer, un predicador que es poseído por un ángel y un demonio. Custer, junto con su novia Tulip y su amigo Cassidy, se embarcan en una cruzada para encontrar a Dios y reclamar su venganza.",
+            details: "Preacher es una serie de historietas creada por Garth Ennis y Steve Dillon, publicada originalmente en los Estados Unidos por Vertigo Comics.",
             price: 20,
             image: "https://upload.wikimedia.org/wikipedia/en/a/a8/Preacher56.png",
             stock: 10,
@@ -3527,7 +3527,7 @@ productsData = [
           },
           {
             name: "V for Vendetta",
-            details: "V for Vendetta es una serie de historietas creada por Alan Moore y David Lloyd, publicada originalmente en los Estados Unidos por DC Comics. La historia se desarrolla en un mundo alternativo donde el Reino Unido está gobernado por un fascista. V, un misterioso vigilante, comienza una campaña de terrorismo para derrocar al gobierno.",
+            details: "V for Vendetta es una serie de historietas creada por Alan Moore y David Lloyd, publicada originalmente en los Estados Unidos por DC Comics.",
             price: 20,
             image: "https://2.bp.blogspot.com/-Xfx31h_t2q4/Uk9OrYVNoxI/AAAAAAAAlDY/bwh5hKQD_4g/s1600/vforvendetta.jpg",
             stock: 10,
@@ -3536,7 +3536,7 @@ productsData = [
           },
           {
             name: "The Sandman",
-            details: "The Sandman es una serie de historietas creada por Neil Gaiman, publicada originalmente en los Estados Unidos por DC Comics. La historia sigue a Morfeo, el Rey de los Sueños, mientras se embarca en una serie de aventuras a través de los sueños y la realidad.",
+            details: "The Sandman es una serie de historietas creada por Neil Gaiman, publicada originalmente en los Estados Unidos por DC Comics.",
             price: 20,
             image: "https://4.bp.blogspot.com/-ZYhgOmSKUlc/Uk6Ml13grRI/AAAAAAAAk84/TaMQP-tH0OI/s1600/the_sandman_los_eternos_Quitely.jpg",
             stock: 10,
@@ -3572,7 +3572,7 @@ productsData = [
           },
           {
             name: "Persepolis",
-            details: "Persepolis es una serie de historietas creada por Marjane Satrapi, publicada originalmente en Francia. La historia se desarrolla en Irán y sigue la vida de Marjane Satrapi, desde su infancia hasta su adolescencia.",
+            details: "Persepolis es una serie de historietas creada por Marjane Satrapi, publicada originalmente en Francia.",
             price: 20,
             image: "https://historiaycomic.files.wordpress.com/2014/09/libro_1362099657.jpg",
             stock: 10,
