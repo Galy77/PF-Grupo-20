@@ -38,10 +38,6 @@ module.exports = (sequelize) => {
           max: 5,
           min: 0.5,
         },
-      },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false
       }
     },
     { timestamps: false }

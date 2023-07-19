@@ -25,5 +25,5 @@ const postContacto = async (req, res) => {
 };
 
 module.exports = {
-  postContacto,
+  postContacto
 };

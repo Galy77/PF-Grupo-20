@@ -22,7 +22,7 @@ router.get("/", getCategory);
 
 router.get("/products", getProducts);
 router.get("/products/:id", getProductById);
-router.get("/review/:id", getReviewByIdProduct);
+// router.get("/review/:id", getReviewByIdProduct);
 
 router.post("/products", upload.single("image"), postProduct);
 
