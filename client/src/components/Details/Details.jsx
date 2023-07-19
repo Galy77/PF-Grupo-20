@@ -29,6 +29,9 @@ const Details = () => {
 
     
 
+    console.log("este es mi console de details", product)
+
+
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
     if(!orders.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))

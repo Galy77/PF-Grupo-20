@@ -168,6 +168,7 @@ export const getProductById = (id) => {
    return async function(dispatch){
       try {
          const response = await axios.get(`http://localhost:3001/PF/products/${id}`);
+         console.log(response.data)
          return dispatch({
             type: GET_PRODUCT_BY_ID,
             payload: response.data
