@@ -54,24 +54,31 @@ const Cart = () => {
             }
         }
         ////MP
-    function goBack() {
-        window.history.back();
-    }
-      
-
-
+        useEffect(() => {
+            console.log(products)
+        },[])
+        //setStock
+        const getProductInfo = () => {
+            const data = products.map(el => {
+                return{
+                    id:el.id,
+                    cantidad:el.stock - el.cant
+                }
+            })
+            alert('a')
+            localStorage.setItem("setStockProduct",JSON.stringify(data))
+        }
+        //setStock
     return(
         <>
         <div class='mt-4'>
 
-            <div class='cart-container d-flex justify-content-evenly '>
-                <div id='cart-card'class="d-flex flex-column align-items-center">
+            <div class='cart-container d-flex justify-content-evenly'>
+                <div id='cart-card'class="d-flex flex-column align-items-center justify-content-center cuerpo">
                     {
-                        
-                        productosStorage? productosStorage.map(productscart => {
+                        productosStorage.length? productosStorage.map(productscart => {
                                 return <CartCart products={productscart}/>
-    
-                        }):''
+                        }):<p>No hay productos en tu carrito</p>
                     }
 
                 </div>
@@ -81,7 +88,7 @@ const Cart = () => {
                         <span class='txt-large'>{`$${total}`}</span>
 
                         <button onClick={handleBuy} id="pay">Pay</button>
-                        {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
+                        {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
 
                         <i onClick={deleteCart} id='trash'class="bi bi-trash-fill"></i>
                     </div>

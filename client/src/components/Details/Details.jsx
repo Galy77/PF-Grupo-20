@@ -9,8 +9,9 @@ import { addOrder, getProductById } from "../../redux/actions";
 import { getAllProducts } from "../../redux/actions";
 import Reviews from "./Reviews";
 import axios from "axios";
+import {initMercadoPago, Wallet } from "@mercadopago/sdk-react"
 
-const Details = () => {
+const Details = ({}) => {
     const dispatch = useDispatch()
     const { id } = useParams()
     const product = useSelector(state => state.detailProduct);
@@ -63,7 +64,67 @@ const Details = () => {
     /// reviews
     const [review, setReview] = useState()
 
+    const getReviews = async () => {
+        try {
+            const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
+            setReview(data.reviews)
+        } catch (error) {
+            console.log('este producto no tiene reviews')
+        }
+    }
+    useEffect(() => {
+        getReviews()
+        console.log(product)
+    },[])
+    //MP
+    const [cantidadProducts, setCantidadProducts] = useState()
+    const [error, setError] = useState()
 
+    const handleInput = (event) => {
+        let value = event.target.value
+        if(value >= 0 && value <= product.stock){
+            setCantidadProducts(value)
+            setError()
+        } 
+        else setError('ingrese un numero valido')
+    }
+    const [preferenceId, setPreferenceId] = useState(null)
+     
+    initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
+    const createPreference = async () => {
+        try {
+            const response = await axios.post("http://localhost:3001/PF/create_preference",{
+                description:`${product.name}`,
+                price:product.price,
+                quantity:cantidadProducts ? cantidadProducts : 1
+                // currency_id:"ARS"
+            })
+            console.log(response)
+            const {id} = response.data;
+            return id
+        } catch (error) {
+            console.log(error)          
+        }
+    }
+    const handleBuy = async () => {
+        const id = await createPreference()
+        if(id){
+            setPreferenceId(id)
+        }
+    }
+    ////MP
+    //setStock
+    const getProductInfo = () => {
+        const data = {
+            id:product.id,
+            cantidad:product.stock - cantidadProducts
+        }
+        console.log(data)
+        alert('a')
+        localStorage.setItem("setStockProduct",JSON.stringify(data))
+    }
+    //setStock
+    //reviews
     const handleReviews = async () => {
         if(!stars||!coment) alert('completa la review')
         else{
@@ -87,7 +148,7 @@ const Details = () => {
 
     return(
         <>
-            <div class="container d-flex flex-column justify-content-start border h1000 mt-4 w-100">
+            <div class="container d-flex flex-column justify-content-start border h1000 mt-4 w-100 cuerpo">
                 <div class=' d-flex flex-column h-50 my-4'>
 
                     <div class="d-flex flex-column justify-content-start align-items-end">
@@ -109,14 +170,19 @@ const Details = () => {
                                 </div>
                             </div>
                                 <div id='stock'class='d-flex justify-content-around align-items-center'>
-                                        <input type="text" placeholder={`stock:${product.stock}`} class='text-center w-25 rounded border'/>
+                                    <div class='w-50' >
+                                        <input type="number" placeholder={`stock:${product.stock}`} class='text-center w-25 rounded border' value={cantidadProducts} onChange={handleInput} />
+                                        {
+                                            error? <p class='error'>{error}</p>:''
+                                        }
+                                    </div>
                                     <h3>
                                         {`$${product.price}`}
                                     </h3>
                                 </div>
 
                                 <div id="btn" class='d-flex w-100 justify-content-end align-items-center mt-4'>
-                                        <button type="button"id="buy" class="btn btn-primary"  onClick={addCart}>
+                                        <button type="button"id="buy" class="btn btn-primary"  onClick={handleBuy}>
                                             Buy
                                         </button>
                                         <button type="button" id="addCart" class="btn btn-info"  onClick={addCart}>
@@ -124,6 +190,7 @@ const Details = () => {
                                             <i class="bi bi-cart3"></i>
                                         </button>
                                 </div>
+                                {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
 
                         </div>
 
@@ -135,37 +202,38 @@ const Details = () => {
                         <p class='text-start m-4'>{product.details}</p>
                     </div>
 
-                    <div class='mx-4 '>
-                        <h2>Comentarios</h2>
-                    </div>
-                    <div class="d-flex flex-column align-items-start h-50 p-4">
-                            {
-                                review? review.map(el => <Reviews stars={el.stars} coment={el.coment}/>):''
-                            }  
-                            <div class='h-100 d-flex align-items-center rounded w-100'>
-                                <div class='d-flex align-items-center justify-content-center w-50 h-100'>
-                                    <div class=''>
-                                        {stars? <Stars rating={stars} />:
-                                        <div>
-                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
-                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
-                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
-                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
-                                            <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                        <div class='mx-4 '>
+                            <h2>Comentarios</h2>
+                        </div>
+                        <div class="d-flex flex-column align-items-start h-50 p-4">
+                                {
+                                    review? review.map(el => <Reviews stars={el.stars} coment={el.coment}/>):''
+                                }  
+                                <div class='h-100 d-flex align-items-center rounded w-100'>
+                                    <div class='d-flex align-items-center justify-content-center w-50 h-100'>
+                                        <div class=''>
+                                            {stars? <Stars rating={stars} />:
+                                            <div>
+                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
+                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
+                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
+                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
+                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                                            </div>
+                                            }
+                                            <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
                                         </div>
-                                        }
-                                        <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
                                     </div>
-                                </div>
 
-                                <div class=' d-flex flex-column align-items-center'>
-                                    <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
-                                    <div class='d-flex justify-content-end w-100'>
-                                        <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
+                                    <div class=' d-flex flex-column align-items-center'>
+                                        <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
+                                        <div class='d-flex justify-content-end w-100'>
+                                            <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
+                                        </div>
                                     </div>
+                
                                 </div>
-             
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

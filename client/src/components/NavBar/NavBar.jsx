@@ -110,6 +110,11 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
               <i class="icons bi bi-plus"></i>
             </Link>
           </li>
+          <li>
+          <Link to={"/contact"}>
+            <i class="icons bi bi-info-circle"></i>
+          </Link>
+          </li>
         </ul>
       </div>
     </div>
