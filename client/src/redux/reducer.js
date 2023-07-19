@@ -1,3 +1,5 @@
+/* eslint-disable no-case-declarations */
+
 // import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes"
 
 // const initialState = {
@@ -21,10 +23,23 @@
 //     ],
 // */
 
-import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER} from "./actionTypes"
+import { 
+  GET_USER,
+  ADD_USER,
+  ADD_FIREBASEUSER,
+  LOGOUT_USER,
+  ADD_PRODUCT,
+  REMOVE_PRODUCT,
+  ADD_ORDER,
+  REMOVE_ORDER,
+  GET_ALL_CATEGORIES, 
+  MINIMUM_PRICE, 
+  MAXIMUM_PRICE, 
+  BETTER_QUALIFIED_FILTER,
+  ALL_FILTER
+} from "./actionTypes"
 
 const initialState = {
-    user:{},
     categories:[{id: 1,name: "Muebles", img: "https://d2qc4bb64nav1a.cloudfront.net/cdn/13/images/curso-a-distancia-restauracion-muebles_amp_primaria_1_1560503054.jpg"},
     {id: 2,name: "Tecnología", img: "https://pcacademia.com/wp-content/uploads/2019/09/precios-de-computadoras.jpg"}, 
     {id: 3,name: "Electrodomesticos", img: "https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/12/11-mitos-electrodomesticos-hora-dejes-creerte-2157733.jpg?tf=3840x"}, 
@@ -33,6 +48,7 @@ const initialState = {
     {id: 6,name: "Construcción", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROhlsHISi9oUcOsHFc4milaQ3kTV7PtxtmQQ&usqp=CAU"}, 
     {id: 7,name: "Hobbies", img: "https://www.reed.co.uk/career-advice/wp-content/uploads/sites/6/2016/06/career-advice-article-header-should-i-include-hobbies-and-interests-in-my-cv.jpg"},
     {id: 8,name: "Joyeria", img: "https://img.freepik.com/foto-gratis/joyas-oro-gemas-escaparate_1398-4327.jpg?w=2000"}],
+
     carouselPhotos: [{img: "https://www.native-instruments.com/typo3temp/pics/img-welcome-hero-guitar-rig-6-player-product-page-01-hero-v2-8c04bb712c562230a837e56511c10f1d-m@2x.jpg", description: "Algun texto descriptivo"},
     {img: "https://assetsio.reedpopcdn.com/g502x_f9QuuM8.jpeg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp", description: "Algun texto descriptivo"},
     {img: "https://images.ecestaticos.com/oycpBwJcX7i-r9GCd1vztzplwCQ=/0x0:1800x1350/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fbfd%2F097%2Fcc7%2Fbfd097cc74485783a690289860e14759.jpg", description: "Algun texto descriptivo"},
@@ -346,31 +362,53 @@ const initialState = {
           rating:4.51
         }
       ],
-      carouselPhotos: [{img: "https://www.native-instruments.com/typo3temp/pics/img-welcome-hero-guitar-rig-6-player-product-page-01-hero-v2-8c04bb712c562230a837e56511c10f1d-m@2x.jpg", description: "Algun texto descriptivo"},
-      {img: "https://assetsio.reedpopcdn.com/g502x_f9QuuM8.jpeg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp", description: "Algun texto descriptivo"},
-      {img: "https://images.ecestaticos.com/oycpBwJcX7i-r9GCd1vztzplwCQ=/0x0:1800x1350/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fbfd%2F097%2Fcc7%2Fbfd097cc74485783a690289860e14759.jpg", description: "Algun texto descriptivo"},
-      {img: "https://www.cleanipedia.com/images/iohqr4whhl17/7fvPOEi6Aros2m9Qxdo1De/757a393ca1569b66eff2f27d8f5bfe45/U2NyZWVuc2hvdF8yLnBuZw/944w-629h/lavarropas-de-color-blanco-sobre-un-piso-gris.jpg", description: "Algun texto descriptivo"}
-     ],
     orders:[],
     minimumPrice: "",
     maximumPrice: "",
-    ratingFilterValue: "all"
+    ratingFilterValue: "all",
+    user:{}
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
     switch (type) {
-
         //USER
+        case GET_USER: {
+            localStorage.setItem("usuarioActual", JSON.stringify(payload));
+            return {
+              ...state,
+              user: payload,
+            };
+          }
+
         case ADD_USER:
+        const auxUser = () => {
+          const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          return userX;
+        }
+        const actUser = state.user
+        console.log("este es mi usuarui actual",actUser)
+        return{
+          ...state,
+          user:auxUser()
+        }
+        case ADD_FIREBASEUSER:
+        const auxUserFirebase = () => {
+          const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          return userX;
+        }
+        const actUser2= state.user
+        console.log("este es mi usuario actual", actUser2)
+
+        return{
+          ...state,
+          user:auxUserFirebase()
+        }
+       
+        case LOGOUT_USER:
+          localStorage.removeItem("usuarioActual");
             return{
                 ...state,
-                user:payload
-            }
-            
-        case REMOVE_USER:
-            return{
-                ...state,
-                user: {}
+                user: payload
             }
 
         //PRODUCT

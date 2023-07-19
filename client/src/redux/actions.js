@@ -1,31 +1,89 @@
-import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes";
+import { 
+   GET_FIREBASEUSER,
+   ADD_ORDER, 
+   ADD_PRODUCT,
+   ADD_USER,
+   ADD_FIREBASEUSER,
+   REMOVE_ORDER,
+   REMOVE_PRODUCT,
+   GET_ALL_CATEGORIES, 
+   MINIMUM_PRICE, 
+   MAXIMUM_PRICE, 
+   BETTER_QUALIFIED_FILTER, 
+   ALL_FILTER,
+   GET_USER, 
+   LOGOUT_USER
+} from "./actionTypes";
 import axios from "axios";
 
 /////USER//////
+export const getUser = (user) => {
+   return async (dispatch) => {
+     try {
+       const response = await axios.get(
+         `http://localhost:3001/PF/user/bdd?email=${user.email}&password=${user.password}`
+       );
+       const payload = response.data;
+       localStorage.setItem("usuarioActual", JSON.stringify(payload));
+       dispatch({
+         type: GET_USER,
+         payload: payload,
+       });
+     } catch (error) {
+       console.log("Error al obtener el usuario: ", error.message);
+       throw error;
+     }
+   };
+ };
+ 
+export const getFirebaseUser = (email) => {
+   return async (dispatch) => {
+      try {
+         const response = await axios.post('http://localhost:3001/PF/user/firebase', { email: email });
+         return dispatch({
+            type: GET_FIREBASEUSER,
+            payload: response.data
+         });
+      } catch (error) {
+         console.log("Error al traer el usuario: ", error.message);
+      }
+   };
+};
+
 export const addUser = (user) => {
     return async(dispatch) => {
       try {
-         return dispatch({
-            type: ADD_USER,
-            payload: user
-         })
+         const response = await axios.post('http://localhost:3001/PF/user', user)
+            dispatch({
+               type: ADD_USER,
+               payload:response.data
+            })
+         return response;
       } catch (error) {
-         console.log(error.message)
+         console.log("Error al crear el usuario", error.message)
       }
     };
 }
+export const addFirebaseUser = (user) => {
+   return async(dispatch) => {
+     try {
+        const response = await axios.post('http://localhost:3001/PF/user/firebase', user)
+           dispatch({
+              type: ADD_FIREBASEUSER,
+              payload:response.data
+           })
+        return response;
+     } catch (error) {
+        console.log("Error al crear el usuario", error.message)
+     }
+   };
+}
 
-export const removeUser = (payload) => {
-    return async (dispatch) => {
-      try {
-         return dispatch({
-             type: REMOVE_USER,
-             payload
-         });
-      } catch (error) {
-         console.log(error.message);
-      }
-    };
+export const userLogout = () => {
+   return {
+      type: LOGOUT_USER,
+      payload:{},
+   }
 }
 
 /////PRODUCTS//////

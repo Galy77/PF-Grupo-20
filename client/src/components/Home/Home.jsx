@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -13,9 +14,7 @@ import { useState } from 'react';
 function Home (){
 
     const categories = useSelector(state => state.categories);
-
-    const [ allCategories, setAllCategories ] = useState([]);
-
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     return (
     <>
         <CreatedCarousel />

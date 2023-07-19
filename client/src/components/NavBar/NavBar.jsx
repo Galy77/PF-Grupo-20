@@ -110,6 +110,11 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
             </Link>
           </li>
           <li>
+          <Link to = {'/profile'}>
+                  <i class="icons bi bi-person"></i>
+            </Link>
+          </li>
+          <li>
           <Link to={"/contact"}>
             <i class="icons bi bi-info-circle"></i>
           </Link>
