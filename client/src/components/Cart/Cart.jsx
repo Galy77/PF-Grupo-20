@@ -32,7 +32,7 @@ const Cart = () => {
         initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
         const createPreference = async () => {
             try {
-                const response = await axios.post("http://localhost:3001/PF/create_preference",{
+                const response = await axios.post("https://api-market-henry-jczt.onrender.com/PF/create_preference",{
                     description:"cart Mercado Henry",
                     price:total,
                     quantity:1
