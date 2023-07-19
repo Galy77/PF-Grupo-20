@@ -67,7 +67,7 @@ const Details = ({}) => {
     const [review, setReview] = useState()
     const getReviews = async () => {
         try {
-            const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
+            const { data } = await axios(` https://api-market-henry-jczt.onrender.com/PF/review/${id}`)
             setReview(data.reviews)
         } catch (error) {
             console.log('este producto no tiene reviews')
@@ -91,7 +91,7 @@ const Details = ({}) => {
     initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
     const createPreference = async () => {
         try {
-            const response = await axios.post("http://localhost:3001/PF/create_preference",{
+            const response = await axios.post(" https://api-market-henry-jczt.onrender.com/PF/create_preference",{
                 description:`${product.name}`,
                 price:product.price,
                 quantity:cantidadProducts ? cantidadProducts : 1
@@ -123,7 +123,7 @@ const Details = ({}) => {
                 id_product:id
             }
             try {
-                const response = await axios.post('http://localhost:3001/PF/review',data)
+                const response = await axios.post(' https://api-market-henry-jczt.onrender.com/PF/review',data)
                 setStars(null)
                 setComent('')
                 getReviews()
