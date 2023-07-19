@@ -25,7 +25,7 @@ function Products (){
     const data = products.map(el => {
         return{
             id:el.id,
-            details:el.details,
+            details:el.description,
             image:el.image,
             name:el.name,
             price:el.price,
@@ -44,28 +44,16 @@ function Products (){
         const matchRating = (ratingFilterValue === "all") || (ratingFilterValue === "betterQualified" && product.rating >= 3);
         return matchSearch && matchPrice && matchRating;
     });
-const a = () => {
-    console.log(categoryProducts)
-}
     return (
         <div class='d-flex flex-column' >
             <CreatedCarousel />
-            <button onClick={a}>a</button>
-
                 <div class='filter-products d-flex my-4'>
                     <Filters />
                     <div class='d-flex flex-column align-items-center w-100 px-4' >
-                        <div class='w-100 g-4-products mx-4'>
                                 <ProductsCards
                                     categoryProducts={categoryProducts}
                                     filteredProducts={filteredProducts}
-                                    // setProductsToShow={setProductsToShow}
-                                    // dataProducts={dataProducts}
-                                    // sliceProducts={sliceProducts}
-                                    // page={page}
-                                    // setPage={setPage}
                                 />
-                        </div>
                     </div>
                 </div>
 
