@@ -14,8 +14,8 @@ const postPreference = (req, res) => {
                 }
             ],
             back_urls: {
-                "success": "http://localhost:5173/cart",
-                "failure": "http://localhost:5173/cart",
+                "success": "http://localhost:5173/success",
+                "failure": "http://localhost:5173/failure",
                 "pending": "http://localhost:5173/cart"
             },
 

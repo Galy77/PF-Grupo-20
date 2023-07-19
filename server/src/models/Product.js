@@ -14,8 +14,8 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      details: {
-        type: DataTypes.JSON,
+      description: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       price: {
@@ -38,10 +38,6 @@ module.exports = (sequelize) => {
           max: 5,
           min: 0.5,
         },
-      },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false
       }
     },
     { timestamps: false }

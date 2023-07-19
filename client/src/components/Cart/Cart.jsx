@@ -54,12 +54,21 @@ const Cart = () => {
             }
         }
         ////MP
-    function goBack() {
-        window.history.back();
-    }
-      
-
-console.log(productosStorage)
+        useEffect(() => {
+            console.log(products)
+        },[])
+        //setStock
+        const getProductInfo = () => {
+            const data = products.map(el => {
+                return{
+                    id:el.id,
+                    cantidad:el.stock - el.cant
+                }
+            })
+            alert('a')
+            localStorage.setItem("setStockProduct",JSON.stringify(data))
+        }
+        //setStock
     return(
         <>
         <div class='mt-4'>
@@ -79,7 +88,7 @@ console.log(productosStorage)
                         <span class='txt-large'>{`$${total}`}</span>
 
                         <button onClick={handleBuy} id="pay">Pay</button>
-                        {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
+                        {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
 
                         <i onClick={deleteCart} id='trash'class="bi bi-trash-fill"></i>
                     </div>

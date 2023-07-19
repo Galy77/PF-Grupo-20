@@ -7,6 +7,8 @@ import { useDispatch,useSelector } from 'react-redux';
 import { addOrder,addProduct,addUser,removeOrder,removeProduct,removeUser } from './redux/actions';
 import Details from './components/Details/Details'
 import Cart from './components/Cart/Cart';
+import Success from './components/Payment/Success';
+import Failure from './components/Payment/Failure';
 import Home from './components/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import Create from './components/Create/Create'
@@ -34,6 +36,8 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/detail/:id' element={<Details/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/Success' element={<Success/>}/>
+        <Route path='/Failure' element={<Failure/>}/>
         <Route path='/login'/>
         <Route path='/register'/> 
         <Route path='/create' element={ <Create /> }/>

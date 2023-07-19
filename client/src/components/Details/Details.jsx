@@ -75,10 +75,12 @@ const Details = ({}) => {
     }
     useEffect(() => {
         getReviews()
+        console.log(product)
     },[])
     //MP
     const [cantidadProducts, setCantidadProducts] = useState()
     const [error, setError] = useState()
+
     const handleInput = (event) => {
         let value = event.target.value
         if(value >= 0 && value <= product.stock){
@@ -86,8 +88,9 @@ const Details = ({}) => {
             setError()
         } 
         else setError('ingrese un numero valido')
-    } 
+    }
     const [preferenceId, setPreferenceId] = useState(null)
+     
     initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
     const createPreference = async () => {
         try {
@@ -99,11 +102,9 @@ const Details = ({}) => {
             })
             console.log(response)
             const {id} = response.data;
-            console.log(id)
             return id
         } catch (error) {
-            console.log(error)
-            console.log(1)            
+            console.log(error)          
         }
     }
     const handleBuy = async () => {
@@ -112,8 +113,19 @@ const Details = ({}) => {
             setPreferenceId(id)
         }
     }
-    ////MP 
-
+    ////MP
+    //setStock
+    const getProductInfo = () => {
+        const data = {
+            id:product.id,
+            cantidad:product.stock - cantidadProducts
+        }
+        console.log(data)
+        alert('a')
+        localStorage.setItem("setStockProduct",JSON.stringify(data))
+    }
+    //setStock
+    //reviews
     const handleReviews = async () => {
         if(!stars||!coment) alert('completa la review')
         else{
@@ -180,7 +192,7 @@ const Details = ({}) => {
                                             <i class="bi bi-cart3"></i>
                                         </button>
                                 </div>
-                                {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
+                                {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
 
                         </div>
 
