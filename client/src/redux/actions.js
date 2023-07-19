@@ -12,8 +12,10 @@ import {
    BETTER_QUALIFIED_FILTER, 
    ALL_FILTER,
    GET_USER, 
-   LOGOUT_USER
+   LOGOUT_USER,
+   GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID
 } from "./actionTypes";
+
 import axios from "axios";
 
 /////USER//////
@@ -193,7 +195,7 @@ export const showAll = (payload) => {
    }
 }
 
-//---->Categories
+/////GET ALLS/////
 export const getAllCategories = () => {
    return async function(dispatch){
       try{
@@ -204,6 +206,35 @@ export const getAllCategories = () => {
          })
       }catch(error){
          alert(error.menssage);
+      }
+   }
+}
+
+export const getAllProducts = () => {
+   return async function(dispatch){
+      try {
+         const response = await axios.get("http://localhost:3001/PF/products");
+         return dispatch({
+            type: GET_ALL_PRODUCTS,
+            payload: response.data
+         })
+      } catch (error) {
+         console.log(error.message);
+      }
+   }
+}
+
+export const getProductById = (id) => {
+   return async function(dispatch){
+      try {
+         const response = await axios.get(`http://localhost:3001/PF/products/${id}`);
+         console.log(response.data)
+         return dispatch({
+            type: GET_PRODUCT_BY_ID,
+            payload: response.data
+         })
+      } catch (error) {
+         console.log(error.message)
       }
    }
 }

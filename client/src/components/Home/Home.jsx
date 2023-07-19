@@ -2,23 +2,34 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import CreatedCarousel from '../Carousel/Carousel';
 import { Link } from 'react-router-dom';
-import style from "./Home.module.css";
+// import style from "./Home.module.css";
+// import axios from "axios"
 import './Home.css'
+import { useEffect } from 'react';
+import { getAllCategories } from '../../redux/actions';
 
 
 function Home (){
     const categories = useSelector(state => state.categories);
+
     const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     console.log("actual",usuarioActual)
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllCategories());
+    },[dispatch])
+
     return (
     <>
         <CreatedCarousel />
-        <div class='a w-100 d-flex justify-content-center'>
-            <div class='cards-container'>
-                <Row xs={1} md={2} className="g-4 m-3 justify-content-center">
+        <div class='w-100 d-flex flex-column justify-content-center align-items-center h-100'>
+            <div class='cuerpo cards-container my-4'>
+                <Row xs={1} md={2} className="grid-2 g-4 m-3 justify-content-center">
                     {categories.map((category) => (
                             <Col md={3}>
                                 <div class='card-container'>
@@ -36,11 +47,6 @@ function Home (){
                 </Row>
             </div>
         </div>
-        <footer>
-            <div>
-                    <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
-            </div>
-        </footer>
 
     </>
     )

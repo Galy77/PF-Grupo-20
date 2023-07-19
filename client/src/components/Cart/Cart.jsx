@@ -3,27 +3,30 @@ import CartCart from "./CartCard"
 import { removeOrder } from "../../redux/actions";
 import { useDispatch,useSelector } from "react-redux";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 import { addOrder } from "../../redux/actions";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useState } from 'react';
 import {initMercadoPago, Wallet } from "@mercadopago/sdk-react"
-import { useAuth } from "../../context/AuthContext";
+// import { useAuth } from "../../context/AuthContext";
+
 const Cart = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
-    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+    // const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     
-    const { user } = useAuth();
-    const [isUser, setIsUser] = useState();
+    // const { user } = useAuth();
+    // const [isUser, setIsUser] = useState();
 
-    useEffect(() => {
-        if(usuarioActual){
-          setIsUser(usuarioActual);
-        }else{
-          setIsUser(user);
-        }
-    }, [user, usuarioActual]);
+    // useEffect(() => {
+    //     if(usuarioActual){
+    //       setIsUser(usuarioActual);
+    //     }else{
+    //       setIsUser(user);
+    //     }
+    // }, [user, usuarioActual]);
 
     
     const products = useSelector(state => state.orders)
@@ -70,43 +73,61 @@ const Cart = () => {
                 setPreferenceId(id)
             }
         }
-        ////MP
-    function goBack() {
-        window.history.back();
-    }
       
-    if (!isUser) {
-        navigate("/login");
-        return null;
-    }
-console.log(productosStorage)
-    return(
-        <>
-        <div class='mt-4'>
+        
+        // useEffect(() => {
+        //     console.log(products)
+        // },[])
+        //setStock
+        const getProductInfo = () => {
+            const data = products.map(el => {
+                return{
+                    id:el.id,
+                    cantidad:el.stock - el.cant
+                }
+            })
+            alert('a')
+            localStorage.setItem("setStockProduct",JSON.stringify(data))
+        }
+        //setStock
+        
+        // if (!isUser) {
+        //     navigate("/login");
+        //     return null;
+        // }
+        return (
+            <>
+                <div class='mt-4'>
 
-            <div class='cart-container d-flex justify-content-evenly'>
-                <div id='cart-card'class="d-flex flex-column align-items-center cuerpo">
-                    {
-                        productosStorage.length? productosStorage.map(productscart => {
-                                return <CartCart products={productscart}/>
-                        }):<p>No hay productos en tu carrito</p>
-                    }
+                    <div class='cart-container d-flex justify-content-evenly'>
 
-                </div>
-                <div id='aux'>
-                    <div class='total-container d-flex flex-column justify-content-evenly align-items-center'>
-                        <span id='total'className="txt-large">TOTAL</span>
-                        <span class='txt-large'>{`$${total}`}</span>
+                        <div id='cart-card'class="d-flex flex-column align-items-center justify-content-center cuerpo">
 
-                        <button onClick={handleBuy} id="pay">Pay</button>
-                        {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
+                            {
+                                productosStorage.length? productosStorage.map(productscart => {
+                                        return <CartCart products={productscart}/>
+                                }):<p>No hay productos en tu carrito</p>
+                            }
 
-                        <i onClick={deleteCart} id='trash'class="bi bi-trash-fill"></i>
+                        </div>
+                        <div id='aux'>
+                            <div class='total-container d-flex flex-column justify-content-evenly align-items-center'>
+                                <span id='total'className="txt-large">TOTAL</span>
+                                <span class='txt-large'>{`$${total}`}</span>
+
+                                <button onClick={handleBuy} id="pay">Pay</button>
+
+                                {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
+
+                                <i onClick={deleteCart} id='trash'class="bi bi-trash-fill"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        </>
-    )
+            </>
+        )
+
+        
 }
-export default Cart
+
+export default Cart;
