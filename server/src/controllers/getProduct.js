@@ -27,7 +27,7 @@ const getProducts = async (req, res) => {
         }
       })
       );
-      res.status(200).json({name:a});
+      res.status(200).json(createdProducts);
     } else {
 
 
