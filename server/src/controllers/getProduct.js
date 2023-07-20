@@ -7,8 +7,9 @@ const productsData = require("../data/productsData")
 const getProducts = async (req, res) => {
   try {
   const existingCategories = await Category.findAll();
-  const productsDb = await Product.findAll();
-
+  const productsDb = await Product.findAll({
+    include:Category
+  });
   if (productsDb.length === 0) {
     const createdProducts = await Product.bulkCreate(productsData);
     await Promise.all(

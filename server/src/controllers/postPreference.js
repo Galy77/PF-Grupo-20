@@ -3,10 +3,6 @@ mercadopago.configure({
     access_token:"TEST-4743047827353853-070813-4c276747a002655f7e652afe39298bfb-609427139",
 })
 
-mercadopago.configure({
-    access_token:"TEST-4743047827353853-070813-4c276747a002655f7e652afe39298bfb-609427139",
-})
-
 const postPreference = (req, res) => {
     try {
         let preference = {
@@ -18,11 +14,13 @@ const postPreference = (req, res) => {
                 }
             ],
             back_urls: {
-                "success": "http://localhost:5173/cart",
-                "failure": "http://localhost:5173/cart",
+                "success": "http://localhost:5173/success",
+                "failure": "http://localhost:5173/failure",
                 "pending": "http://localhost:5173/cart"
             },
+
             notification_url: "https://api-market-henry-jczt.onrender.com/pf/webhook",
+
             auto_return: "approved",
         };
     

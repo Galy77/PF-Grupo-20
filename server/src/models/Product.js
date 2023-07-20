@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
       },
       price: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
 
       image: {
@@ -32,16 +32,12 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       rating: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DOUBLE,
         allowNull: false,
         validate: {
           max: 5,
-          min: 1,
+          min: 0.5,
         },
-      },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false
       }
     },
     { timestamps: false }

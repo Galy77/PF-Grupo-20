@@ -1,17 +1,18 @@
-const { Category } = require('../db');
+const { Category , Product} = require('../db');
 const axios = require("axios");
+const categoriesData = require("../data/categoriesData")
 
 
 const getCategory = async(req, res) => {
     try {
-        const respawns = await axios.get("https://api.mercadolibre.com/sites/MLA/categories")
-        const data = respawns.data;
-        
+        const data = categoriesData;
+
         const category = await Category.findAll()
         if(category.length === 0){
             const categories = data.map((obj) => {
                 return {
-                    name: obj.name
+                    name: obj.name,
+                    image: obj.img
                 }
             })
 
@@ -25,4 +26,6 @@ const getCategory = async(req, res) => {
     }
 };
 
-module.exports = getCategory;
+module.exports = {
+    getCategory
+};
