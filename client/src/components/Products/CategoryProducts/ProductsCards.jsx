@@ -46,19 +46,21 @@ function ProductsCards (props) {
 
     return(
         <>
-            {dataProducts ? dataProducts?.map((product) => (
-                <div class='card-products m-4 rounded' >
+            <div class='w-100 g-4-products mx-4'>
+                {dataProducts ? dataProducts?.map((product) => (
+                    <div class='card-products m-4 rounded' >
 
-                    <Card.Link href={`/detail/${product.id}`} class='linkProducts'>
-                        <Card.Img variant="top" src={product.image} />
-                        <Card.Body>
-                            <Card.Title>{product.name}</Card.Title>
-                            <Card.Text>{`$ ${product.price}`}</Card.Text>
-                        </Card.Body>
-                    </Card.Link>
-                </div> 
-                )) : <h1 className={style.notFound}>En esta categoria aun no hay productos</h1>
-            }
+                        <Card.Link href={`/detail/${product.id}`} class='linkProducts'>
+                            <Card.Img variant="top" src={product.image} />
+                            <Card.Body>
+                                <Card.Title>{product.name}</Card.Title>
+                                <Card.Text>{`$ ${product.price}`}</Card.Text>
+                            </Card.Body>
+                        </Card.Link>
+                    </div> 
+                    )) : <h1 className={style.notFound}>En esta categoria aun no hay productos</h1>
+                }
+            </div>
             <div class='d-flex align-items-center'>
                 {
                     page > 1 ? <p class='m-4 border btn btn-primary' onClick={handlePage} >Anterior</p>:''

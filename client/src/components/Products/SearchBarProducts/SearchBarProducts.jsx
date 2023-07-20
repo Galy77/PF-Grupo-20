@@ -63,13 +63,15 @@ function SearchBarProducts () {
 
 
     return (
-        <div>
+        <div class='d-flex flex-column' >
             <CreatedCarousel />
-            <div className={style.container}>
+            <div class='filter-products d-flex my-4'>
                 <Filters />
-                <SearchBarProductsCards
-                productsFiltered={filteredProducts ? filteredProducts :alphabeticOrderFilter(searchProducts, alphabeticFilterValue, priceOrderValue)}                 
-                />
+                <div class='d-flex flex-column align-items-center w-100 px-4' >
+                    <SearchBarProductsCards
+                    productsFiltered={filteredProducts ? filteredProducts :alphabeticOrderFilter(searchProducts, alphabeticFilterValue, priceOrderValue)}                 
+                    />
+                </div>
             </div>
         </div>
     )

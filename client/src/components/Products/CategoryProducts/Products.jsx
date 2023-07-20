@@ -27,7 +27,7 @@ function Products (){
     const data = products.map(el => {
         return{
             id:el.id,
-            details:el.details,
+            details:el.description,
             image:el.image,
             name:el.name,
             price:el.price,
@@ -72,10 +72,7 @@ function Products (){
         const matchRating = (ratingFilterValue === "all") || (ratingFilterValue === "betterQualified" && product.rating >= 3);
         return matchSearch && matchPrice && matchRating;
     });
-
     const filteredProducts = alphabeticOrderFilter(filteredsProducts, alphabeticFilterValue, priceOrderValue);
-
-
 
     return (
         <div class='d-flex flex-column' >
@@ -83,12 +80,10 @@ function Products (){
                 <div class='filter-products d-flex my-4'>
                     <Filters />
                     <div class='d-flex flex-column align-items-center w-100 px-4' >
-                        <div class='w-100 g-4-products mx-4'>
                                 <ProductsCards
                                     categoryProducts={alphabeticOrderFilter(categoryProducts, alphabeticFilterValue, priceOrderValue)}
                                     filteredProducts={filteredProducts}
                                 />
-                        </div>
                     </div>
                 </div>
 
