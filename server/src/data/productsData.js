@@ -408,7 +408,7 @@ productsData = [
             name: "Nokia 9 PureView",
             description: "Pantalla pOLED de 5.99 pulgadas, Snapdragon 845, cámara penta de 12 MP, Android 9",
             price: 699.99,
-            image: "nokia9pureview.jpg",
+            image: "https://camara.pro/wp-content/uploads/2019/03/nokia_9_pureview-specs_popup-desktop.png",
             stock: 9,
             rating: 4.0,
             category: "Celulares"
@@ -483,7 +483,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_640096-MLV48293057811_112021-O.webp",
             stock: 100,
             rating: 4.7,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Soporte Magnético para Teléfono",
@@ -492,7 +492,7 @@ productsData = [
             image: "https://sistemasrjd.com/3657-home_default/soporte-magn%C3%A9tico-para-tel%C3%A9fono-inteligente-f3.jpg",
             stock: 80,
             rating: 4.5,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Kit de Emergencia para Automóvil",
@@ -501,7 +501,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_879802-MLV51629757934_092022-O.webp",
             stock: 30,
             rating: 4.8,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Tapetes para Automóvil Resistentes al Agua",
@@ -510,7 +510,7 @@ productsData = [
             image: "https://www.elnuevoherald.com/guiasdecompra/_next/image?url=https%3A%2F%2Fnh.revoousandbox.com%2Fguiasdecompra%2Fwp-content%2Fuploads%2F2022%2F09%2Fmotor-trek.jpg&w=640&q=75",
             stock: 60,
             rating: 4.6,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Cámara de Visión Trasera",
@@ -519,7 +519,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/51DwHQfP+yS._AC_UF894,1000_QL80_.jpg",
             stock: 50,
             rating: 4.4,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Set de Limpiadores para Coche",
@@ -528,7 +528,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_810584-CBT51068660810_082022-O.webp",
             stock: 70,
             rating: 4.3,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Almohada de Viaje para Reposacabezas",
@@ -537,7 +537,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81KcNg8Mo1L._AC_UF894,1000_QL80_.jpg",
             stock: 90,
             rating: 4.6,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Organizador de Maletero Plegable",
@@ -546,7 +546,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81llVwxwUXS._AC_UF894,1000_QL80_.jpg",
             stock: 40,
             rating: 4.2,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Cargador Inalámbrico para Automóvil",
@@ -555,7 +555,7 @@ productsData = [
             image: "https://gossipvehiculo.com/wp-content/uploads/2021/09/imagen-destacada-10.jpg",
             stock: 60,
             rating: 4.7,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Organizador de Asiento para Niños",
@@ -564,7 +564,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_811429-MLA51841099106_102022-O.webp",
             stock: 50,
             rating: 4.5,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Fundas de Asiento Transpirables",
@@ -573,7 +573,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81cwSa3C-2L._AC_UF894,1000_QL80_.jpg",
             stock: 70,
             rating: 4.4,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Luces LED para Ruedas",
@@ -582,7 +582,7 @@ productsData = [
             image: "https://http2.mlstatic.com/D_NQ_NP_788359-MLV46367375939_062021-O.webp",
             stock: 100,
             rating: 4.8,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Bocina de Aire para Automóvil",
@@ -591,7 +591,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/51eSQQkRIDL._AC_UF894,1000_QL80_.jpg",
             stock: 30,
             rating: 4.6,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Protector de Parachoques Trasero",
@@ -600,7 +600,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/61TRKVsZWsL.jpg",
             stock: 80,
             rating: 4.3,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Espejo Retrovisor con Cámara Dashcam",
@@ -609,7 +609,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/41hGgjj16gL._SL500_.jpg",
             stock: 20,
             rating: 4.7,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Desodorante de Aire para Automóvil",
@@ -618,7 +618,7 @@ productsData = [
             image: "https://images-na.ssl-images-amazon.com/images/I/81PqJQz7IJL._AC_UL210_SR210,210_.jpg",
             stock: 120,
             rating: 4.5,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Alfombrillas para Reposabrazos",
@@ -627,7 +627,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/61P85XWE-IL._AC_UF894,1000_QL80_.jpg",
             stock: 90,
             rating: 4.4,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Adaptador Bluetooth para el Coche",
@@ -636,7 +636,7 @@ productsData = [
             image: "https://imagenes.elpais.com/resizer/mXT5kosnj7EExuVF3yUiB4-rbnE=/414x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/46LFIAN3GRAQXJKZOXYFKVB72I.jpg",
             stock: 50,
             rating: 4.8,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Cobertor para Asientos de Cuero",
@@ -645,7 +645,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/71hL1XBEt0L._AC_UF894,1000_QL80_.jpg",
             stock: 40,
             rating: 4.6,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Parasol para Parabrisas",
@@ -654,7 +654,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/61usGI8lAbL._AC_UF894,1000_QL80_.jpg",
             stock: 60,
             rating: 4.3,
-            category: "accesorios para Vehículos"
+            category: "Accesorios para Vehículos"
           },
           {
             name: "Fertilizante NPK 10-20-10",
@@ -1356,7 +1356,7 @@ productsData = [
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDLNuzfxGBg83UoLlSGMQkYduJoVzuQLNJCw&usqp=CAU",
             stock: 10,
             rating: 4.5,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Libro de pintura al óleo",
@@ -1365,7 +1365,7 @@ productsData = [
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsT8N45JdLnoG7k6ICzwraw3b0Cvj9Bhsdkg&usqp=CAU",
             stock: 5,
             rating: 4.2,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Caja de acuarelas profesionales",
@@ -1374,7 +1374,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/71Cw-UwGZYL._AC_UL400_.jpg",
             stock: 3,
             rating: 4.8,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Bloc de dibujo para bocetos",
@@ -1383,7 +1383,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81ntwJyizkL._AC_UL400_.jpg",
             stock: 15,
             rating: 4.4,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Set de pinceles para acrílico",
@@ -1392,7 +1392,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81ovuq8o5mL._AC_UL400_.jpg",
             stock: 8,
             rating: 4.6,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Tijeras de costura profesional",
@@ -1401,7 +1401,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/71UMcGc9eRL._AC_UL400_.jpg",
             stock: 6,
             rating: 4.3,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Set de marcadores de colores",
@@ -1410,7 +1410,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81tP3Oi62ZL._AC_UL400_.jpg",
             stock: 10,
             rating: 4.1,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Libreta de apuntes",
@@ -1419,7 +1419,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81pOPer1eIL._AC_UL400_.jpg",
             stock: 20,
             rating: 4.0,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Caja de hilos de bordar",
@@ -1428,7 +1428,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/710q0CK-PGL._AC_UL400_.jpg",
             stock: 4,
             rating: 4.7,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Set de lápices de colores",
@@ -1437,7 +1437,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81TlNqOb+pL._AC_UL400_.jpg",
             stock: 10,
             rating: 4.5,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Revista de arte contemporáneo",
@@ -1446,7 +1446,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/91x0VRKuXgL._AC_UY218_.jpg",
             stock: 12,
             rating: 4.3,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Cinta adhesiva decorativa",
@@ -1455,7 +1455,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/41dQmUs4uiL._AC_UL400_.jpg",
             stock: 15,
             rating: 4.1,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Papel para acuarela",
@@ -1464,7 +1464,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/71zYIzy1KeL._AC_UL400_.jpg",
             stock: 8,
             rating: 4.6,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Set de ganchillos de crochet",
@@ -1473,7 +1473,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/815HEtZvlkL._AC_UL400_.jpg",
             stock: 6,
             rating: 4.2,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Cuaderno de caligrafía",
@@ -1482,7 +1482,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/61TRMIDNTEL._AC_UL400_.jpg",
             stock: 10,
             rating: 4.0,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Set de pinceles para acuarela",
@@ -1491,7 +1491,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81nUpD9G6OL._AC_UL400_.jpg",
             stock: 7,
             rating: 4.4,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Libro de técnicas de bordado",
@@ -1500,7 +1500,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/51W+5NGp4HL._AC_UY218_.jpg",
             stock: 5,
             rating: 4.7,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Set de marcadores de arte",
@@ -1509,7 +1509,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/91dc5sKc-BL._AC_UL400_.jpg",
             stock: 9,
             rating: 4.6,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Bloc de papel de calco",
@@ -1518,7 +1518,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/71SHbx-qwVL._AC_UL400_.jpg",
             stock: 12,
             rating: 4.3,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Caja de lápices de grafito",
@@ -1527,7 +1527,7 @@ productsData = [
             image: "https://m.media-amazon.com/images/I/81yb+HGKXrL._AC_UL400_.jpg",
             stock: 8,
             rating: 4.5,
-            category: "Arte Librería y Mercería"
+            category: "Arte, Librería y Mercería"
           },
           {
             name: "Neumáticos para automóvil",
@@ -2063,7 +2063,7 @@ productsData = [
             name: "Aceite de argán para el cabello",
             description: "Aceite de argán natural para nutrir y dar brillo al cabello, apto para todo tipo de cabello.",
             price: 15,
-            image: "https://example.com/images/argan-oil.jpg",
+            image: "https://farmacityar.vteximg.com.br/arquivos/ids/228858-1000-1000/155788_tratamiento-oleo-de-argan-x-58ml__imagen-1.jpg?v=637994734012070000",
             stock: 15,
             rating: 4.3,
             category: "Belleza y Cuidado Personal"
@@ -3060,7 +3060,7 @@ productsData = [
           },
           {
             name: "Aros de oro amarillo de 14 quilates",
-            description: "Estos aros de oro amarillo de 14 quilates son el regalo perfecto para cualquier ocasión. Están hechos de oro de alta calidad y están disponibles en una variedad de tamaños.",
+            description: "Estos aros de oro amaris.",
             price: 200,
             image: "https://www.zales.com/productimages/processed/V-20505398_0_260.jpg?pristine=true",
             stock: 10,
@@ -3069,7 +3069,7 @@ productsData = [
           },
           {
             name: "Collar de oro blanco de 14 quilates con colgante de corazón",
-            description: "Este collar de oro blanco de 14 quilates con colgante de corazón es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está disponible en una variedad de longitudes.",
+            description: "Este collar de oro blanco de 14 quilates ces.",
             price: 300,
             image: "https://www.zales.com/productimages/processed/V-20560691_0_260.jpg?pristine=true",
             stock: 10,
@@ -3078,7 +3078,7 @@ productsData = [
           },
           {
             name: "Reloj de pulsera de acero inoxidable con esfera negra",
-            description: "Este reloj de pulsera de acero inoxidable con esfera negra es un reloj clásico que nunca pasa de moda. Está hecho de materiales de alta calidad y está disponible en una variedad de tamaños.",
+            description: "Este reloj de pulsera de acero inoxidaños.",
             price: 400,
             image: "https://www.zales.com/productimages/processed/V-20027771_0_260.jpg?pristine=true",
             stock: 10,
@@ -3087,7 +3087,7 @@ productsData = [
           },
           {
             name: "Pulsera de oro amarillo de 14 quilates con dije de estrella",
-            description: "Esta pulsera de oro amarillo de 14 quilates con dije de estrella es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            description: "Esta pulsera de oro amarillo de 14 quilates con di longitudes.",
             price: 500,
             image: "https://www.zales.com/productimages/processed/V-20495638_0_260.jpg?pristine=true",
             stock: 10,
@@ -3096,7 +3096,7 @@ productsData = [
           },
           {
             name: "Aretes de plata esterlina con diamantes",
-            description: "Estos aretes de plata esterlina con diamantes son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de plata de alta calidad y están adornados con diamantes de alta calidad.",
+            description: "Estos aretes de plata esterlina con diamantidad.",
             price: 600,
             image: "https://www.zales.com/productimages/processed/V-20012024_0_260.jpg?pristine=true",
             stock: 10,
@@ -3105,7 +3105,7 @@ productsData = [
           },
             {
             name: "Anillo de oro amarillo de 14 quilates con solitario de diamante",
-            description: "Este anillo de oro amarillo de 14 quilates con solitario de diamante es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está adornado con un diamante de alta calidad.",
+            description: "Este anillo de oro amarillo de 14 quilates codad.",
             price: 1000,
             image: "https://www.zales.com/productimages/processed/V-15748494_0_260.jpg?pristine=true",
             stock: 10,
@@ -3114,7 +3114,7 @@ productsData = [
           },
           {
             name: "Collar de oro blanco de 14 quilates con colgante de perla",
-            description: "Este collar de oro blanco de 14 quilates con colgante de perla es una pieza elegante que es perfecta para cualquier ocasión. Está hecho de oro de alta calidad y está adornado con una perla de alta calidad.",
+            description: "Este collar de oro blanco de 14 quilates con colgantlidad.",
             price: 1500,
             image: "https://www.zales.com/productimages/processed/V-20049793_0_260.jpg?pristine=true",
             stock: 10,
@@ -3123,7 +3123,7 @@ productsData = [
           },
           {
             name: "Reloj de pulsera de oro rosa de 18 quilates con esfera blanca",
-            description: "Este reloj de pulsera de oro rosa de 18 quilates con esfera blanca es un reloj clásico que nunca pasa de moda. Está hecho de materiales de alta calidad y está disponible en una variedad de tamaños.",
+            description: "Este reloj de pulsera de oro rosa de 18 quilatños.",
             price: 2000,
             image: "https://www.zales.com/productimages/processed/V-20050926_0_260.jpg?pristine=true",
             stock: 10,
@@ -3132,25 +3132,17 @@ productsData = [
           },
           {
             name: "Pulsera de oro rosa de 18 quilates con dije de corazón",
-            description: "Esta pulsera de oro rosa de 18 quilates con dije de corazón es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            description: "Esta pulsera de oro rosa de 18 quilates con dije ditudes.",
             price: 2500,
             image: "https://www.zales.com/productimages/processed/V-20143370_0_260.jpg",
-            stock: 10,
-            rating: 5,
-            category: "Joyas y Relojes"
-          },
-          {
-            name: "Aretes de diamantes de oro blanco de 14 quilates",
-            description: "Estos aretes de diamantes de oro blanco de 14 quilates son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de oro de alta calidad y están adornados con diamantes de alta calidad.",
             price: 3000,
-            image: "https://www.zales.com/productimages/processed/V-17068131_0_260.jpg?pristine=true",
             stock: 10,
             rating: 5,
             category: "Joyas y Relojes"
           },
           {
             name: "Anillo de compromiso de oro amarillo de 14 quilates con diamante de corte princesa",
-            description: "Este anillo de compromiso de oro amarillo de 14 quilates con diamante de corte princesa es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está adornado con un diamante de alta calidad.",
+            description: "Este anillo de compromiso de oro amarillo de 14 quilates con dlidad.",
             price: 5000,
             image: "https://www.zales.com/productimages/processed/V-19613603_0_260.jpg?pristine=true",
             stock: 10,
@@ -3159,7 +3151,7 @@ productsData = [
           },
           {
             name: "Collar de oro blanco de 14 quilates con colgante de esmeralda",
-            description: "Este collar de oro blanco de 14 quilates con colgante de esmeralda es una pieza elegante que es perfecta para cualquier ocasión. Está hecho de oro de alta calidad y está adornado con una esmeralda de alta calidad.",
+            description: "Este collar de oro blanco de 14 quilates con colgante de esmerdad.",
             price: 7000,
             image: "https://www.zales.com/productimages/processed/V-20560676_0_260.jpg?pristine=true",
             stock: 10,
@@ -3168,7 +3160,7 @@ productsData = [
           },
           {
             name: "Reloj de pulsera de oro rosa de 18 quilates con esfera azul",
-            description: "Este reloj de pulsera de oro rosa de 18 quilates con esfera azul es un reloj clásico que nunca pasa de moda. Está hecho de materiales de alta calidad y está disponible en una variedad de tamaños.",
+            description: "Este reloj de pulsera de oro rosa de 18 quilats.",
             price: 10000,
             image: "https://www.zales.com/productimages/processed/V-20308233_0_260.jpg?pristine=true",
             stock: 10,
@@ -3177,7 +3169,7 @@ productsData = [
           },
           {
             name: "Pulsera de oro rosa de 18 quilates con dije de estrella",
-            description: "Esta pulsera de oro rosa de 18 quilates con dije de estrella es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            description: "Esta pulsera de oro rosa de 18 quilates con dije deitudes.",
             price: 15000,
             image: "https://www.zales.com/productimages/processed/V-20353281_0_260.jpg?pristine=true",
             stock: 10,
@@ -3186,7 +3178,7 @@ productsData = [
           },
           {
             name: "Aretes de diamantes de oro blanco de 14 quilates con oro rosa",
-            description: "Estos aretes de diamantes de oro blanco de 14 quilates con oro rosa son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de oro de alta calidad y están adornados con diamantes de alta calidad.",
+            description: "Estos aretes de diamantes de oro blanco de 14 quilates con oro rosd.",
             price: 20000,
             image: "https://www.zales.com/productimages/processed/V-20340349_0_260.jpg?pristine=true",
             stock: 10,
@@ -3195,7 +3187,7 @@ productsData = [
           },
           {
             name: "Anillo de compromiso de oro amarillo de 14 quilates con diamante de corte marquise",
-            description: "Este anillo de compromiso de oro amarillo de 14 quilates con diamante de corte marquise es una pieza clásica que nunca pasa de moda. Está hecho de oro de alta calidad y está adornado con un diamante de alta calidad.",
+            description: "Este anillo de compromiso de oro amarillo de 14 quilates concalidad.",
             price: 25000,
             image: "https://www.zales.com/productimages/processed/V-20359916_0_260.jpg?pristine=true",
             stock: 10,
@@ -3204,7 +3196,7 @@ productsData = [
           },
           {
             name: "Collar de oro blanco de 14 quilates con colgante de rubí",
-            description: "Este collar de oro blanco de 14 quilates con colgante de rubí es una pieza elegante que es perfecta para cualquier ocasión. Está hecho de oro de alta calidad y está adornado con un rubí de alta calidad.",
+            description: "Este collar de oro blanco de 14 quilates con colalidad.",
             price: 30000,
             image: "https://www.zales.com/productimages/processed/V-20560688_0_260.jpg?pristine=true",
             stock: 10,
@@ -3213,7 +3205,7 @@ productsData = [
           },
           {
             name: "Reloj de pulsera de oro rosa de 18 quilates con esfera roja",
-            description: "Este reloj de pulsera de oro rosa de 18 quilates con esfera roja es un reloj clásico que nunca pasa de moda. Está hecho de materiales de alta calidad y está disponible en una variedad de tamaños.",
+            description: "Este reloj de pulsera de oro rosa de 18 qamaños.",
             price: 35000,
             image: "https://www.zales.com/productimages/processed/V-20321198_0_260.jpg?pristine=true",
             stock: 10,
@@ -3222,7 +3214,7 @@ productsData = [
           },
           {
             name: "Pulsera de oro rosa de 18 quilates con dije de corazón",
-            description: "Esta pulsera de oro rosa de 18 quilates con dije de corazón es una pieza delicada que es perfecta para cualquier ocasión. Está hecha de oro de alta calidad y está disponible en una variedad de longitudes.",
+            description: "Esta pulsera de oro rosa de 18 quilates con dije gitudes.",
             price: 40000,
             image: "https://www.zales.com/productimages/processed/V-19981053_0_800.jpg?pristine=true",
             stock: 10,
@@ -3231,7 +3223,7 @@ productsData = [
           },
           {
             name: "Aretes de diamantes de oro blanco de 14 quilates con oro amarillo",
-            description: "Estos aretes de diamantes de oro blanco de 14 quilates con oro amarillo son una pieza elegante que es perfecta para cualquier ocasión. Están hechos de oro de alta calidad y están adornados con diamantes de alta calidad.",
+            description: "Estos aretes de diamantes de oro blanco de 14 quilates con oro  calidad.",
             price: 45000,
             image: "https://www.zales.com/productimages/processed/V-20559489_0_260.jpg?pristine=true",
             stock: 10,
@@ -3240,7 +3232,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Monopoly",
-            description: "Monopoly es un juego de mesa clásico que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en ir a la bancarrota. Para hacerlo, los jugadores deben comprar, vender y negociar propiedades, construir casas y hoteles, y cobrar alquiler a sus oponentes.",
+            description: "Monopoly es un juego de mesa clásico que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer juga sus oponentes.",
             price: 50,
             image: "https://mundojuguete.vteximg.com.br/arquivos/ids/167424-778-788/FOTO-Monopoly-Argentina.jpg?v=637293838976970000",
             stock: 10,
@@ -3249,7 +3241,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Scrabble",
-            description: "Scrabble es un juego de mesa de letras que ha sido disfrutado por familias durante generaciones. El objetivo del juego es obtener la mayor cantidad de puntos al formar palabras con las letras que se le dan. Los jugadores pueden colocar sus letras en una cuadrícula de 15x15, y pueden usar fichas de bonificación para obtener puntos adicionales.",
+            description: "Scrabble es un juego de mesa de letras que ha sido disfrutado por familias durante generaciones. El objetivo del juego es obtener la mayor cantidad de puntos al formpara obtener puntos adicionales.",
             price: 40,
             image: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Tablero_de_ScrabbleIMG_20201008_175354.jpg",
             stock: 10,
@@ -3258,7 +3250,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Risk",
-            description: "Risk es un juego de mesa de estrategia que ha sido disfrutado por familias durante generaciones. El objetivo del juego es conquistar el mundo. Los jugadores pueden lanzar dados para mover sus ejércitos, y pueden atacar y conquistar territorios enemigos.",
+            description: "Risk es un juego de mesa de estrategia que ha sido disfrutado por familias durante generaciones. enemigos.",
             price: 60,
             image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/050/305/products/juego-risk1-caf7af66bb239c777e15888878465945-1024-1024.jpg",
             stock: 10,
@@ -3267,7 +3259,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Cluedo",
-            description: "Cluedo es un juego de mesa de misterio que ha sido disfrutado por familias durante generaciones. El objetivo del juego es descubrir quién asesinó a Mr. Boddy, dónde ocurrió el asesinato, y con qué arma. Los jugadores pueden mover sus fichas por el tablero, y pueden interrogar a otros jugadores para obtener pistas.",
+            description: "Cluedo es un juego de mesa de misterio que ha sido disfrutado por familias durante generaciones. El objetivo del juego es descubrir quién asesinó a Mr. Bobtener pistas.",
             price: 30,
             image: "https://i.blogs.es/6d4d88/cluedo/1366_2000.jpg",
             stock: 10,
@@ -3276,7 +3268,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Pictionary",
-            description: "Pictionary es un juego de mesa de dibujo que ha sido disfrutado por familias durante generaciones. El objetivo del juego es hacer que sus compañeros de equipo adivinen las palabras que están dibujando. Los jugadores pueden dibujar en una pizarra, y pueden usar gestos para ayudar a sus compañeros de equipo a adivinar las palabras.",
+            description: "Pictionary es un juego de mesa de dibujo que ha sido disfrutado por familias durante generaciones. El objetivo del juego es hacer que sus compañeros de equipo adivinen la las palabras.",
             price: 20,
             image: "https://kinderlandar.vtexassets.com/arquivos/ids/157627/11020159_1.jpg?v=638049176875230000",
             stock: 10,
@@ -3284,7 +3276,7 @@ productsData = [
             category: "Juegos y Juguetes"
           },{
             name: "Juego de mesa Twister",
-            description: "Twister es un juego de fiesta que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en caer. Los jugadores deben girar una rueda que les dice qué parte del cuerpo deben colocar en qué punto del tablero.",
+            description: "Twister es un juego de fiesta que ha sido disfrutado por familias durante generaciones. El objetivtablero.",
             price: 25,
             image: "https://apioverde.com/cdn/shop/products/D_958786-MLA31042240967_062019-B_1024x1024.jpg?v=1662141269",
             stock: 10,
@@ -3293,7 +3285,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Jenga",
-            description: "Jenga es un juego de destreza que ha sido disfrutado por familias durante generaciones. El objetivo del juego es quitar bloques de una torre sin que la torre se caiga. Los jugadores pueden quitar bloques de la parte inferior de la torre, uno por uno.",
+            description: "Jenga es un juego de destreza que ha sido disfrutado por familias durante generaciones. El objetivo no.",
             price: 15,
             image: "https://cdnlaol.laanonimaonline.com/webapp_webp/images/productos/b/0000013000/13290.webp",
             stock: 10,
@@ -3302,7 +3294,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Connect 4",
-            description: "Connect 4 es un juego de estrategia que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en conectar cuatro de sus fichas en una fila, columna o diagonal. Los jugadores pueden colocar sus fichas en la parte inferior de la cuadrícula.",
+            description: "Connect 4 es un juego de estrategia que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el pruadrícula.",
             price: 10,
             image: "https://http2.mlstatic.com/D_NQ_NP_814379-MLA70304220767_072023-O.webp",
             stock: 10,
@@ -3311,7 +3303,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Candyland",
-            description: "Candyland es un juego de suerte que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en llegar al final del tablero. Los jugadores se turnan para tirar un dado y moverse su ficha por el tablero.",
+            description: "Candyland es un juego de suerte que ha sido disfrutado por familias durante generaciones. El obero.",
             price: 15,
             image: "https://m.media-amazon.com/images/I/91yUG40gv0L._AC_SL1500_.jpg",
             stock: 10,
@@ -3320,7 +3312,7 @@ productsData = [
           },
           {
             name: "Juego de mesa Chutes and Ladders",
-            description: "Chutes and Ladders es un juego de suerte que ha sido disfrutado por familias durante generaciones. El objetivo del juego es ser el primer jugador en llegar al final del tablero. Los jugadores se turnan para tirar un dado y moverse su ficha por el tablero.",
+            description: "Chutes and Ladders es un juego de suerte que ha sido disfrutado por familias durante generaciones.l tablero.",
             price: 20,
             image: "https://m.media-amazon.com/images/I/91QLD-DzaOL._AC_UF894,1000_QL80_.jpg",
             stock: 10,
@@ -3329,7 +3321,7 @@ productsData = [
           },
            {
             name: "Barbie",
-            description: "Barbie es una muñeca que ha sido popular entre las niñas durante generaciones. Barbie viene en una variedad de estilos y profesiones, y es una excelente manera para que las niñas exploren sus sueños.",
+            description: "Barbie es una muñeca que ha sido popular ens sueños.",
             price: 20,
             image: "https://www.soscomputacion.com.ar/15449-thickbox_default/muneca-barbie-con-vestido-brillante-mattel-original.jpg",
             stock: 10,
@@ -3338,7 +3330,7 @@ productsData = [
           },
           {
             name: "Hot Wheels",
-            description: "Hot Wheels son autos de juguete que han sido populares entre los niños durante generaciones. Hot Wheels vienen en una variedad de estilos y colores, y son una excelente manera para que los niños exploren su creatividad.",
+            description: "Hot Wheels son autos de juguete que han sido populares entre los ividad.",
             price: 10,
             image: "https://m.media-amazon.com/images/I/71Us2XS68KL._AC_UF894,1000_QL80_.jpg",
             stock: 10,
@@ -3347,7 +3339,7 @@ productsData = [
           },
           {
             name: "Lego",
-            description: "Lego son bloques de construcción que han sido populares entre los niños durante generaciones. Lego vienen en una variedad de estilos y colores, y son una excelente manera para que los niños exploren su creatividad y habilidades motoras finas.",
+            description: "Lego son bloques de construcción que han sido populares entre los niñosbilidades motoras finas.",
             price: 20,
             image: "https://m.media-amazon.com/images/I/81F4BHJ6tdL._AC_SL1500_.jpg",
             stock: 10,
@@ -3356,7 +3348,7 @@ productsData = [
           },
           {
             name: "Play-Doh",
-            description: "Play-Doh es una masa para modelar que ha sido popular entre los niños durante generaciones. Play-Doh viene en una variedad de colores, y es una excelente manera para que los niños exploren su creatividad y habilidades motoras finas.",
+            description: "Play-Doh es una masa para modelar que ha sido popular entre los niades motoras finas.",
             price: 15,
             image: "https://http2.mlstatic.com/D_NQ_NP_872156-MLA48353260656_112021-O.webp",
             stock: 10,
@@ -3365,7 +3357,7 @@ productsData = [
           },
           {
             name: "Puzzle",
-            description: "Los rompecabezas son un tipo de juego que ha sido popular entre las personas de todas las edades durante generaciones. Los rompecabezas vienen en una variedad de tamaños y dificultades, y son una excelente manera para que las personas de todas las edades exploren su paciencia y habilidades visuales.",
+            description: "Los rompecabezas son un tipo de ja y habilidades visuales.",
             price: 10,
             image: "https://http2.mlstatic.com/D_NQ_NP_732734-MLA70458982241_072023-O.webp",
             stock: 10,
@@ -3374,7 +3366,7 @@ productsData = [
           },
           {
             name: "Coche de juguete",
-            description: "Un coche de juguete es un vehículo de juguete que se utiliza para el entretenimiento. Los coches de juguete suelen estar hechos de plástico, metal o madera, y pueden ser impulsados por motores, pilas o manualmente. Los coches de juguete pueden ser utilizados por niños de todas las edades, y pueden ser una forma divertida de aprender sobre los coches y el transporte.",
+            description: "Un coche de juguete es un vehículo de juguete que se utiliza para el entretenimiento. Los coches de juguete suy el transporte.",
             price: 10,
             image: "https://http2.mlstatic.com/D_NQ_NP_798868-MLA50998849643_082022-O.webp",
             stock: 10,
@@ -3383,7 +3375,7 @@ productsData = [
           },
           {
             name: "Muñeca",
-            description: "Una muñeca es una figura humana que se utiliza para el entretenimiento. Las muñecas suelen estar hechas de plástico, tela o madera, y pueden representar a personas reales o personajes ficticios. Las muñecas pueden ser utilizadas por niños de todas las edades, y pueden ser una forma divertida de aprender sobre la gente y el mundo.",
+            description: "Una muñeca es una figura humana que se utiliza para el entretenimiento. Las muñecas undo.",
             price: 20,
             image: "https://thumbs.dreamstime.com/b/la-sonrisa-sienta-mu%C3%B1eca-de-trapo-linda-aislada-101484296.jpg",
             stock: 10,
@@ -3392,7 +3384,7 @@ productsData = [
           },
           {
             name: "Bloques de construcción",
-            description: "Los bloques de construcción son un tipo de juguete que se utiliza para construir estructuras. Los bloques de construcción suelen estar hechos de plástico, madera o ladrillo, y pueden ser de diferentes tamaños, formas y colores. Los bloques de construcción pueden ser utilizados por niños de todas las edades, y pueden ser una forma divertida de aprender sobre la arquitectura y la ingeniería.",
+            description: "Los bloques de construcción son un tipo de juguete que se utiliza para construir estructuras. Los bloques de construcción suelen estar hechos deiería.",
             price: 20,
             image: "https://m.media-amazon.com/images/I/71mnsQS0n1L._AC_SL1500_.jpg",
             stock: 10,
@@ -3401,7 +3393,7 @@ productsData = [
           },
           {
             name: "Masa para modelar",
-            description: "La masa para modelar es un tipo de material que se utiliza para crear objetos. La masa para modelar suele estar hecha de arcilla, plastilina o Play-Doh, y puede ser de diferentes colores. La masa para modelar puede ser utilizada por niños de todas las edades, y puede ser una forma divertida de aprender sobre el arte y el diseño.",
+            description: "La masa para modelar es un tipo de material que se utiliza para crear obrte y el diseño.",
             price: 15,
             image: "https://http2.mlstatic.com/D_NQ_NP_755977-MLA50892143394_072022-O.webp",
             stock: 10,
@@ -3410,7 +3402,7 @@ productsData = [
           },
           {
             name: "Rompecabezas",
-            description: "Un rompecabezas es un tipo de juego que se utiliza para armar una imagen. Los rompecabezas suelen estar hechos de cartón o madera, y pueden ser de diferentes tamaños y dificultades. Los rompecabezas pueden ser utilizados por personas de todas las edades, y pueden ser una forma divertida de aprender sobre la paciencia y las habilidades visuales.",
+            description: "Un rompecabezas es un tipo de juego que se utiliza para armar una imagen. Los rompecabezas des visuales.",
             price: 10,
             image: "https://d3ugyf2ht6aenh.cloudfront.net/stores/583/555/products/1639362597634-011-aba02fc3d4e89c09b216395992815433-640-0.png",
             stock: 10,
@@ -3419,7 +3411,7 @@ productsData = [
           },
           {
             name: "Harry Potter y la piedra filosofal",
-            description: "La piedra filosofal es la primera novela de la serie de Harry Potter escrita por J.K. Rowling. Fue publicada en 1997 y sigue la historia de Harry Potter, un joven mago que descubre su herencia mágica en su undécimo cumpleaños. Harry comienza su primer año en el Colegio Hogwarts de Magia y Hechicería, donde aprende a utilizar magia y hace amigos con Ron Weasley y Hermione Granger. Los tres amigos se embarcan en una aventura para detener al malvado mago Lord Voldemort, que está tratando de robar la Piedra Filosofal, un objeto que le otorgaría la inmortalidad.",
+            description: "La piedra filosofal es la primera novela de la serie de Harry Potter escrita por J.K. Rowling. Fue publicada en 1997 y sigue la historia  la inmortalidad.",
             price: 20,
             image: "https://static.wikia.nocookie.net/esharrypotter/images/9/9a/Harry_Potter_y_la_Piedra_Filosofal_Portada_Espa%C3%B1ol.PNG/revision/latest?cb=20151020165725",
             stock: 10,
@@ -3428,7 +3420,7 @@ productsData = [
           },
           {
             name: "El Señor de los Anillos: La comunidad del anillo",
-            description: "El Señor de los Anillos: La comunidad del anillo es la primera novela de la trilogía de El Señor de los Anillos escrita por J.R.R. Tolkien. Fue publicada en 1954 y sigue la historia de Frodo Bolsón, un hobbit que se embarca en una misión para destruir el Anillo Único, un poderoso artefacto creado por el Señor Oscuro Sauron. Frodo es acompañado por un grupo de amigos, incluyendo a Samsagaz Gamyi, Merry Brandigamo, Pippin Tuk, Aragorn, Legolas, Gimli, Boromir y Gandalf. La comunidad viaja a través de la Tierra Media, enfrentándose a muchos peligros en el camino.",
+            description: "El Señor de los Anillos: La comunidad del anillo es la primera novela de la trilogía de El Señor de los Anillos escrita por J.R.R. Tolkien. Fue pubel camino.",
             price: 30,
             image: "https://images.bajalibros.com/-0OLedXhmjEEjmVpkidlVeZbV2w=/fit-in/292x446/filters:fill(f8f8f8):quality(90):format(webp)/d2d6tho5fth6q4.cloudfront.net/extast1586699_2b4b6e5405275933adb2a1180ea8750212b3b3f6.jpg",
             stock: 10,
@@ -3437,7 +3429,7 @@ productsData = [
           },
           {
             name: "El Hobbit",
-            description: "El Hobbit es una novela escrita por J.R.R. Tolkien. Fue publicada en 1937 y sigue la historia de Bilbo Bolsón, un hobbit que se embarca en una aventura con un grupo de enanos para reclamar su tesoro de un dragón llamado Smaug. Bilbo se encuentra con muchos peligros en el camino, pero también aprende mucho sobre sí mismo y sobre el valor de la amistad.",
+            description: "El Hobbit es una novela escrita por J.R.R. Tolkien. Fue publicada en 1937 y sigue la historia de Bilbo Bolsón, un hobbit que se embarca en una aventura con un grupo de enanos para reclamar d.",
             price: 20,
             image: "https://images.cdn1.buscalibre.com/fit-in/360x360/c6/cc/c6cc0d544da7e4c54e0ae464d7ffcbcd.jpg",
             stock: 10,
@@ -3446,7 +3438,7 @@ productsData = [
           },
           {
             name: "El principito",
-            description: "El principito es una novela corta escrita por Antoine de Saint-Exupéry. Fue publicada en 1943 y sigue la historia de un joven príncipe que abandona su pequeño asteroide para viajar a través del universo, conociendo a diferentes personajes y aprendiendo sobre el amor, la amistad y la pérdida.",
+            description: "El principito es una novela corta escrita por Antoine de Saint-Exupéry. Fue publicada en 1943 y sigue la historia de un joven pda.",
             price: 20,
             image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/El_principito.jpg",
             stock: 10,
@@ -3455,7 +3447,7 @@ productsData = [
           },
           {
             name: "El diario de Ana Frank",
-            description: "El diario de Ana Frank es un diario escrito por Ana Frank, una niña judía que se escondió con su familia de los nazis durante la Segunda Guerra Mundial. El diario fue publicado en 1947 y es uno de los documentos históricos más importantes del Holocausto.",
+            description: "El diario de Ana Frank es un diario escrito por Ana Frank, una niña judía que se escondióto.",
             price: 20,
             image: "https://images.cdn3.buscalibre.com/fit-in/360x360/43/57/4357f08f2ff8f21cbcc70910075d0960.jpg",
             stock: 10,
@@ -3464,7 +3456,7 @@ productsData = [
           },
           {
             name: "La Biblia",
-            description: "La Biblia es el libro sagrado del judaísmo y el cristianismo. Es una colección de textos sagrados que incluyen historias, leyes, profecías y poemas. La Biblia ha sido traducida a muchos idiomas y es el libro más leído del mundo.",
+            description: "La Biblia es el libro sagrado del judaísmo y el cristianismo.undo.",
             price: 20,
             image: "https://verbodivino.es/documentos/libros/3993.jpg",
             stock: 10,
@@ -3473,7 +3465,7 @@ productsData = [
           },
           {
             name: "El Corán",
-            description: "El Corán es el libro sagrado del islam. Es una colección de revelaciones que el profeta Mahoma recibió de Dios. El Corán es considerado por los musulmanes como la palabra literal de Dios y es la base de su fe.",
+            description: "El Corán es el libro sagrado del islam. Esu fe.",
             price: 20,
             image: "https://libreriacalledelibros.com/wp-content/uploads/2021/12/el-coran-pluton.jpg",
             stock: 10,
@@ -3482,7 +3474,7 @@ productsData = [
           },
           {
             name: "El Talmud",
-            description: "El Talmud es una colección de comentarios y discusiones sobre la ley judía. Es considerado por los judíos como la segunda parte de la Torá, la primera parte siendo el Pentateuco. El Talmud es una fuente importante de la ley judía y también contiene información sobre la historia, la filosofía y la ética judías.",
+            description: "El Talmud es una colección de comentarios y discusiones sobre la ley judía. Es considerado por los judíos c historia, la filosofía y la ética judías.",
             price: 20,
             image: "https://upload.wikimedia.org/wikipedia/commons/3/38/Talmud_set.JPG",
             stock: 10,
@@ -3491,7 +3483,7 @@ productsData = [
           },
           {
             name: "Watchmen",
-            description: "Watchmen es una serie de historietas creada por Alan Moore y Dave Gibbons, publicada originalmente en los Estados Unidos por DC Comics. La serie se desarrolla en un mundo alternativo donde los superhéroes existen, pero son vistos como figuras peligrosas e indeseables. La historia sigue a un grupo de superhéroes retirados que deben volver a reunirse para detener una conspiración que podría destruir el mundo.",
+            description: "Watchmen es una serie de historietas creada por Alan Moore y Dave Gibbons, publicada ormundo.",
             price: 20,
             image: "https://d2r9epyceweg5n.cloudfront.net/stores/057/977/products/watchmen-cov-3ra-ed1-d2909b9e9da955652416205191241657-640-0.jpg",
             stock: 10,
@@ -3500,7 +3492,7 @@ productsData = [
           },
           {
             name: "The Dark Knight Returns",
-            description: "The Dark Knight Returns es una miniserie de historietas creada por Frank Miller y Klaus Janson, publicada originalmente en los Estados Unidos por DC Comics. La serie se desarrolla en un mundo alternativo donde Batman ha regresado del retiro para luchar contra el crimen. La historia sigue a Batman mientras se enfrenta a un nuevo grupo de villanos, incluyendo a Two-Face, The Joker y The Scarecrow.",
+            description: "The Dark Knight Returns es una miniserie de historietas creada por Frank Miller y Klaus Janson, publicada originalmente en los Esow.",
             price: 20,
             image: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2019%2F09%2Fdark-knight-returns-golden-child_1-2000.jpg&q=60",
             stock: 10,
@@ -3509,7 +3501,7 @@ productsData = [
           },
           {
             name: "Sin City",
-            description: "Sin City es una serie de historietas creada por Frank Miller, publicada originalmente en los Estados Unidos por Dark Horse Comics. Las historias se desarrollan en una ciudad ficticia llamada Sin City, que es un lugar de violencia, corrupción y crimen. Las historias siguen a un grupo de personajes, incluyendo a Marv, Dwight, Nancy y Hartigan, mientras se enfrentan a los peligros de Sin City.",
+            description: "Sin City es una serie de historietas creada por Frank Miller, publicadaCity.",
             price: 20,
             image: "https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/9928/9788416905744.jpg",
             stock: 10,
@@ -3518,7 +3510,7 @@ productsData = [
           },
           {
             name: "Preacher",
-            description: "Preacher es una serie de historietas creada por Garth Ennis y Steve Dillon, publicada originalmente en los Estados Unidos por Vertigo Comics. La historia sigue a Jesse Custer, un predicador que es poseído por un ángel y un demonio. Custer, junto con su novia Tulip y su amigo Cassidy, se embarcan en una cruzada para encontrar a Dios y reclamar su venganza.",
+            description: "Preacher es una serie de historietasnza.",
             price: 20,
             image: "https://upload.wikimedia.org/wikipedia/en/a/a8/Preacher56.png",
             stock: 10,
@@ -3527,7 +3519,7 @@ productsData = [
           },
           {
             name: "V for Vendetta",
-            description: "V for Vendetta es una serie de historietas creada por Alan Moore y David Lloyd, publicada originalmente en los Estados Unidos por DC Comics. La historia se desarrolla en un mundo alternativo donde el Reino Unido está gobernado por un fascista. V, un misterioso vigilante, comienza una campaña de terrorismo para derrocar al gobierno.",
+            description: "V for Vendetta es una serie de historietas creada por Alan Moore y David Lloyd, publicada originalmente en los Estados Unidos por DC Comics. La historia se desarrolla en ubierno.",
             price: 20,
             image: "https://2.bp.blogspot.com/-Xfx31h_t2q4/Uk9OrYVNoxI/AAAAAAAAlDY/bwh5hKQD_4g/s1600/vforvendetta.jpg",
             stock: 10,
@@ -3536,7 +3528,7 @@ productsData = [
           },
           {
             name: "The Sandman",
-            description: "The Sandman es una serie de historietas creada por Neil Gaiman, publicada originalmente en los Estados Unidos por DC Comics. La historia sigue a Morfeo, el Rey de los Sueños, mientras se embarca en una serie de aventuras a través de los sueños y la realidad.",
+            description: "The Sandman es una serie de historietas creada por Neil Gaiman, publicada originalmente en lo realidad.",
             price: 20,
             image: "https://4.bp.blogspot.com/-ZYhgOmSKUlc/Uk6Ml13grRI/AAAAAAAAk84/TaMQP-tH0OI/s1600/the_sandman_los_eternos_Quitely.jpg",
             stock: 10,
@@ -3572,7 +3564,7 @@ productsData = [
           },
           {
             name: "Persepolis",
-            description: "Persepolis es una serie de historietas creada por Marjane Satrapi, publicada originalmente en Francia. La historia se desarrolla en Irán y sigue la vida de Marjane Satrapi, desde su infancia hasta su adolescencia.",
+            description: "Persepolis es una serie de historietas creada por Marjane ",
             price: 20,
             image: "https://historiaycomic.files.wordpress.com/2014/09/libro_1362099657.jpg",
             stock: 10,
@@ -3940,7 +3932,196 @@ productsData = [
             stock: 12,
             rating: 4.3,
             category: "Ropa y Accesorios"
-          }
-]
+          },
+          {
+            name: "Vinilo de la banda XYZ",
+            description: "Edición especial en vinilo del último álbum de la banda XYZ",
+            price: 29.99,
+            image: "https://3.bp.blogspot.com/-wIeFTtxnfOA/TdM7EgkxErI/AAAAAAAAAuc/cGia4vhTNaw/s1600/danger-mouse-daniele-luppi-rome.jpg",
+            stock: 20,
+            rating: 4.7,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película ABC",
+            description: "Versión extendida con escenas eliminadas y documentales adicionales",
+            price: 14.99,
+            image: "https://2.bp.blogspot.com/-JPqFire1lls/TfELHA76x0I/AAAAAAAAHrc/hUr5m8EEOPo/s1600/Thurston%252BMoore%252B-%252BDemolished%252BThoughts%252B%25255B2011%25255D-front.jpg",
+            stock: 15,
+            rating: 4.2,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD recopilatorio de los mejores éxitos",
+            description: "Recopilación de los mejores éxitos de diversos artistas",
+            price: 9.99,
+            image: "https://2.bp.blogspot.com/-1vZhyD66NxE/TY5B7apAwuI/AAAAAAAAAes/50DavXOkksU/s1600/The+Joy+Formidable+-+The+Big+Roar+%25282011%2529.jpg",
+            stock: 30,
+            rating: 4.5,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie XYZ",
+            description: "Colección completa de la serie XYZ en alta definición",
+            price: 39.99,
+            image: "https://cdn.pigeonsandplanes.com/wp-content/uploads/2011/09/Neon-Indian-Era-Extra%C3%B1a.jpg",
+            stock: 10,
+            rating: 4.8,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD de la banda ABC",
+            description: "Álbum debut de la banda ABC con 12 canciones originales",
+            price: 12.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/07/Grian-Chatten.jpg",
+            stock: 25,
+            rating: 4.4,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película XYZ",
+            description: "Edición especial con contenido adicional y comentarios del director",
+            price: 19.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/07/Nothing-But-Thieves.jpg",
+            stock: 18,
+            rating: 4.6,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie ABC",
+            description: "Temporadas 1-5 de la serie ABC en alta definición",
+            price: 59.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Triangulo-de-Amor-Bizarro.jpg",
+            stock: 5,
+            rating: 4.3,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Vinilo de la banda PQR",
+            description: "Edición limitada en vinilo del álbum más reciente de la banda PQR",
+            price: 34.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Swans.jpg",
+            stock: 12,
+            rating: 4.9,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película DEF",
+            description: "Versión remasterizada con contenido extra y subtítulos en varios idiomas",
+            price: 16.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Gideo.jpg",
+            stock: 20,
+            rating: 4.1,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD de la banda XYZ",
+            description: "Álbum en CD con las mejores canciones de la banda XYZ",
+            price: 10.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Squid.jpg",
+            stock: 30,
+            rating: 4.7,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie DEF",
+            description: "Temporadas 1-3 de la serie DEF en calidad de alta definición",
+            price: 49.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Clutch.jpg",
+            stock: 8,
+            rating: 4.5,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Vinilo de la banda ABC",
+            description: "Edición especial en vinilo del álbum clásico de la banda ABC",
+            price: 27.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Rufus-Wainwright.jpg",
+            stock: 15,
+            rating: 4.4,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película PQR",
+            description: "Versión director's cut con escenas eliminadas y comentarios del elenco",
+            price: 21.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Sparks-1.jpg",
+            stock: 10,
+            rating: 4.6,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD recopilatorio de los 80s",
+            description: "Recopilación de éxitos de los años 80 en un CD",
+            price: 9.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/06/Noel-Gallagher.jpg",
+            stock: 35,
+            rating: 4.3,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie PQR",
+            description: "Temporadas 1-2 de la serie PQR en alta definición",
+            price: 39.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Florent-y-yo-1.jpg",
+            stock: 7,
+            rating: 4.7,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Vinilo de la banda DEF",
+            description: "Edición limitada en vinilo del álbum más reciente de la banda DEF",
+            price: 32.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Bunbury.jpg",
+            stock: 11,
+            rating: 4.8,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película XYZ",
+            description: "Edición especial con documentales y material adicional",
+            price: 18.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Ladytron.jpg",
+            stock: 13,
+            rating: 4.5,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "CD de la banda PQR",
+            description: "Álbum en CD con nuevas canciones de la banda PQR",
+            price: 11.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Guadalupe-Plata.jpg",
+            stock: 28,
+            rating: 4.6,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Blu-ray de la serie ABC",
+            description: "Temporadas 1-4 de la serie ABC en alta definición",
+            price: 54.99,
+            image: "abc_bluray.jpg",
+            stock: 6,
+            rating: 4.2,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "Vinilo de la banda XYZ",
+            description: "Edición especial en vinilo del álbum clásico de la banda XYZ",
+            price: 28.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Charlie-Cunningham.jpg",
+            stock: 16,
+            rating: 4.6,
+            category: "Música, Películas y Series"
+          },
+          {
+            name: "DVD de la película ABC",
+            description: "Versión remasterizada con contenido extra y subtítulos en varios idiomas",
+            price: 17.99,
+            image: "https://muzikalia.com/wp-content/uploads/2023/05/Yung-Beef.jpg",
+            stock: 14,
+            rating: 4.3,
+            category: "Música, Películas y Series"
+            }
+  ]
 
 module.exports = productsData;

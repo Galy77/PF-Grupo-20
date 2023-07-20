@@ -13,8 +13,10 @@ import {
    ALL_FILTER,
    GET_USER, 
    LOGOUT_USER,
-   GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID
+   GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
+   ALPHABETIC_ORDER, PRICE_ORDER
 } from "./actionTypes";
+
 
 import axios from "axios";
 
@@ -191,6 +193,24 @@ export const betterQualified = (payload) => {
 export const showAll = (payload) => {
    return {
       type: ALL_FILTER,
+      payload
+   }
+}
+
+/////ALPHABETIC FILTER/////
+
+export const alphabeticOrder = (payload) => {
+   return {
+      type: ALPHABETIC_ORDER,
+      payload
+   }
+}
+
+/////PRICE ORDER/////
+
+export const priceOrder = (payload) => {
+   return {
+      type: PRICE_ORDER,
       payload
    }
 }

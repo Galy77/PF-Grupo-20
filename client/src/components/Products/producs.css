@@ -69,3 +69,16 @@
         grid-template-columns: 1fr;
     }
 }
+
+.subContainer{
+    display: flex;
+}
+
+.filtersContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5px;
+    height: 200px;
+    align-items: center;
+}

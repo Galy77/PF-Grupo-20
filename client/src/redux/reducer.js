@@ -1,4 +1,3 @@
-
 /* eslint-disable no-case-declarations */
 
 // import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER } from "./actionTypes"
@@ -38,7 +37,8 @@ import {
   MAXIMUM_PRICE, 
   BETTER_QUALIFIED_FILTER,
   ALL_FILTER,
-  GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID
+  GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
+  ALPHABETIC_ORDER, PRICE_ORDER
 } from "./actionTypes"
 
 const initialState = {
@@ -54,7 +54,9 @@ const initialState = {
     maximumPrice: "",
     ratingFilterValue: "all",
     user:{},
-    detailProduct: []
+    detailProduct: [],
+    lettersOrder: "A-Z",
+    priceOrder: "Mayor"
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
@@ -200,6 +202,18 @@ export const reducer = (state = initialState,{type,payload})=>{
           return{
             ...state,
             detailProduct: payload
+          }
+
+        case ALPHABETIC_ORDER:
+          return{
+            ...state,
+            lettersOrder: payload
+          }
+
+        case PRICE_ORDER:
+          return{
+            ...state,
+            priceOrder: payload
           }
 
         default:
