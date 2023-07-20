@@ -408,7 +408,7 @@ productsData = [
             name: "Nokia 9 PureView",
             details: "Pantalla pOLED de 5.99 pulgadas, Snapdragon 845, cámara penta de 12 MP, Android 9",
             price: 699.99,
-            image: "nokia9pureview.jpg",
+            image: "https://camara.pro/wp-content/uploads/2019/03/nokia_9_pureview-specs_popup-desktop.png",
             stock: 9,
             rating: 4.0,
             category: "Celulares"
@@ -2063,7 +2063,7 @@ productsData = [
             name: "Aceite de argán para el cabello",
             details: "Aceite de argán natural para nutrir y dar brillo al cabello, apto para todo tipo de cabello.",
             price: 15,
-            image: "https://example.com/images/argan-oil.jpg",
+            image: "https://farmacityar.vteximg.com.br/arquivos/ids/228858-1000-1000/155788_tratamiento-oleo-de-argan-x-58ml__imagen-1.jpg?v=637994734012070000",
             stock: 15,
             rating: 4.3,
             category: "Belleza y Cuidado Personal"

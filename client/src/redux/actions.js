@@ -1,4 +1,4 @@
-import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER, GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID } from "./actionTypes";
+import { ADD_ORDER, ADD_PRODUCT,ADD_USER,REMOVE_ORDER,REMOVE_USER,REMOVE_PRODUCT,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER, GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID, ALPHABETIC_ORDER, PRICE_ORDER } from "./actionTypes";
 import axios from "axios";
 
 /////USER//////
@@ -131,6 +131,24 @@ export const betterQualified = (payload) => {
 export const showAll = (payload) => {
    return {
       type: ALL_FILTER,
+      payload
+   }
+}
+
+/////ALPHABETIC FILTER/////
+
+export const alphabeticOrder = (payload) => {
+   return {
+      type: ALPHABETIC_ORDER,
+      payload
+   }
+}
+
+/////PRICE ORDER/////
+
+export const priceOrder = (payload) => {
+   return {
+      type: PRICE_ORDER,
       payload
    }
 }

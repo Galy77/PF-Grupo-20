@@ -1,4 +1,4 @@
-import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER, GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID} from "./actionTypes"
+import { ADD_USER,REMOVE_USER,ADD_PRODUCT,REMOVE_PRODUCT,ADD_ORDER,REMOVE_ORDER,GET_ALL_CATEGORIES, MINIMUM_PRICE, MAXIMUM_PRICE, BETTER_QUALIFIED_FILTER, ALL_FILTER, GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID, ALPHABETIC_ORDER, PRICE_ORDER} from "./actionTypes"
 
 const initialState = {
     user:{},
@@ -13,7 +13,9 @@ const initialState = {
     minimumPrice: "",
     maximumPrice: "",
     ratingFilterValue: "all",
-    detailProduct: []
+    lettersOrder: "A-Z",
+    detailProduct: [],
+    priceOrder: "Mayor"
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
@@ -133,6 +135,18 @@ export const reducer = (state = initialState,{type,payload})=>{
           return{
             ...state,
             detailProduct: payload
+          }
+
+        case ALPHABETIC_ORDER:
+          return{
+            ...state,
+            lettersOrder: payload
+          }
+
+        case PRICE_ORDER:
+          return{
+            ...state,
+            priceOrder: payload
           }
 
         default:

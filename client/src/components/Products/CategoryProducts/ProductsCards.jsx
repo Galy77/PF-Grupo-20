@@ -30,7 +30,6 @@ function ProductsCards (props) {
         setProductsToShow(products)
     }
     useEffect(() => {
-        console.log(products)
         paginado()
     },[products])
     

@@ -16,6 +16,8 @@ function Products (){
     const min = useSelector(state => state.minimumPrice);
     const max = useSelector(state => state.maximumPrice);
     const ratingFilterValue = useSelector(state => state.ratingFilterValue)
+    const alphabeticFilterValue = useSelector(state => state.lettersOrder)
+    const priceOrderValue = useSelector(state => state.priceOrder)
 
     useEffect(() => {
         dispatch(getAllProducts())
@@ -34,9 +36,35 @@ function Products (){
             category:el.Categories[0].name
         }
     })
+
+    const alphabeticOrderFilter = (productos, orden, sortByPrice) => {
+    const ordenAscendente = orden === "A-Z";
+    const ordenValor = ordenAscendente ? 1 : -1;
+
+    productos.sort((productoA, productoB) => {
+        const nombreA = productoA.name.toUpperCase();
+        const nombreB = productoB.name.toUpperCase();
+
+        if (nombreA < nombreB) {
+            return -1 * ordenValor;
+        } else if (nombreA > nombreB) {
+            return 1 * ordenValor;
+        } else {
+            return 0;
+        }
+    });
+
+    if (sortByPrice === "Menor") {
+        productos.sort((productoA, productoB) => productoA.price - productoB.price);
+    } else if (sortByPrice === "Mayor") {
+        productos.sort((productoA, productoB) => productoB.price - productoA.price);
+    }
+
+    return productos;
+};
     
     const categoryProducts = data.filter((product) => product.category === category);
-    const filteredProducts = categoryProducts.filter((product) => {
+    const filteredsProducts = categoryProducts.filter((product) => {
         const matchSearch = product.name.includes(search);
         const matchPrice = (min && max) ? (product.price >= min && product.price <= max) :
             (!min && max) ? (product.price <= max) :
@@ -44,26 +72,21 @@ function Products (){
         const matchRating = (ratingFilterValue === "all") || (ratingFilterValue === "betterQualified" && product.rating >= 3);
         return matchSearch && matchPrice && matchRating;
     });
-const a = () => {
-    console.log(categoryProducts)
-}
+
+    const filteredProducts = alphabeticOrderFilter(filteredsProducts, alphabeticFilterValue, priceOrderValue);
+
+
+
     return (
         <div class='d-flex flex-column' >
             <CreatedCarousel />
-            <button onClick={a}>a</button>
-
                 <div class='filter-products d-flex my-4'>
                     <Filters />
                     <div class='d-flex flex-column align-items-center w-100 px-4' >
                         <div class='w-100 g-4-products mx-4'>
                                 <ProductsCards
-                                    categoryProducts={categoryProducts}
+                                    categoryProducts={alphabeticOrderFilter(categoryProducts, alphabeticFilterValue, priceOrderValue)}
                                     filteredProducts={filteredProducts}
-                                    // setProductsToShow={setProductsToShow}
-                                    // dataProducts={dataProducts}
-                                    // sliceProducts={sliceProducts}
-                                    // page={page}
-                                    // setPage={setPage}
                                 />
                         </div>
                     </div>
