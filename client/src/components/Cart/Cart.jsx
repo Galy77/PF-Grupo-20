@@ -81,7 +81,6 @@ const Cart = () => {
                     cantidad:el.stock - el.cant
                 }
             })
-            alert('a')
             localStorage.setItem("setStockProduct",JSON.stringify(data))
         }
         //setStock

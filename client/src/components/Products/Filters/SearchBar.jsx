@@ -23,12 +23,12 @@ function SearchBar () {
             <Form className="d-flex">
                 <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="Buscar"
                 className="me-2"
                 aria-label="Search"
                 onChange={handleInput}
                 />
-                <Link to={`/products/${category}?search=${capital}`}><Button variant="outline-success">Search</Button></Link>
+                <Link to={`/products/${category}?search=${capital}`}><Button variant="outline-dark">Buscar</Button></Link>
             </Form>
         </div>
     )
