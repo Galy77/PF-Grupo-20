@@ -12,11 +12,12 @@ import CategoriesDropdown from './CategoriesDropdown';
 function NavBar (){
 const [ object, setObject ] = useState("");
 
+
+
 const handleChange = (event) => {
   const { value } = event.target;
   setObject(value);
 }
-
 const capital = object.charAt(0).toUpperCase() + object.slice(1); 
 
     return (
@@ -103,7 +104,9 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
         </Form>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class='text-center icons d-flex align-items-center'>
-              Login
+            <Link to = {'/profile'}>
+                  <i class="icons bi bi-person"></i>
+            </Link>
           </li>
           <li class='text-center d-flex align-items-center'>
               <Link to={'/cart'} class='link'>

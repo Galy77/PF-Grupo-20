@@ -205,7 +205,7 @@ export const getAllCategories = () => {
              payload:response.data
          })
       }catch(error){
-         alert(error.menssage);
+         console.log(error.menssage);
       }
    }
 }

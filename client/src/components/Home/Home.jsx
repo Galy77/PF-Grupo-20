@@ -14,16 +14,14 @@ import { getAllCategories } from '../../redux/actions';
 
 function Home (){
     const categories = useSelector(state => state.categories);
-
-    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
-    console.log("actual",usuarioActual)
-
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getAllCategories());
     },[dispatch])
 
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+    console.log("actual",usuarioActual)
     return (
     <>
         <CreatedCarousel />

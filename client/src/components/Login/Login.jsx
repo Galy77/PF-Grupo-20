@@ -10,16 +10,26 @@ export function Login() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
 
   const { loginWithGoogle} = useAuth();
   const [ error, setError ] = useState("");
   const [ currentUser, setCurrentUser ] = useState({});
+
   const [cUser, setUser] = useState({
     email: "",
     password: ""
   });
 
-  const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+  useEffect(() => {
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+    if (usuarioActual) {
+      navigate("/");
+    }else{
+      navigate("/login");
+    }
+  }, []);
+
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,14 +41,7 @@ export function Login() {
       setError(error.message);
     }
   };
-  useEffect(() => {
-    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
-    if (usuarioActual) {
-      navigate("/");
-    }else{
-      navigate("/login");
-    }
-  }, []);
+  
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -47,6 +50,7 @@ export function Login() {
       [name]: value,
     }));
   };
+
 
 
   const handleGoogleSignin = async () => {
