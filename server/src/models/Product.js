@@ -42,6 +42,12 @@ module.exports = (sequelize) => {
       category: {
         type: DataTypes.STRING,
         allowNull: false
+      },
+      /**para marcar status 0 = no visible 1 = visible */
+      status: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue:"1"
       }
     },
     { timestamps: false }

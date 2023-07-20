@@ -10,9 +10,17 @@ const { postPreference } = require("../controllers/postPreference")
 const { postReview } = require("../controllers/postReview")
 const { handlePaymentUpload } = require("../controllers/paymentController");
 
+const { postCategory } = require("../controllers/postCategory");
+
 const upload = require("../middleware/multer");
 
 const router = Router();
+
+/**
+ * para el dashboard
+ */
+const {deleteProduct} = require("../controllers/deleteProduct");
+
 
 router.get("/", getCategory);
 
@@ -25,7 +33,15 @@ router.post("/create_preference", postPreference);
 router.post("/user", postUser);
 router.post("/review",postReview)
 router.post("/webhook", handlePaymentUpload);
-
 router.post("/contacto", postContacto);
+
+// para el dashboard Productos , Usuarios y categorias
+
+router.post("/category",postCategory);
+// Products eliminar
+router.delete("/products",deleteProduct);
+
+// Products eliminar
+
 
 module.exports = router;
