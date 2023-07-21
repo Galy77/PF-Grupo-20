@@ -11,6 +11,7 @@ export function Profile() {
   
   const { logout, user } = useAuth();
   const [isUser, setIsUser] = useState();
+  const [isLoged,setIsLoged] = useState();
 
   useEffect(() => {
     if(usuarioActual){
@@ -41,8 +42,6 @@ export function Profile() {
         <h1>Perfil</h1>
         <h3>Nombre {isUser.full_name}</h3>
         <h3>Email {isUser.email}</h3>
-        <h3>Telefono {isUser.phone}</h3>
-        <h3>Direccion {isUser.direction_shipping}</h3>
         <button onClick={handleLogout}>Cerrar Sesion</button>
       </div>
     </div>

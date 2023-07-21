@@ -12,10 +12,6 @@ import { getAllCategories } from '../../redux/actions';
 
 function Home (){
     const categories = useSelector(state => state.categories);
-
-    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
-    console.log("actual",usuarioActual)
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -62,6 +58,8 @@ function Home (){
     ////paginado
 
 
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+    console.log("actual",usuarioActual)
     return (
     <>
         <CreatedCarousel />

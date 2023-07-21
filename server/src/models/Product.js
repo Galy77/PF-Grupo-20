@@ -38,6 +38,16 @@ module.exports = (sequelize) => {
           max: 5,
           min: 0.5,
         },
+
+      },
+      category: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      status: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue:1
       }
     },
     { timestamps: false }

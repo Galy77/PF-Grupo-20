@@ -6,35 +6,30 @@ import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 import { addOrder } from "../../redux/actions";
-// import { useEffect, useState } from "react";
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 import {initMercadoPago, Wallet } from "@mercadopago/sdk-react"
-// import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 const Cart = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
-    // const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
-    
-    // const { user } = useAuth();
-    // const [isUser, setIsUser] = useState();
+    const { user } = useAuth();
+    const [isUser, setIsUser] = useState();
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
 
-    // useEffect(() => {
-    //     if(usuarioActual){
-    //       setIsUser(usuarioActual);
-    //     }else{
-    //       setIsUser(user);
-    //     }
-    // }, [user, usuarioActual]);
-
-    
     const products = useSelector(state => state.orders)
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
-    if(!products.length){
-        if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
-    }
   
+    useEffect(() => {
+        if(usuarioActual){
+          setIsUser(usuarioActual);
+        }else{
+          setIsUser(user);
+        }
+      }, [user, usuarioActual]);
+      
+    
 
     ///eliminar todas los productos del carrito
     const deleteCart = () => {
@@ -89,11 +84,15 @@ const Cart = () => {
             localStorage.setItem("setStockProduct",JSON.stringify(data))
         }
         //setStock
-        
-        // if (!isUser) {
-        //     navigate("/login");
-        //     return null;
-        // }
+
+        if(!products.length){
+            if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
+        }
+
+        if (!isUser) {
+            navigate("/login");
+            return null
+          }
         return (
             <>
                 <div class='mt-4'>
