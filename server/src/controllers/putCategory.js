@@ -3,7 +3,12 @@ const { Category } = require('../db');
 const putCategory = async(req,res) => {
 
   const { id } = req.params; 
-  const { status } = req.body;
+  const { name, status } = req.body;
+  let image;
+  
+  if (req.file) {
+    image = req.file;
+  }
 
   try {
     const category = await Category.findByPk(id);
@@ -12,7 +17,21 @@ const putCategory = async(req,res) => {
       return res.status(404).json({ error: 'Categoria no encontrada' });
     }
 
-    category.status = status;
+    if(name){
+      category.name = name;
+    }
+
+    if(image){
+      const result = await cloudinary.uploader.upload(image.path, {
+        folder: "products"
+      });
+      category.image = result.secure_url;
+    }
+
+    if(status){
+      category.status = status;
+    }
+
     await category.save();
 
     return res.status(200).json(category);
@@ -25,4 +44,4 @@ const putCategory = async(req,res) => {
 
 module.exports = {
     putCategory
-}
+};

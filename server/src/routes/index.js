@@ -54,7 +54,7 @@ router.post("/contacto", postContacto);
 
 //Categorias
 router.post("/category",postCategory);
-router.put("/category/:id", putCategory);
+router.put("/category/:id", upload.single("image"), putCategory);
 
 // Productos
 router.put("/products/:id", upload.single("image"), putProduct);
