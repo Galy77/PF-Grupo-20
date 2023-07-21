@@ -24,8 +24,12 @@ module.exports = (sequelize) => {
         amount: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        id_product:{
+            type: DataTypes.INTEGER,
+            allowNull: true
         }
-    })
+    },{ timestamps: false })
 
     return Payments;
 };

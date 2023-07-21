@@ -13,7 +13,7 @@ const { postContacto } = require("../controllers/postContacto");
 
 const { postPreference } = require("../controllers/postPreference")
 const { postReview } = require("../controllers/postReview")
-const { handlePaymentUpload } = require("../controllers/paymentController");
+const { handlePaymentUpload, uploadProduct, getPaymentByUserId, createPayment } = require("../controllers/paymentController");
 
 
 const upload = require("../middleware/multer");
@@ -24,12 +24,14 @@ router.get("/", getCategory);
 
 router.get("/products", getProducts);
 router.get("/products/:id", getProductById);
-// router.get("/review/:id", getReviewByIdProduct);
+router.get("/review/:id", getReviewByIdProduct);
 
 router.post("/products", upload.single("image"), postProduct);
 
 router.get("/user/bdd", getUserBDD);
 router.get("/user/firebase", getFirebaseUser);
+router.get("/payment/:id", getPaymentByUserId);
+
 
 router.post("/user", postUser);
 router.post("/user/firebase", postUserFirebase);
@@ -37,11 +39,13 @@ router.post("/user/firebase", postUserFirebase);
 router.post("/create_preference", postPreference);
 router.post("/user", postUser);
 router.post("/review",postReview)
+router.post("/payment",createPayment)
 
 router.post("/webhook", handlePaymentUpload);
 
 router.post("/contacto", postContacto);
 
 router.put("/products/:id", putStockProduct);
+router.put("/payment/:id", uploadProduct)
 
 module.exports = router;

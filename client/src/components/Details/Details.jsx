@@ -16,21 +16,32 @@ const Details = () => {
     const { id } = useParams()
     const product = useSelector(state => state.detailProduct);
     const orders = useSelector(state => state.orders);
+    const [isBuy,setIsBuy] = useState()
+    const user = JSON.parse(localStorage.getItem("usuarioActual"));
     const getReviews = async () => {
         const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
-        console.log(data)
         setReview(data.reviews)
     }
-
     useEffect(() => {
         dispatch(getProductById(id))
         getReviews()
     },[]) 
+    if(!isBuy){
+        if(user){
+            axios.get(`http://localhost:3001/PF/payment/${user.id}`)
+            .then(response => {
+                const isPay = response.data.filter(el => el.id_product == id)
+                setIsBuy(isPay)
+                console.log(isPay)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
+    }
     
 
-    
-
-    console.log("este es mi console de details", product)
+    // console.log("este es mi console de details", product)
 
 
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
@@ -65,10 +76,10 @@ const Details = () => {
     const [review, setReview] = useState()
 
 
-    useEffect(() => {
-        getReviews()
-        console.log(product)
-    },[])
+    // useEffect(() => {
+    //     getReviews()
+    //     console.log(product)
+    // },[])
 
 
     //MP
@@ -112,9 +123,9 @@ const Details = () => {
     const getProductInfo = () => {
         const data = {
             id:product.id,
-            cantidad:cantidadProducts ? product.stock - cantidadProducts : product.stock - 1
+            cantidad:cantidadProducts ? product.stock - cantidadProducts : product.stock - 1,
+            amount:cantidadProducts ? cantidadProducts * product.price : product.price
         }
-        console.log(data)
         localStorage.setItem("setStockProduct",JSON.stringify(data))
     }
     //setStock
@@ -198,35 +209,39 @@ const Details = () => {
                             <div class='mx-4 '>
                                 <h2>Comentarios</h2>
                             </div>
-                            <div class="d-flex flex-column align-items-start h-50 p-4">
-                                    {
-                                        review? review.map(el => <Reviews stars={el.stars} coment={el.coment}/>):''
-                                    }  
-                                    <div class='h-100 d-flex align-items-center rounded w-100'>
-                                        <div class='d-flex align-items-center justify-content-center w-50 h-100'>
-                                            <div class=''>
-                                                {stars? <Stars rating={stars} />:
-                                                <div>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                            {
+                                isBuy? isBuy.length?
+                                <div class="d-flex flex-column align-items-start h-50 p-4">
+                                        {
+                                            review? review.map(el => <Reviews stars={el.stars} coment={el.coment}/>):''
+                                        }  
+                                        <div class='h-100 d-flex align-items-center rounded w-100'>
+                                            <div class='d-flex align-items-center justify-content-center w-50 h-100'>
+                                                <div class=''>
+                                                    {stars? <Stars rating={stars} />:
+                                                    <div>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                                                    </div>
+                                                    }
+                                                    <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
                                                 </div>
-                                                }
-                                                <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
                                             </div>
-                                        </div>
 
-                                        <div class=' d-flex flex-column align-items-center'>
-                                            <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
-                                            <div class='d-flex justify-content-end w-100'>
-                                                <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
+                                            <div class=' d-flex flex-column align-items-center'>
+                                                <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
+                                                <div class='d-flex justify-content-end w-100'>
+                                                    <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
+                                                </div>
                                             </div>
+                        
                                         </div>
-                    
-                                    </div>
-                            </div>
+                                </div>:
+                                'no has comprado este producto':''
+                            }
                         </div>
                 </div>
 

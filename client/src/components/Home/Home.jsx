@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 // import axios from "axios"
 import './Home.css'
 import { useEffect,useState } from 'react';
-import { getAllCategories } from '../../redux/actions';
+import { getAllCategories, getAllProducts } from '../../redux/actions';
 
 
 function Home (){
@@ -16,6 +16,7 @@ function Home (){
 
     useEffect(() => {
         dispatch(getAllCategories());
+        dispatch(getAllProducts())
     },[dispatch])
     ////paginado
     let products = categories
