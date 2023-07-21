@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import "./payment.css"
 import axios from "axios";
 const Success = () => {
+    const postPaymentExecutedRef = useRef(false);
     const data = JSON.parse(localStorage.getItem("setStockProduct"))
     const putStock = async () =>{
         if(data){
@@ -24,6 +25,8 @@ const Success = () => {
         }
     }
     const postPayment = async () =>{
+        if (!postPaymentExecutedRef.current && data) {
+      postPaymentExecutedRef.current = true;
         const user = JSON.parse(localStorage.getItem("usuarioActual"));
         if(data){
             if(data.length){
@@ -47,10 +50,14 @@ const Success = () => {
             localStorage.removeItem('setStockProduct');
         }
     }
-    useEffect(() => {
-        putStock()
-        postPayment()
-    })
+}
+useEffect(() => {
+    putStock();
+  }, []);
+
+  useEffect(() => {
+    postPayment();
+  }, []);
 
     return(
         <div class='pay-cont d-flex justify-content-center align-items-center'>
