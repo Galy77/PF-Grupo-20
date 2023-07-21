@@ -1,54 +1,38 @@
-const {Product, User, Category} = require("../db")
-const {Op} = require("sequelize");
-const Reviews = require("../models/Reviews");
-const axios = require("axios");
+const {Product, Category} = require("../db")
+const productsData = require("../data/productsData")
 
 const getProducts = async (req, res) => {
   try {
-    const categories = await Category.findAll();
-    let i = 1
-    const data = await Promise.all(
-      categories.map(async (category) => {
-        const categoryId = category.id;
-        const results = await axios.get(
-          `https://api.mercadolibre.com/sites/MLA/search?category=${categoryId}`
-        );
-        const products = results.data.results;
+  const existingCategories = await Category.findAll();
+  const productsDb = await Product.findAll({
+    include:Category
+  });
 
-        const minStock = 1;
-        const maxStock = 200;
-        const minRating = 0.5;
-        const maxRating = 5;
+  console.log("productsDB------", productsDb.length)
 
-        const transformedProducts = products.map(
-          ({ id, title, price, thumbnail, attributes }) => {
-            const randomStockNumber =
-              Math.floor(Math.random() * (maxStock - minStock + 1)) + minStock;
-            const randomRatingNumber =
-              Math.round(Math.random() * (maxRating - minRating)) + minRating;
-            
-            const details = JSON.stringify(attributes);
-            const obj = {
-              id: i++,
-              name: title,
-              details: details,
-              price: price,
-              image: thumbnail,
-              stock: randomStockNumber,
-              rating: randomRatingNumber,
-              category: categoryId
-            };
-            return obj;
+  if (productsDb.length === 0) {
+    const createdProducts = await Product.bulkCreate(productsData);
+    await Promise.all(
+      createdProducts.map(async (product) => {
+        const productData = productsData.find((prod) => prod.name === product.name);
+        if (productData) {
+          const categoryName = productData.category;
+          const category = existingCategories.find((cat) => cat.name === categoryName);
+          if (category) {
+            await product.addCategory(category);
+          } else {
+            console.log(`La categoría '${categoryName}' no existe en la base de datos.`);
           }
-        );
-
-        const createdProducts = await Product.bulkCreate(transformedProducts);
-        await createdProducts.map((product) => product.addCategories(categoryId, { through: "product_category" }));
-        return transformedProducts;
+        }
       })
-    );
-
-    res.status(200).json(data);
+      );
+            const filterProduct = createdProducts.filter(pro => pro.status === 1 )
+            res.status(200).json(filterProduct);
+    } else {
+            const filterProduct = productsDb.filter(pro => pro.status === 1 )
+            return res.status(200).json(filterProduct)
+           
+  }
   } catch (error) {
     console.error("Error al obtener los productos:", error);
     res.status(500).json({ error: "Error al obtener los productos" });
