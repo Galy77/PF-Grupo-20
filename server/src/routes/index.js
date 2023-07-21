@@ -38,16 +38,16 @@ router.post("/products", upload.single("image"), postProduct);
 router.get("/user/bdd", getUserBDD);
 router.get("/user/firebase", getFirebaseUser);
 
-router.post("/user", postUser);
+router.post("/user", postUser); //veo 1
 router.post("/user/firebase", postUserFirebase);
 
 router.post("/create_preference", postPreference);
-router.post("/user", postUser);
+// router.post("/user", postUser); // veo 2
 router.post("/review",postReview);
 
-router.post("/webhook", handlePaymentUpload);
+router.post("/webhook", handlePaymentUpload); // veo 1
 
-router.post("/webhook", handlePaymentUpload);
+// router.post("/webhook", handlePaymentUpload); // veo 2
 router.post("/contacto", postContacto);
 
 // para el dashboard Productos , Usuarios y categorias
