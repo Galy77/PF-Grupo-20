@@ -61,7 +61,7 @@ router.put("/products/:id", upload.single("image"), putProduct);
 
 // User
 router.get("/user", getAllUsers);
-router.put("/user/:id",putUser);
+router.put("/user/:id", upload.single("image"), putUser);
 
 module.exports = router;
 
