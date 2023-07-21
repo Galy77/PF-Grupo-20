@@ -1,5 +1,4 @@
-const { Category , Product} = require('../db');
-const axios = require("axios");
+const { Category } = require('../db');
 const categoriesData = require("../data/categoriesData")
 
 
@@ -22,8 +21,6 @@ const getCategory = async(req, res) => {
             // console.log(filterCategory)
             return res.status(200).json(filterCategory)
         }
-        
-        
             const filterCategory = category.filter(ca => ca.status === 1)
             return res.status(200).json(filterCategory)
 
