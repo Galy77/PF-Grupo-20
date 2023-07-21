@@ -28,7 +28,14 @@ module.exports = (sequelize) => {
         direction_shipping: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        /**para marcar status 0 = no visible 1 = visible */
+        status: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue:1
+    
+          }
     }, { timestamps: false })
 
     return User;
