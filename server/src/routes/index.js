@@ -13,7 +13,7 @@ const { postPreference } = require("../controllers/postPreference")
 const { postReview } = require("../controllers/postReview")
 const { handlePaymentUpload } = require("../controllers/paymentController");
 
-const { postCategory } = require("../controllers/postCategory");est/serverDashboard
+const { postCategory } = require("../controllers/postCategory");
 
 const upload = require("../middleware/multer");
 
