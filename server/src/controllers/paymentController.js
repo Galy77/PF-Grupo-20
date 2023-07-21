@@ -53,6 +53,7 @@ const handlePaymentUpload = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
+//plan a
 const createPayment = async (req,res) => {
   try {
     const {id_user,email,amount,id_product} = req.body
@@ -68,6 +69,7 @@ const createPayment = async (req,res) => {
     console.log(error)
   }
 }
+//plan b
 const uploadProduct = async (req,res) => {
   try {
     const { id } = req.params; // ID del page
