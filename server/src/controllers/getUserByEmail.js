@@ -29,8 +29,6 @@ const getFirebaseUser = async(req, res) => {
 };
 
 module.exports = {
-
     getUserBDD,
     getFirebaseUser
-
 };
