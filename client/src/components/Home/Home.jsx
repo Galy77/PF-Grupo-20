@@ -15,6 +15,7 @@ function Home (){
     const dispatch = useDispatch();
 
     useEffect(() => {
+
         // Primero, llamamos a getAllCategories y esperamos su respuesta
         dispatch(getAllCategories())
           .then((categories) => {
@@ -32,6 +33,7 @@ function Home (){
             console.error("Error al obtener categorías y productos:", error);
           });
       }, [dispatch]);
+
     ////paginado
     let products = categories
 

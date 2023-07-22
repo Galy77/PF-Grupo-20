@@ -26,31 +26,50 @@ const Success = () => {
     }
     const postPayment = async () =>{
         if (!postPaymentExecutedRef.current && data) {
-      postPaymentExecutedRef.current = true;
+
+            postPaymentExecutedRef.current = true;
+
         const user = JSON.parse(localStorage.getItem("usuarioActual"));
         console.log(`esto es data: ${data.id}, ${data.amount}`)
         if(data){
-            
+
+            if(data.length){
+                data.map(async el =>{
+                    const newPayment = {
+                        id_user:user.id,
+                        email:user.email,
+                          amount:el.amount,
+                            id_product:el.id
+                    }
+                    await axios.post(`http://localhost:3001/PF/payment`,newPayment)
+                })
+                const deleteCart = data.map(el => el.id) 
+                const info = {productsToAdd:[],productsToRemove:deleteCart}
+                await axios.put(`http://localhost:3001/PF/cart/${user.id}`,info)
+            }else{
+
                 const newPayment = {
                     id_user:user.id,
                     email:user.email,
                       amount:data.amount,
                         id_product:data.id
                 }
-                const response = await axios.post(`http://localhost:3001/PF/payment`,newPayment)
-                console.log("entro en el else")
-            
-            localStorage.removeItem('setStockProduct');
-        }
-    }
-}
-useEffect(() => {
-    putStock();
-  }, []);
 
-  useEffect(() => {
-    postPayment();
-  }, []);
+                await axios.post(`http://localhost:3001/PF/payment`,newPayment)
+                 
+                const info = {productsToAdd:[],productsToRemove:[data.id]}
+                await axios.put(`http://localhost:3001/PF/cart/${user.id}`,info)
+            }
+        }
+    }}
+    useEffect(() => {
+        putStock();
+      }, []);
+    
+      useEffect(() => {
+        postPayment();
+      }, []);
+
 
     return(
         <div class='pay-cont d-flex justify-content-center align-items-center'>

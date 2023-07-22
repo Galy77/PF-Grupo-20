@@ -48,9 +48,30 @@ const Details = () => {
     if(!orders.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
     }
-    const addCart = () => {
-        dispatch(addOrder({...product,cant:1}))
-        alert('producto añadido correctamente al carrito')
+
+    const addCart = async () => {
+        const cart = await axios(`http://localhost:3001/PF/cart/${user.id}`)
+        if(cart.data.response == "no hay carrito"){
+            const data = {
+                id_user:user.id,
+                product_cart:[product.id]
+            }
+            try {
+                if(data) await axios.post('http://localhost:3001/PF/cart',data)
+            } catch (error) {
+                console.log(error)
+            }
+        }else{
+            const data = {
+                productsToAdd:[product.id],
+                productsToRemove:[]
+            }
+            try {
+                if(data) await axios.put(`http://localhost:3001/PF/cart/${user.id}`,data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
     }
 
 
@@ -153,7 +174,7 @@ const Details = () => {
 
     return(
         <>
-            <div class="container d-flex flex-column justify-content-start border h1000 mt-4 w-100 cuerpo">
+            <div class="container d-flex flex-column justify-content-start border mt-4 w-100 cuerpo">
                 <div class=' d-flex flex-column h-50 my-4'>
 
                     <div class="d-flex flex-column justify-content-start align-items-end">
