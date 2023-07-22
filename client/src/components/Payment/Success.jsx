@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import "./payment.css"
 import axios from "axios";
 const Success = () => {
+    const postPaymentExecutedRef = useRef(false);
     const data = JSON.parse(localStorage.getItem("setStockProduct"))
     const putStock = async () =>{
         if(data){
@@ -24,16 +25,23 @@ const Success = () => {
         }
     }
     const postPayment = async () =>{
+        if (!postPaymentExecutedRef.current && data) {
+            postPaymentExecutedRef.current = true;
         const user = JSON.parse(localStorage.getItem("usuarioActual"));
         if(data){
             if(data.length){
-                // data.map(async el =>{
-                //     const newStock = {
-                //         stock:el.cantidad
-                //     }
-                //     const response = await axios.put(`http://localhost:3001/PF/products/${el.id}`,newStock)
-                //     console.log(response)
-                // })
+                data.map(async el =>{
+                    const newPayment = {
+                        id_user:user.id,
+                        email:user.email,
+                          amount:el.amount,
+                            id_product:el.id
+                    }
+                    await axios.post(`http://localhost:3001/PF/payment`,newPayment)
+                })
+                const deleteCart = data.map(el => el.id) 
+                const info = {productsToAdd:[],productsToRemove:deleteCart}
+                await axios.put(`http://localhost:3001/PF/cart/${user.id}`,info)
             }else{
                 const newPayment = {
                     id_user:user.id,
@@ -41,16 +49,20 @@ const Success = () => {
                       amount:data.amount,
                         id_product:data.id
                 }
-                const response = await axios.post(`http://localhost:3001/PF/payment`,newPayment)
-                console.log(response)
+                await axios.post(`http://localhost:3001/PF/payment`,newPayment)
+                 
+                const info = {productsToAdd:[],productsToRemove:[data.id]}
+                await axios.put(`http://localhost:3001/PF/cart/${user.id}`,info)
             }
-            localStorage.removeItem('setStockProduct');
         }
-    }
+    }}
     useEffect(() => {
-        putStock()
-        postPayment()
-    })
+        putStock();
+      }, []);
+    
+      useEffect(() => {
+        postPayment();
+      }, []);
 
     return(
         <div class='pay-cont d-flex justify-content-center align-items-center'>

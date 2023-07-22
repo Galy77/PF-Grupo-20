@@ -17,49 +17,69 @@ const Cart = () => {
     const { user } = useAuth();
     const [isUser, setIsUser] = useState();
     const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
-
-    const products = useSelector(state => state.orders)
-    const productosStorage = JSON.parse(localStorage.getItem("productos"))
-  
+    const [products, setProducts] = useState([]) 
+    const [dataProducts, setDataProducts] = useState(true)
+    ///obtener el total
+    const [total, setTotal] = useState(0)
+    
     useEffect(() => {
         if(usuarioActual){
-          setIsUser(usuarioActual);
+            setIsUser(usuarioActual);
         }else{
-          setIsUser(user);
+            setIsUser(user);
         }
-      }, [user, usuarioActual]);
-      
+    }, []);
+    // }, [user, usuarioActual]); BUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+    
+    const getCart = async () => {
+        const { data } = await axios(`http://localhost:3001/PF/cart/${usuarioActual.id}`)
+        if(data.Products.length){
+            let allPrice = data.Products.map(el => el.price)
+            allPrice = Math.round(allPrice.reduce(function(acc, numero) {
+                return acc + numero;
+              }, 0));
+            setTotal(allPrice)
+            setProducts(data.Products)
+
+        } else {
+            setDataProducts(!dataProducts)
+            setProducts([])
+            setTotal(0)
+        }
+    }
+    if(!products.length && dataProducts){
+        getCart()
+    }
     
 
     ///eliminar todas los productos del carrito
-    const deleteCart = () => {
-        products.map(el => dispatch(removeOrder(el.id)))
+    const deleteCart = async () => {
+        if(products.length){
+            const productsToRemove = products.map(el => el.id)
+            const data = {productsToAdd:[],productsToRemove}
+            await axios.put(`http://localhost:3001/PF/cart/${usuarioActual.id}`,data)
+            getCart()
+        }
     }
-    ///obtener el total
-    let total = products.map(el => el.price*el.cant)
-    ///redondear el total
-    total = Math.round(total.reduce(function(acc, numero) {
-        return acc + numero;
-      }, 0));
-    ///goBack
+    
+
         //MP
         const [preferenceId, setPreferenceId] = useState(null)
         initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
         const createPreference = async () => {
             try {
-                const response = await axios.post("http://localhost:3001/PF/create_preference",{
-                    description:"cart Mercado Henry",
-                    price:total,
-                    quantity:1
-                    // currency_id:"ARS"
-                })
-                console.log(response)
-                const {id} = response.data;
-                console.log(id)
-                return id
+                if(total > 0){
+                    const response = await axios.post("http://localhost:3001/PF/create_preference",{
+                        description:"cart Mercado Henry",
+                        price:total,
+                        quantity:1
+                        // currency_id:"ARS"
+                    })
+                    const {id} = response.data;
+                    return id
+                }
             } catch (error) {
-                console.log(error)
-                console.log(1)            
+                console.log(error)   
             }
         }
         const handleBuy = async () => {
@@ -70,29 +90,24 @@ const Cart = () => {
         }
       
         
-        // useEffect(() => {
-        //     console.log(products)
-        // },[])
-        //setStock
         const getProductInfo = () => {
             const data = products.map(el => {
                 return{
                     id:el.id,
-                    cantidad:el.stock - el.cant
+                    cantidad:el.stock-1,
+                    amount:el.price
                 }
             })
             localStorage.setItem("setStockProduct",JSON.stringify(data))
         }
         //setStock
 
-        if(!products.length){
-            if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
-        }
 
         if (!isUser) {
             navigate("/login");
             return null
           }
+
         return (
             <>
                 <div class='mt-4'>
@@ -101,11 +116,7 @@ const Cart = () => {
 
                         <div id='cart-card'class="d-flex flex-column align-items-center justify-content-center cuerpo">
 
-                            {
-                                productosStorage.length? productosStorage.map(productscart => {
-                                        return <CartCart products={productscart}/>
-                                }):<p>No hay productos en tu carrito</p>
-                            }
+                            <CartCart products={products}  usuarioActual={usuarioActual} getCart={getCart} setTotal={setTotal} total={total}/>
 
                         </div>
                         <div id='aux'>
@@ -115,7 +126,12 @@ const Cart = () => {
 
                                 <button onClick={handleBuy} id="pay">Pay</button>
 
-                                {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
+                                {
+                                preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>
+                                }
+                                {
+                                    preferenceId && <p onClick={() => setPreferenceId(null)} class='cancelar'>cancelar</p>
+                                }
 
                                 <i onClick={deleteCart} id='trash'class="bi bi-trash-fill"></i>
                             </div>

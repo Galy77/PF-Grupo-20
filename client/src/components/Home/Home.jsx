@@ -16,7 +16,7 @@ function Home (){
 
     useEffect(() => {
         dispatch(getAllCategories());
-        dispatch(getAllProducts())
+        if(categories.length) dispatch(getAllProducts())
     },[dispatch])
     ////paginado
     let products = categories
