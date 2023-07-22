@@ -22,12 +22,10 @@ const Cart = () => {
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
   
     useEffect(() => {
-        if(usuarioActual){
+        if (usuarioActual && !isUser) {
           setIsUser(usuarioActual);
-        }else{
-          setIsUser(user);
         }
-      }, [user, usuarioActual]);
+      }, [usuarioActual, isUser]);
       
     
 
@@ -47,7 +45,7 @@ const Cart = () => {
         initMercadoPago("TEST-81546c5f-6e41-4a1b-94e1-d5813132d7c2")
         const createPreference = async () => {
             try {
-                const response = await axios.post( "https://api-market-henry-jczt.onrender.com/PF/create_preference",{
+                const response = await axios.post( "http://localhost:3001/PF/create_preference",{
                     description:"cart Mercado Henry",
                     price:total,
                     quantity:1

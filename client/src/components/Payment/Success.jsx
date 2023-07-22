@@ -28,16 +28,9 @@ const Success = () => {
         if (!postPaymentExecutedRef.current && data) {
       postPaymentExecutedRef.current = true;
         const user = JSON.parse(localStorage.getItem("usuarioActual"));
+        console.log(`esto es data: ${data.id}, ${data.amount}`)
         if(data){
-            if(data.length){
-                // data.map(async el =>{
-                //     const newStock = {
-                //         stock:el.cantidad
-                //     }
-                //     const response = await axios.put(`http://localhost:3001/PF/products/${el.id}`,newStock)
-                //     console.log(response)
-                // })
-            }else{
+            
                 const newPayment = {
                     id_user:user.id,
                     email:user.email,
@@ -45,8 +38,8 @@ const Success = () => {
                         id_product:data.id
                 }
                 const response = await axios.post(`http://localhost:3001/PF/payment`,newPayment)
-                console.log(response)
-            }
+                console.log("entro en el else")
+            
             localStorage.removeItem('setStockProduct');
         }
     }

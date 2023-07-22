@@ -25,6 +25,7 @@ function Products (){
 
     const search = location.search.slice(8);
     const data = products.map(el => {
+        console.log(`producto ${el.name}`)
         return{
             id:el.id,
             details:el.description,
@@ -33,7 +34,7 @@ function Products (){
             price:el.price,
             rating:el.rating,
             stock:el.stock,
-            category:el.Categories[0].name
+            category:el.Categories.name
         }
     })
 
