@@ -219,7 +219,7 @@ export const priceOrder = (payload) => {
 export const getAllCategories = () => {
    return async function(dispatch){
       try{
-         const response = await axios.get(" https://api-market-henry-jczt.onrender.com/PF");
+         const response = await axios.get("http://localhost:3001/pf/");
          return dispatch({
              type:GET_ALL_CATEGORIES,
              payload:response.data

@@ -1,4 +1,7 @@
-const {Product, Category} = require("../db")
+const {Product, User, Category} = require("../db")
+const {Op} = require("sequelize");
+const Reviews = require("../models/Reviews");
+const axios = require("axios");
 const productsData = require("../data/productsData")
 
 const getProducts = async (req, res) => {
@@ -26,6 +29,8 @@ const getProducts = async (req, res) => {
       );
       res.status(200).json(createdProducts);
     } else {
+
+
     res.status(200).json(productsDb);
   }
   } catch (error) {

@@ -34,7 +34,7 @@ function Products (){
             price:el.price,
             rating:el.rating,
             stock:el.stock,
-            category:el.Categories.name
+            category:el.Categories[0].name
         }
     })
 

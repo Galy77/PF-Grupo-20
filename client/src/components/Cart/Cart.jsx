@@ -22,10 +22,12 @@ const Cart = () => {
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
   
     useEffect(() => {
-        if (usuarioActual && !isUser) {
-          setIsUser(usuarioActual);
+        if(usuarioActual){
+            setIsUser(usuarioActual);
+        }else{
+            setIsUser(user);
         }
-      }, [usuarioActual, isUser]);
+    }, []);
       
     
 
@@ -99,12 +101,11 @@ const Cart = () => {
 
                         <div id='cart-card'class="d-flex flex-column align-items-center justify-content-center cuerpo">
 
-                            {
-                                productosStorage.length? productosStorage.map(productscart => {
-                                        return <CartCart products={productscart}/>
-                                }):<p>No hay productos en tu carrito</p>
-                            }
-
+                        {productosStorage && productosStorage.length
+              ? productosStorage.map((productscart) => {
+                  return <CartCart products={productscart} />;
+                })
+              : <p>No hay productos en tu carrito</p>}
                         </div>
                         <div id='aux'>
                             <div class='total-container d-flex flex-column justify-content-evenly align-items-center'>
