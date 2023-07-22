@@ -5,19 +5,46 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { addOrder } from "../../redux/actions";
+import { addOrder, getProductById } from "../../redux/actions";
+import { getAllProducts } from "../../redux/actions";
 import Reviews from "./Reviews";
 import axios from "axios";
 import {initMercadoPago, Wallet } from "@mercadopago/sdk-react"
-const Details = ({}) => {
+
+const Details = () => {
     const dispatch = useDispatch()
-    const {id} = useParams()
-    const products = useSelector(state => state.products);
+    const { id } = useParams()
+    const product = useSelector(state => state.detailProduct);
     const orders = useSelector(state => state.orders);
-    const product = products.filter(el => el.id == id).pop()
+    const [isBuy,setIsBuy] = useState()
+    const user = JSON.parse(localStorage.getItem("usuarioActual"));
+    const getReviews = async () => {
+        const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
+        setReview(data.reviews)
+    }
+    useEffect(() => {
+        dispatch(getProductById(id))
+        getReviews()
+    },[]) 
+    if(!isBuy){
+        if(user){
+            axios.get(`http://localhost:3001/PF/payment/${user.id}`)
+            .then(response => {
+                const isPay = response.data.filter(el => el.id_product == id)
+                setIsBuy(isPay)
+                console.log(isPay)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        }
+    }
+    
+
+    // console.log("este es mi console de details", product)
+
 
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
-
     if(!orders.length){
         if(productosStorage !== null) productosStorage.map(el => dispatch(addOrder(el)))
     }
@@ -25,26 +52,8 @@ const Details = ({}) => {
         dispatch(addOrder({...product,cant:1}))
         alert('producto añadido correctamente al carrito')
     }
-    ///goBack
-    function goBack() {
-        window.history.back();
-    }
-    /// ver mas...
-    const [isExpanded, setIsExpanded] = useState(false);
-    const toggleExpanded = () => {
-      setIsExpanded(!isExpanded);
-    };
-    let text = 'It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. Its also worth noting that just about any HTML can go within the, though the transition does limit overflow'
-    let maxLength = 300
-    let displayText = text;
-    if (!isExpanded && text.length > maxLength) {
-      displayText = text.substring(0, maxLength) + '...';
-    }
-    /// ver mas...
 
 
-
- 
     /// stars dropdown
     const [stars, setStars] = useState(null)
 
@@ -65,20 +74,18 @@ const Details = ({}) => {
     /// stars dropdown
     /// reviews
     const [review, setReview] = useState()
-    const getReviews = async () => {
-        try {
-            const { data } = await axios(` https://api-market-henry-jczt.onrender.com/PF/review/${id}`)
-            setReview(data.reviews)
-        } catch (error) {
-            console.log('este producto no tiene reviews')
-        }
-    }
-    useEffect(() => {
-        getReviews()
-    },[])
+
+
+    // useEffect(() => {
+    //     getReviews()
+    //     console.log(product)
+    // },[])
+
+
     //MP
     const [cantidadProducts, setCantidadProducts] = useState()
     const [error, setError] = useState()
+
     const handleInput = (event) => {
         let value = event.target.value
         if(value >= 0 && value <= product.stock){
@@ -86,12 +93,13 @@ const Details = ({}) => {
             setError()
         } 
         else setError('ingrese un numero valido')
-    } 
+    }
     const [preferenceId, setPreferenceId] = useState(null)
-    initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
+     
+    initMercadoPago("TEST-81546c5f-6e41-4a1b-94e1-d5813132d7c2")
     const createPreference = async () => {
         try {
-            const response = await axios.post(" https://api-market-henry-jczt.onrender.com/PF/create_preference",{
+            const response = await axios.post("http://localhost:3001/PF/create_preference",{
                 description:`${product.name}`,
                 price:product.price,
                 quantity:cantidadProducts ? cantidadProducts : 1
@@ -99,11 +107,9 @@ const Details = ({}) => {
             })
             console.log(response)
             const {id} = response.data;
-            console.log(id)
             return id
         } catch (error) {
-            console.log(error)
-            console.log(1)            
+            console.log(error)          
         }
     }
     const handleBuy = async () => {
@@ -112,8 +118,18 @@ const Details = ({}) => {
             setPreferenceId(id)
         }
     }
-    ////MP 
-
+    ////MP
+    //setStock
+    const getProductInfo = () => {
+        const data = {
+            id:product.id,
+            cantidad:cantidadProducts ? product.stock - cantidadProducts : product.stock - 1,
+            amount:cantidadProducts ? cantidadProducts * product.price : product.price
+        }
+        localStorage.setItem("setStockProduct",JSON.stringify(data))
+    }
+    //setStock
+    //reviews
     const handleReviews = async () => {
         if(!stars||!coment) alert('completa la review')
         else{
@@ -142,7 +158,7 @@ const Details = ({}) => {
 
                     <div class="d-flex flex-column justify-content-start align-items-end">
                         <div className="product d-flex flex-column align-items-center">
-                            <Slider images={product.image}/>
+                             <Slider images={product.image}/> 
                         </div>
                     </div>
 
@@ -158,10 +174,9 @@ const Details = ({}) => {
                                     <Stars rating={product.rating}/>
                                 </div>
                             </div>
-
                                 <div id='stock'class='d-flex justify-content-around align-items-center'>
-                                    <div class='w-50' >
-                                        <input type="number" placeholder={`stock:${product.stock}`} class='text-center w-25 rounded border' value={cantidadProducts} onChange={handleInput} />
+                                    <div class='w-0' >
+                                        <input type="number" placeholder={`stock:${product.stock}`} class='text-center w-100 rounded border' value={cantidadProducts} onChange={handleInput} />
                                         {
                                             error? <p class='error'>{error}</p>:''
                                         }
@@ -180,57 +195,58 @@ const Details = ({}) => {
                                             <i class="bi bi-cart3"></i>
                                         </button>
                                 </div>
-                                {preferenceId && <Wallet initialization={{preferenceId:preferenceId}}/>}
+                                {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
 
                         </div>
 
                     </div>
-                    <div class=' d-flex flex-column'>
+                    <div class='h-100'>
 
                         <div class='w-100 mb-5'>
-                            <p class='text-start m-4'>{displayText}</p>
-                            {text.length > maxLength && (
-                                <span onClick={toggleExpanded} class='showtext text-end w-100'>
-                                {isExpanded ? 'Mostrar menos' : 'Mostrar más...'}
-                                </span>
-                            )}
+                            <p class='text-start m-4'>{product.description}</p>
                         </div>
 
-                        <div class='mx-4 '>
-                            <h2>Comentarios</h2>
-                        </div>
-                        <div class="d-flex flex-column align-items-start h-50 p-4">
-                                {
-                                    review? review.map(el => <Reviews stars={el.stars} coment={el.coment}/>):''
-                                }  
-                                <div class='h-100 d-flex align-items-center rounded w-100'>
-                                    <div class='d-flex align-items-center justify-content-center w-50 h-100'>
-                                        <div class=''>
-                                            {stars? <Stars rating={stars} />:
-                                            <div>
-                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
-                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
-                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
-                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
-                                                <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                            <div class='mx-4 '>
+                                <h2>Comentarios</h2>
+                            </div>
+                            {
+                                isBuy? isBuy.length?
+                                <div class="d-flex flex-column align-items-start h-50 p-4">
+                                        {
+                                            review? review.map(el => <Reviews stars={el.stars} coment={el.coment}/>):''
+                                        }  
+                                        <div class='h-100 d-flex align-items-center rounded w-100'>
+                                            <div class='d-flex align-items-center justify-content-center w-50 h-100'>
+                                                <div class=''>
+                                                    {stars? <Stars rating={stars} />:
+                                                    <div>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
+                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                                                    </div>
+                                                    }
+                                                    <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
+                                                </div>
                                             </div>
-                                            }
-                                            <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
-                                        </div>
-                                    </div>
 
-                                    <div class=' d-flex flex-column align-items-center'>
-                                        <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
-                                        <div class='d-flex justify-content-end w-100'>
-                                            <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
+                                            <div class=' d-flex flex-column align-items-center'>
+                                                <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
+                                                <div class='d-flex justify-content-end w-100'>
+                                                    <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
+                                                </div>
+                                            </div>
+                        
                                         </div>
-                                    </div>
-                
-                                </div>
+                                </div>:
+                                'no has comprado este producto':''
+                            }
                         </div>
-                    </div>
                 </div>
-            </div>
+
+                </div>
+
         </>
     )
 }
