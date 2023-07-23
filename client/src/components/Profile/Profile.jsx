@@ -6,8 +6,7 @@ import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import "./Profile.style.css";
 import ShowModal from "../Modals/ShowModal/ShowModal";
-import LazyLoad from "react-lazyload";
-
+import OuterModal from "../Modals/OuterModal/OuterModal"
 export function Profile() {
   const dispatch = useDispatch();
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
@@ -20,6 +19,7 @@ export function Profile() {
   const [modalCompras, setModalCompras] = useState(false);
   const [modalPublicaciones, setModalPublicaciones] = useState(false);
   const [modalDatos, setModalDatos] = useState(true);
+  const [modificarDatos,setModificarDatos]  = useState(false)
 
   useEffect(() => {
     if (usuarioActual) {
@@ -119,6 +119,7 @@ export function Profile() {
       ) : (
         <div className="profile-container">
           <div className="lateral-profile-container">
+            <h6>¡Bienvenido!</h6>
             <h1>{isUser.full_name}</h1>
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
@@ -151,10 +152,10 @@ export function Profile() {
                 <h1>{isUser.direction_shipping}</h1>
                 <h1>{isUser.phone}</h1>
               </div>
-              <Link to="/register">
-                <button className="btn-lateral">Modificar Datos</button>
-              </Link>
+              <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
             </ShowModal>
+            <OuterModal estadoOuterModal={modificarDatos} setEstadoOuterModal={setModificarDatos} datosUser={isUser}/>
+
           </div>
         </div>
       )}

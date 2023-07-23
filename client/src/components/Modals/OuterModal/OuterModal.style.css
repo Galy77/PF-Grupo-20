@@ -1,4 +1,4 @@
-.Overlay{
+.Outer-Overlay{
     width:100vw;
     height: 100vh;
     position: fixed;
@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
 }
-.ContenedorModal{ 
+.Outer-ContenedorModal{ 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,7 @@
     box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
     padding: 20px;
 }
-.BotonCerrar{
+.Outer-BotonCerrar{
     position: absolute;
     background-color: white;
     right: 10px;
@@ -34,7 +34,7 @@
     transition: 0.4s ease all;
     border-radius: 4px;
 }
-.BotonCerrar:hover{
+.Outer-BotonCerrar:hover{
     background-color: #dbdbdb;
-    color: #4abdff;
+    color: #ff5f4a;
 }
