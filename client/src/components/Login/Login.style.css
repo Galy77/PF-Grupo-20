@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body-login{
+  margin-top: 1%;
+}
+.login-container{
+  width: 80%;
+  height: 88vh;
+  border-radius: 20px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-div{
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 100%;
+  overflow: hidden;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.login-image-div{
+
+  width: 65%;
+  height: 100%;
+  overflow: hidden;
+  background-image: url("../../../public/fondo-login2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.div-inputs{ 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px;
+  width: 300px;
+}
+.lbl-title{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 5px;
+}
+.btn-is{
+  padding: .375rem .75rem;
+  border: 1px solid #b6b2b2;
+  border-radius: .25rem;
+  color: #030000;
+  transition: color .15s ease-in-out,
+    background-color .15s ease-in-out;
+}
+
+.btn-is:hover, .btn-is:active, .btn-is:focus {
+  color: #fff;
+  background-color: #d40505;
+}
+
+.btn-is-google {
+  /* Estilos iniciales del botón */
+  padding: .375rem .75rem;
+  border: 1px solid #b6b2b2;
+  border-radius: .25rem;
+  color: #030000;
+  background-size: 200% 200%; /* Ajusta el tamaño del degradado */
+  transition: color .30s ease-in-out, background-position .15s ease-in-out; /* Transiciones suaves */
+}
+
+/* Estilos al pasar el cursor, cuando el botón está activo o cuando tiene el enfoque */
+.btn-is-google:hover,
+.btn-is-google:active,
+.btn-is-google:focus {
+  color: #fff;
+  background-image: linear-gradient(55deg, #ff0000,blue);
+  background-position: right;
+}
+.link{
+  text-decoration: none;
+  color: rgb(21, 126, 224);
+}
+.link:hover{
+  color: rgb(223, 26, 26);
+  transition: color .30s ease-in-out;
+}
+.form-control:focus {
+  border-color: #d40505; /* Cambia el color del borde al rojo oscuro */
+  outline: none; /* Elimina el contorno predeterminado del enfoque */
+  transition: border-color 0.5s ease; /* Animación de cambio de color lenta */
+}

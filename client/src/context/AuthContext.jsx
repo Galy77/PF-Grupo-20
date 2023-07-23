@@ -32,10 +32,12 @@ export function AuthProvider({ children }) {
   const loginWithGoogle = async () => {
       const googleProvider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, googleProvider);
+      localStorage.setItem("userProvider","google")
 
       const { user } = result;
       const { displayName, email } = user;
-        
+
+
       console.log("Usuario creado con Google", user);
       console.log("Nombre:", displayName);
       console.log("Email:", email);

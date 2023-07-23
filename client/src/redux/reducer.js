@@ -64,6 +64,7 @@ export const reducer = (state = initialState,{type,payload})=>{
         //USER
         case GET_USER: {
             localStorage.setItem("usuarioActual", JSON.stringify(payload));
+            localStorage.setItem("userProvider","local")
             return {
               ...state,
               user: payload,
@@ -73,10 +74,11 @@ export const reducer = (state = initialState,{type,payload})=>{
         case ADD_USER:
         const auxUser = () => {
           const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          localStorage.setItem("userProvider","local")
           return userX;
         }
         const actUser = state.user
-        console.log("este es mi usuarui actual",actUser)
+        console.log("este es mi usuario actual",actUser)
         return{
           ...state,
           user:auxUser()
@@ -84,6 +86,7 @@ export const reducer = (state = initialState,{type,payload})=>{
         case ADD_FIREBASEUSER:
         const auxUserFirebase = () => {
           const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          localStorage.setItem("userProvider","google")
           return userX;
         }
         const actUser2= state.user
@@ -96,6 +99,7 @@ export const reducer = (state = initialState,{type,payload})=>{
        
         case LOGOUT_USER:
           localStorage.removeItem("usuarioActual");
+          localStorage.removeItem("userProvider");
             return{
                 ...state,
                 user: payload
