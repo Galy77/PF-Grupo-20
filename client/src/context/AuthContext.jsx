@@ -7,8 +7,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 
-import { useDispatch } from "react-redux";
-import { getUser } from "../redux/actions"
+
 import { auth } from "../firebase";
 
 const authContext = createContext({
@@ -33,16 +32,9 @@ export function AuthProvider({ children }) {
       const googleProvider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, googleProvider);
       localStorage.setItem("userProvider","google")
-
       const { user } = result;
-      const { displayName, email } = user;
-
-
-      console.log("Usuario creado con Google", user);
-      console.log("Nombre:", displayName);
-      console.log("Email:", email);
-
-      return(user);
+      setUser(user);
+      return (user);
   };
 
   const logout = () => signOut(auth);

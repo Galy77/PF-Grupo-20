@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import "./Profile.style.css";
 import ShowModal from "../Modals/ShowModal/ShowModal";
+import LazyLoad from "react-lazyload";
 
 export function Profile() {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export function Profile() {
 
   const { logout, user } = useAuth();
   const [isUser, setIsUser] = useState();
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   const [modalCompras, setModalCompras] = useState(false);
   const [modalPublicaciones, setModalPublicaciones] = useState(false);
   const [modalDatos, setModalDatos] = useState(true);
@@ -28,8 +29,7 @@ export function Profile() {
       setIsUser(user);
       setLoading(false);
     }
-  
-  }, [usuarioActual,user]);
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -64,7 +64,8 @@ export function Profile() {
   if (loading) {
     return <div>Cargando...</div>;
   }
-  if(!loading){
+
+  if (!loading) {
     if (!isUser && !usuarioActual) {
       navigate("/login");
       return null;
@@ -76,9 +77,8 @@ export function Profile() {
       {providerActual === "google" ? (
         <div className="profile-container">
           <div className="lateral-profile-container">
-            <h1>{isUser.displayName}</h1>
             <h6>¡Bienvenido!</h6>
-            <img src={user.photoURL} alt="UserImage" className="profile-image" />
+            <h1>{isUser.name}</h1>
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
