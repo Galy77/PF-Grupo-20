@@ -57,6 +57,9 @@ Cart.belongsTo(User,{foreignKey: 'id_user'})
 Product.belongsToMany(Cart,{through: 'product_cart'})
 Cart.belongsToMany(Product,{through: 'product_cart'})
 
+User.hasMany(Reviews, { foreignKey: 'id_user' });
+Reviews.belongsTo(User, { foreignKey: 'id_user' });
+
 
 // Diego estuvo aki
 
