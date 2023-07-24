@@ -26,9 +26,13 @@ const Success = () => {
     }
     const postPayment = async () =>{
         if (!postPaymentExecutedRef.current && data) {
+
             postPaymentExecutedRef.current = true;
+
         const user = JSON.parse(localStorage.getItem("usuarioActual"));
+        console.log(`esto es data: ${data.id}, ${data.amount}`)
         if(data){
+
             if(data.length){
                 data.map(async el =>{
                     const newPayment = {
@@ -43,12 +47,14 @@ const Success = () => {
                 const info = {productsToAdd:[],productsToRemove:deleteCart}
                 await axios.put(`http://localhost:3001/PF/cart/${user.id}`,info)
             }else{
+
                 const newPayment = {
                     id_user:user.id,
                     email:user.email,
                       amount:data.amount,
                         id_product:data.id
                 }
+
                 await axios.post(`http://localhost:3001/PF/payment`,newPayment)
                  
                 const info = {productsToAdd:[],productsToRemove:[data.id]}
@@ -63,6 +69,7 @@ const Success = () => {
       useEffect(() => {
         postPayment();
       }, []);
+
 
     return(
         <div class='pay-cont d-flex justify-content-center align-items-center'>

@@ -122,7 +122,7 @@ const Details = () => {
     }
     const [preferenceId, setPreferenceId] = useState(null)
      
-    initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
+    initMercadoPago("TEST-81546c5f-6e41-4a1b-94e1-d5813132d7c2")
     const createPreference = async () => {
         try {
             const response = await axios.post("http://localhost:3001/PF/create_preference",{
@@ -167,7 +167,9 @@ const Details = () => {
                 id_user:user.id
             }
             try {
+
                 await axios.post('http://localhost:3001/PF/review',data)
+
                 setStars(null)
                 setComent('')
                 getReviews()

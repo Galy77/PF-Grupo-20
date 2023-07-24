@@ -6,7 +6,7 @@ const categoriesData = require("../data/categoriesData")
 const getCategory = async(req, res) => {
     try {
         const data = categoriesData;
-
+        
         const category = await Category.findAll()
         if(category.length === 0){
             const categories = data.map((obj) => {

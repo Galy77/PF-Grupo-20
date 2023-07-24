@@ -103,12 +103,7 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
           <Link to={`/products?search=${capital}`}><Button variant="outline-dark" class='btn btn-dark'>Search</Button></Link>
         </Form>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class='text-center icons d-flex align-items-center'>
-            <Link to = {'/profile'}>
-                  <i class="icons bi bi-person"></i>
-            </Link>
-          </li>
-          <li class='text-center d-flex align-items-center'>
+                   <li class='text-center d-flex align-items-center'>
               <Link to={'/cart'} class='link'>
                 <i class="icons bi bi-cart3"></i>
               </Link>
@@ -116,6 +111,11 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
           <li class='text-center d-flex align-items-center'>
             <Link to={`/create`} class='link d-flex justify-content-center'>
               <i class="icons bi bi-plus"></i>
+            </Link>
+          </li>
+          <li>
+          <Link to = {'/profile'}>
+                  <i class="icons bi bi-person"></i>
             </Link>
           </li>
           <li>

@@ -29,7 +29,7 @@ const Cart = () => {
             setIsUser(user);
         }
     }, []);
-    // }, [user, usuarioActual]); BUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+
     
     const getCart = async () => {
         const { data } = await axios(`http://localhost:3001/PF/cart/${usuarioActual.id}`)
@@ -50,6 +50,7 @@ const Cart = () => {
     if(!products.length && dataProducts){
         getCart()
     }
+
     
 
     ///eliminar todas los productos del carrito
@@ -65,9 +66,10 @@ const Cart = () => {
 
         //MP
         const [preferenceId, setPreferenceId] = useState(null)
-        initMercadoPago("TEST-3805efe2-4de0-416c-a67b-416a74b0d3f6")
+        initMercadoPago("TEST-81546c5f-6e41-4a1b-94e1-d5813132d7c2")
         const createPreference = async () => {
             try {
+
                 if(total > 0){
                     const response = await axios.post("http://localhost:3001/PF/create_preference",{
                         description:"cart Mercado Henry",
@@ -78,6 +80,7 @@ const Cart = () => {
                     const {id} = response.data;
                     return id
                 }
+
             } catch (error) {
                 console.log(error)   
             }
@@ -116,7 +119,9 @@ const Cart = () => {
 
                         <div id='cart-card'class="d-flex flex-column align-items-center justify-content-center cuerpo">
 
+
                             <CartCart products={products}  usuarioActual={usuarioActual} getCart={getCart} setTotal={setTotal} total={total}/>
+
 
                         </div>
                         <div id='aux'>

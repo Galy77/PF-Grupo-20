@@ -1,4 +1,8 @@
-const {Product, Category, User} = require("../db")
+
+const {Product, User, Category} = require("../db")
+
+const Reviews = require("../models/Reviews");
+
 const productsData = require("../data/productsData")
 
 const getProducts = async (req, res) => {
@@ -26,6 +30,8 @@ const getProducts = async (req, res) => {
       );
       res.status(200).json(createdProducts);
     } else {
+
+
     res.status(200).json(productsDb);
   }
   } catch (error) {

@@ -64,7 +64,7 @@ export const addUser = (user) => {
             })
          return response;
       } catch (error) {
-         console.log("Error al crear el usuario", error.message)
+         console.log("Error al crear el usuario", error)
       }
     };
 }
@@ -103,7 +103,7 @@ export function addProduct(productData) {
        formData.append('rating', productData.rating);
        formData.append('image', productData.image); 
  
-       const response = await axios.post('http://localhost:3001/PF/products', formData, {
+       const response = await axios.post(' https://api-market-henry-jczt.onrender.com/PF/products', formData, {
          headers: {
            'Content-Type': 'multipart/form-data', 
          },
@@ -219,7 +219,7 @@ export const priceOrder = (payload) => {
 export const getAllCategories = () => {
    return async function(dispatch){
       try{
-         const response = await axios.get("http://localhost:3001/PF");
+         const response = await axios.get("http://localhost:3001/pf/");
          return dispatch({
              type:GET_ALL_CATEGORIES,
              payload:response.data

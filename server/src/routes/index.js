@@ -2,6 +2,8 @@ const { Router } = require("express");
 const {getCategory} = require("../controllers/getCategory");
 const { getProducts, getProductById, getReviewByIdProduct } = require("../controllers/getProduct");
 const { postProduct } = require("../controllers/postProduct");
+
+
 const { putStockProduct } = require("../controllers/putStockProduct")
 
 const { postUser } = require("../controllers/postUser");
@@ -12,7 +14,9 @@ const { postUserFirebase } = require("../controllers/postUserFirebase");
 const { postContacto } = require("../controllers/postContacto");
 
 const { postPreference } = require("../controllers/postPreference")
+
 const { postReview, removeReview } = require("../controllers/postReview")
+
 const { handlePaymentUpload, getPaymentByUserId, createPayment } = require("../controllers/paymentController");
 const { postCart, getCartById, putCartById } = require("../controllers/postCart");
 
@@ -25,8 +29,10 @@ router.get("/", getCategory);
 
 router.get("/products", getProducts);
 router.get("/products/:id", getProductById);
+
 router.get("/review/:id", getReviewByIdProduct);
 router.get("/cart/:id", getCartById);
+
 
 router.post("/products", upload.single("image"), postProduct);
 
