@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 // import axios from "axios"
 import './Home.css'
 import { useEffect,useState } from 'react';
-import { getAllCategories } from '../../redux/actions';
+import { getAllCategories, getAllProducts } from '../../redux/actions';
 
 
 function Home (){
@@ -15,8 +15,25 @@ function Home (){
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getAllCategories());
-    },[dispatch])
+
+        // Primero, llamamos a getAllCategories y esperamos su respuesta
+        dispatch(getAllCategories())
+          .then((categories) => {
+            // Una vez que tenemos las categorías, llamamos a getAllProducts
+            return dispatch(getAllProducts());
+          })
+          .then((products) => {
+            // Aquí ya tenemos las categorías y los productos.
+            // Puedes realizar cualquier acción adicional que requiera ambos.
+            console.log("Categorías:", categories);
+            console.log("Productos:", products);
+          })
+          .catch((error) => {
+            // Manejo de errores, si es necesario
+            console.error("Error al obtener categorías y productos:", error);
+          });
+      }, [dispatch]);
+
     ////paginado
     let products = categories
 

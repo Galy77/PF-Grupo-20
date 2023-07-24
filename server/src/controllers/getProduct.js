@@ -1,4 +1,8 @@
-const {Product, Category} = require("../db")
+
+const {Product, User, Category} = require("../db")
+
+const Reviews = require("../models/Reviews");
+
 const productsData = require("../data/productsData")
 
 let productsCreated = false;
@@ -34,9 +38,13 @@ const getProducts = async (req, res) => {
       const filterProduct = productsData.filter((pro) => pro.status === 1);
       return res.status(200).json(filterProduct);
     } else {
-      const filterProduct = productsDb.filter((pro) => pro.status === 1);
-      return res.status(200).json(filterProduct);
-    }
+
+
+            const filterProduct = productsDb.filter(pro => pro.status === 1 )
+            return res.status(200).json(filterProduct)
+
+  }
+
   } catch (error) {
     console.error("Error al obtener los productos:", error);
     res.status(500).json({ error: "Error al obtener los productos" });
@@ -57,7 +65,9 @@ const getReviewByIdProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const request = await Product.findByPk(id);
-    let reviews = await request.getReviews();
+    let reviews = await request.getReviews({
+      include:User
+    });
     res.status(200).json({reviews});
   } catch (error) {
     res.status(500).json({ error: 'Error al obtener el producto por ID' });

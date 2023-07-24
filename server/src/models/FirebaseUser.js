@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
       email:{
         type:DataTypes.STRING,
         allowNull:false,
-      }
+      },
     },
     { timestamps: false }
   );

@@ -1,13 +1,12 @@
 const { DataTypes } = require('sequelize');
 const { User } = require('./User');
-
 module.exports = (sequelize) => {
-    const Payments = sequelize.define('Payments', {
+    const Cart = sequelize.define('Cart', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
-            allowNull: false,
+            allowNull: false
         },
         id_user: {
             type: DataTypes.INTEGER,
@@ -16,20 +15,8 @@ module.exports = (sequelize) => {
                 model: User,
                 key: 'id',
             },
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        amount: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        id_product:{
-            type: DataTypes.INTEGER,
-            allowNull: true
         }
-    },{ timestamps: false })
+    }, { timestamps: false })
 
-    return Payments;
+    return Cart;
 };

@@ -1,3 +1,4 @@
+
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
@@ -22,7 +23,7 @@ module.exports = (sequelize) => {
             allowNull: false
         },
         phone: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         direction_shipping: {
@@ -38,10 +39,12 @@ module.exports = (sequelize) => {
             defaultValue:1
           },
         /**para marcar status 0 = no visible 1 = visible */
+
         status: {
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue:1
+
     
           }
 

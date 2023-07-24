@@ -3,9 +3,7 @@ const { Sequelize } = require("sequelize");
 const fs = require('fs');
 const path = require('path');
 
-const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
-
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ecommerce`, {
+const sequelize = new Sequelize('postgres://postgres:admin@localhost/ecommerce', {
   logging: false, 
   native: false, 
 });
@@ -26,7 +24,7 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { User, Order, Product, Category, FirebaseUser, Payments, Reviews } = sequelize.models;
+const { User, Order, Product, Category, FirebaseUser, Payments, Reviews, Cart } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
@@ -50,6 +48,16 @@ Product.belongsToMany(FirebaseUser,{through: 'product_firebase'})
 
 Product.hasMany(Reviews, { foreignKey: 'id_product' });
 Reviews.belongsTo(Product, { foreignKey: 'id_product' });
+
+User.hasOne(Cart,{foreignKey: 'id_user'})
+Cart.belongsTo(User,{foreignKey: 'id_user'})
+
+Product.belongsToMany(Cart,{through: 'product_cart'})
+Cart.belongsToMany(Product,{through: 'product_cart'})
+
+User.hasMany(Reviews, { foreignKey: 'id_user' });
+Reviews.belongsTo(User, { foreignKey: 'id_user' });
+
 
 // Diego estuvo aki
 

@@ -1,0 +1,40 @@
+.Outer-Overlay{
+    width:100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Outer-ContenedorModal{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:500px;
+    min-height: 200px;
+    position: relative;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+    padding: 20px;
+}
+.Outer-BotonCerrar{
+    position: absolute;
+    background-color: white;
+    right: 10px;
+    top:10px;
+    width: 30px;
+    height: 30px;
+    border:none;
+    cursor: pointer;
+    transition: 0.4s ease all;
+    border-radius: 4px;
+}
+.Outer-BotonCerrar:hover{
+    background-color: #dbdbdb;
+    color: #ff5f4a;
+}
