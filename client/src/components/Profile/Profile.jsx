@@ -74,11 +74,11 @@ export function Profile() {
 
   return (
     <div>
-      {providerActual === "google" && isUser ? (
+      {providerActual === "google" && (isUser || usuarioActual)? (
         <div className="profile-container">
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
-            <h1>{isUser.name}</h1>
+            <h1>{isUser.name ||isUser.displayName }</h1>
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>

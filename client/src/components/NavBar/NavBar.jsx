@@ -22,7 +22,8 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
 
     return (
         <div>
-          {/* <Navbar id='a'expand="lg">
+          {
+          /* <Navbar id='a'expand="lg">
             <Container id='container-nav'>
 
               <div id='brand-container' class='d-flex align-items-center'>
@@ -70,7 +71,8 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
               </Link>
               </div>
           </Container>
-        </Navbar> */}
+        </Navbar> */
+        }
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
       <div id='brand-container' class='col-5 text-start'>
