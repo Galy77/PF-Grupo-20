@@ -29,6 +29,7 @@ export const getUser = (user) => {
        );
        const payload = response.data;
        localStorage.setItem("usuarioActual", JSON.stringify(payload));
+       localStorage.setItem("userProvider","local");
        dispatch({
          type: GET_USER,
          payload: payload,
@@ -78,7 +79,7 @@ export const addFirebaseUser = (user) => {
            })
         return response;
      } catch (error) {
-        console.log("Error al crear el usuario", error.message)
+        console.log("Error al crear el usuario", error.message);
      }
    };
 }

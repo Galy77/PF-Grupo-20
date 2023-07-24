@@ -28,11 +28,13 @@ const getProducts = async (req, res) => {
         }
       })
       );
-      res.status(200).json(createdProducts);
+      const filterProduct = createdProducts.filter(pro => pro.status === 1 )
+      res.status(200).json(filterProduct);
     } else {
 
+            const filterProduct = productsDb.filter(pro => pro.status === 1 )
+            return res.status(200).json(filterProduct)
 
-    res.status(200).json(productsDb);
   }
   } catch (error) {
     console.error("Error al obtener los productos:", error);

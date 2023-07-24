@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/jsx-key */
 import "./Cart.css"
 import CartCart from "./CartCard"
 import { removeOrder } from "../../redux/actions";
