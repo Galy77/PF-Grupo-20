@@ -77,7 +77,7 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
   <div class="container-fluid">
       <div id='brand-container' class='col-5 text-start'>
               <Link to = {'/'}>
-                <img src="homelogo.png" alt="logo" style={{ width: "140px", height: "40px" }}/>
+                <img src="/public/homelogo.png" alt="logo" style={{ width: "140px", height: "40px" }}/>
               </Link>
       </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
