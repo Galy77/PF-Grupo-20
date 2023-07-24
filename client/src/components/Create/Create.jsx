@@ -48,7 +48,7 @@ function Create(){
         rating:"",
         CategoryId:""
     })
-    if (!isUser) {
+    if (!isUser && !usuarioActual) {
       navigate("/login");
       return null;
     }
