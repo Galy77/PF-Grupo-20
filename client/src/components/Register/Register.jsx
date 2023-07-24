@@ -6,7 +6,6 @@ import { addUser } from "../../redux/actions";
 import {useDispatch} from  "react-redux"
 
 export function Register() {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

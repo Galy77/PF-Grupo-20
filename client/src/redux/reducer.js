@@ -38,7 +38,8 @@ import {
   BETTER_QUALIFIED_FILTER,
   ALL_FILTER,
   GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
-  ALPHABETIC_ORDER, PRICE_ORDER
+  ALPHABETIC_ORDER, PRICE_ORDER,
+  MODIFY_USER
 } from "./actionTypes"
 
 const initialState = {
@@ -103,6 +104,12 @@ export const reducer = (state = initialState,{type,payload})=>{
             return{
                 ...state,
                 user: payload
+            }
+
+        case MODIFY_USER:
+            return{
+              ...state,
+              user: payload
             }
 
         //PRODUCT

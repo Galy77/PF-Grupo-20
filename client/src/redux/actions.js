@@ -14,7 +14,8 @@ import {
    GET_USER, 
    LOGOUT_USER,
    GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
-   ALPHABETIC_ORDER, PRICE_ORDER
+   ALPHABETIC_ORDER, PRICE_ORDER,
+   MODIFY_USER
 } from "./actionTypes";
 
 
@@ -83,6 +84,21 @@ export const addFirebaseUser = (user) => {
      }
    };
 }
+export const modifyUser=(id)=>{
+   return async(dispatch) => {
+      try {
+         const response = await axios.put(`http://localhost:3001/PF/user/${id}`, id)
+            dispatch({
+               type: MODIFY_USER,
+               payload:response.data
+            })
+         return response;
+      } catch (error) {
+         console.log("Error al crear el usuario", error.message);
+      }
+    };
+}
+
 
 export const userLogout = () => {
    return {
