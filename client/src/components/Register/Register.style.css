@@ -9,6 +9,8 @@
     background-size:cover;
     background-position: center;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .register-form {
     display: flex;
@@ -17,9 +19,10 @@
     margin: auto;
     width: 40%;
     border-radius: 10px;
-    height: 90%;
+    height: 95vh;
     align-items: center;
     justify-content: center;
+
 }
 .form-register-control {
     display: flex;
@@ -94,4 +97,11 @@
   display: flex;
   flex-direction: row;
   width: 22rem; 
+}
+.error-inputs{
+  max-width: 100%;
+  color: red;
+  max-height: 40px;
+  margin: 0;
+  font-size: 12px;
 }

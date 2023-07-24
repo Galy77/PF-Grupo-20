@@ -105,7 +105,7 @@ export function Profile() {
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
               <div>
-                <h1>Tus Informacion</h1>
+                <h1>Tu Informacion</h1>
                 <h2>{isUser.displayName}</h2>
                 <h2>{isUser.email}</h2>
                 <h2>Registrado mediante {providerActual}</h2>
@@ -137,7 +137,7 @@ export function Profile() {
           </div>
           <div className="central-profile-container">
             <ShowModal estadoShowModal={modalCompras}>
-              <h1>TERRIBLE WENO PO CULIAO COMPRAS</h1>
+            <h1>Tus Compras</h1>
             </ShowModal>
             <ShowModal estadoShowModal={modalPublicaciones}>
               <h1>Tus Publicaciones</h1>
@@ -147,6 +147,7 @@ export function Profile() {
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
               <div>
+                <h1>Tu Informacion</h1>
                 <h1>{isUser.name}</h1>
                 <h1>{isUser.email}</h1>
                 <h1>{isUser.direction_shipping}</h1>
