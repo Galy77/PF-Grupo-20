@@ -88,10 +88,16 @@ export const modifyUser=(user)=>{
    return async(dispatch) => {
       try {
          const response = await axios.put(`http://localhost:3001/PF/user/${user.id}`, user)
+
+         const payload = response.data;
+         localStorage.removeItem("usuarioActual");
+         localStorage.setItem("usuarioActual", JSON.stringify(payload));
+
             dispatch({
                type: MODIFY_USER,
                payload:response.data
             })
+            
          return response;
       } catch (error) {
          console.log("Error al crear el usuario", error.message);

@@ -1,13 +1,11 @@
 /* eslint-disable react/prop-types */
 import "./OuterModal.style.css"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import {useDispatch} from  "react-redux"
+import { useDispatch } from  "react-redux"
+import { modifyUser } from "../../../redux/actions";
 
 function OuterModal ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
     const dispatch = useDispatch();
-    const navigate = useNavigate();
-  
     const [input, setInput] = useState({
         full_name: datosUser?.full_name || "",
         email: datosUser?.email || "",
@@ -76,10 +74,32 @@ function OuterModal ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
     const handleSubmit = (event) => {
       event.preventDefault();
       if (Object.keys(error).length === 0) {
-        const modifyUser = { ...input };
-        console.log("modificaciones", modifyUser);
+        const modifiedUser = {
+          ...input,
+          id: datosUser?.id || null, 
+        };
+        console.log("modificaciones", modifiedUser);
+        dispatch(modifyUser(modifiedUser))
+        .then((res) => {
+          console.log("respuesta: ", res);
+          if (res) {
+            alert("¡El usuario se registró exitosamente!");
+            setInput({
+              full_name: input.full_name,
+              email: input.email,
+              password: input.password,
+              phone: input.phone,
+              direction_shipping: input.direction_shipping
+            });
+            window.location.reload(); 
+          }
+        })
+        .catch((error) => {
+          alert("Error al agregar el usuario.");
+          console.log(error);
+        });
         } else {
-        alert("Faltan datos.");
+          alert("Faltan datos.");
         }
     }
     return (
