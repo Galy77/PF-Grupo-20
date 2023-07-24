@@ -20,7 +20,7 @@ const upload = require("../middleware/multer");
 const router = Router();
 /**
  * para el dashboard
- */
+*/
 const { putProduct } = require("../controllers/putProduct");
 const { putCategory } = require("../controllers/putCategory");
 const { getAllUsers } = require("../controllers/getAllUsers");
