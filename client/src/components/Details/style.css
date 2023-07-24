@@ -120,3 +120,15 @@ min-width: 580px;
 .orange{
     background-color: orange;
 }
+.removeComment{
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 0 0.5rem;
+    transition: 0.4s;
+}
+.removeComment:hover{
+    -webkit-box-shadow: 2px 3px 18px -1px rgb(0, 0, 0);
+    -moz-box-shadow: 2px 3px 18px -1px rgb(0, 0, 0);
+    box-shadow: 2px 3px 18px -1px rgb(0, 0, 0);
+}

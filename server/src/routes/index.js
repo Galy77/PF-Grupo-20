@@ -14,11 +14,14 @@ const { postUserFirebase } = require("../controllers/postUserFirebase");
 const { postContacto } = require("../controllers/postContacto");
 
 const { postPreference } = require("../controllers/postPreference")
-const { postReview } = require("../controllers/postReview")
+
+const { postReview, removeReview } = require("../controllers/postReview")
+
 const { handlePaymentUpload, getPaymentByUserId, createPayment } = require("../controllers/paymentController");
 const { postCart, getCartById, putCartById } = require("../controllers/postCart");
 
 const upload = require("../middleware/multer");
+const { putRatingProduct } = require("../controllers/putRatingProduct");
 
 const router = Router();
 
@@ -49,9 +52,10 @@ router.post("/cart",postCart)
 router.post("/webhook", handlePaymentUpload);
 
 router.post("/contacto", postContacto);
-
+router.put("/rating/:id", putRatingProduct);
 router.put("/products/:id", putStockProduct);
 router.put("/cart/:id", putCartById);
+router.delete("/review",removeReview)
 
 
 module.exports = router;

@@ -1,7 +1,8 @@
+
 const {Product, User, Category} = require("../db")
-const {Op} = require("sequelize");
+
 const Reviews = require("../models/Reviews");
-const axios = require("axios");
+
 const productsData = require("../data/productsData")
 
 const getProducts = async (req, res) => {
@@ -53,7 +54,9 @@ const getReviewByIdProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const request = await Product.findByPk(id);
-    let reviews = await request.getReviews();
+    let reviews = await request.getReviews({
+      include:User
+    });
     res.status(200).json({reviews});
   } catch (error) {
     res.status(500).json({ error: 'Error al obtener el producto por ID' });
