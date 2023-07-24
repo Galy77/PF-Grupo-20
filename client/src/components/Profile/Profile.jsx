@@ -74,7 +74,7 @@ export function Profile() {
 
   return (
     <div>
-      {providerActual === "google" ? (
+      {providerActual === "google" && isUser ? (
         <div className="profile-container">
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
