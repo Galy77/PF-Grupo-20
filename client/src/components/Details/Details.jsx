@@ -58,6 +58,12 @@ const Details = () => {
             }
             try {
                 if(data) await axios.post('http://localhost:3001/PF/cart',data)
+                Swal.fire(
+                    'Producto añadido correctamente al carrito!',
+                    '',
+                    'success'
+                  )
+
             } catch (error) {
                 console.log(error)
             }
