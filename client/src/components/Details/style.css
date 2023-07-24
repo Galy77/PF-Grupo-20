@@ -1,6 +1,13 @@
 .ml-4{
     margin-left: 1.5rem;
 }
+.container-detail{
+    padding: 10px 0 0!important;
+}
+.bg{
+    background-color: var(--azul-claro);
+    padding: 15px;
+}
 .row{
     display: flex;
     justify-content: center;
@@ -12,6 +19,12 @@
 .celeste{
     background-color: aqua;
 }
+.description{
+    font-size: 1.2rem;
+}
+.review{
+    background-color: var(--white);
+}
 .coments{
 min-width: 580px;
 }
@@ -22,7 +35,7 @@ min-width: 580px;
     height: 700px;
 }
 .stars{
-    color:black;
+    color:var(--amarillo);
     font-size: 1.4rem;
 }
 .product{
@@ -131,4 +144,10 @@ min-width: 580px;
     -webkit-box-shadow: 2px 3px 18px -1px rgb(0, 0, 0);
     -moz-box-shadow: 2px 3px 18px -1px rgb(0, 0, 0);
     box-shadow: 2px 3px 18px -1px rgb(0, 0, 0);
+}
+.blue{
+    background-color: blue;
+}
+.celeste{
+    background-color:aqua;
 }

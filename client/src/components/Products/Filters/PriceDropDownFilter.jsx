@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useDispatch } from 'react-redux';
 import { priceOrder } from '../../../redux/actions';
-
+import style from "../Products.module.css";
 function PriceDropDownFilter (){
     const [selectedOption, setSelectedOption] = useState(null);
     const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function PriceDropDownFilter (){
 
     return (
         <Dropdown>
-            <Dropdown.Toggle variant="black" id="dropdown-basic">Precio</Dropdown.Toggle>
+            <Dropdown.Toggle variant="black" id="dropdown-basic" className={style.filter}>Precio</Dropdown.Toggle>
                 <Dropdown.Menu >
                     <Dropdown.Item
                     active={selectedOption === 'Mayor'}

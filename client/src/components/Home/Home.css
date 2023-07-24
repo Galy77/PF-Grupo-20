@@ -1,17 +1,27 @@
 .card{
     height: 15rem;
+    transition: 0.3s;
+    background-color: var(--verde);
 }
 .card-img-top{
     width: 100%;
     min-height:170px;
     max-height:170px;
+    border-radius: 4px !important;
 }
 .categories-container{
+    width: 90%;
     margin: 2rem;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 2rem;
 }
+.card:hover{
+    -webkit-box-shadow: -1px 12px 31px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 12px 31px -11px rgba(0,0,0,0.75);
+    box-shadow: -1px 12px 31px -11px rgba(0,0,0,0.75);
+}
+
 @media (max-width: 767px) {
     .card{
       min-width: 244px;

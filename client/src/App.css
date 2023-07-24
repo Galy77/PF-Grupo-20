@@ -1,9 +1,21 @@
+:root{
+  --verde:#28A82B;
+  --verde-claro:#2FF432;
+  --azul:#0777A8;
+  --azul-claro:#9eccdf;
+  --fondo:#d1e0e4;
+  --naranja:#F54C22;
+  --amarillo:#ffea00;
+  --naranja-claro:#50c958;
+  --white:#fff;
+  --black:#000;
+}
 #root {
   min-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   text-align: center;
-  background-color: #ebebeb;
+  background-color:var(--fondo);
 }
 .cuerpo{
   background-color:white;

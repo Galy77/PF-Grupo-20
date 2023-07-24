@@ -21,10 +21,10 @@ const Reviews =  ({stars, coment, User, product, getReviews, id_user}) => {
     console.log({id_user:id_user,UserId:User})
     return(
         <div class='w-100 h-100 mb-4'>
-            <div class='h-100 d-flex mx-4 justify-content-between align-items-center border rounded'>
+            <div class='review h-100 d-flex mx-4 justify-content-between align-items-center border rounded'>
                 <div class='d-flex flex-column mx-4'>
-                    <i class="stars bi bi-person-circle mx-3"></i>
-                    <span>{user}</span>
+                    <i class=" bi bi-person-circle mx-3"></i>
+                    <strong>{user}</strong>
                 </div>
                 <div class='py-2'>
                     <div class='d-flex justify-content-end p-1'>

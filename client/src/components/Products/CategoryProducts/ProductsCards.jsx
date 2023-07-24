@@ -54,7 +54,9 @@ function ProductsCards (props) {
                             <Card.Img variant="top" src={product.image} />
                             <Card.Body>
                                 <Card.Title>{product.name}</Card.Title>
-                                <Card.Text>{`$ ${product.price}`}</Card.Text>
+                                <div class='d-flex w-100 justify-content-end'>
+                                    <Card.Text>{`$ ${product.price}`}</Card.Text>
+                                </div>
                             </Card.Body>
                         </Card.Link>
                     </div> 
@@ -63,7 +65,7 @@ function ProductsCards (props) {
             </div>
             <div class='d-flex align-items-center'>
                 {
-                    page > 1 ? <p class='m-4 border btn btn-primary' onClick={handlePage} >Anterior</p>:''
+                    page > 1 ? <p class='m-4 border btn btn-success' onClick={handlePage} >Anterior</p>:''
                 }
                 {
                     lastPage > 1 ? 
@@ -71,7 +73,7 @@ function ProductsCards (props) {
 
                 }
                 {
-                    page < lastPage ? <p class='m-4 border btn btn-primary' onClick={() => handlePage('next')} >Siguiente</p>:''
+                    page < lastPage ? <p class='m-4 border btn btn-success' onClick={() => handlePage('next')} >Siguiente</p>:''
                 }
             </div>
         </>

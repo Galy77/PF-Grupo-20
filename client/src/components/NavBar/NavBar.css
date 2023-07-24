@@ -6,10 +6,11 @@
     border-bottom: 1px solid black;
 }
 .icons{
-    color: black;
+    color: var(--white);
     font-size: 1.5rem;
     margin-right: 2rem;
     cursor: pointer;
+    background-color: var(--azul);
 }
 .link{
     color: black;
@@ -24,4 +25,8 @@
 }
 .navbar-nav{
     color: black;
+}
+.navbar{
+    min-height: 4rem !important;
+    background-color: var(--azul);
 }

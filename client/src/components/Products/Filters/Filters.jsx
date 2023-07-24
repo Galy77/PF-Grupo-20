@@ -10,14 +10,15 @@ import PriceDropDownFilter from "./PriceDropDownFilter";
 
 function Filters (props) {
     return (
-      <div class='mx-4 filtersContainer' >
+      <div class='mx-4 filtersContainer my-4' >
+        <h2 class='filter-title'>Filtros</h2>
+        <SearchBar />
+        <PriceFilter />
         <div class="subContainer">
           <AlphabeticalOrder />
           <PriceDropDownFilter />
           <RatingFilter />
         </div>
-        <SearchBar />
-        <PriceFilter />
       </div>
     )
 }

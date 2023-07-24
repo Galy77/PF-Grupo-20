@@ -56,7 +56,7 @@ const initialState = {
     user:{},
     detailProduct: [],
     lettersOrder: "A-Z",
-    priceOrder: "Mayor"
+    priceOrder: ""
 }
 
 export const reducer = (state = initialState,{type,payload})=>{

@@ -5,7 +5,7 @@ import "../Create/Create.style.css";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-
+import Swal from "sweetalert2"
 function Create(){
     const dispatch = useDispatch();
     const allCategories = useSelector((state) => state.categories);
@@ -138,7 +138,11 @@ function Create(){
           dispatch(addProduct(productData))
           .then((response) => {
               if(response){
-                alert("¡El producto se creó exitosamente!");
+                Swal.fire(
+                  'El producto se creo exitosamente!',
+                  '',
+                  'success'
+                );
                 setSuccess(true); 
                 setInput({
                   name: "",

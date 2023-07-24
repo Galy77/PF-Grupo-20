@@ -2,7 +2,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { betterQualified, showAll } from '../../../redux/actions';
-
+import style from "../Products.module.css";
 function RatingFilter () {
     const [selectedOption, setSelectedOption] = useState(null);
     const dispatch = useDispatch()
@@ -18,7 +18,7 @@ function RatingFilter () {
 
     return (
         <Dropdown >
-            <Dropdown.Toggle variant="black" id="dropdown-basic">Rating</Dropdown.Toggle>
+            <Dropdown.Toggle variant="black" id="dropdown-basic" className={style.filter}>Rating</Dropdown.Toggle>
                 <Dropdown.Menu >
                     <Dropdown.Item
                     active={selectedOption === 'betterQualified'}

@@ -30,6 +30,7 @@
     border: 1px solid black;
     border-left: none;
     border-radius: 10px !important;
+    background-color: var(--white);
     transition: 0.3s;
 }
 .list-group-item:hover{
@@ -40,8 +41,8 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 
 .imgs-cart{
     border-radius: 10px 0 0 10px;
-    max-width: 25%;
-    max-height: 20%;
+    max-width: 24%;
+    max-height: 100%;
 }
 .img-title{
     width:100%;
@@ -50,7 +51,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 .bi-trash-fill{
     font-size: 1.5rem;
     cursor: pointer;
-    color: #3B5161;
+    color: var(--naranja);
     transition: color 0.3s;
 }
 .bi-trash-fill:hover{
@@ -59,6 +60,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 #cart-card{
     width: 70vh;
     min-height: 60vh;
+    background: none;
 }
 #title-price{
     padding-right: 1rem;
@@ -78,7 +80,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
     width: 50vh;
     height: 60vh;
     margin-top: 1rem;
-    background-color: white;
+    background-color:var(--white);
     border-radius: 10px;
     padding: 0 8vh;
     position:fixed;
@@ -93,7 +95,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 /*SECTION BUY*/
 #pay{
     color: white;
-    background-color: black;
+    background-color: var(--verde);
     min-width:7rem ;
     min-height:3rem ;
     border-radius: 5px;
@@ -111,7 +113,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 }
 #trash{
     max-width: 2rem;
-    color: black;
+    color: var(--naranja);
     font-size: 3rem;
     cursor: pointer;
     transition: color 0.3s;

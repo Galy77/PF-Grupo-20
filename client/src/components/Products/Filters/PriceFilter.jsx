@@ -21,7 +21,7 @@ function PriceFilter (props){
     
     const handleMaxPrice = (e) => {
         const { value } = e.target;
-        if(value > 0){
+        if(value >= 0){
             setMaxPrice(value)
 
         }
@@ -34,7 +34,7 @@ function PriceFilter (props){
 
     return (
         <InputGroup size='sm' >
-            <InputGroup.Text>Precio</InputGroup.Text>
+            <InputGroup.Text class={style.precio}>Precio</InputGroup.Text>
             <Form.Control   
             aria-label="minimum"
             placeholder="Minimo"
@@ -49,7 +49,7 @@ function PriceFilter (props){
             value={maxPrice}
             onChange={handleMaxPrice}
             />
-            <Button variant="secondary" size="sm" onClick={() => handleOnClick()}>Aplicar</Button>
+            <button variant="secondary" size="sm" class='btn btn-success' onClick={() => handleOnClick()}>Aplicar</button>
         </InputGroup>
     )
 }
