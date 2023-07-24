@@ -78,6 +78,7 @@ export function Profile() {
         <div className="profile-container">
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
+            <h6>¡sos!</h6>
             <h1>{isUser.name ||isUser.displayName }</h1>
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
