@@ -1,9 +1,6 @@
 const {Product, Category} = require("../db")
 const productsData = require("../data/productsData")
 
-const { Product, Category } = require("../db");
-const productsData = require("../data/productsData");
-
 let productsCreated = false;
 
 const getProducts = async (req, res) => {
