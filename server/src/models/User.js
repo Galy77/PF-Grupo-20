@@ -30,11 +30,24 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        image: {
+            type: DataTypes.STRING            
+        },
+        role: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue:1
+          },
+        /**para marcar status 0 = no visible 1 = visible */
+
         status: {
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue:1
-        }
+
+    
+          }
+
     }, { timestamps: false })
 
     return User;

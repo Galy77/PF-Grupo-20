@@ -55,10 +55,11 @@ router.get("/user/firebase", getFirebaseUser);
 router.get("/payment/:id", getPaymentByUserId);
 
 
-router.post("/user", postUser);
+router.post("/user", postUser); //veo 1
 router.post("/user/firebase", postUserFirebase);
 
 router.post("/create_preference", postPreference);
+
 router.post("/user", postUser);
 
 router.post("/review",postReview)
@@ -67,9 +68,10 @@ router.post("/cart",postCart)
 
 
 
-router.post("/webhook", handlePaymentUpload);
 
-router.post("/webhook", handlePaymentUpload);
+router.post("/webhook", handlePaymentUpload); // veo 1
+
+// router.post("/webhook", handlePaymentUpload); // veo 2
 router.post("/contacto", postContacto);
 
 router.put("/rating/:id", putRatingProduct);
@@ -83,14 +85,14 @@ router.delete("/review",removeReview)
 
 //Categorias
 router.post("/category",postCategory);
-router.put("/category/:id", putCategory);
+router.put("/category/:id", upload.single("image"), putCategory);
 
 // Productos
 // router.put("/products/:id", upload.single("image"), putProduct);
 
 // User
 router.get("/user", getAllUsers);
-router.put("/user/:id",putUser);
+router.put("/user/:id", upload.single("image"), putUser);
 
 
 module.exports = router;
