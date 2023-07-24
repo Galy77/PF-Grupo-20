@@ -17,6 +17,7 @@ const { handlePaymentUpload, getPaymentByUserId, createPayment } = require("../c
 const { postCart, getCartById, putCartById } = require("../controllers/postCart");
 
 const upload = require("../middleware/multer");
+const { putRatingProduct } = require("../controllers/putRatingProduct");
 
 const router = Router();
 
@@ -45,7 +46,7 @@ router.post("/cart",postCart)
 router.post("/webhook", handlePaymentUpload);
 
 router.post("/contacto", postContacto);
-
+router.put("/rating/:id", putRatingProduct);
 router.put("/products/:id", putStockProduct);
 router.put("/cart/:id", putCartById);
 

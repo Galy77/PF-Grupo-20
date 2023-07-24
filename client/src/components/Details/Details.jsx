@@ -10,7 +10,7 @@ import { getAllProducts } from "../../redux/actions";
 import Reviews from "./Reviews";
 import axios from "axios";
 import {initMercadoPago, Wallet } from "@mercadopago/sdk-react"
-
+import Swal from "sweetalert2"
 const Details = () => {
     const dispatch = useDispatch()
     const { id } = useParams()
@@ -25,6 +25,7 @@ const Details = () => {
     useEffect(() => {
         dispatch(getProductById(id))
         getReviews()
+        console.log({review:review})
     },[]) 
     if(!isBuy){
         if(user){
@@ -68,6 +69,11 @@ const Details = () => {
             }
             try {
                 if(data) await axios.put(`http://localhost:3001/PF/cart/${user.id}`,data)
+                Swal.fire(
+                    'Producto añadido correctamente al carrito!',
+                    '',
+                    'success'
+                  )
             } catch (error) {
                 console.log(error)
             }
@@ -135,6 +141,7 @@ const Details = () => {
     }
     const handleBuy = async () => {
         const id = await createPreference()
+        console.log(review)
         if(id){
             setPreferenceId(id)
         }
@@ -154,7 +161,7 @@ const Details = () => {
     const handleReviews = async () => {
         if(!stars||!coment) alert('completa la review')
         else{
-            const data = {
+            let data = {
                 stars:stars,
                 coment:coment,
                 id_product:id
@@ -164,6 +171,36 @@ const Details = () => {
                 setStars(null)
                 setComent('')
                 getReviews()
+                //setRating
+                if(!review.length){
+                    if(product.stock){
+                        data = {
+                            rating:(product.rating + stars)/2
+                        }
+                    }else{
+                        data = {
+                            rating:stars
+                        }
+                    }
+                    console.log(data)
+                    const response = await axios.put(`http://localhost:3001/PF/rating/${product.id}`,data)
+                    dispatch(getProductById(id))
+                    console.log({prueba:response.data})
+                }else{
+                    data = [...review.map(el => parseFloat(el.stars)),stars]
+                    console.log({data1:data})
+                    data = data.reduce(function(acc, numero) {
+                        return acc + numero;
+                      }, 0)/data.length;
+                    data = data.toFixed(2)
+                    data = {
+                        rating:data
+                    }
+                    console.log({data:data})
+                    await axios.put(`http://localhost:3001/PF/rating/${product.id}`,data)
+                    dispatch(getProductById(id))
+                }
+                //
             } catch (error) {
                 console.log(error)
                 alert('hubo problemas')
@@ -217,6 +254,9 @@ const Details = () => {
                                         </button>
                                 </div>
                                 {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
+                                {
+                                    preferenceId && <p onClick={() => setPreferenceId(null)} class='cancelar'>cancelar</p>
+                                }
 
                         </div>
 
