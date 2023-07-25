@@ -86,7 +86,7 @@ export function Login() {
                 </label>
                 <input
                   value={cUser.email}
-                  type="email"
+                  type="text"
                   name="email"
                   id="email"
                   className="form-control"

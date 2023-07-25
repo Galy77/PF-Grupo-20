@@ -7,9 +7,9 @@ const postUserFirebase = async (req, res) => {
     const existingUser = await FirebaseUser.findOne({
       where: { email },
     });
-
     if (existingUser) {
-      return res.status(409).json({ status: 409, error: "Ya existe un usuario con ese email" });
+      console.log("usuario existnte",existingUser)
+      return res.status(200).json(existingUser);
     }
 
     const newUser = {
@@ -19,7 +19,7 @@ const postUserFirebase = async (req, res) => {
     };
     console.log("mi user esta sas",newUser)
     await transporter.sendMail({
-      from: '"onemarket"<pf@gmail.com>', 
+      from: '"Onearket"<pf@gmail.com>', 
       to: email, 
       subject: "¡Bienvenido a ONE!",
       html: `

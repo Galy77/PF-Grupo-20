@@ -86,18 +86,17 @@ export const reducer = (state = initialState,{type,payload})=>{
           user:auxUser()
         }
         case ADD_FIREBASEUSER:
-        const auxUserFirebase = () => {
-          const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
-          localStorage.setItem("userProvider","google")
-          return userX;
-        }
-        const actUser2= state.user
-        console.log("este es mi usuario actual", actUser2)
+         // Instead of using a separate function, update the local storage directly
+          localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          localStorage.setItem("userProvider", "google");
+          console.log("ya se agrego  el user");
 
-        return{
-          ...state,
-          user:auxUserFirebase()
-        }
+          // Since Redux reducers should be pure functions, avoid modifying local storage here
+          // Instead, return the updated state with the new user payload
+          return {
+            ...state,
+            user: payload,
+          };
        
         case LOGOUT_USER:
           localStorage.removeItem("usuarioActual");

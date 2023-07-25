@@ -21,8 +21,7 @@ function OuterModalGoogle ({children,estadoOuterModal,setEstadoOuterModal,datosU
   
     const validate = (input) => {
       let error = {};
-  
-  
+      
       if (input.phone.trim().length === 0) {
         error.phone = "Ingrese un número de teléfono.";
       } else if (!/^[\d\s()+-]+$/.test(input.phone)) {
