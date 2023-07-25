@@ -7,6 +7,9 @@ import { useState, useEffect } from "react";
 import "./Profile.style.css";
 import ShowModal from "../Modals/ShowModal/ShowModal";
 import OuterModal from "../Modals/OuterModal/OuterModal"
+import Swal from 'sweetalert2'
+import OuterModalGoogle from "../Modals/OuterModal/OuterModalGoogle";
+
 export function Profile() {
   const dispatch = useDispatch();
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
@@ -33,9 +36,29 @@ export function Profile() {
 
   const handleLogout = async () => {
     try {
-      await logout();
-      dispatch(userLogout());
-      navigate("/");
+      const result = await Swal.fire({
+        title: '¿Estás seguro?',
+        text: '¡Serás desconectado de tu cuenta!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, cerrar sesión',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true,
+      });
+
+      if (result.isConfirmed) {
+        await logout();
+        dispatch(userLogout());
+        navigate("/");
+        Swal.fire({ 
+          width:'20em',
+          title:'Has cerrado sesión correctamente.',
+          icon:'success',
+          timer:1200,
+          timerProgressBar:true
+        }
+        );
+      } 
     } catch (error) {
       console.error(error.message);
     }
@@ -67,6 +90,7 @@ export function Profile() {
 
   if (!loading) {
     if (!isUser && !usuarioActual) {
+      console.log("este es mi user",isUser)
       navigate("/login");
       return null;
     }
@@ -79,6 +103,8 @@ export function Profile() {
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
             <h1>{isUser.name ||isUser.displayName }</h1>
+            <div className="profile-image"><img src={isUser.image} alt="" className="profile-image"/></div>
+           
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
@@ -105,14 +131,15 @@ export function Profile() {
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
               <div>
-                <h1>Tu Informacion</h1>
-                <h2>{isUser.displayName}</h2>
-                <h2>{isUser.email}</h2>
-                <h2>Registrado mediante {providerActual}</h2>
+                <h1>Tu Datos</h1>
+                <h5>{isUser.displayName}</h5>
+                <h5>{isUser.email}</h5>
+                <h5>{isUser.phone}</h5>
+                <h5>{isUser.direction_shipping}</h5>
+                <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
               </div>
-              <Link to="/register">
-                <button className="btn-lateral">Completar registro</button>
-              </Link>
+              <OuterModalGoogle estadoOuterModal={modificarDatos} setEstadoOuterModal={setModificarDatos} datosUserGoogle={isUser}/>
+              
             </ShowModal>
           </div>
         </div>
@@ -121,6 +148,7 @@ export function Profile() {
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
             <h1>{isUser.full_name}</h1>
+            <div className="profile-image"><img src="fondo-login2.jpg" alt="" className="profile-image"/></div>
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>

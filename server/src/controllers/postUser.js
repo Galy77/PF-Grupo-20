@@ -1,6 +1,5 @@
 const { User } = require("../db");
-
-const transporter = require("../middleware/nodemailer")
+const transporter = require("../middleware/nodemailer");
 
 const postUser = async (req, res) => {
   const { full_name, email, password, phone, direction_shipping } = req.body;
@@ -15,7 +14,6 @@ const postUser = async (req, res) => {
     if (existingUser) {
       return res.status(409).json({ status: 409, error: "Ya existe un usuario con ese email" });
     }
-
     const newUser = {
       full_name,
       email,

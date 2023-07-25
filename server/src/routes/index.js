@@ -25,6 +25,7 @@ const { putProduct } = require("../controllers/putProduct");
 const { putCategory } = require("../controllers/putCategory");
 const { getAllUsers } = require("../controllers/getAllUsers");
 const { putUser } = require("../controllers/putUser");
+const {putFirebaseUser} = require("../controllers/putFirebaseUser")
 
 
 router.get("/", getCategory);
@@ -40,6 +41,8 @@ router.get("/user/firebase", getFirebaseUser);
 
 router.post("/user", postUser); //veo 1
 router.post("/user/firebase", postUserFirebase);
+
+
 
 router.post("/create_preference", postPreference);
 // router.post("/user", postUser); // veo 2
@@ -62,6 +65,10 @@ router.put("/products/:id", upload.single("image"), putProduct);
 // User
 router.get("/user", getAllUsers);
 router.put("/user/:id", upload.single("image"), putUser);
+router.put("/firebase/:id", putFirebaseUser)
+
+//profile Routes
+
 
 module.exports = router;
 

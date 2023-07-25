@@ -45,6 +45,10 @@ Category.belongsToMany(Product,{through: 'product_category'})
 Product.belongsToMany(User,{through: 'product_user'})
 User.belongsToMany(Product,{through: 'product_user'})
 
+//Compras Perfil
+User.belongsToMany(Product,{through: 'posts_user'})
+Product.belongsToMany(User,{through: 'posts_user'})
+
 FirebaseUser.belongsToMany(Product,{through: 'product_firebase'})
 Product.belongsToMany(FirebaseUser,{through: 'product_firebase'})
 
@@ -52,8 +56,6 @@ Product.hasMany(Reviews, { foreignKey: 'id_product' });
 Reviews.belongsTo(Product, { foreignKey: 'id_product' });
 
 // Diego estuvo aki
-
-
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');

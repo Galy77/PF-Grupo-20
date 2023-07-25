@@ -39,7 +39,8 @@ import {
   ALL_FILTER,
   GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
   ALPHABETIC_ORDER, PRICE_ORDER,
-  MODIFY_USER
+  MODIFY_USER,
+  MODIFY_FIREBASE_USER
 } from "./actionTypes"
 
 const initialState = {
@@ -107,6 +108,12 @@ export const reducer = (state = initialState,{type,payload})=>{
             }
 
         case MODIFY_USER:
+            return{
+              ...state,
+              user: payload
+            }
+            
+        case MODIFY_FIREBASE_USER:
             return{
               ...state,
               user: payload

@@ -21,9 +21,18 @@
     align-items: center;
     padding-top: 30px;
 }
-.profile-image{
+.profile-image {
+    width: 100px; /* Ancho del cuadrado */
+    height: 100px; /* Alto del cuadrado */  
+    overflow: hidden; /* Esto recortará cualquier contenido que exceda el cuadrado */
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
-    width: 30%;
+    border: solid black 1px;
 }
 .btn-profile{
     width: 80%;
