@@ -9,7 +9,7 @@ const CartCart = ({products, usuarioActual, getCart}) => {
     const removeCart = async(id) => {
         if(id){
             const data = {productsToAdd:[],productsToRemove:[id]}
-            await axios.put(` http://localhost:3001/pf/cart/${usuarioActual.id}`,data)
+            await axios.put(` https://api-market-henry-jczt.onrender.com/pf/cart/${usuarioActual.id}`,data)
             getCart()
         }
     }

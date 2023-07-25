@@ -12,7 +12,7 @@ const Reviews =  ({stars, coment, User, product, getReviews, id_user}) => {
     }
     const deleteReview = async () => {
         try {
-            await axios.delete(` http://localhost:3001/pf/review?id_product=${product.id}&id_user=${User.id}`)
+            await axios.delete(` https://api-market-henry-jczt.onrender.com/pf/review?id_product=${product.id}&id_user=${User.id}`)
             getReviews()
         } catch (error) {
             console.log(error)
