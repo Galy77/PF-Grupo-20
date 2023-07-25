@@ -23,7 +23,7 @@ const router = Router();
  */
 const { putProduct } = require("../controllers/putProduct");
 const { putCategory } = require("../controllers/putCategory");
-const { getAllUsers } = require("../controllers/getAllUsers");
+const { getAllUsers, getUsers } = require("../controllers/getAllUsers");
 const { putUser } = require("../controllers/putUser");
 
 
@@ -61,7 +61,8 @@ router.put("/category/:id", upload.single("image"), putCategory);
 router.put("/products/:id", upload.single("image"), putProduct);
 
 // User
-router.get("/user", getAllUsers);
+router.get("/user", getUsers);
+router.get("/userAll", getAllUsers);
 router.put("/user/:id", upload.single("image"), putUser);
 
 module.exports = router;
