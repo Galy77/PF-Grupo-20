@@ -16,22 +16,16 @@ const Details = () => {
     const { id } = useParams()
     const product = useSelector(state => state.detailProduct);
     const orders = useSelector(state => state.orders);
-    const [isUser, setIsUser] = useState();
+
     const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     const [isBuy,setIsBuy] = useState()
     const user = JSON.parse(localStorage.getItem("usuarioActual"));
     const getReviews = async () => {
-        const { data } = await axios(` http://localhost:3001/pf/review/${id}`)
+        const { data } = await axios(`http://localhost:3001/pf/review/${id}`)
         setReview(data.reviews)
     }
       
-    useEffect(() => {
-        if(usuarioActual){
-            setIsUser(usuarioActual);
-        }else{
-            setIsUser(user);
-        }
-    }, []);
+
 
     useEffect(() => {
         dispatch(getProductById(id))
@@ -39,7 +33,7 @@ const Details = () => {
     },[]) 
     if(!isBuy){
         if(user){
-            axios.get(` http://localhost:3001/pf/payment/${user.id}`)
+            axios.get(`http://localhost:3001/pf/payment/${user.id}`)
             .then(response => {
                 const isPay = response.data.filter(el => el.id_product == id)
                 setIsBuy(isPay)
@@ -52,7 +46,7 @@ const Details = () => {
     }
     
 
-    console.log("este es mi console de details", user, isUser, usuarioActual)
+    console.log("este es mi console de details", user, usuarioActual)
 
 
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
@@ -84,7 +78,7 @@ const Details = () => {
                 productsToRemove:[]
             }
             try {
-                if(data) await axios.put(` http://localhost:3001/pf/cart/${user.id}`,data)
+                if(data) await axios.put(`http://localhost:3001/pf/cart/${user.id}`,data)
                 Swal.fire(
                     'Producto añadido correctamente al carrito!',
                     '',
@@ -142,7 +136,7 @@ const Details = () => {
     initMercadoPago("TEST-81546c5f-6e41-4a1b-94e1-d5813132d7c2")
     const createPreference = async () => {
         try {
-            const response = await axios.post(" http://localhost:3001/pf/create_preference",{
+            const response = await axios.post("http://localhost:3001/pf/create_preference",{
                 description:`${product.name}`,
                 price:product.price,
                 quantity:cantidadProducts ? cantidadProducts : 1
@@ -185,7 +179,7 @@ const Details = () => {
             }
             try {
 
-                await axios.post(' http://localhost:3001/pf/review',data)
+                await axios.post('http://localhost:3001/pf/review',data)
 
                 setStars(null)
                 setComent('')
@@ -202,7 +196,7 @@ const Details = () => {
                         }
                     }
                     console.log(data)
-                    const response = await axios.put(` http://localhost:3001/pf/rating/${product.id}`,data)
+                    const response = await axios.put(`http://localhost:3001/pf/rating/${product.id}`,data)
                     dispatch(getProductById(id))
                     console.log({prueba:response.data})
                 }else{
@@ -216,7 +210,7 @@ const Details = () => {
                         rating:data
                     }
                     console.log({data:data})
-                    await axios.put(` http://localhost:3001/pf/rating/${product.id}`,data)
+                    await axios.put(`http://localhost:3001/pf/rating/${product.id}`,data)
                     dispatch(getProductById(id))
                 }
                 //
