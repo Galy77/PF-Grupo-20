@@ -30,7 +30,7 @@ const Success = () => {
             postPaymentExecutedRef.current = true;
 
         const user = JSON.parse(localStorage.getItem("usuarioActual"));
-        console.log(`esto es data: ${data.id}, ${data.amount}`)
+        console.log(`${user.id}`)
         if(data){
 
             if(data.length){

@@ -73,6 +73,7 @@ export const addFirebaseUser = (user) => {
    return async(dispatch) => {
      try {
         const response = await axios.post('http://localhost:3001/PF/user/firebase', user)
+        const localResponse = await axios.post('http://localhost:3001/PF/user', user);
            dispatch({
               type: ADD_FIREBASEUSER,
               payload:response.data
