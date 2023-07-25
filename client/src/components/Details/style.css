@@ -23,7 +23,7 @@
     font-size: 1.2rem;
 }
 .review{
-    background-color: var(--white);
+    background-color: white;
 }
 .coments{
 min-width: 580px;

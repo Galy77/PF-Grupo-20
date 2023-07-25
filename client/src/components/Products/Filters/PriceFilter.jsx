@@ -49,7 +49,7 @@ function PriceFilter (props){
             value={maxPrice}
             onChange={handleMaxPrice}
             />
-            <button variant="secondary" size="sm" class='btn btn-success' onClick={() => handleOnClick()}>Aplicar</button>
+            <button variant="secondary" size="sm" class='btn border bg-white' onClick={() => handleOnClick()}>Aplicar</button>
         </InputGroup>
     )
 }

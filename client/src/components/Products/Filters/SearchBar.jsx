@@ -28,7 +28,7 @@ function SearchBar () {
                 aria-label="Search"
                 onChange={handleInput}
                 />
-                <Link to={`/products/${category}?search=${capital}`}><button variant="outline-dark" class='btn btn-success'>Buscar</button></Link>
+                <Link to={`/products/${category}?search=${capital}`}><button variant="outline-dark" class='btn border bg-white'>Buscar</button></Link>
             </Form>
         </div>
     )

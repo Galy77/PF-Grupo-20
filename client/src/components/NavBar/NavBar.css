@@ -12,6 +12,12 @@
     cursor: pointer;
     background-color: var(--azul);
 }
+@media (max-width: 991px) {
+    .icons{
+        color: black;
+        background-color:var(--white);
+    }
+}
 .link{
     color: black;
     text-decoration: none;

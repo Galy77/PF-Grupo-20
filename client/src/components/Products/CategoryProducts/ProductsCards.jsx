@@ -65,7 +65,7 @@ function ProductsCards (props) {
             </div>
             <div class='d-flex align-items-center'>
                 {
-                    page > 1 ? <p class='m-4 border btn btn-success' onClick={handlePage} >Anterior</p>:''
+                    page > 1 ? <p class='m-4 border btn btn-dark' onClick={handlePage} >Anterior</p>:''
                 }
                 {
                     lastPage > 1 ? 
@@ -73,7 +73,7 @@ function ProductsCards (props) {
 
                 }
                 {
-                    page < lastPage ? <p class='m-4 border btn btn-success' onClick={() => handlePage('next')} >Siguiente</p>:''
+                    page < lastPage ? <p class='m-4 border btn btn-dark' onClick={() => handlePage('next')} >Siguiente</p>:''
                 }
             </div>
         </>

@@ -22,18 +22,35 @@
     box-shadow: -1px 12px 31px -11px rgba(0,0,0,0.75);
 }
 
-@media (max-width: 767px) {
-    .card{
-      min-width: 244px;
+  @media (max-width: 1150px) {
+    .categories-container{
+      grid-template-columns: repeat(3,1fr);
     }
   }
-@media (min-width: 500px) and (max-width: 767px) {
+  @media (max-width: 849px) {
+    .categories-container{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+@media(max-width: 767px) {
+    .categories-container{
+        grid-template-columns:repeat(1,1fr);
+    }
     .card{
         width: 449px;
     }
     .card-container{
         display: flex;
         justify-content: center;
+    }
+}
+@media(max-width: 500px) {
+    .categories-container{
+        width: 100%;
+        margin: 2rem 0;
+    }
+    .card{
+        max-width: 100%;
     }
 }
 @media (min-width: 767px) and (max-width: 1064px) {

@@ -24,13 +24,14 @@
     justify-content: space-around;
     align-items: center;
     max-width: 100%;
+    min-width: 100%;
     min-height: 15vh;
     max-height: 15.5vh;
     margin: 0.5rem;
     border: 1px solid black;
     border-left: none;
     border-radius: 10px !important;
-    background-color: var(--white);
+    background-color: white;
     transition: 0.3s;
 }
 .list-group-item:hover{
@@ -80,7 +81,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
     width: 50vh;
     height: 60vh;
     margin-top: 1rem;
-    background-color:var(--white);
+    background-color:white;
     border-radius: 10px;
     padding: 0 8vh;
     position:fixed;
@@ -95,7 +96,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 /*SECTION BUY*/
 #pay{
     color: white;
-    background-color: var(--verde);
+    background-color: black;
     min-width:7rem ;
     min-height:3rem ;
     border-radius: 5px;

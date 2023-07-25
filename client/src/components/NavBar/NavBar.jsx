@@ -51,28 +51,28 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
             onChange={handleChange}
             value={object}
           />
-          <Link to={`/products?search=${capital}`}><button variant="outline-dark" class='btn btn-success'>Search</button></Link>
+          <Link to={`/products?search=${capital}`}><button variant="outline-dark" class='btn btn-dark'>Search</button></Link>
         </Form>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                   <li class='text-center d-flex align-items-center'>
+          <li>
               <Link to={'/cart'} class='link'>
                 <i class="icons bi bi-cart3"></i>
               </Link>
           </li>
-          <li class='text-center d-flex align-items-center'>
-            <Link to={`/create`} class='link d-flex justify-content-center'>
+          <li >
+            <Link to={`/create`} class='link'>
               <i class="icons bi bi-plus"></i>
             </Link>
           </li>
           <li>
-          <Link to = {'/profile'}>
+            <Link to = {'/profile'}>
                   <i class="icons bi bi-person"></i>
             </Link>
           </li>
           <li>
-          <Link to={"/contact"}>
-            <i class="icons bi bi-info-circle"></i>
-          </Link>
+            <Link to={"/contact"}>
+              <i class="icons bi bi-info-circle"></i>
+            </Link>
           </li>
         </ul>
       </div>
