@@ -22,12 +22,12 @@ function Create(){
     }, [dispatch]);
     
     useEffect(() => {
-      if(usuarioActual !== null){
-        setIsUser(usuarioActual);
+      if(usuarioActual){
+          setIsUser(usuarioActual);
       }else{
-        setIsUser(user);
+          setIsUser(user);
       }
-    }, [user, usuarioActual]);
+  }, []);
       
     const [input, setInput] = useState({
         name: "",
@@ -48,7 +48,8 @@ function Create(){
         rating:"",
         CategoryId:""
     })
-    if (!isUser) {
+    
+    if (!isUser && !usuarioActual) {
       navigate("/login");
       return null;
     }

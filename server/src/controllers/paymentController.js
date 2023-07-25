@@ -53,7 +53,33 @@ const handlePaymentUpload = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-
+const createPayment = async (req,res) => {
+  try {
+    const {id_user,email,amount,id_product} = req.body
+    const paymentData = {
+      id_user,
+      email,
+      amount,
+      id_product
+    };
+    const response = await Payments.create(paymentData)
+    res.status(200).json(response)
+  } catch (error) {
+    console.log(error)
+  }
+}
+const getPaymentByUserId = async (req,res) => {
+  try {
+    const { id } = req.params;
+    const request = await User.findByPk(id);
+    let payments = await request.getPayments();
+    res.status(200).json(payments);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al obtener el producto por ID' });
+  }
+}
 module.exports = {
   handlePaymentUpload,
+  getPaymentByUserId,
+  createPayment
 };

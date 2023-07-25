@@ -25,10 +25,11 @@ export const getUser = (user) => {
    return async (dispatch) => {
      try {
        const response = await axios.get(
-         `http://localhost:3001/PF/user/bdd?email=${user.email}&password=${user.password}`
+         ` http://localhost:3001/pf/user/bdd?email=${user.email}&password=${user.password}`
        );
        const payload = response.data;
        localStorage.setItem("usuarioActual", JSON.stringify(payload));
+       localStorage.setItem("userProvider","local");
        dispatch({
          type: GET_USER,
          payload: payload,
@@ -43,7 +44,7 @@ export const getUser = (user) => {
 export const getFirebaseUser = (email) => {
    return async (dispatch) => {
       try {
-         const response = await axios.post('http://localhost:3001/PF/user/firebase', { email: email });
+         const response = await axios.post(' http://localhost:3001/pf/user/firebase', { email: email });
          return dispatch({
             type: GET_FIREBASEUSER,
             payload: response.data
@@ -57,28 +58,29 @@ export const getFirebaseUser = (email) => {
 export const addUser = (user) => {
     return async(dispatch) => {
       try {
-         const response = await axios.post('http://localhost:3001/PF/user', user)
+         const response = await axios.post(' http://localhost:3001/pf/user', user)
             dispatch({
                type: ADD_USER,
                payload:response.data
             })
          return response;
       } catch (error) {
-         console.log("Error al crear el usuario", error.message)
+         console.log("Error al crear el usuario", error)
       }
     };
 }
 export const addFirebaseUser = (user) => {
    return async(dispatch) => {
      try {
-        const response = await axios.post('http://localhost:3001/PF/user/firebase', user)
+        const response = await axios.post(' http://localhost:3001/pf/user/firebase', user)
+        const localResponse = await axios.post(' http://localhost:3001/pf/user', user);
            dispatch({
               type: ADD_FIREBASEUSER,
               payload:response.data
            })
         return response;
      } catch (error) {
-        console.log("Error al crear el usuario", error.message)
+        console.log("Error al crear el usuario", error.message);
      }
    };
 }
@@ -103,7 +105,7 @@ export function addProduct(productData) {
        formData.append('rating', productData.rating);
        formData.append('image', productData.image); 
  
-       const response = await axios.post('http://localhost:3001/PF/products', formData, {
+       const response = await axios.post(' http://localhost:3001/PF/products', formData, {
          headers: {
            'Content-Type': 'multipart/form-data', 
          },
@@ -219,7 +221,7 @@ export const priceOrder = (payload) => {
 export const getAllCategories = () => {
    return async function(dispatch){
       try{
-         const response = await axios.get("http://localhost:3001/PF");
+         const response = await axios.get(" http://localhost:3001/pf/");
          return dispatch({
              type:GET_ALL_CATEGORIES,
              payload:response.data
@@ -233,7 +235,7 @@ export const getAllCategories = () => {
 export const getAllProducts = () => {
    return async function(dispatch){
       try {
-         const response = await axios.get("http://localhost:3001/PF/products");
+         const response = await axios.get(" http://localhost:3001/pf/products");
          return dispatch({
             type: GET_ALL_PRODUCTS,
             payload: response.data
@@ -247,7 +249,7 @@ export const getAllProducts = () => {
 export const getProductById = (id) => {
    return async function(dispatch){
       try {
-         const response = await axios.get(`http://localhost:3001/PF/products/${id}`);
+         const response = await axios.get(` http://localhost:3001/pf/products/${id}`);
          console.log(response.data)
          return dispatch({
             type: GET_PRODUCT_BY_ID,

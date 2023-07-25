@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getUser,addFirebaseUser } from "../../redux/actions"
 
+import "./Login.style.css"
 export function Login() {
 
   const navigate = useNavigate();
@@ -75,56 +76,63 @@ export function Login() {
   };
 
   return (
-    <div className="container">
-      <h1>Iniciar Sesión</h1>
-      {error && <p>{error}</p>}
+    <div className="body-login">
+      <div className="login-container">
+        <div className="login-div">
+          <h1>Iniciar Sesión</h1>
+          {error && <p>{error}</p>}
 
-        <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
-            <input
-              value={cUser.email}
-              type="email"
-              name="email"
-              id="email"
-              className="form-control"
-              onChange={handleChange}
-              placeholder="youremail@company.com"
-              
-            />
-          </div>
+              <div className="div-inputs">
+                <label htmlFor="email" className="lbl-title">
+                  Email
+                </label>
+                <input
+                  value={cUser.email}
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="form-control"
+                  onChange={handleChange}
+                  placeholder="youremail@company.com"
+                  
+                />
+              </div>
 
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Contraseña
-            </label>
-            <input
-              value={cUser.password}
-              type="password"
-              name="password"
-              id="password"
-              className="form-control"
-              onChange={handleChange}
-              placeholder="*************"
-            />
-          </div>
+              <div className="div-inputs">
+                <label htmlFor="password" className="lbl-title">
+                  Contraseña
+                </label>
+                <input
+                  value={cUser.password}
+                  type="password"
+                  name="password"
+                  id="password"
+                  className="form-control"
+                  onChange={handleChange}
+                  placeholder="*************"
+                />
+              </div>
 
-          <div className="mb-3">
-            <button type="submit" className="btn btn-primary">
-              Iniciar sesión
-            </button>
-          </div>
-        </form>
+              <div>
+                <button type="submit" className="btn-is">
+                  Iniciar sesión
+                </button>
+              </div>
+            </form>
 
-        <button className="btn btn-secondary" onClick={handleGoogleSignin}>
-          <img src="googlelogo.png" alt="GoogleLogo" style={{ width: "30px", height: "30px" }}/>
-            Iniciar sesión con Google
-          <img src="googlelogo.png" alt="GoogleLogo" style={{ width: "30px", height: "30px" }}/>
-        </button><p>¿No tienes una cuenta? <Link to="/register">Regístrate</Link></p>
+            <button onClick={handleGoogleSignin} className="btn-is-google">
+              <img src="googlelogo.png" alt="GoogleLogo" style={{ width: "30px", height: "30px" }}/>
+                Iniciar sesión con Google
+              <img src="googlelogo.png" alt="GoogleLogo" style={{ width: "30px", height: "30px" }}/>
+            </button><p>¿No tienes una cuenta? <Link className="link" to="/register">Regístrate</Link></p>
+          
+        </div>
 
-    </div>
+        <div className="login-image-div">
+        </div>
+      </div>
+    </div> 
   );
 }
