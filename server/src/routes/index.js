@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const {getCategory} = require("../controllers/getCategory");
-const { getProducts, getProductById, getReviewByIdProduct } = require("../controllers/getProduct");
+const { getProducts, getProductById, getReviewByIdProduct, getAllProducts } = require("../controllers/getProduct");
 const { postProduct } = require("../controllers/postProduct");
 const { postUser } = require("../controllers/postUser");
 
@@ -53,6 +53,7 @@ router.post("/contacto", postContacto);
 // para el dashboard Productos , Usuarios y categorias
 
 //Categorias
+router.get("/productsAll", getAllProducts);
 router.post("/category",postCategory);
 router.put("/category/:id", upload.single("image"), putCategory);
 
