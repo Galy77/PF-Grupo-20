@@ -52,7 +52,6 @@ router.post("/products", upload.single("image"), postProduct);
 
 router.get("/user/bdd", getUserBDD);
 router.get("/user/firebase", getFirebaseUser);
-router.get("/payment/:id", getPaymentByUserId);
 
 
 router.post("/user", postUser); //veo 1
@@ -63,21 +62,22 @@ router.post("/create_preference", postPreference);
 router.post("/user", postUser);
 
 router.post("/review",postReview)
+
+
+// Estas rutas necesito
+router.get("/payment/:id", getPaymentByUserId);
 router.post("/payment",createPayment)
 router.post("/cart",postCart)
+router.put("/cart/:id", putCartById);
+router.put("/rating/:id", putRatingProduct);
+router.put("/products/:id", putStockProduct);
+router.delete("/review",removeReview)
 
 
-
-
-router.post("/webhook", handlePaymentUpload); // veo 1
-
+// router.post("/webhook", handlePaymentUpload); // veo 1
 // router.post("/webhook", handlePaymentUpload); // veo 2
 router.post("/contacto", postContacto);
 
-router.put("/rating/:id", putRatingProduct);
-router.put("/products/:id", putStockProduct);
-router.put("/cart/:id", putCartById);
-router.delete("/review",removeReview)
 
 
 

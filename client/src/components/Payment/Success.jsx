@@ -11,14 +11,14 @@ const Success = () => {
                     const newStock = {
                         stock:el.cantidad
                     }
-                    const response = await axios.put(`http://localhost:3001/PF/products/${el.id}`,newStock)
+                    const response = await axios.put(` http://localhost:3001/pf/products/${el.id}`,newStock)
                     console.log(response)
                 })
             }else{
                 const newStock = {
                     stock:data.cantidad
                 }
-                const response = await axios.put(`http://localhost:3001/PF/products/${data.id}`,newStock)
+                const response = await axios.put(` http://localhost:3001/pf/products/${data.id}`,newStock)
                 console.log(response)
             }
             localStorage.removeItem('setStockProduct');
@@ -30,7 +30,7 @@ const Success = () => {
             postPaymentExecutedRef.current = true;
 
         const user = JSON.parse(localStorage.getItem("usuarioActual"));
-        console.log(`esto es data: ${data.id}, ${data.amount}`)
+        console.log(`${user.id}`)
         if(data){
 
             if(data.length){
@@ -41,11 +41,11 @@ const Success = () => {
                           amount:el.amount,
                             id_product:el.id
                     }
-                    await axios.post(`http://localhost:3001/PF/payment`,newPayment)
+                    await axios.post(` http://localhost:3001/pf/payment`,newPayment)
                 })
                 const deleteCart = data.map(el => el.id) 
                 const info = {productsToAdd:[],productsToRemove:deleteCart}
-                await axios.put(`http://localhost:3001/PF/cart/${user.id}`,info)
+                await axios.put(` http://localhost:3001/pf/cart/${user.id}`,info)
             }else{
 
                 const newPayment = {
@@ -55,10 +55,10 @@ const Success = () => {
                         id_product:data.id
                 }
 
-                await axios.post(`http://localhost:3001/PF/payment`,newPayment)
+                await axios.post(` http://localhost:3001/pf/payment`,newPayment)
                  
                 const info = {productsToAdd:[],productsToRemove:[data.id]}
-                await axios.put(`http://localhost:3001/PF/cart/${user.id}`,info)
+                await axios.put(` http://localhost:3001/pf/cart/${user.id}`,info)
             }
         }
     }}

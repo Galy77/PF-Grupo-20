@@ -3,8 +3,8 @@ const { User } = require("../db");
 const transporter = require("../middleware/nodemailer")
 
 const postUser = async (req, res) => {
-  const { full_name, email, password, phone, direction_shipping } = req.body;
-  console.log("entro", full_name, email, password, phone, direction_shipping);
+  const { full_name, email, password, phone, direction_shipping, displayName } = req.body;
+  console.log("entro", full_name, email, password, phone, direction_shipping, displayName);
 
   try {
 
@@ -17,7 +17,7 @@ const postUser = async (req, res) => {
     }
 
     const newUser = {
-      full_name,
+      full_name: full_name || displayName,
       email,
       password,
       phone,

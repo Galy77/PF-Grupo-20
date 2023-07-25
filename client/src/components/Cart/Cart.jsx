@@ -34,7 +34,7 @@ const Cart = () => {
 
     
     const getCart = async () => {
-        const { data } = await axios(`http://localhost:3001/PF/cart/${usuarioActual.id}`)
+        const { data } = await axios(` http://localhost:3001/pf/cart/${usuarioActual.id}`)
         if(data.Products.length){
             let allPrice = data.Products.map(el => el.price)
             allPrice = Math.round(allPrice.reduce(function(acc, numero) {
@@ -60,7 +60,7 @@ const Cart = () => {
         if(products.length){
             const productsToRemove = products.map(el => el.id)
             const data = {productsToAdd:[],productsToRemove}
-            await axios.put(`http://localhost:3001/PF/cart/${usuarioActual.id}`,data)
+            await axios.put(` http://localhost:3001/pf/cart/${usuarioActual.id}`,data)
             getCart()
         }
     }
@@ -73,7 +73,7 @@ const Cart = () => {
             try {
 
                 if(total > 0){
-                    const response = await axios.post("http://localhost:3001/PF/create_preference",{
+                    const response = await axios.post(" http://localhost:3001/pf/create_preference",{
                         description:"cart Mercado Henry",
                         price:total,
                         quantity:1
