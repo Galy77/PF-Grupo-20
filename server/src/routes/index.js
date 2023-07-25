@@ -44,8 +44,6 @@ router.get("/", getCategory);
 router.get("/products", getProducts);
 router.get("/products/:id", getProductById);
 
-router.get("/review/:id", getReviewByIdProduct);
-router.get("/cart/:id", getCartById);
 
 
 router.post("/products", upload.single("image"), postProduct);
@@ -65,6 +63,8 @@ router.post("/review",postReview)
 
 
 // Estas rutas necesito
+router.get("/review/:id", getReviewByIdProduct);
+router.get("/cart/:id", getCartById);
 router.get("/payment/:id", getPaymentByUserId);
 router.post("/payment",createPayment)
 router.post("/cart",postCart)
