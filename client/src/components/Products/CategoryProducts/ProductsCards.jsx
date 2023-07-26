@@ -2,20 +2,25 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import style from "../Products.module.css";
 import '../producs.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from "react"
 
 function ProductsCards (props) {
     let products = []
     if(props.categoryProducts.length == props.filteredProducts.length) products = props.categoryProducts
     else products = props.filteredProducts
-
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentPage = urlParams.get('page');
     const [dataProducts, setDataProducts] = useState()
     const [productsToShow , setProductsToShow] = useState(products)
     const [page,setPage] = useState(1)
+    const [isLoadedPage, setIsLoadedPage] = useState(1)
     let productsQuantityToShow = 12
     let lastPage = Math.ceil(productsToShow.length/productsQuantityToShow)
     /// setDataProducts
     const sliceProducts = (categoryProducts, page) => {
+        const newUrl = `${window.location.pathname}?page=${page}`;
+        window.history.replaceState(null, null, newUrl);
         if(categoryProducts.length <= productsQuantityToShow) setPage(1)
         lastPage = Math.ceil(categoryProducts.length/productsQuantityToShow)
         if(page > lastPage){
@@ -25,17 +30,30 @@ function ProductsCards (props) {
         setDataProducts(categoryProducts.slice(numToSlice - productsQuantityToShow,numToSlice))
     }
 
-    const paginado = () => {
+    const paginado = (currentPage) => {
+        if(currentPage){
+            sliceProducts(products,currentPage)
+            setProductsToShow(products)
+            setPage(parseInt(currentPage))
+            return
+        }
         sliceProducts(products,page)
         setProductsToShow(products)
     }
     useEffect(() => {
-        paginado()
-    },[products])
-    
+        if(isLoadedPage == 4){
+            sliceProducts(props.filteredProducts,1)
+            setProductsToShow(props.filteredProducts)
+            setPage(1)
+        }else{
+            setIsLoadedPage(isLoadedPage + 1)
+            paginado(currentPage)
+        }
+    },[props.filteredProducts])
 
     const handlePage = (order) => {
         if(order == 'next'){
+            console.log(page)
             setPage(page + 1)
             sliceProducts(productsToShow,page + 1)
         }else{

@@ -79,7 +79,7 @@ function Products (){
         <div class='d-flex flex-column' >
             <CreatedCarousel />
                 <div class='filter-products d-flex my-4'>
-                    <Filters />
+                    <Filters category={category}/>
                     <div class='d-flex flex-column align-items-center w-100 px-4' >
                                 <ProductsCards
                                     categoryProducts={alphabeticOrderFilter(categoryProducts, alphabeticFilterValue, priceOrderValue)}

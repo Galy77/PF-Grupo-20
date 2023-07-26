@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useDispatch } from 'react-redux';
 import { alphabeticOrder } from '../../../redux/actions';
 import style from "../Products.module.css";
 
-function AlphabeticalOrder () {
+function AlphabeticalOrder (props) {
     const [selectedOption, setSelectedOption] = useState(null);
     const dispatch = useDispatch();
 
@@ -16,7 +16,9 @@ function AlphabeticalOrder () {
             dispatch(alphabeticOrder(option))
         }
       };
-
+    useEffect(()=> {
+        setSelectedOption(null)
+    },[props.reset])
     return (
         <Dropdown>
             <Dropdown.Toggle variant="black" id="dropdown-basic" className={style.filter}>Orden Alfabetico</Dropdown.Toggle>

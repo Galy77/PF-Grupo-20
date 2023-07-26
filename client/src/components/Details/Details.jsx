@@ -56,6 +56,7 @@ const Details = () => {
                 id_user:user.id,
                 product_cart:[product.id]
             }
+            console.log(data)
             try {
                 if(data) await axios.post('http://localhost:3001/PF/cart',data)
                 Swal.fire(
@@ -71,6 +72,7 @@ const Details = () => {
                 productsToAdd:[product.id],
                 productsToRemove:[]
             }
+            console.log(data)
             try {
                 if(data) await axios.put(`http://localhost:3001/PF/cart/${user.id}`,data)
                 Swal.fire(
@@ -214,11 +216,15 @@ const Details = () => {
             }
         }
     }
-    /// reviews
-console.log(review)
+    const goBack = () => {
+        window.history.back();
+    }
     return(
         <>
-            <div class="container container-detail  d-flex flex-column justify-content-start border mt-4 cuerpo w-100">
+            <div class='w-50 d-flex mx-4'>
+                <i class="arrow bi bi-arrow-left-circle-fill" onClick={goBack}></i>
+            </div>
+            <div class="container container-detail  d-flex flex-column justify-content-start border cuerpo w-100">
                 <div class=' d-flex flex-column h-50 '>
 
                     <div class="d-flex flex-column justify-content-start align-items-end">
@@ -241,13 +247,13 @@ console.log(review)
                                 </div>
                                     <div id='stock'class='d-flex justify-content-around align-items-center'>
                                         <div class='w-0' >
-                                            <input type="number" placeholder={`stock:${product.stock}`} class='text-center w-100 rounded border' value={cantidadProducts} onChange={handleInput} />
+                                            <input type="number" placeholder={product.stock?`stock:${product.stock}`:0} class='text-center w-100 rounded border' value={cantidadProducts} onChange={handleInput} />
                                             {
                                                 error? <p class='error'>{error}</p>:''
                                             }
                                         </div>
                                         <h3>
-                                            {`$${product.price}`}
+                                            {product.price && `$${product.price}`}
                                         </h3>
                                     </div>
 
@@ -260,7 +266,7 @@ console.log(review)
                                                 <i class="bi bi-cart3"></i>
                                             </button>
                                     </div>
-                                    {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo}/>}
+                                    {preferenceId && <Wallet initialization={{preferenceId:preferenceId}} onSubmit={getProductInfo} class='wallet'/>}
                                     {
                                         preferenceId && <p onClick={() => setPreferenceId(null)} class='cancelar'>cancelar</p>
                                     }

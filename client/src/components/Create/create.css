@@ -23,3 +23,11 @@
 #stock{
     margin-top: 0;
 }
+.arrow{
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition:0.5s;
+}
+.arrow:hover{
+color: white;
+}

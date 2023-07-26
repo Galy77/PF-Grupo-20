@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
@@ -31,7 +31,10 @@ function PriceFilter (props){
         dispatch(minimumPrice(minPrice))
         dispatch(maximumPrice(maxPrice))
     }
-
+    useEffect(()=> {
+        setMinPrice("")
+        setMaxPrice("")
+    },[props.reset])
     return (
         <InputGroup size='sm' >
             <InputGroup.Text class={style.precio}>Precio</InputGroup.Text>

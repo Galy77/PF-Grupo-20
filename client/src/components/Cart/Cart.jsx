@@ -110,10 +110,15 @@ const Cart = () => {
             navigate("/login");
             return null
           }
-
+        const goBack = () => {
+            window.history.back();
+        }
         return (
             <>
                 <div class='mt-4'>
+                    <div class='w-50 d-flex mx-4'>
+                        <i class="arrow bi bi-arrow-left-circle-fill" onClick={goBack}></i>
+                    </div>
 
                     <div class='cart-container d-flex justify-content-evenly'>
 

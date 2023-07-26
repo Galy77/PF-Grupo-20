@@ -166,8 +166,14 @@ function Create(){
           alert("Faltan datos");
         }
       };
+      const goBack = () => {
+        window.history.back();
+    }
       return (
         <div>
+          <div class='w-50 d-flex mx-4'>
+              <i class="arrow bi bi-arrow-left-circle-fill" onClick={goBack}></i>
+          </div>
           <div className="createContainer">
               <h1 class='mt-4 createProductTittle'>Crea un Producto</h1>
             <Form className="formContainer azul" onSubmit={handleSubmit}>

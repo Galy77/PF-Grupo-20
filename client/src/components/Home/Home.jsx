@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 // import axios from "axios"
 import './Home.css'
 import { useEffect,useState } from 'react';
-import { getAllCategories, getAllProducts } from '../../redux/actions';
+import { getAllCategories, getAllProducts} from '../../redux/actions';
 
 
 function Home (){
@@ -44,6 +44,7 @@ function Home (){
     let productsQuantityToShow = 12
     let lastPage = Math.ceil(productsToShow.length/productsQuantityToShow)
     const sliceProducts = (categoryProducts, page) => {
+        localStorage.setItem("savePage",JSON.stringify(page))
         if(categoryProducts.length <= productsQuantityToShow) setPage(1)
         lastPage = Math.ceil(categoryProducts.length/productsQuantityToShow)
         if(page > lastPage){
@@ -53,15 +54,25 @@ function Home (){
         setDataProducts(categoryProducts.slice(numToSlice - productsQuantityToShow,numToSlice))
     }
 
-    const paginado = () => {
-        sliceProducts(products,page)
+    const saved_page = JSON.parse(localStorage.getItem("savePage"));
+    const paginado = (saved_page) => {
+        if(saved_page){
+            sliceProducts(products,saved_page)
+            setProductsToShow(products)
+            setPage(saved_page)
+            return  
+        }
+        sliceProducts(products,2)
         setProductsToShow(products)
     }
     useEffect(() => {
-        console.log(products)
-        paginado()
+        if(saved_page == null) paginado()
+        else paginado(saved_page)
     },[products])
-    
+
+    useEffect(() => {
+        if(saved_page == null) localStorage.setItem("savePage",JSON.stringify(page))
+    },[dataProducts])
 
     const handlePage = (order) => {
         if(order == 'next'){
@@ -83,7 +94,8 @@ function Home (){
         <div class='d-flex flex-column' >
             <div class='c w-100 d-flex flex-column justify-content-center align-items-center'>
                     <div class='categories-container'>
-                        {dataProducts? dataProducts?.map((category) => (
+                        {
+                        dataProducts? dataProducts.map((category) => (
                                 <div>
                                     <div class='card-container'>
                                         <Link to={`/products/${category.name}`} class='link'>

@@ -1,9 +1,9 @@
 import Dropdown from 'react-bootstrap/Dropdown';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { betterQualified, showAll } from '../../../redux/actions';
 import style from "../Products.module.css";
-function RatingFilter () {
+function RatingFilter (props) {
     const [selectedOption, setSelectedOption] = useState(null);
     const dispatch = useDispatch()
     
@@ -15,6 +15,9 @@ function RatingFilter () {
           dispatch(showAll(option))
         }
       };
+    useEffect(()=> {
+      setSelectedOption(null)
+    },[props.reset])
 
     return (
         <Dropdown >
