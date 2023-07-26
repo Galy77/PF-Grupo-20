@@ -38,18 +38,24 @@ const getProducts = async (req, res) => {
       const filterProduct = productsData.filter((pro) => pro.status === 1);
       return res.status(200).json(filterProduct);
     } else {
-
-
-            const filterProduct = productsDb.filter(pro => pro.status === 1 )
-            return res.status(200).json(filterProduct)
-
-  }
-
+      const filterProduct = productsDb.filter((pro) => pro.status === 1);
+      return res.status(200).json(filterProduct);
+    }
   } catch (error) {
     console.error("Error al obtener los productos:", error);
     res.status(500).json({ error: "Error al obtener los productos" });
   }
 };
+
+const getAllProducts= async (req, res) => {
+  try {
+    const allproducts = await Product.findAll({ include: Category })
+    return res.status(200).json(allproducts)
+  } catch (error) {
+    console.error("Error al obtener los productos:", error);
+    res.status(500).json({ error: "Error al obtener los productos" });    
+  }
+}
 
 const getProductById = async (req, res) => {
   try {
@@ -75,7 +81,8 @@ const getReviewByIdProduct = async (req, res) => {
 };
 
 module.exports = {
-  getProductById,
   getProducts,
+  getAllProducts,
+  getProductById,
   getReviewByIdProduct
 };

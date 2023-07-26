@@ -34,9 +34,11 @@ const Reviews =  ({stars, coment, User, product, getReviews, id_user}) => {
                         <p>{coment}</p>
                     </div>
                     {
-                        id_user == User.id &&
-                        <i onClick={deleteReview} class='removeComment'> Remove</i>
-                    }
+    // Check if the user is logged in and if the logged-in user's id matches the review's user id
+    user && user.id === User.id && (
+        <i onClick={deleteReview} class='removeComment'> Remove</i>
+    )
+}
                 </div>
             </div>
         </div>

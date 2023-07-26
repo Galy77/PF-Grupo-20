@@ -57,8 +57,8 @@ const initialState = {
     ratingFilterValue: "all",
     user:{},
     detailProduct: [],
-    lettersOrder: "A-Z",
-    priceOrder: "Mayor"
+    lettersOrder: "",
+    priceOrder: ""
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
@@ -224,13 +224,15 @@ export const reducer = (state = initialState,{type,payload})=>{
         case ALPHABETIC_ORDER:
           return{
             ...state,
-            lettersOrder: payload
+            lettersOrder: payload,
+            priceOrder: ""
           }
 
         case PRICE_ORDER:
           return{
             ...state,
-            priceOrder: payload
+            priceOrder: payload,
+            lettersOrder: ""
           }
 
         default:

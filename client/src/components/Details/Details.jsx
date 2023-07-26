@@ -55,6 +55,15 @@ const Details = () => {
     }
 
     const addCart = async () => {
+        if (!user) {
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Necesitas iniciar sesión para añadir el producto al carrito.",
+            });
+            return;
+        }
         const cart = await axios(`http://localhost:3001/pf/cart/${user.id}`)
         if(cart.data.response == "no hay carrito"){
             const data = {
@@ -150,6 +159,15 @@ const Details = () => {
         }
     }
     const handleBuy = async () => {
+        if (!user) {
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Necesitas iniciar sesión para comprar el producto.",
+            });
+            return;
+            }
         const id = await createPreference()
         console.log(review)
         if(id){
@@ -287,32 +305,41 @@ const Details = () => {
                                 {
                                     review? review.map(el => <Reviews stars={el.stars} coment={el.coment} User={el.User} product={product} getReviews={getReviews} id_user={el.id_user}/>):''
                                 }
-                                {
-                                    review? review.filter(el => el.id_user == user.id).length? <span class='text-center w-100'>ya hiciste un cometario pa</span> : isBuy?isBuy.length? <div class='h-100 d-flex align-items-center rounded w-100'>
-                                        <div class='d-flex align-items-center justify-content-center w-50 h-100'>
-                                            <div class=''>
-                                                {stars? <Stars rating={stars} />:
-                                                <div>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
-                                                    <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
-                                                </div>
-                                                }
-                                                <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
-                                            </div>
-                                        </div>
+                              {
+    review ? (
+        user ? (
+            review.filter(el => el.id_user === user.id).length ? (
+                <span class='text-center w-100'>ya hiciste un comentario pa</span>
+            ) : isBuy ? (
+                isBuy.length ? (
+                    <div class='h-100 d-flex align-items-center rounded w-100'>
+                        <div class='d-flex align-items-center justify-content-center w-50 h-100'>
+                            <div class=''>
+                                {stars ? <Stars rating={stars} /> : (
+                                    <div>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                                    </div>
+                                )}
+                                <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
+                            </div>
+                        </div>
 
-                                        <div class=' d-flex flex-column align-items-center'>
-                                            <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
-                                            <div class='d-flex justify-content-end w-100'>
-                                                <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
-                                            </div>
-                                        </div>
-                    
-                                    </div>:'':<span class='text-center w-100'>no has comprado este producto</span>:''
-                                }  
+                        <div class='d-flex flex-column align-items-center'>
+                            <input placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
+                            <div class='d-flex justify-content-end w-100'>
+                                <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                ) : ''
+            ) : <span class='text-center w-100'>no has comprado este producto</span>
+        ) : <span class='text-center w-100'>Inicia sesión y compra este producto para hacer un comentario</span>
+    ) : ''
+} 
                             </div>                 
                         </div>
                 </div>

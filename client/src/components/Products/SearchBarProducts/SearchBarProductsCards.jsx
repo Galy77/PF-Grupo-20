@@ -1,14 +1,10 @@
 /* eslint-disable react/jsx-key */
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import style from "../Products.module.css";
 import '../producs.css'
 import { useState,useEffect } from 'react';
 
 function SearchBarProductsCards (props) {
     let products = props.productsFiltered
- 
-
     const [dataProducts, setDataProducts] = useState()
     const [productsToShow , setProductsToShow] = useState(products)
     const [page,setPage] = useState(1)
@@ -30,9 +26,8 @@ function SearchBarProductsCards (props) {
         setProductsToShow(products)
     }
     useEffect(() => {
-        console.log(products)
         paginado()
-    },[products])
+    },[products ])
     
 
     const handlePage = (order) => {
@@ -44,6 +39,12 @@ function SearchBarProductsCards (props) {
             sliceProducts(productsToShow,page - 1)
         }
     }
+
+    useEffect(() => {
+        sliceProducts(props.productsFiltered,1)
+        setProductsToShow(props.productsFiltered)
+        setPage(1)
+    },[props.productsFiltered])
 
     return (
         <>
