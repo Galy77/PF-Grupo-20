@@ -17,7 +17,7 @@
   min-height: 100vh;
   margin: 0 auto;
   text-align: center;
-  background:url("https://media.discordapp.net/attachments/1125481005885694124/1133195800609042522/FondoPresentacion.jpg?width=893&height=670");
+  background:var(--createProduct);
 }
 .cuerpo{
   background-color:white;

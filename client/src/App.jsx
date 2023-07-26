@@ -16,6 +16,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { Register } from './components/Register/Register';
 import { Login } from './components/Login/Login';
 import Contact from './components/Contact/Contact';
+import Footer from './components/footer/Footer';
 
 function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
           <Route path='/create' element={ <Create/> }/>
           <Route path='/profile' element={<Profile/>}/>
         </Routes>
+        <Footer/>
       </AuthProvider>
     </div>
   )

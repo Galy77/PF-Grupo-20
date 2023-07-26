@@ -70,9 +70,9 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
             </Link>
           </li>
           <li>
-            <Link to={"/contact"}>
+            {/* <Link to={"/contact"}>
               <i class="icons bi bi-info-circle"></i>
-            </Link>
+            </Link> */}
           </li>
         </ul>
       </div>
