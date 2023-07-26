@@ -17,6 +17,7 @@ function SearchBar (props) {
     }
 
     const capital = input.charAt(0).toUpperCase() + input.slice(1);
+    console.log(capital)
     useEffect(()=> {
         setInput("")
     },[props.reset])

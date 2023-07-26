@@ -11,6 +11,7 @@ function ProductsCards (props) {
     
     const urlParams = new URLSearchParams(window.location.search);
     const currentPage = urlParams.get('page');
+    const search = urlParams.get('search')
     const [dataProducts, setDataProducts] = useState()
     const [productsToShow , setProductsToShow] = useState(products)
     const [page,setPage] = useState(1)
@@ -19,8 +20,13 @@ function ProductsCards (props) {
     let lastPage = Math.ceil(productsToShow.length/productsQuantityToShow)
     /// setDataProducts
     const sliceProducts = (categoryProducts, page) => {
-        const newUrl = `${window.location.pathname}?page=${page}`;
-        window.history.replaceState(null, null, newUrl);
+        if(search){
+            const newUrl = `${window.location.pathname}?search=${search}`;
+            window.history.replaceState(null, null, newUrl);
+        }else{
+            const newUrl = `${window.location.pathname}?page=${page}`;
+            window.history.replaceState(null, null, newUrl);
+        }
         if(categoryProducts.length <= productsQuantityToShow) setPage(1)
         lastPage = Math.ceil(categoryProducts.length/productsQuantityToShow)
         if(page > lastPage){

@@ -103,7 +103,7 @@ export function addProduct(productData) {
        formData.append('rating', productData.rating);
        formData.append('image', productData.image); 
  
-       const response = await axios.post(' https://api-market-henry-jczt.onrender.com/PF/products', formData, {
+       const response = await axios.post('https://api-market-henry-jczt.onrender.com/PF/products', formData, {
          headers: {
            'Content-Type': 'multipart/form-data', 
          },
