@@ -5,7 +5,7 @@ import "../Create/Create.style.css";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-
+import Swal from 'sweetalert2'
 function Create(){
     const dispatch = useDispatch();
     const allCategories = useSelector((state) => state.categories);
@@ -23,11 +23,11 @@ function Create(){
     
     useEffect(() => {
       if(usuarioActual){
-          setIsUser(usuarioActual);
+        setIsUser(usuarioActual);
       }else{
           setIsUser(user);
       }
-  }, []);
+    }, []);
       
     const [input, setInput] = useState({
         name: "",
@@ -49,11 +49,7 @@ function Create(){
         CategoryId:""
     })
     
-    if (!isUser && !usuarioActual) {
-      navigate("/login");
-      return null;
-    }
-
+    
     const validate = (input) =>{
       
         let error = {}
@@ -162,6 +158,11 @@ function Create(){
           alert("Faltan datos");
         }
       };
+      if (!isUser && !usuarioActual) {
+        navigate("/login");
+        return null;
+      }
+  
       return (
         <div>
           <div className="createContainer">

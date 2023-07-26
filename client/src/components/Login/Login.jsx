@@ -5,6 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 
 import { useDispatch } from "react-redux";
 import { getUser,addFirebaseUser } from "../../redux/actions"
+import Swal from 'sweetalert2'
 
 import "./Login.style.css"
 export function Login() {
@@ -23,7 +24,6 @@ export function Login() {
   });
 
   useEffect(() => {
-    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     if (usuarioActual) {
       navigate("/");
     }else{
@@ -52,8 +52,6 @@ export function Login() {
     }));
   };
 
-
-
   const handleGoogleSignin = async () => {
     try {
       const response = await loginWithGoogle();
@@ -61,10 +59,8 @@ export function Login() {
       try {
         dispatch(addFirebaseUser(response));
         if(usuarioActual){
+          setCurrentUser(usuarioActual)
           console.log("Action terminada",usuarioActual)
-        if(usuarioActual.password === usuarioActual.password){
-            setCurrentUser(usuarioActual)
-          }
         }
       } catch (error) {
         setError(error.message);
@@ -90,7 +86,7 @@ export function Login() {
                 </label>
                 <input
                   value={cUser.email}
-                  type="email"
+                  type="text"
                   name="email"
                   id="email"
                   className="form-control"

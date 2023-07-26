@@ -11,14 +11,14 @@ const Success = () => {
                     const newStock = {
                         stock:el.cantidad
                     }
-                    const response = await axios.put(` https://api-market-henry-jczt.onrender.com/pf/products/${el.id}`,newStock)
+                    const response = await axios.put(` http://localhost:3001/pf/products/${el.id}`,newStock)
                     console.log(response)
                 })
             }else{
                 const newStock = {
                     stock:data.cantidad
                 }
-                const response = await axios.put(` https://api-market-henry-jczt.onrender.com/pf/products/${data.id}`,newStock)
+                const response = await axios.put(` http://localhost:3001/pf/products/${data.id}`,newStock)
                 console.log(response)
             }
             localStorage.removeItem('setStockProduct');
@@ -41,11 +41,11 @@ const Success = () => {
                           amount:el.amount,
                             id_product:el.id
                     }
-                    await axios.post(` https://api-market-henry-jczt.onrender.com/pf/payment`,newPayment)
+                    await axios.post(` http://localhost:3001/pf/payment`,newPayment)
                 })
                 const deleteCart = data.map(el => el.id) 
                 const info = {productsToAdd:[],productsToRemove:deleteCart}
-                await axios.put(` https://api-market-henry-jczt.onrender.com/pf/cart/${user.id}`,info)
+                await axios.put(` http://localhost:3001/pf/cart/${user.id}`,info)
             }else{
 
                 const newPayment = {
@@ -54,11 +54,11 @@ const Success = () => {
                       amount:data.amount,
                         id_product:data.id
                 }
-
-                await axios.post(` https://api-market-henry-jczt.onrender.com/pf/payment`,newPayment)
+                console.log(newPayment);
+                await axios.post(` http://localhost:3001/pf/payment`,newPayment)
                  
                 const info = {productsToAdd:[],productsToRemove:[data.id]}
-                await axios.put(` https://api-market-henry-jczt.onrender.com/pf/cart/${user.id}`,info)
+                await axios.put(` http://localhost:3001/pf/cart/${user.id}`,info)
             }
         }
     }}

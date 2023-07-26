@@ -19,7 +19,7 @@ const postPreference = (req, res) => {
                 "pending": "http://localhost:5173/cart"
             },
 
-            // notification_url: "https://api-market-henry-jczt.onrender.com/pf/webhook",
+            // notification_url: "http://localhost:3001/pf/webhook",
 
             auto_return: "approved",
         };
