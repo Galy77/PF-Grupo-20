@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
-import "./OuterModal.style.css"
+import "./OuterPhotoChange.style.css"
 import { useState } from "react";
 import { useDispatch } from  "react-redux"
-import { modifyUser } from "../../../redux/actions";
+import { modifyUserPhoto } from "../../../redux/actions";
 import Swal from 'sweetalert2'
-function OuterPhotoChange ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
+function OuterPhotoChange ({estadoPhotoModal,setEstadoPhotoModal,datosUser}){
     const dispatch = useDispatch();
+    console.log(datosUser)
+
     const [input, setInput] = useState({
-        image: datosUser?.image || ""
+        image: datosUser?.image || null
       });
     
       const [error, setError] = useState({
@@ -16,22 +18,11 @@ function OuterPhotoChange ({children,estadoOuterModal,setEstadoOuterModal,datosU
   
     const validate = (input) => {
       let error = {};
-  
+      if(input.image === null){
+        error.image = "Ingrese una Imagen.";
+      }
       return error;
     };
-    const handleChange = (event) => {
-      setInput({
-        ...input,
-        [event.target.name]: event.target.value
-      });
-      
-      setError(
-        validate({
-          ...input,
-          [event.target.name]: event.target.value
-        })
-      )
-    }
   
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -41,8 +32,8 @@ function OuterPhotoChange ({children,estadoOuterModal,setEstadoOuterModal,datosU
           id: datosUser?.id || null,
         };
         console.log("modificaciones", modifiedUser);
-        dispatch(modifyUser(modifiedUser))
-        .then((res) => {
+         dispatch(modifyUserPhoto(modifiedUser))
+         .then((res) => {
           console.log("respuesta: ", res);
           if (res) {
             Swal.fire({
@@ -68,9 +59,23 @@ function OuterPhotoChange ({children,estadoOuterModal,setEstadoOuterModal,datosU
           });
         }
     }
+    const handleImageChange = (event) => {
+      const file = event.target.files[0];
+      setInput({
+        ...input,
+        image: file,
+      });
+  
+      setError(
+        validate({
+          ...input,
+          image: file,
+        })
+      );
+    };
     return (
         <>
-          {estadoOuterModal && (
+          {estadoPhotoModal && (
             <div className="Outer-Overlay">
               <div className="Outer-ContenedorModal">
                 <form onSubmit={handleSubmit}>
@@ -79,13 +84,7 @@ function OuterPhotoChange ({children,estadoOuterModal,setEstadoOuterModal,datosU
                     <label htmlFor="full_name" className="form-label">
                       Cambiar foto de perfil
                     </label>
-                    <input
-                      name="full_name"
-                      value={input.image}
-                      onChange={handleChange}
-                      type="text"
-                      className="form-register-control"
-                    />
+                    <input type="file" name="image" onChange={handleImageChange} accept="image/*" />
                   </div>
                   {error.image && <p className="error-inputs">{error.image}</p>}
                   
@@ -93,8 +92,7 @@ function OuterPhotoChange ({children,estadoOuterModal,setEstadoOuterModal,datosU
                     Modificar
                   </button>
                 </form>
-                <button className="Outer-BotonCerrar" onClick={() => setEstadoOuterModal(false)}>X</button>
-                {children}
+                <button className="Outer-BotonCerrar" onClick={() => setEstadoPhotoModal(false)}>X</button>
               </div>
             </div>
           )}

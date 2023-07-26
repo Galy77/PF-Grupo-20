@@ -9,6 +9,7 @@ import ShowModal from "../Modals/ShowModal/ShowModal";
 import OuterModal from "../Modals/OuterModal/OuterModal"
 import Swal from 'sweetalert2'
 import OuterModalGoogle from "../Modals/OuterModal/OuterModalGoogle";
+import OuterPhotoChange from "../Modals/CambioFotoPeril/OuterPhotoChange";
 
 export function Profile() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ export function Profile() {
   const [modalPublicaciones, setModalPublicaciones] = useState(false);
   const [modalDatos, setModalDatos] = useState(true);
   const [modificarDatos,setModificarDatos]  = useState(false);
+  const [modificarFoto,setModificarFoto]  = useState(false);
 
   useEffect(() => {
     if (usuarioActual) {
@@ -45,7 +47,6 @@ export function Profile() {
         confirmButtonText: 'Sí, cerrar sesión',
         cancelButtonText: 'Cancelar',
         reverseButtons: true,
-        
       });
 
       if (result.isConfirmed) {
@@ -153,8 +154,8 @@ export function Profile() {
             <h1>{isUser.full_name}</h1>
           
             <div className="image-container">
-              <img src="fondo-login2.jpg" alt="login" className="profile-image"/>
-              <div className="modify-button" onClick={()=>alert("sas")}>Modificar</div>
+              <img src={isUser.image === null ? "fondo-login2.jpg" : isUser.image } alt="login" className="profile-image"/>
+              <div className="modify-button" onClick={()=>setModificarFoto(!modificarFoto)}>Modificar</div>
             </div>
 
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
@@ -192,7 +193,7 @@ export function Profile() {
               <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
             </ShowModal>
             <OuterModal estadoOuterModal={modificarDatos} setEstadoOuterModal={setModificarDatos} datosUser={isUser}/>
-
+            <OuterPhotoChange estadoPhotoModal={modificarFoto} setEstadoPhotoModal={setModificarFoto} datosUser={isUser}/>
           </div>
         </div>
       )}

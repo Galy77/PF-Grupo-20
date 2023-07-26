@@ -16,7 +16,8 @@ import {
    GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
    ALPHABETIC_ORDER, PRICE_ORDER,
    MODIFY_USER,
-   MODIFY_FIREBASE_USER
+   MODIFY_FIREBASE_USER,
+   MODIFY_USER_PHOTO
 } from "./actionTypes";
 
 
@@ -96,6 +97,33 @@ export const modifyUser=(user)=>{
 
          dispatch({
             type: MODIFY_USER,
+            payload:response.data
+         })
+            
+         return response;
+
+      } catch (error) {
+         console.log("Error al modificar el usuario", error.message);
+      }
+    };
+}
+export const modifyUserPhoto=(user)=>{
+   return async(dispatch) => {
+      try {
+         const formData = new FormData();
+         formData.append('image', user.image);
+         const response = await axios.put(`http://localhost:3001/PF/user/${user.id}`, formData, {
+            headers: {
+               'Content-Type': 'multipart/form-data', 
+            },
+         });
+         const payload = response.data;
+
+         localStorage.removeItem("usuarioActual");
+         localStorage.setItem("usuarioActual", JSON.stringify(payload));
+
+         dispatch({
+            type: MODIFY_USER_PHOTO,
             payload:response.data
          })
             
