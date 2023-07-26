@@ -32,9 +32,16 @@ function Filters ({category}) {
           <PriceDropDownFilter reset={reset}/>
           <RatingFilter reset={reset}/>
         </div>
-        <Link to={`/products/${category}?search=`}>
-          <button onClick={resetFilter} class='btn btn-dark'>restaurar</button>
-        </Link>
+        {
+        category == undefined ? 
+          <Link to={`/products`}>
+            <button onClick={resetFilter} class='btn btn-dark'>restaurar</button>
+          </Link>
+          :
+          <Link to={`/products/${category}?search=`}>
+            <button onClick={resetFilter} class='btn btn-dark'>restaurar</button>
+          </Link>
+        }
       </div>
     )
 }
