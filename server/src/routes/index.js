@@ -88,6 +88,9 @@ router.get("/productsAll", getAllProducts);
 router.post("/category",postCategory);
 router.put("/category/:id", upload.single("image"), putCategory);
 
+//Products manipular todo
+router.put("/product/:id", upload.single("image"), putProduct);
+
 // Productos
 // router.put("/products/:id", upload.single("image"), putProduct);
 
