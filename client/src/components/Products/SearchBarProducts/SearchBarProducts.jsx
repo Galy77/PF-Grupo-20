@@ -57,7 +57,7 @@ function SearchBarProducts () {
         removeAccents(search.toUpperCase())
         )
     );
-console.log(searchProducts)
+
     const filteredsProducts = searchProducts.filter((product) => {
         const normal = removeAccents(product.name.toUpperCase())
         const matchSearch = normal.includes(search.toUpperCase());
@@ -75,7 +75,7 @@ console.log(searchProducts)
         <div class='d-flex flex-column' >
             <CreatedCarousel />
             <div class='filter-products d-flex my-4'>
-                <Filters />
+                <Filters search={search}/>
                 <div class='d-flex flex-column align-items-center w-100 px-4' >
                     <SearchBarProductsCards
                     productsFiltered={filteredProducts ? filteredProducts :alphabeticOrderFilter(searchProducts, alphabeticFilterValue, priceOrderValue)}                 

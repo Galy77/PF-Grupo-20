@@ -16,7 +16,7 @@ function Filters (props) {
           <PriceDropDownFilter />
           <RatingFilter />
         </div>
-        <SearchBar />
+        <SearchBar search={props.search}/>
         <PriceFilter />
       </div>
     )

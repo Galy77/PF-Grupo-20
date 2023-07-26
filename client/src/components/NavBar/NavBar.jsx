@@ -46,7 +46,7 @@ const capital = object.charAt(0).toUpperCase() + object.slice(1);
             className="me-2 justify-content-center"
             aria-label="Search"
             onChange={handleChange}
-            onKeyPress={object&& handleKeyPress}
+            onKeyPress={capital !== undefined && handleKeyPress}
             value={object}
           />
           <Link to={capital && `/products?search=${capital}`}><Button variant="outline-dark" class='btn btn-dark'>Search</Button></Link>
