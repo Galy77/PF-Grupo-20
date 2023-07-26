@@ -143,7 +143,6 @@ export function Profile() {
                 <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
               </div>
               <OuterModalGoogle estadoOuterModal={modificarDatos} setEstadoOuterModal={setModificarDatos} datosUserGoogle={isUser}/>
-              
             </ShowModal>
           </div>
         </div>
