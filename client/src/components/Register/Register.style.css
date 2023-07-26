@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .register-form {
     display: flex;
     flex-direction: column;
@@ -84,4 +85,10 @@
 .espacio{
   border:none;
   margin-bottom: 20px;
+}
+.btn-register-dis{
+    position: relative;
+    padding: .375rem .75rem;
+    border: 1px solid #b6b2b2;
+    border-radius: .25rem;
 }

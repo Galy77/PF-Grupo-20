@@ -25,6 +25,9 @@ export function Register() {
     direction_shipping:"",
   });
 
+  function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
   const validate = (input) => {
     let error = {};
 
@@ -52,14 +55,20 @@ export function Register() {
       error.phone = "Ingrese un número de teléfono.";
     } else if (!/^[\d\s()+-]+$/.test(input.phone)) {
       error.phone = "Ingrese un número de teléfono válido.";
-    }
+    } 
 
-    if (input.direction_shipping.trim().length === 0) {
-      error.direction_shipping = "Ingrese una dirección de envío.";
-    }
-
+      const inputDirectionShipping = input.direction_shipping.trim().toLowerCase();
+      const normalizedDirectionShipping = removeAccents(inputDirectionShipping);
+      const validKeywords = [ "calle" , "departamento", "dpto", "barrio", "casa", "dpto"];
+      
+      if (normalizedDirectionShipping.length === 0) {
+        error.direction_shipping = "Ingrese una dirección de envío.";
+      } else if (!validKeywords.some(keyword => normalizedDirectionShipping.includes(keyword))) {
+        error.direction_shipping = "Ingrese una dirección de envío válida.";
+      }
     return error;
   };
+
   const handleChange = (event) => {
     setInput({
       ...input,
@@ -199,9 +208,16 @@ export function Register() {
         </div>
         {error.direction_shipping && <p className="error-inputs">{error.direction_shipping}</p>}
         <hr className="espacio"></hr>
-        <button type="submit" className="btn-register">
-          Registrarse
-        </button>
+        {Object.keys(error).length === 0 ?(
+          <button type="submit" className="btn-register" >
+            Registrarse
+          </button>
+        ):(
+          <button type="submit" className="btn-register-dis" disabled >
+            Registrarse
+          </button>
+        )}
+        
       </form>
       <p>
         Ya tienes una cuenta? <Link to="/login" className="linkR">iniciar Sesion</Link>

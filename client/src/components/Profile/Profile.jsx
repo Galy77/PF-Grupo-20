@@ -17,12 +17,14 @@ export function Profile() {
   const navigate = useNavigate();
 
   const { logout, user } = useAuth();
+
   const [isUser, setIsUser] = useState();
   const [loading, setLoading] = useState(true);
   const [modalCompras, setModalCompras] = useState(false);
+
   const [modalPublicaciones, setModalPublicaciones] = useState(false);
   const [modalDatos, setModalDatos] = useState(true);
-  const [modificarDatos,setModificarDatos]  = useState(false)
+  const [modificarDatos,setModificarDatos]  = useState(false);
 
   useEffect(() => {
     if (usuarioActual) {
@@ -38,12 +40,12 @@ export function Profile() {
     try {
       const result = await Swal.fire({
         title: '¿Estás seguro?',
-        text: '¡Serás desconectado de tu cuenta!',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Sí, cerrar sesión',
         cancelButtonText: 'Cancelar',
         reverseButtons: true,
+        
       });
 
       if (result.isConfirmed) {
@@ -55,7 +57,8 @@ export function Profile() {
           title:'Has cerrado sesión correctamente.',
           icon:'success',
           timer:1200,
-          timerProgressBar:true
+          timerProgressBar:true,
+          showConfirmButton: false
         }
         );
       } 
@@ -85,7 +88,7 @@ export function Profile() {
   };
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return <div>Cargando usuario...</div>;
   }
 
   if (!loading) {
@@ -102,9 +105,10 @@ export function Profile() {
         <div className="profile-container">
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
-            <h1>{isUser.name ||isUser.displayName }</h1>
-            <div className="profile-image"><img src={isUser.image} alt="" className="profile-image"/></div>
-           
+            <h1>{isUser.name || isUser.displayName}</h1>
+            <div className="image-container-google">
+              <img src={isUser.image} alt="" className="profile-image" />
+            </div>
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
@@ -148,7 +152,12 @@ export function Profile() {
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
             <h1>{isUser.full_name}</h1>
-            <div className="profile-image"><img src="fondo-login2.jpg" alt="" className="profile-image"/></div>
+          
+            <div className="image-container">
+              <img src="fondo-login2.jpg" alt="login" className="profile-image"/>
+              <div className="modify-button" onClick={()=>alert("sas")}>Modificar</div>
+            </div>
+
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
