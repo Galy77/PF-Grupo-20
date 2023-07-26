@@ -9,6 +9,7 @@ import ShowModal from "../Modals/ShowModal/ShowModal";
 import OuterModal from "../Modals/OuterModal/OuterModal"
 import Swal from 'sweetalert2'
 import OuterModalGoogle from "../Modals/OuterModal/OuterModalGoogle";
+import OuterPhotoChange from "../Modals/CambioFotoPeril/OuterPhotoChange";
 
 export function Profile() {
   const dispatch = useDispatch();
@@ -17,12 +18,15 @@ export function Profile() {
   const navigate = useNavigate();
 
   const { logout, user } = useAuth();
+
   const [isUser, setIsUser] = useState();
   const [loading, setLoading] = useState(true);
   const [modalCompras, setModalCompras] = useState(false);
+
   const [modalPublicaciones, setModalPublicaciones] = useState(false);
   const [modalDatos, setModalDatos] = useState(true);
-  const [modificarDatos,setModificarDatos]  = useState(false)
+  const [modificarDatos,setModificarDatos]  = useState(false);
+  const [modificarFoto,setModificarFoto]  = useState(false);
 
   useEffect(() => {
     if (usuarioActual) {
@@ -38,7 +42,6 @@ export function Profile() {
     try {
       const result = await Swal.fire({
         title: '¿Estás seguro?',
-        text: '¡Serás desconectado de tu cuenta!',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Sí, cerrar sesión',
@@ -55,7 +58,8 @@ export function Profile() {
           title:'Has cerrado sesión correctamente.',
           icon:'success',
           timer:1200,
-          timerProgressBar:true
+          timerProgressBar:true,
+          showConfirmButton: false
         }
         );
       } 
@@ -85,7 +89,7 @@ export function Profile() {
   };
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return <div>Cargando usuario...</div>;
   }
 
   if (!loading) {
@@ -102,9 +106,10 @@ export function Profile() {
         <div className="profile-container">
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
-            <h1>{isUser.name ||isUser.displayName }</h1>
-            <div className="profile-image"><img src={isUser.image} alt="" className="profile-image"/></div>
-           
+            <h1>{isUser.name || isUser.displayName}</h1>
+            <div className="image-container-google">
+              <img src={isUser.image} alt="" className="profile-image" />
+            </div>
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
@@ -139,7 +144,6 @@ export function Profile() {
                 <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
               </div>
               <OuterModalGoogle estadoOuterModal={modificarDatos} setEstadoOuterModal={setModificarDatos} datosUserGoogle={isUser}/>
-              
             </ShowModal>
           </div>
         </div>
@@ -148,7 +152,12 @@ export function Profile() {
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
             <h1>{isUser.full_name}</h1>
-            <div className="profile-image"><img src="fondo-login2.jpg" alt="" className="profile-image"/></div>
+          
+            <div className="image-container">
+              <img src={isUser.image === null ? "fondo-login2.jpg" : isUser.image } alt="login" className="profile-image"/>
+              <div className="modify-button" onClick={()=>setModificarFoto(!modificarFoto)}>Modificar</div>
+            </div>
+
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
@@ -184,7 +193,7 @@ export function Profile() {
               <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
             </ShowModal>
             <OuterModal estadoOuterModal={modificarDatos} setEstadoOuterModal={setModificarDatos} datosUser={isUser}/>
-
+            <OuterPhotoChange estadoPhotoModal={modificarFoto} setEstadoPhotoModal={setModificarFoto} datosUser={isUser}/>
           </div>
         </div>
       )}

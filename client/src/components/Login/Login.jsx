@@ -36,10 +36,24 @@ export function Login() {
     e.preventDefault();
     try {
       await dispatch(getUser(cUser));
+      Swal.fire({ 
+        width:'20em',
+        title:'Sesion iniciada.',
+        showConfirmButton: false,
+        icon:'success',
+        timer:2000,
+        timerProgressBar:true
+      })
       navigate("/");
     } catch (error) {
-      alert("Autenticación fallida");
-      setError(error.message);
+      Swal.fire({ 
+        width:'20em',
+        title:'No se pudo iniciar sesion',
+        icon:'error',
+        showConfirmButton: false,
+        timer:1000,
+      }
+      );
     }
   };
   
@@ -60,12 +74,28 @@ export function Login() {
         dispatch(addFirebaseUser(response));
         if(usuarioActual){
           setCurrentUser(usuarioActual)
-          console.log("Action terminada",usuarioActual)
         }
       } catch (error) {
         setError(error.message);
       }
       navigate("/")
+      Swal.fire({
+        title: 'Iniciando sesion',
+        html: '<div class="loader"></div>', // Usa una clase CSS llamada "loader" para el símbolo de carga
+        showCancelButton: false,
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+      });
+
+      setTimeout(() => {
+        Swal.close();
+      }, 3000); 
+
     } catch (error) {
       setError(error.message);
     }

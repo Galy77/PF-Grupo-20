@@ -1,5 +1,4 @@
 .profile-container{
-
     display: flex;
     flex-direction: row;
     height: 92vh;
@@ -21,19 +20,44 @@
     align-items: center;
     padding-top: 30px;
 }
-.profile-image {
-    width: 100px; /* Ancho del cuadrado */
-    height: 100px; /* Alto del cuadrado */  
-    overflow: hidden; /* Esto recortará cualquier contenido que exceda el cuadrado */
-}
 
-.profile-image img {
+.image-container,.image-container-google {
+    position: relative;
+    overflow: hidden;
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+  }
+  
+  .profile-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: solid black 1px;
-}
+    object-fit: cover; 
+    transition: filter 0.3s ease-in-out;
+  } 
+
+  .modify-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    font-size: 1rem;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .image-container:hover .modify-button {
+    opacity: 1; 
+  }
+  
+  
 .btn-profile{
     width: 80%;
     height: 12%;
