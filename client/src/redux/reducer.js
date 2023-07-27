@@ -234,7 +234,8 @@ export const reducer = (state = initialState,{type,payload})=>{
         case GET_PRODUCT_BY_ID:
           return{
             ...state,
-            detailProduct: payload
+            detailProduct: payload,
+            products:payload
           }
 
         case ALPHABETIC_ORDER:

@@ -219,11 +219,12 @@ function Create(){
                 <Form.Label>Categoría</Form.Label>
                 <Form.Control as="select" name="CategoryId" value={input.CategoryId} onChange={handleChange}>
                   <option value="nn">Seleccione un valor</option>
-                  {allCategories.map((category) => (
-                    <option key={category.id} value={category.id}>
-                      {category.name}
-                    </option>
-                  ))}
+                  { 
+                  allPayments.length ? allPayments.map(buy => <option key={buy.id} value={buy.id}>
+                                {buy.id}
+                            </option>
+                  ) : <p>No hay compras recientes.</p>
+                }
                 </Form.Control>
                 {error.CategoryId && <Form.Text className="text-danger">{error.CategoryId}</Form.Text>}
               </Form.Group>

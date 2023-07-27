@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { userLogout, getPaymentsById } from "../../redux/actions";
+import { userLogout, getPaymentsById, getProductById } from "../../redux/actions";
 import { useDispatch,useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import "./Profile.style.css";
@@ -14,6 +14,7 @@ import OuterPhotoChange from "../Modals/CambioFotoPeril/OuterPhotoChange";
 export function Profile() {
   const dispatch = useDispatch();
   const allPayments = useSelector((state) => state.payments);
+  const allProducts = useSelector((state) => state.products);
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   const providerActual = localStorage.getItem("userProvider");
   const navigate = useNavigate();
@@ -29,18 +30,31 @@ export function Profile() {
   const [modificarDatos,setModificarDatos]  = useState(false);
   const [modificarFoto,setModificarFoto]  = useState(false);
 
+  const [AllPaymentsData,setAllPaymentsData] = useState([]);
+
   useEffect(() => {
     if (usuarioActual) {
       setIsUser(usuarioActual);
       setLoading(false);
-      console.log("user actual prfile",usuarioActual)
       dispatch(getPaymentsById(usuarioActual.id))
-      console.log("compras realizadas",allPayments.id_product)
     } else {
       setIsUser(user);
       setLoading(false);
     }
   }, []);
+
+  useEffect(() => {
+    console.log("todos mis pagos",allPayments)
+    if (allPayments && allPayments.length > 0) {
+      const mappedPaymentsData = allPayments.map((payment) => {
+        const product = dispatch(getProductById(payment.id_product)); 
+        return product;
+      });
+      console.log("Todos mis mapeados",mappedPaymentsData)
+      setAllPaymentsData(mappedPaymentsData);
+    }
+  }, [allPayments]); 
+
 
   const handleLogout = async () => {
     try {
@@ -178,12 +192,11 @@ export function Profile() {
             <ShowModal estadoShowModal={modalCompras}>
             <div>
               <h1>Tus Compras</h1>
-              { allPayments.length ?
-                  allPayments.map((buy) => (
-                   <option key={buy.id} value={buy.id}>
-                   {buy.name}
-                   </option>
-                 )) : <p>No hay compras recientes.</p>
+              { 
+                allProducts.length ? allProducts.map(buy => <option key={buy.id} >
+                                {buy.name}
+                            </option>
+                ) : <p>No hay compras recientes.</p>
               }
             </div>
 
