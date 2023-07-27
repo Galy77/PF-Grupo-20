@@ -10,6 +10,7 @@ import OuterModal from "../Modals/OuterModal/OuterModal"
 import Swal from 'sweetalert2'
 import OuterModalGoogle from "../Modals/OuterModal/OuterModalGoogle";
 import OuterPhotoChange from "../Modals/CambioFotoPeril/OuterPhotoChange";
+import axios from "axios";
 
 export function Profile() {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export function Profile() {
   const [modificarDatos,setModificarDatos]  = useState(false);
   const [modificarFoto,setModificarFoto]  = useState(false);
 
-  const [AllPaymentsData,setAllPaymentsData] = useState([]);
+  const allPaymentsData = [];
 
   useEffect(() => {
     if (usuarioActual) {
@@ -42,18 +43,22 @@ export function Profile() {
       setLoading(false);
     }
   }, []);
+  
+  const mappedPaymentsData =  async () => {
+    const newData = await allPayments.map(async el => {
+      const {data} = await axios(`http://localhost:3001/PF/products/${el.id_product}`)
+      allPaymentsData.push(data)
+    })
+  }
 
   useEffect(() => {
     console.log("todos mis pagos",allPayments)
     if (allPayments && allPayments.length > 0) {
-      const mappedPaymentsData = allPayments.map((payment) => {
-        const product = dispatch(getProductById(payment.id_product)); 
-        return product;
-      });
+      mappedPaymentsData()  
+    };
       console.log("Todos mis mapeados",mappedPaymentsData)
-      setAllPaymentsData(mappedPaymentsData);
-    }
-  }, [allPayments]); 
+      // setAllPaymentsData(mappedPaymentsData);
+    }, [allPayments]); 
 
 
   const handleLogout = async () => {
@@ -118,9 +123,12 @@ export function Profile() {
       return null;
     }
   }
-
+const a = () => {
+  console.log(allPaymentsData)
+}
   return (
     <div>
+      <button onClick={a}>a</button>
       {providerActual === "google" && (isUser || usuarioActual)? (
         <div className="profile-container">
           <div className="lateral-profile-container">
@@ -194,7 +202,7 @@ export function Profile() {
               <h1>Tus Compras</h1>
               { 
                 allProducts.length ? allProducts.map(buy => <option key={buy.id} >
-                                {buy.name}
+                                {buy.id}
                             </option>
                 ) : <p>No hay compras recientes.</p>
               }
