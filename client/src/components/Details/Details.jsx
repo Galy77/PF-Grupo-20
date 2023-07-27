@@ -16,19 +16,24 @@ const Details = () => {
     const { id } = useParams()
     const product = useSelector(state => state.detailProduct);
     const orders = useSelector(state => state.orders);
+
+    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     const [isBuy,setIsBuy] = useState()
     const user = JSON.parse(localStorage.getItem("usuarioActual"));
     const getReviews = async () => {
-        const { data } = await axios(`http://localhost:3001/PF/review/${id}`)
+        const { data } = await axios(`http://localhost:3001/pf/review/${id}`)
         setReview(data.reviews)
     }
+      
+
+
     useEffect(() => {
         dispatch(getProductById(id))
         getReviews()
     },[]) 
     if(!isBuy){
         if(user){
-            axios.get(`http://localhost:3001/PF/payment/${user.id}`)
+            axios.get(`http://localhost:3001/pf/payment/${user.id}`)
             .then(response => {
                 const isPay = response.data.filter(el => el.id_product == id)
                 setIsBuy(isPay)
@@ -41,7 +46,7 @@ const Details = () => {
     }
     
 
-    // console.log("este es mi console de details", product)
+    console.log("este es mi console de details", user, usuarioActual)
 
 
     const productosStorage = JSON.parse(localStorage.getItem("productos"))
@@ -50,7 +55,16 @@ const Details = () => {
     }
 
     const addCart = async () => {
-        const cart = await axios(`http://localhost:3001/PF/cart/${user.id}`)
+        if (!user) {
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Necesitas iniciar sesión para añadir el producto al carrito.",
+            });
+            return;
+        }
+        const cart = await axios(`http://localhost:3001/pf/cart/${user.id}`)
         if(cart.data.response == "no hay carrito"){
             const data = {
                 id_user:user.id,
@@ -58,12 +72,15 @@ const Details = () => {
             }
             console.log(data)
             try {
-                if(data) await axios.post('http://localhost:3001/PF/cart',data)
+
+                if(data) await axios.post('http://localhost:3001/pf/cart',data)
+
                 Swal.fire(
                     'Producto añadido correctamente al carrito!',
                     '',
                     'success'
                   )
+
             } catch (error) {
                 console.log(error)
             }
@@ -74,7 +91,7 @@ const Details = () => {
             }
             console.log(data)
             try {
-                if(data) await axios.put(`http://localhost:3001/PF/cart/${user.id}`,data)
+                if(data) await axios.put(`http://localhost:3001/pf/cart/${user.id}`,data)
                 Swal.fire(
                     'Producto añadido correctamente al carrito!',
                     '',
@@ -132,7 +149,7 @@ const Details = () => {
     initMercadoPago("TEST-81546c5f-6e41-4a1b-94e1-d5813132d7c2")
     const createPreference = async () => {
         try {
-            const response = await axios.post("http://localhost:3001/PF/create_preference",{
+            const response = await axios.post("http://localhost:3001/pf/create_preference",{
                 description:`${product.name}`,
                 price:product.price,
                 quantity:cantidadProducts ? cantidadProducts : 1
@@ -146,6 +163,15 @@ const Details = () => {
         }
     }
     const handleBuy = async () => {
+        if (!user) {
+            
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Necesitas iniciar sesión para comprar el producto.",
+            });
+            return;
+            }
         const id = await createPreference()
         console.log(review)
         if(id){
@@ -175,7 +201,7 @@ const Details = () => {
             }
             try {
 
-                await axios.post('http://localhost:3001/PF/review',data)
+                await axios.post('http://localhost:3001/pf/review',data)
 
                 setStars(null)
                 setComent('')
@@ -192,7 +218,7 @@ const Details = () => {
                         }
                     }
                     console.log(data)
-                    const response = await axios.put(`http://localhost:3001/PF/rating/${product.id}`,data)
+                    const response = await axios.put(`http://localhost:3001/pf/rating/${product.id}`,data)
                     dispatch(getProductById(id))
                     console.log({prueba:response.data})
                 }else{
@@ -206,7 +232,7 @@ const Details = () => {
                         rating:data
                     }
                     console.log({data:data})
-                    await axios.put(`http://localhost:3001/PF/rating/${product.id}`,data)
+                    await axios.put(`http://localhost:3001/pf/rating/${product.id}`,data)
                     dispatch(getProductById(id))
                 }
                 //
@@ -279,6 +305,7 @@ const Details = () => {
                         <div class='h-100'>
 
 
+
                                 <div class='mx-4 '>
                                     <h2>Comentarios</h2>
                                 </div>
@@ -316,6 +343,7 @@ const Details = () => {
                             </div>
 
                     </div>
+
                 </div>
 
                 </div>

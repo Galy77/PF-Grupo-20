@@ -31,26 +31,35 @@ function PriceFilter (props){
         dispatch(minimumPrice(minPrice))
         dispatch(maximumPrice(maxPrice))
     }
-    useEffect(()=> {
-        setMinPrice("")
-        setMaxPrice("")
-    },[props.reset])
+
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault()
+          dispatch(minimumPrice(minPrice))
+          dispatch(maximumPrice(maxPrice))
+        }
+      };
+
     return (
         <InputGroup size='sm' >
             <InputGroup.Text class={style.precio}>Precio</InputGroup.Text>
             <Form.Control   
+
             aria-label="minimum"
             placeholder="Minimo"
             type='number'
             value={minPrice}
             onChange={handleMinPrice}
+            onKeyPress={handleKeyPress}
             />
-            <Form.Control 
+            <Form.Control
             aria-label="maximum"
             type='number'
             placeholder="Maximo"
             value={maxPrice}
             onChange={handleMaxPrice}
+            onKeyPress={handleKeyPress}
             />
             <button variant="secondary" size="sm" class='btn border bg-white' onClick={() => handleOnClick()}>Aplicar</button>
         </InputGroup>

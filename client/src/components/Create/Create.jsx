@@ -5,8 +5,10 @@ import "../Create/Create.style.css";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+
 import Swal from "sweetalert2"
 import "./create.css"
+
 function Create(){
     const dispatch = useDispatch();
     const allCategories = useSelector((state) => state.categories);
@@ -23,12 +25,12 @@ function Create(){
     }, [dispatch]);
     
     useEffect(() => {
-      if(usuarioActual !== null){
+      if(usuarioActual){
         setIsUser(usuarioActual);
       }else{
-        setIsUser(user);
+          setIsUser(user);
       }
-    }, [user, usuarioActual]);
+    }, []);
       
     const [input, setInput] = useState({
         name: "",
@@ -49,11 +51,8 @@ function Create(){
         rating:"",
         CategoryId:""
     })
-    if (!isUser) {
-      navigate("/login");
-      return null;
-    }
-
+    
+    
     const validate = (input) =>{
       
         let error = {}
@@ -166,9 +165,17 @@ function Create(){
           alert("Faltan datos");
         }
       };
+
+      if (!isUser && !usuarioActual) {
+        navigate("/login");
+        return null;
+      }
+  
+
       const goBack = () => {
         window.history.back();
     }
+
       return (
         <div>
           <div class='w-50 d-flex mx-4'>

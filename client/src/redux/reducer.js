@@ -38,24 +38,27 @@ import {
   BETTER_QUALIFIED_FILTER,
   ALL_FILTER,
   GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
-  ALPHABETIC_ORDER, PRICE_ORDER
+  ALPHABETIC_ORDER, PRICE_ORDER,
+  MODIFY_USER,
+  MODIFY_FIREBASE_USER,
+  MODIFY_USER_PHOTO
 } from "./actionTypes"
 
 const initialState = {
     categories:[],  
     products: [],
-      carouselPhotos: [{img: "https://www.native-instruments.com/typo3temp/pics/img-welcome-hero-guitar-rig-6-player-product-page-01-hero-v2-8c04bb712c562230a837e56511c10f1d-m@2x.jpg", description: "Algun texto descriptivo"},
-      {img: "https://assetsio.reedpopcdn.com/g502x_f9QuuM8.jpeg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp", description: "Algun texto descriptivo"},
-      {img: "https://images.ecestaticos.com/oycpBwJcX7i-r9GCd1vztzplwCQ=/0x0:1800x1350/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fbfd%2F097%2Fcc7%2Fbfd097cc74485783a690289860e14759.jpg", description: "Algun texto descriptivo"},
-      {img: "https://www.cleanipedia.com/images/iohqr4whhl17/7fvPOEi6Aros2m9Qxdo1De/757a393ca1569b66eff2f27d8f5bfe45/U2NyZWVuc2hvdF8yLnBuZw/944w-629h/lavarropas-de-color-blanco-sobre-un-piso-gris.jpg", description: "Algun texto descriptivo"}
-     ],
+      carouselPhotos:[{img:"fotoCarrussel.jpg", description: "Algun texto descriptivo"},
+                      {img:"C2.jpg", description: "Algun texto descriptivo"},
+      ],
     orders:[],
     minimumPrice: "",
     maximumPrice: "",
     ratingFilterValue: "all",
     user:{},
     detailProduct: [],
+
     lettersOrder: "A-Z",
+
     priceOrder: ""
 }
 
@@ -64,6 +67,7 @@ export const reducer = (state = initialState,{type,payload})=>{
         //USER
         case GET_USER: {
             localStorage.setItem("usuarioActual", JSON.stringify(payload));
+            localStorage.setItem("userProvider","local")
             return {
               ...state,
               user: payload,
@@ -73,32 +77,54 @@ export const reducer = (state = initialState,{type,payload})=>{
         case ADD_USER:
         const auxUser = () => {
           const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          localStorage.setItem("userProvider","local")
           return userX;
         }
         const actUser = state.user
-        console.log("este es mi usuarui actual",actUser)
+        console.log("este es mi usuario actual",actUser)
         return{
           ...state,
           user:auxUser()
         }
         case ADD_FIREBASEUSER:
-        const auxUserFirebase = () => {
-          const userX = localStorage.setItem("usuarioActual", JSON.stringify(payload));
-          return userX;
-        }
-        const actUser2= state.user
-        console.log("este es mi usuario actual", actUser2)
+         // Instead of using a separate function, update the local storage directly
+          localStorage.setItem("usuarioActual", JSON.stringify(payload));
+          localStorage.setItem("userProvider", "google");
+          console.log("ya se agrego  el user");
 
-        return{
-          ...state,
-          user:auxUserFirebase()
-        }
+          // Since Redux reducers should be pure functions, avoid modifying local storage here
+          // Instead, return the updated state with the new user payload
+          return {
+            ...state,
+            user: payload,
+          };
        
         case LOGOUT_USER:
           localStorage.removeItem("usuarioActual");
+          localStorage.removeItem("userProvider");
             return{
                 ...state,
                 user: payload
+            }
+
+        case MODIFY_USER:
+            return{
+              ...state,
+              user: payload
+            }
+        case MODIFY_USER_PHOTO:
+            return{
+              ...state,
+              user_photo:payload,
+              user: {
+                ...state.user, payload
+              }
+            }
+            
+        case MODIFY_FIREBASE_USER:
+            return{
+              ...state,
+              user: payload
             }
 
         //PRODUCT
@@ -207,13 +233,15 @@ export const reducer = (state = initialState,{type,payload})=>{
         case ALPHABETIC_ORDER:
           return{
             ...state,
-            lettersOrder: payload
+            lettersOrder: payload,
+            priceOrder: ""
           }
 
         case PRICE_ORDER:
           return{
             ...state,
-            priceOrder: payload
+            priceOrder: payload,
+            lettersOrder: ""
           }
 
         default:

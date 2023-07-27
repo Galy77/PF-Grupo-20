@@ -5,7 +5,7 @@ import ProductsCards from './ProductsCards';
 import Filters from '../Filters/Filters';
 import style from "../Products.module.css";
 import { useState, useEffect } from 'react';
-import { getAllProducts } from '../../../redux/actions';
+import { getAllProducts, getAllCategories } from '../../../redux/actions';
 import "../producs.css"
 
 function Products (){
@@ -20,8 +20,24 @@ function Products (){
     const priceOrderValue = useSelector(state => state.priceOrder)
 
     useEffect(() => {
-        dispatch(getAllProducts())
-    }, [])
+
+        // Primero, llamamos a getAllCategories y esperamos su respuesta
+        dispatch(getAllCategories())
+          .then((categories) => {
+            // Una vez que tenemos las categorías, llamamos a getAllProducts
+            return dispatch(getAllProducts());
+          })
+          .then((products) => {
+            // Aquí ya tenemos las categorías y los productos.
+            // Puedes realizar cualquier acción adicional que requiera ambos.
+            console.log("Categorías:", categories);
+            console.log("Productos:", products);
+          })
+          .catch((error) => {
+            // Manejo de errores, si es necesario
+            console.error("Error al obtener categorías y productos:", error);
+          });
+      }, [dispatch]);
 
     const search = location.search.slice(8);
     const data = products.map(el => {
@@ -63,10 +79,15 @@ function Products (){
 
     return productos;
 };
+
+function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
     
     const categoryProducts = data.filter((product) => product.category === category);
     const filteredsProducts = categoryProducts.filter((product) => {
-        const matchSearch = product.name.includes(search);
+        const normal = removeAccents(product.name.toUpperCase())
+        const matchSearch = normal.includes(search.toUpperCase());
         const matchPrice = (min && max) ? (product.price >= min && product.price <= max) :
             (!min && max) ? (product.price <= max) :
             (min && !max) ? (product.price >= min) : true;

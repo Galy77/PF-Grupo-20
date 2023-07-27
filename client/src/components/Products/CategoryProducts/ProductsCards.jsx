@@ -68,6 +68,12 @@ function ProductsCards (props) {
         }
     }
 
+    useEffect(() => {
+        sliceProducts(props.filteredProducts,1)
+        setProductsToShow(props.filteredProducts)
+        setPage(1)
+    },[props.filteredProducts])
+
     return(
         <>
             <div class='w-100 g-4-products mx-4'>

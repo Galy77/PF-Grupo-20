@@ -1,3 +1,4 @@
+
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
@@ -10,7 +11,7 @@ module.exports = (sequelize) => {
         },
         full_name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         email: {
             type: DataTypes.STRING,
@@ -19,16 +20,30 @@ module.exports = (sequelize) => {
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         phone: {
-            type: DataTypes.INTEGER,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: true
         },
         direction_shipping: {
             type: DataTypes.STRING,
-            allowNull: false
-        }
+            allowNull: true
+        },
+        image: {
+            type: DataTypes.STRING            
+        },
+        role: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue:1
+          },
+        /**para marcar status 0 = no visible 1 = visible */
+        status: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue:1
+          }
     }, { timestamps: false })
 
     return User;

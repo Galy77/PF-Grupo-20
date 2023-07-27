@@ -32,6 +32,7 @@ function Filters ({category}) {
           <PriceDropDownFilter reset={reset}/>
           <RatingFilter reset={reset}/>
         </div>
+
         {
         category == undefined ? 
           <Link to={`/products`}>
@@ -42,6 +43,7 @@ function Filters ({category}) {
             <button onClick={resetFilter} class='btn btn-dark'>restaurar</button>
           </Link>
         }
+
       </div>
     )
 }

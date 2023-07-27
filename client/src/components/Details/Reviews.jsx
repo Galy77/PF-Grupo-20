@@ -12,7 +12,7 @@ const Reviews =  ({stars, coment, User, product, getReviews, id_user}) => {
     }
     const deleteReview = async () => {
         try {
-            await axios.delete(`http://localhost:3001/PF/review?id_product=${product.id}&id_user=${User.id}`)
+            await axios.delete(` http://localhost:3001/pf/review?id_product=${product.id}&id_user=${User.id}`)
             getReviews()
         } catch (error) {
             console.log(error)
@@ -34,9 +34,11 @@ const Reviews =  ({stars, coment, User, product, getReviews, id_user}) => {
                         <p>{coment}</p>
                     </div>
                     {
-                        id_user == User.id &&
-                        <i onClick={deleteReview} class='removeComment'> Remove</i>
-                    }
+    // Check if the user is logged in and if the logged-in user's id matches the review's user id
+    user && user.id === User.id && (
+        <i onClick={deleteReview} class='removeComment'> Remove</i>
+    )
+}
                 </div>
             </div>
         </div>

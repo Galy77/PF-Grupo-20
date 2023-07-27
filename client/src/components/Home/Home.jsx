@@ -5,6 +5,7 @@ import CreatedCarousel from '../Carousel/Carousel';
 import { Link } from 'react-router-dom';
 // import style from "./Home.module.css";
 // import axios from "axios"
+import Skeleton from '../Skeleton/Skeleton';
 import './Home.css'
 import { useEffect,useState } from 'react';
 import { getAllCategories, getAllProducts} from '../../redux/actions';
@@ -108,8 +109,9 @@ function Home (){
                                         </Link>
                                     </div>
                                 </div>
-                        )):<h1>No hay categorias disponibles</h1>
-                        }
+                        )):(
+                           Array.from({ length: 12 }).map((_, index) => <Skeleton key={index} />)
+                          )}
                     </div>
 
             </div>
