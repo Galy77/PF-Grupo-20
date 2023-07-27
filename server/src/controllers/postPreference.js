@@ -15,7 +15,7 @@ const postPreference = (req, res) => {
         },
       ],
       back_urls: {
-        success: "http://localhost:5173/success",
+        success: "https://pf-grupo-20.vercel.app/success",
         failure: "http://localhost:5173/failure",
         pending: "http://localhost:5173/cart",
       },
