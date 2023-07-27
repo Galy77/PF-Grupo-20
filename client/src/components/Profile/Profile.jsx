@@ -223,10 +223,11 @@ export function Profile() {
               Mis Datos
             </button>
             {isUser.role === 2 && (
-              <a href="#">
-                <button className="btn-lateral">Dashboard</button>
-              </a>
-            )}
+
+  <a href="https://pf-dashboard-admin.vercel.app/" className="btn-lateral">Dashboard</a>
+)}
+
+
             <button className="btn-cerrar-sesion" onClick={handleLogout}>
               Cerrar Sesion
             </button>
