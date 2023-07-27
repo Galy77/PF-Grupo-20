@@ -164,6 +164,9 @@ export function Profile() {
                 <button className="btn-lateral">+Añadir publicacion</button>
               </Link>
             </ShowModal>
+            {isUser.role === 2 && (
+              <button className="btn-lateral">Dashboard</button>
+            )}
             <ShowModal estadoShowModal={modalDatos}>
               <div>
                 <h1>Tu Datos</h1>
@@ -201,23 +204,25 @@ export function Profile() {
           </div>
           <div className="central-profile-container">
             <ShowModal estadoShowModal={modalCompras}>
-            <div>
+            <div className="containers-profile">
               <h1>Tus Compras</h1>
               {AllPaymentsData.length > 0 ? (
-      // Render content when AllPaymentsData has data
-      AllPaymentsData.map((item) => (
-        <p key={item.payload.id}>{item.payload.name}</p>
-      ))
-    ) : (
-      // Render content when AllPaymentsData is empty
-      <p>No hay compras recientes.</p>
-    )}
+                AllPaymentsData.map((item) => (
+                  <div key={item.payload.id} className="producContainerProfile">
+                    <div><img src={item.payload.image} className="profile-image-product"/></div>
+                    <div className="profile-name-product">{item.payload.name}</div>
+                    <div className="profile-price-product">{item.payload.price}$</div>
+                  </div>
+                ))
+              ) : (
+                <p>No hay compras recientes.</p>
+              )}
             </div>
 
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
               <div>
-                <h1>Tu Informacion!</h1>
+                <h1>Tu Informacion</h1>
                 <h1>{isUser.name}</h1>
                 <h1>{isUser.email}</h1>
                 <h1>{isUser.direction_shipping}</h1>
