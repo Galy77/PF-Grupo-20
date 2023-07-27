@@ -95,3 +95,24 @@
     background-color: red;
     color: white;
 }
+.producContainerProfile{
+    display: flex;
+    flex-direction: row;
+    border-bottom:rgb(218, 218, 218) solid 2px;
+    width: 100%;
+    height: 20vh;
+    justify-content:center;
+    align-items: center;
+}
+.profile-image-product{
+    width: 150px;
+    height: 100px;
+}
+.profile-name-product{
+    margin: 10px;
+    
+}
+.profile-price-product{
+    margin: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

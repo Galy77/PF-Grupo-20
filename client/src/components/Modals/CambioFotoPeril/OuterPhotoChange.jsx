@@ -6,7 +6,6 @@ import { modifyUserPhoto } from "../../../redux/actions";
 import Swal from 'sweetalert2'
 function OuterPhotoChange ({estadoPhotoModal,setEstadoPhotoModal,datosUser}){
     const dispatch = useDispatch();
-    console.log(datosUser)
 
     const [input, setInput] = useState({
         image: datosUser?.image || null
@@ -31,10 +30,9 @@ function OuterPhotoChange ({estadoPhotoModal,setEstadoPhotoModal,datosUser}){
           ...input,
           id: datosUser?.id || null,
         };
-        console.log("modificaciones", modifiedUser);
          dispatch(modifyUserPhoto(modifiedUser))
          .then((res) => {
-          console.log("respuesta: ", res);
+
           if (res) {
             Swal.fire({
               position: 'center',

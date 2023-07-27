@@ -25,7 +25,7 @@ module.exports = (sequelize) => {
 
       image: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       stock: {
         type: DataTypes.INTEGER,
@@ -33,16 +33,16 @@ module.exports = (sequelize) => {
       },
       rating: {
         type: DataTypes.DOUBLE,
-        allowNull: false,
+
+        allowNull: true,
+
         validate: {
           max: 5,
           min: 0.5,
         },
 
-      },
-      category: {
-        type: DataTypes.STRING,
-        allowNull: false
+
+
       },
       status: {
         type: DataTypes.INTEGER,

@@ -17,8 +17,7 @@ const { postContacto } = require("../controllers/postContacto");
 
 const { postPreference } = require("../controllers/postPreference")
 
-
-const { postReview, removeReview } = require("../controllers/postReview")
+const { postReview, removeReview, getUserReviewsById } = require("../controllers/postReview")
 
 const { handlePaymentUpload, getPaymentByUserId, createPayment } = require("../controllers/paymentController");
 const { postCart, getCartById, putCartById } = require("../controllers/postCart");
@@ -51,6 +50,8 @@ router.post("/products", upload.single("image"), postProduct);
 
 router.get("/user/bdd", getUserBDD);
 router.get("/user/firebase", getFirebaseUser);
+router.get("/payment/:id", getPaymentByUserId); //nuevo
+router.get("/review_user/:id", getUserReviewsById); //nuevo
 
 
 router.post("/user", postUser); //veo 1
@@ -60,7 +61,7 @@ router.post("/user/firebase", postUserFirebase);
 
 router.post("/create_preference", postPreference);
 
-router.post("/user", postUser);
+
 
 
 
