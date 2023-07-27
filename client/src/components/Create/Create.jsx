@@ -38,7 +38,6 @@ function Create(){
         price:"",
         image: null,
         stock: "",
-        rating:"",
         CategoryId:""
     });
 
@@ -48,7 +47,6 @@ function Create(){
         price:"",
         image: "",
         stock: "",
-        rating:"",
         CategoryId:""
     })
     
@@ -67,15 +65,9 @@ function Create(){
         }else if(input.description.length < 20 ||input.description.length > 500){
           error.description = "La descripción debe tener entre 20 y 500 caracteres."
         }
+
         if(input.image === null){
           error.image = "Ingrese una Imagen.";
-        }
-        if (input.rating <= 0 || input.rating >= 6) {
-          error.rating = "Ingrese una calificación válida (entre 1 y 5).";
-        }else if(input.rating.trim().length === 0){
-          error.rating = "Ingrese una calificación.";
-        }else if (isNaN(parseFloat(input.rating))) {
-          error.rating = "Ingrese un número válido para la calificación.";
         }
 
         if (input.stock <= 0 || input.stock >= 5000) {
@@ -150,9 +142,9 @@ function Create(){
                   price:"",
                   image: null,
                   stock: "",
-                  rating:"",
                   CategoryId:""
                 });
+                navigate("/")
               }
           })
           .catch((error) => {
@@ -227,11 +219,12 @@ function Create(){
                 <Form.Label>Categoría</Form.Label>
                 <Form.Control as="select" name="CategoryId" value={input.CategoryId} onChange={handleChange}>
                   <option value="nn">Seleccione un valor</option>
-                  {allCategories.map((category) => (
-                    <option key={category.id} value={category.id}>
-                      {category.name}
-                    </option>
-                  ))}
+                  { 
+                  allCategories.length ? allCategories.map(buy => <option key={buy.id} value={buy.id}>
+                                {buy.name}
+                            </option>
+                  ) : <p>No hay compras recientes.</p>
+                }
                 </Form.Control>
                 {error.CategoryId && <Form.Text className="text-danger">{error.CategoryId}</Form.Text>}
               </Form.Group>
@@ -254,19 +247,7 @@ function Create(){
                 />
                 {error.stock && <Form.Text className="text-danger">{error.stock}</Form.Text>}
               </Form.Group>
-    
-              <Form.Group controlId="rating" class='d-flex flex-column'>
-                <Form.Label>Puntuación</Form.Label>
-                <Form.Control
-                  type="number"
-                  name="rating"
-                  value={input.rating}
-                  onChange={handleChange}
-                  placeholder="Ej: 4.5"
-                  class='text-center'
-                />
-                {error.rating && <Form.Text className="text-danger">{error.rating}</Form.Text>}
-              </Form.Group>
+  
     
               <Button variant="primary" type="submit">
                 Crear
