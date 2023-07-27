@@ -1,83 +1,96 @@
-import { useEffect, useState, useRef } from "react"
-import "./payment.css"
+import { useEffect, useState, useRef } from "react";
+import "./payment.css";
 import axios from "axios";
 const Success = () => {
-    const postPaymentExecutedRef = useRef(false);
-    const data = JSON.parse(localStorage.getItem("setStockProduct"))
-    const putStock = async () =>{
-        if(data){
-            if(data.length){
-                data.map(async el =>{
-                    const newStock = {
-                        stock:el.cantidad
-                    }
-                    const response = await axios.put(` https://api-market-henry-jczt.onrender.com/pf/products/${el.id}`,newStock)
-                    console.log(response)
-                })
-            }else{
-                const newStock = {
-                    stock:data.cantidad
-                }
-                const response = await axios.put(` https://api-market-henry-jczt.onrender.com/pf/products/${data.id}`,newStock)
-                console.log(response)
-            }
-            localStorage.removeItem('setStockProduct');
-        }
+  const postPaymentExecutedRef = useRef(false);
+  const data = JSON.parse(localStorage.getItem("setStockProduct"));
+  const putStock = async () => {
+    if (data) {
+      if (data.length) {
+        data.map(async (el) => {
+          const newStock = {
+            stock: el.cantidad,
+          };
+          const response = await axios.put(
+            ` https://api-market-henry-jczt.onrender.com/pf/products/${el.id}`,
+            newStock
+          );
+        });
+      } else {
+        const newStock = {
+          stock: data.cantidad,
+        };
+        const response = await axios.put(
+          ` https://api-market-henry-jczt.onrender.com/pf/products/${data.id}`,
+          newStock
+        );
+      }
+      localStorage.removeItem("setStockProduct");
     }
-    const postPayment = async () =>{
-        if (!postPaymentExecutedRef.current && data) {
+  };
+  const postPayment = async () => {
+    if (!postPaymentExecutedRef.current && data) {
+      postPaymentExecutedRef.current = true;
 
-            postPaymentExecutedRef.current = true;
+      const user = JSON.parse(localStorage.getItem("usuarioActual"));
 
-        const user = JSON.parse(localStorage.getItem("usuarioActual"));
-        console.log(`${user.id}`)
-        if(data){
+      if (data) {
+        if (data.length) {
+          data.map(async (el) => {
+            const newPayment = {
+              id_user: user.id,
+              email: user.email,
+              amount: el.amount,
+              id_product: el.id,
+            };
+            await axios.post(
+              ` https://api-market-henry-jczt.onrender.com/pf/payment`,
+              newPayment
+            );
+          });
+          const deleteCart = data.map((el) => el.id);
+          const info = { productsToAdd: [], productsToRemove: deleteCart };
+          await axios.put(
+            ` https://api-market-henry-jczt.onrender.com/pf/cart/${user.id}`,
+            info
+          );
+        } else {
+          const newPayment = {
+            id_user: user.id,
+            email: user.email,
+            amount: data.amount,
+            id_product: data.id,
+          };
 
-            if(data.length){
-                data.map(async el =>{
-                    const newPayment = {
-                        id_user:user.id,
-                        email:user.email,
-                          amount:el.amount,
-                            id_product:el.id
-                    }
-                    await axios.post(` https://api-market-henry-jczt.onrender.com/pf/payment`,newPayment)
-                })
-                const deleteCart = data.map(el => el.id) 
-                const info = {productsToAdd:[],productsToRemove:deleteCart}
-                await axios.put(` https://api-market-henry-jczt.onrender.com/pf/cart/${user.id}`,info)
-            }else{
+          await axios.post(
+            ` https://api-market-henry-jczt.onrender.com/pf/payment`,
+            newPayment
+          );
 
-                const newPayment = {
-                    id_user:user.id,
-                    email:user.email,
-                      amount:data.amount,
-                        id_product:data.id
-                }
-                console.log(newPayment);
-                await axios.post(` https://api-market-henry-jczt.onrender.com/pf/payment`,newPayment)
-                 
-                const info = {productsToAdd:[],productsToRemove:[data.id]}
-                await axios.put(` https://api-market-henry-jczt.onrender.com/pf/cart/${user.id}`,info)
-            }
+          const info = { productsToAdd: [], productsToRemove: [data.id] };
+          await axios.put(
+            ` https://api-market-henry-jczt.onrender.com/pf/cart/${user.id}`,
+            info
+          );
         }
-    }}
-    useEffect(() => {
-        putStock();
-      }, []);
-    
-      useEffect(() => {
-        postPayment();
-      }, []);
+      }
+    }
+  };
+  useEffect(() => {
+    putStock();
+  }, []);
 
+  useEffect(() => {
+    postPayment();
+  }, []);
 
-    return(
-        <div class='pay-cont d-flex justify-content-center align-items-center'>
-            <div class='payment success d-flex align-items-center justify-content-center'>
-                <span>Pago realizado Correctamente</span>
-                <i class="bi bi-emoji-laughing-fill"></i>
-            </div>
-        </div>
-    )
-}
-export default Success
+  return (
+    <div class="pay-cont d-flex justify-content-center align-items-center">
+      <div class="payment success d-flex align-items-center justify-content-center">
+        <span>Pago realizado Correctamente</span>
+        <i class="bi bi-emoji-laughing-fill"></i>
+      </div>
+    </div>
+  );
+};
+export default Success;
