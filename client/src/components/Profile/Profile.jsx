@@ -14,7 +14,7 @@ import OuterPhotoChange from "../Modals/CambioFotoPeril/OuterPhotoChange";
 export function Profile() {
   const dispatch = useDispatch();
   const allPayments = useSelector((state) => state.payments);
-  const allProducts = useSelector((state) => state.products);
+  const allProducts = useSelector((state) => state.productsArray);
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   const providerActual = localStorage.getItem("userProvider");
   const navigate = useNavigate();
@@ -44,16 +44,27 @@ export function Profile() {
   }, []);
 
   useEffect(() => {
-    console.log("todos mis pagos",allPayments)
     if (allPayments && allPayments.length > 0) {
-      const mappedPaymentsData = allPayments.map((payment) => {
-        const product = dispatch(getProductById(payment.id_product)); 
-        return product;
-      });
-      console.log("Todos mis mapeados",mappedPaymentsData)
-      setAllPaymentsData(mappedPaymentsData);
+      const fetchProducts = async () => {
+        const mappedPaymentsData = await Promise.all(
+          allPayments.map(async (payment) => {
+            const product = await dispatch(getProductById(payment.id_product));
+            return product;
+          })
+        );
+        setAllPaymentsData(mappedPaymentsData);
+      };
+      fetchProducts();
     }
-  }, [allPayments]); 
+  }, [allPayments, dispatch]);
+
+  useEffect(() => {
+    if (AllPaymentsData.length > 0) {
+      // Lógica a realizar cuando AllPaymentsData tiene datos
+      console.log("AllPaymentsData tiene datos:");
+      // Puedes hacer cualquier otra operación o mostrar contenido dinámico aquí
+    }
+  }, [AllPaymentsData]);
 
 
   const handleLogout = async () => {
@@ -192,12 +203,15 @@ export function Profile() {
             <ShowModal estadoShowModal={modalCompras}>
             <div>
               <h1>Tus Compras</h1>
-              { 
-                allProducts.length ? allProducts.map(buy => <option key={buy.id} >
-                                {buy.name}
-                            </option>
-                ) : <p>No hay compras recientes.</p>
-              }
+              {AllPaymentsData.length > 0 ? (
+      // Render content when AllPaymentsData has data
+      AllPaymentsData.map((item) => (
+        <p key={item.payload.id}>{item.payload.name}</p>
+      ))
+    ) : (
+      // Render content when AllPaymentsData is empty
+      <p>No hay compras recientes.</p>
+    )}
             </div>
 
             </ShowModal>

@@ -61,7 +61,8 @@ const initialState = {
     detailProduct: [],
     lettersOrder: "A-Z",
     priceOrder: "",
-    payments:[]
+    payments:[],
+    productsArray:[]
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
@@ -235,7 +236,10 @@ export const reducer = (state = initialState,{type,payload})=>{
           return{
             ...state,
             detailProduct: payload,
-            products:payload
+            productsArray:{
+              ...state.detailProduct,
+              payload
+            }
           }
 
         case ALPHABETIC_ORDER:
