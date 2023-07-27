@@ -54,7 +54,7 @@ const Success = () => {
                       amount:data.amount,
                         id_product:data.id
                 }
-
+                console.log(newPayment);
                 await axios.post(` http://localhost:3001/pf/payment`,newPayment)
                  
                 const info = {productsToAdd:[],productsToRemove:[data.id]}

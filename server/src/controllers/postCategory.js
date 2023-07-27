@@ -7,11 +7,8 @@ const postCategory = async (req, res) => {
         name,
         status,
     };
-      
-  
     const createCategory = await Category.create(newCategory);
     return res.status(200).json(createCategory);
-    
   } catch (error) {
     return res.status(404).send({ error: error.message })
   }

@@ -37,6 +37,7 @@ const { putProduct } = require("../controllers/putProduct");
 const { putCategory } = require("../controllers/putCategory");
 const { getAllUsers, getUsers } = require("../controllers/getAllUsers");
 const { putUser } = require("../controllers/putUser");
+const {putFirebaseUser} = require("../controllers/putFirebaseUser")
 
 
 router.get("/", getCategory);
@@ -55,11 +56,12 @@ router.get("/user/firebase", getFirebaseUser);
 router.post("/user", postUser); //veo 1
 router.post("/user/firebase", postUserFirebase);
 
+
+
 router.post("/create_preference", postPreference);
 
 router.post("/user", postUser);
 
-router.post("/review",postReview)
 
 
 // Estas rutas necesito
@@ -68,6 +70,7 @@ router.get("/cart/:id", getCartById);
 router.get("/payment/:id", getPaymentByUserId);
 router.post("/payment",createPayment)
 router.post("/cart",postCart)
+router.post("/review",postReview)
 router.put("/cart/:id", putCartById);
 router.put("/rating/:id", putRatingProduct);
 router.put("/products/:id", putStockProduct);
@@ -98,6 +101,10 @@ router.put("/product/:id", upload.single("image"), putProduct);
 router.get("/user", getUsers);
 router.get("/userAll", getAllUsers);
 router.put("/user/:id", upload.single("image"), putUser);
+router.put("/firebase/:id", putFirebaseUser)
+
+//profile Routes
+
 
 module.exports = router;
 

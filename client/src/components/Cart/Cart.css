@@ -13,23 +13,32 @@
 
 /*SECTION CARD*/
 .Cart-Products{
-    min-width: 100vh;
-    min-height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
     align-items: center;
     justify-content: center;
     padding-top: 5rem;
 }
-
+.arrow{
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition:0.5s;
+}
+.arrow:hover{
+color: white;
+}
 .list-group-item{
     justify-content: space-around;
     align-items: center;
     max-width: 100%;
-    min-height: 15vh;
-    max-height: 15.5vh;
+    min-width: 100%;
+    min-height: 160px;
+    max-height: 160px;
     margin: 0.5rem;
     border: 1px solid black;
     border-left: none;
     border-radius: 10px !important;
+    background-color: white;
     transition: 0.3s;
 }
 .list-group-item:hover{
@@ -40,8 +49,8 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 
 .imgs-cart{
     border-radius: 10px 0 0 10px;
-    max-width: 25%;
-    max-height: 20%;
+    max-width: 24%;
+    max-height: 100%;
 }
 .img-title{
     width:100%;
@@ -50,7 +59,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 .bi-trash-fill{
     font-size: 1.5rem;
     cursor: pointer;
-    color: #3B5161;
+    color: var(--naranja);
     transition: color 0.3s;
 }
 .bi-trash-fill:hover{
@@ -59,6 +68,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 #cart-card{
     width: 70vh;
     min-height: 60vh;
+    background: none;
 }
 #title-price{
     padding-right: 1rem;
@@ -78,7 +88,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
     width: 50vh;
     height: 60vh;
     margin-top: 1rem;
-    background-color: white;
+    background-color:white;
     border-radius: 10px;
     padding: 0 8vh;
     position:fixed;
@@ -111,7 +121,7 @@ box-shadow: 0px 4px 38px 0px rgba(0,0,0,0.75);
 }
 #trash{
     max-width: 2rem;
-    color: black;
+    color: var(--naranja);
     font-size: 3rem;
     cursor: pointer;
     transition: color 0.3s;
