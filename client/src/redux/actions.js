@@ -17,7 +17,8 @@ import {
    ALPHABETIC_ORDER, PRICE_ORDER,
    MODIFY_USER,
    MODIFY_FIREBASE_USER,
-   MODIFY_USER_PHOTO
+   MODIFY_USER_PHOTO,
+   GET_PAYMENTS_BY_ID
 } from "./actionTypes";
 
 
@@ -177,7 +178,6 @@ export function addProduct(productData) {
        formData.append('price', productData.price);
        formData.append('CategoryId', productData.CategoryId);
        formData.append('stock', productData.stock);
-       formData.append('rating', productData.rating);
        formData.append('image', productData.image); 
 
  
@@ -337,3 +337,17 @@ export const getProductById = (id) => {
       }
    }
 }
+
+export const getPaymentsById = (id) => {
+   return async (dispatch) => {
+      try {
+         const response = await axios.get(`http://localhost:3001/pf/payment/${id}`);
+         return dispatch({
+            type: GET_PAYMENTS_BY_ID,
+            payload: response.data
+         });
+      } catch (error) {
+         console.log("Error al traer el usuario: ", error.message);
+      }
+   };
+};

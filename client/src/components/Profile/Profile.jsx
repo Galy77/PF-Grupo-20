@@ -1,8 +1,8 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { userLogout } from "../../redux/actions";
-import { useDispatch } from "react-redux";
+import { userLogout, getPaymentsById } from "../../redux/actions";
+import { useDispatch,useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import "./Profile.style.css";
 import ShowModal from "../Modals/ShowModal/ShowModal";
@@ -13,6 +13,7 @@ import OuterPhotoChange from "../Modals/CambioFotoPeril/OuterPhotoChange";
 
 export function Profile() {
   const dispatch = useDispatch();
+  const allPayments = useSelector((state) => state.payments);
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   const providerActual = localStorage.getItem("userProvider");
   const navigate = useNavigate();
@@ -32,6 +33,9 @@ export function Profile() {
     if (usuarioActual) {
       setIsUser(usuarioActual);
       setLoading(false);
+      console.log("user actual prfile",usuarioActual)
+      dispatch(getPaymentsById(usuarioActual.id))
+      console.log("compras realizadas",allPayments.id_product)
     } else {
       setIsUser(user);
       setLoading(false);
@@ -68,6 +72,7 @@ export function Profile() {
     }
   };
 
+  
   const handleModalClick = (modalName) => {
     setModalCompras(false);
     setModalPublicaciones(false);
@@ -114,10 +119,10 @@ export function Profile() {
               Compras
             </button>
             <button onClick={() => handleModalClick("publicaciones")} className="btn-lateral">
-              Publicaciones
+              Comentarios
             </button>
             <button onClick={() => handleModalClick("datos")} className="btn-lateral">
-              Mis Datos
+              Mis datos
             </button>
 
             <button className="btn-cerrar-sesion" onClick={handleLogout}>
@@ -126,12 +131,12 @@ export function Profile() {
           </div>
           <div className="central-profile-container">
             <ShowModal estadoShowModal={modalCompras}>
-              <h1>Tus Compras</h1>
+              <h1>Compras</h1>
             </ShowModal>
             <ShowModal estadoShowModal={modalPublicaciones}>
-              <h1>Tus Publicaciones</h1>
+              <h1>Comentarios</h1>
               <Link to="/create">
-                <button className="btn-lateral">+ Añadir publicacion</button>
+                <button className="btn-lateral">+Añadir publicacion</button>
               </Link>
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
@@ -161,9 +166,6 @@ export function Profile() {
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
-            <button onClick={() => handleModalClick("publicaciones")} className="btn-lateral">
-              Publicaciones
-            </button>
             <button onClick={() => handleModalClick("datos")} className="btn-lateral">
               Mis Datos
             </button>
@@ -174,13 +176,17 @@ export function Profile() {
           </div>
           <div className="central-profile-container">
             <ShowModal estadoShowModal={modalCompras}>
-            <h1>Tus Compras</h1>
-            </ShowModal>
-            <ShowModal estadoShowModal={modalPublicaciones}>
-              <h1>Tus Publicaciones</h1>
-              <Link to="/create">
-                <button className="btn-lateral">+ Añadir publicacion</button>
-              </Link>
+            <div>
+              <h1>Tus Compras</h1>
+              { allPayments.length ?
+                  allPayments.map((buy) => (
+                   <option key={buy.id} value={buy.id}>
+                   {buy.name}
+                   </option>
+                 )) : <p>No hay compras recientes.</p>
+              }
+            </div>
+
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
               <div>

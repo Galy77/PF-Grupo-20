@@ -62,8 +62,6 @@ router.post("/create_preference", postPreference);
 
 router.post("/user", postUser);
 
-
-
 // Estas rutas necesito
 router.get("/review/:id", getReviewByIdProduct);
 router.get("/cart/:id", getCartById);
