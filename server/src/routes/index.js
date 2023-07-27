@@ -3,10 +3,7 @@ const {getCategory} = require("../controllers/getCategory");
 const { getProducts, getProductById, getReviewByIdProduct, getAllProducts } = require("../controllers/getProduct");
 const { postProduct } = require("../controllers/postProduct");
 
-
-
-const { putStockProduct } = require("../controllers/putStockProduct")
-
+const { putStockProduct } = require("../controllers/putStockProduct");
 
 const { postUser } = require("../controllers/postUser");
 
@@ -56,11 +53,7 @@ router.get("/user/firebase", getFirebaseUser);
 router.post("/user", postUser); //veo 1
 router.post("/user/firebase", postUserFirebase);
 
-
-
 router.post("/create_preference", postPreference);
-
-router.post("/user", postUser);
 
 
 
