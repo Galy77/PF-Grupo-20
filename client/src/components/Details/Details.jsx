@@ -311,34 +311,43 @@ const Details = () => {
                                 </div>
                                 <div class="d-flex flex-column align-items-start h-50 p-4">
                                     {
-                                        review? review.length? review.map(el => <Reviews stars={el.stars} coment={el.coment} User={el.User} product={product} getReviews={getReviews} id_user={el.id_user}/>):<strong class='text-center w-100'>No hay cometarios :C</strong>:''
+                                        review? review.length? review.map(el => <Reviews stars={el.stars} coment={el.coment} User={el.User} product={product} getReviews={getReviews} id_user={el.id_user}/>):<span class='text-center w-100'>No hay comentarios</span>:''
                                     }
                                     {
-                                        review? review.filter(el => el.id_user == user.id).length? <span class='text-center w-100'>ya hiciste un cometario pa</span> : isBuy?isBuy.length? <div class='h-100 d-flex align-items-center rounded w-100'>
-                                            <div class='d-flex align-items-center justify-content-center w-50 h-100'>
-                                                <div class=''>
-                                                    {stars? <Stars rating={stars} />:
-                                                    <div>
-                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
-                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
-                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
-                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
-                                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
-                                                    </div>
-                                                    }
-                                                    <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
-                                                </div>
-                                            </div>
+    review ? (
+        user ? (
+            review.filter(el => el.id_user === user.id).length ? (
+                <span class='text-center w-100'>ya hiciste un comentario pa</span>
+            ) : isBuy ? (
+                isBuy.length ? (
+                    <div class='h-100 d-flex align-items-center rounded w-100'>
+                        <div class='d-flex align-items-center justify-content-center w-50 h-100'>
+                            <div class=''>
+                                {stars ? <Stars rating={stars} /> : (
+                                    <div>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(0.9)}></i>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(1.9)}></i>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(2.9)}></i>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(3.9)}></i>
+                                        <i class="stars cursor bi bi-star" onClick={() => handleStars(4.9)}></i>
+                                    </div>
+                                )}
+                                <button class='btn btn-primary mt-2' onClick={() => handleStars()}>editar</button>
+                            </div>
+                        </div>
 
-                                            <div class=' d-flex flex-column align-items-center'>
-                                                <input  placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
-                                                <div class='d-flex justify-content-end w-100'>
-                                                    <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
-                                                </div>
-                                            </div>
-                        
-                                        </div>:'':'':''
-                                    }  
+                        <div class='d-flex flex-column align-items-center'>
+                            <input placeholder="añade un comentario" class='ml-4 mt-2 text-start w-100' value={coment} onChange={() => handleComent(event)}></input>
+                            <div class='d-flex justify-content-end w-100'>
+                                <button className="btn btn-primary w-50" onClick={handleReviews}>Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                ) : ''
+            ) : <span class='text-center w-100'>no has comprado este producto</span>
+        ) : <span class='text-center w-100'>Inicia sesión y compra este producto para hacer un comentario</span>
+    ) : ''
+} 
                                 </div>                 
                             </div>
 
