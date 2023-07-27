@@ -21,30 +21,42 @@ const Footer = () => {
                         <i class="fot-icon bi bi-x-square-fill" onClick={ocultarVentana}></i>
                     </div>
                 <div class='columns'>
-                    <div class='perfil d-flex flex-column align-items-center'>
-                        <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/89140273?v=4" alt="edwin" />
-                        <span>Edwin Rodriguez Garcia</span>
-                    </div>
-                    <div class='perfil d-flex flex-column align-items-center'>
-                        <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/101140382?s=64&v=4" alt="" />
-                        <span>Luis Galea</span>
-                    </div>
-                    <div class='perfil d-flex flex-column align-items-center'>
-                        <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/113463357?s=64&v=4" alt="" />
-                        <span>Tomas Unizony</span>
-                    </div>
-                    <div class='perfil d-flex flex-column align-items-center'>
-                        <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/54365396?s=64&v=4" alt="" />
-                        <span>Matias Lanza</span>
-                    </div>
-                    <div class='perfil d-flex flex-column align-items-center'>
-                        <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/73548326?s=64&v=4" alt="" />
-                        <span>Diego Galeano</span>
-                    </div>
-                    <div class='perfil d-flex flex-column align-items-center'>
-                        <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/109426775?s=64&v=4" alt="" />
-                        <span>Bryan Cardenas</span>
-                    </div>
+                    <Link to={"https://www.linkedin.com/in/edwin-rodriguez-7b717a16b"}>
+                        <div class='perfil d-flex flex-column align-items-center'>
+                            <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/89140273?v=4" alt="edwin" />
+                            <span>Edwin Rodriguez Garcia</span>
+                        </div>
+                    </Link>
+                    <Link to={"https://www.linkedin.com/in/luis-galea-207123255/ "}>
+                        <div class='perfil d-flex flex-column align-items-center'>
+                            <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/101140382?s=64&v=4" alt="Luis" />
+                            <span>Luis Galea</span>
+                        </div>
+                    </Link>
+                    <Link to={""}>
+                        <div class='perfil d-flex flex-column align-items-center'>
+                            <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/113463357?s=64&v=4" alt="Tomas" />
+                            <span>Tomas Unizony</span>
+                        </div>
+                    </Link>
+                    <Link to={"https://www.linkedin.com/in/matias-nicolas-lanza-091955244/"}>
+                        <div class='perfil d-flex flex-column align-items-center'>
+                            <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/54365396?s=64&v=4" alt="Matias" />
+                            <span>Matias Lanza</span>
+                        </div>
+                    </Link>
+                    <Link to={"https://www.linkedin.com/in/diego-galeano-b67548281/"}>
+                        <div class='perfil d-flex flex-column align-items-center'>
+                            <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/73548326?s=64&v=4" alt="Diego" />
+                            <span>Diego Galeano</span>
+                        </div>
+                    </Link>
+                    <Link to={""}>
+                        <div class='perfil d-flex flex-column align-items-center'>
+                            <img class='img-linkedin' src="https://avatars.githubusercontent.com/u/109426775?s=64&v=4" alt="Bryan" />
+                            <span>Bryan Cardenas</span>
+                        </div>
+                    </Link>
                 </div>
             </div>
 

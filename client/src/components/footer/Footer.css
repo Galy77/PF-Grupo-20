@@ -55,5 +55,5 @@ footer p{
     border-radius: 10px;
     padding: 1rem 0;
     margin-top: 0.5rem;
-    background-color: #bdaeae;
+    border: 1px solid black;
 }
