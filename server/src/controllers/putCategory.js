@@ -1,4 +1,5 @@
-const { Category } = require('../db'); 
+const { Category } = require('../db');
+const cloudinary = require('../utils/cloudinary');
 
 const putCategory = async(req,res) => {
 
