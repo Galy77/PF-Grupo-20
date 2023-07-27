@@ -47,8 +47,11 @@ import {
 const initialState = {
     categories:[],  
     products: [],
-      carouselPhotos:[{img:"fotoCarrussel.jpg", description: "Algun texto descriptivo"},
+      carouselPhotos:[{img:"C5.jpg", description: "Algun texto descriptivo"},
+                      {img:"fotoCarrussel.jpg", description: "Algun texto descriptivo"},
                       {img:"C2.jpg", description: "Algun texto descriptivo"},
+                      {img:"fotoCarrussel4.jpg", description: "Algun texto descriptivo"},
+                     
       ],
     orders:[],
     minimumPrice: "",

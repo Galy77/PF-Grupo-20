@@ -114,10 +114,10 @@ export function Profile() {
               Compras
             </button>
             <button onClick={() => handleModalClick("publicaciones")} className="btn-lateral">
-              Publicaciones
+              Comentarios
             </button>
             <button onClick={() => handleModalClick("datos")} className="btn-lateral">
-              Mis Datos
+              Mis datos
             </button>
 
             <button className="btn-cerrar-sesion" onClick={handleLogout}>
@@ -126,10 +126,10 @@ export function Profile() {
           </div>
           <div className="central-profile-container">
             <ShowModal estadoShowModal={modalCompras}>
-              <h1>Tus Compras</h1>
+              <h1>Compras</h1>
             </ShowModal>
             <ShowModal estadoShowModal={modalPublicaciones}>
-              <h1>Tus Publicaciones</h1>
+              <h1>Comentarios</h1>
               <Link to="/create">
                 <button className="btn-lateral">+ Añadir publicacion</button>
               </Link>
