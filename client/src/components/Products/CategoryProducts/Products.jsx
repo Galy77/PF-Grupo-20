@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
-import CreatedCarousel from "../../Carousel/Carousel";
 import ProductsCards from "./ProductsCards";
 import Filters from "../Filters/Filters";
 import style from "../Products.module.css";

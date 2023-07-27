@@ -1,4 +1,3 @@
-import CreatedCarousel from "../../Carousel/Carousel";
 import Filters from "../Filters/Filters";
 import SearchBarProductsCards from "./SearchBarProductsCards";
 import { useLocation } from "react-router-dom";
@@ -73,7 +72,6 @@ function SearchBarProducts () {
 
     return (
         <div class='d-flex flex-column' >
-            <CreatedCarousel />
             <div class='filter-products d-flex my-4'>
                 <Filters search={search}/>
                 <div class='d-flex flex-column align-items-center w-100 px-4' >
