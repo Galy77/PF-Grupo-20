@@ -151,12 +151,6 @@ export function Profile() {
             </button>
 
             <button
-              onClick={() => handleModalClick("publicaciones")}
-              className="btn-lateral"
-            >
-              Publicaciones
-            </button>
-            <button
               onClick={() => handleModalClick("datos")}
               className="btn-lateral"
             >
@@ -222,12 +216,6 @@ export function Profile() {
               Compras
             </button>
 
-            <button
-              onClick={() => handleModalClick("publicaciones")}
-              className="btn-lateral"
-            >
-              Publicaciones
-            </button>
             <button
               onClick={() => handleModalClick("datos")}
               className="btn-lateral"
