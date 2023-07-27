@@ -36,7 +36,8 @@ const postUser = async (req, res) => {
         <p>Atentamente,</p>
         <p>El equipo de ONE</p>
       `});
-  
+      
+      
     const createUser = await User.create(newUser);
     return res.status(200).json(createUser);
     
