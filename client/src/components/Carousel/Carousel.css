@@ -13,6 +13,14 @@
     height:350px;
   }
 }
+@media (max-width: 550px) {
+  .carousel{
+    height:350px;
+  }
+  .carousel-item{
+    height:350px;
+  }
+}
 
 .carousel-control-prev,
 .carousel-control-next {

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import Skeleton from '../Skeleton/Skeleton';
 import './Home.css'
 import { useEffect,useState } from 'react';
-import { getAllCategories, getAllProducts } from '../../redux/actions';
+import { getAllCategories, getAllProducts} from '../../redux/actions';
 
 
 function Home (){
@@ -45,6 +45,7 @@ function Home (){
     let productsQuantityToShow = 12
     let lastPage = Math.ceil(productsToShow.length/productsQuantityToShow)
     const sliceProducts = (categoryProducts, page) => {
+        localStorage.setItem("savePage",JSON.stringify(page))
         if(categoryProducts.length <= productsQuantityToShow) setPage(1)
         lastPage = Math.ceil(categoryProducts.length/productsQuantityToShow)
         if(page > lastPage){
@@ -54,15 +55,25 @@ function Home (){
         setDataProducts(categoryProducts.slice(numToSlice - productsQuantityToShow,numToSlice))
     }
 
-    const paginado = () => {
-        sliceProducts(products,page)
+    const saved_page = JSON.parse(localStorage.getItem("savePage"));
+    const paginado = (saved_page) => {
+        if(saved_page){
+            sliceProducts(products,saved_page)
+            setProductsToShow(products)
+            setPage(saved_page)
+            return  
+        }
+        sliceProducts(products,2)
         setProductsToShow(products)
     }
     useEffect(() => {
-        console.log(products)
-        paginado()
+        if(saved_page == null) paginado()
+        else paginado(saved_page)
     },[products])
-    
+
+    useEffect(() => {
+        if(saved_page == null) localStorage.setItem("savePage",JSON.stringify(page))
+    },[dataProducts])
 
     const handlePage = (order) => {
         if(order == 'next'){
@@ -84,7 +95,8 @@ function Home (){
         <div class='d-flex flex-column' >
             <div class='c w-100 d-flex flex-column justify-content-center align-items-center'>
                     <div class='categories-container'>
-                        {dataProducts? dataProducts?.map((category) => (
+                        {
+                        dataProducts? dataProducts.map((category) => (
                                 <div>
                                     <div class='card-container'>
                                         <Link to={`/products/${category.name}`} class='link'>
@@ -105,7 +117,7 @@ function Home (){
             </div>
             <div class='d-flex align-items-center justify-content-center'>
                 {
-                    page > 1 ? <p class='m-4 border btn btn-primary' onClick={handlePage} >Anterior</p>:''
+                    page > 1 ? <p class='m-4 border btn btn-dark' onClick={handlePage} >Anterior</p>:''
                 }
                 {
                     lastPage > 1 ? 
@@ -113,7 +125,7 @@ function Home (){
 
                 }
                 {
-                    page < lastPage ? <p class='m-4 border btn btn-primary' onClick={() => handlePage('next')} >Siguiente</p>:''
+                    page < lastPage ? <p class='m-4 border btn btn-dark' onClick={() => handlePage('next')} >Siguiente</p>:''
                 }
             </div>
         </div>

@@ -56,7 +56,9 @@ const initialState = {
     ratingFilterValue: "all",
     user:{},
     detailProduct: [],
-    lettersOrder: "",
+
+    lettersOrder: "A-Z",
+
     priceOrder: ""
 }
 

@@ -5,7 +5,10 @@ import "../Create/Create.style.css";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import Swal from 'sweetalert2'
+
+import Swal from "sweetalert2"
+import "./create.css"
+
 function Create(){
     const dispatch = useDispatch();
     const allCategories = useSelector((state) => state.categories);
@@ -135,7 +138,11 @@ function Create(){
           dispatch(addProduct(productData))
           .then((response) => {
               if(response){
-                alert("¡El producto se creó exitosamente!");
+                Swal.fire(
+                  'El producto se creo exitosamente!',
+                  '',
+                  'success'
+                );
                 setSuccess(true); 
                 setInput({
                   name: "",
@@ -158,17 +165,26 @@ function Create(){
           alert("Faltan datos");
         }
       };
+
       if (!isUser && !usuarioActual) {
         navigate("/login");
         return null;
       }
   
+
+      const goBack = () => {
+        window.history.back();
+    }
+
       return (
         <div>
+          <div class='w-50 d-flex mx-4'>
+              <i class="arrow bi bi-arrow-left-circle-fill" onClick={goBack}></i>
+          </div>
           <div className="createContainer">
-            <Form className="formContainer" onSubmit={handleSubmit}>
-              <h1>Crear tu Producto</h1>
-              <Form.Group controlId="name">
+              <h1 class='mt-4 createProductTittle'>Crea un Producto</h1>
+            <Form className="formContainer azul" onSubmit={handleSubmit}>
+              <Form.Group controlId="name" class='d-flex flex-column'>
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control
                   type="text"
@@ -176,11 +192,12 @@ function Create(){
                   value={input.name}
                   onChange={handleChange}
                   placeholder="Nombre del producto"
+                  class='text-center'
                 />
                 {error.name && <Form.Text className="text-danger">{error.name}</Form.Text>}
               </Form.Group>
     
-              <Form.Group controlId="description">
+              <Form.Group controlId="description" class='d-flex flex-column'>
                 <Form.Label>Descripción</Form.Label>
                 <Form.Control
                   as="textarea"
@@ -188,11 +205,12 @@ function Create(){
                   value={input.description}
                   onChange={handleChange}
                   placeholder="Inserte aquí su descripción..."
+                  class='description text-center'
                 />
                 {error.description && <Form.Text className="text-danger">{error.description}</Form.Text>}
               </Form.Group>
     
-              <Form.Group controlId="price">
+              <Form.Group controlId="price" class='d-flex flex-column'>
                 <Form.Label>Precio</Form.Label>
                 <Form.Control
                   type="number"
@@ -200,11 +218,12 @@ function Create(){
                   value={input.price}
                   onChange={handleChange}
                   placeholder="Ej: 750.70"
+                  class='text-center'
                 />
                 {error.price && <Form.Text className="text-danger">{error.price}</Form.Text>}
               </Form.Group>
     
-              <Form.Group controlId="category">
+              <Form.Group controlId="category" class='d-flex flex-column'>
                 <Form.Label>Categoría</Form.Label>
                 <Form.Control as="select" name="CategoryId" value={input.CategoryId} onChange={handleChange}>
                   <option value="nn">Seleccione un valor</option>
@@ -217,13 +236,13 @@ function Create(){
                 {error.CategoryId && <Form.Text className="text-danger">{error.CategoryId}</Form.Text>}
               </Form.Group>
     
-              <Form.Group controlId="image">
+              <Form.Group controlId="image" class='d-flex flex-column'>
                 <Form.Label>Imagen</Form.Label>
                 <Form.Control type="file" name="image" onChange={handleImageChange} accept="image/*" />
                 {error.image && <Form.Text className="text-danger">{error.image}</Form.Text>}
               </Form.Group>
     
-              <Form.Group controlId="stock">
+              <Form.Group controlId="stock" class='d-flex flex-column'>
                 <Form.Label>Stock</Form.Label>
                 <Form.Control
                   type="number"
@@ -231,11 +250,12 @@ function Create(){
                   value={input.stock}
                   onChange={handleChange}
                   placeholder="65"
+                  class='text-center'
                 />
                 {error.stock && <Form.Text className="text-danger">{error.stock}</Form.Text>}
               </Form.Group>
     
-              <Form.Group controlId="rating">
+              <Form.Group controlId="rating" class='d-flex flex-column'>
                 <Form.Label>Puntuación</Form.Label>
                 <Form.Control
                   type="number"
@@ -243,6 +263,7 @@ function Create(){
                   value={input.rating}
                   onChange={handleChange}
                   placeholder="Ej: 4.5"
+                  class='text-center'
                 />
                 {error.rating && <Form.Text className="text-danger">{error.rating}</Form.Text>}
               </Form.Group>

@@ -15,7 +15,7 @@ const Contact = () => {
 
   return (
 <>
-    <Container className={`d-flex justify-content-center ${style.container}`} style={{ height: '100vh' }}>
+    <Container className={`d-flex justify-content-center ${style.container}`} style={{ height: '80vh' }}>
       <Form onSubmit={handleSubmit} style={{ maxWidth: '800px' }}>
         <h1>Contactanos</h1>
         <hr />
@@ -55,11 +55,6 @@ const Contact = () => {
         </Button>
       </Form>
     </Container>
-    <footer>
-        <div>
-            <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 </>
   );
 };

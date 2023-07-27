@@ -6,7 +6,18 @@
 .filter-container{
     width: 400px;
 }
-
+.precio{
+    background-color:  rgb(156, 157, 157);
+    border-radius: 10px 0 0 10px;
+    color: var(--white);
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem 0 ;
+}
+.filter{
+    background-color: rgb(156, 157, 157);
+    color: var(--white);
+    margin: 0 2px;
+}
 .cardsContainer{
     display: flex;
     flex-direction: row;

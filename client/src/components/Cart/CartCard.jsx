@@ -36,7 +36,7 @@ const CartCart = ({products, usuarioActual, getCart}) => {
                                         <i onClick={() => removeCart(el.id)} class="x-cart bi bi-trash-fill mx-3"></i>
                                 </div>
                             </div>
-                }):<p>no hay productos</p>
+                }):<strong>no hay productos</strong>
             }
         </>
     )

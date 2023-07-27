@@ -7,17 +7,43 @@ import RatingFilter from "./RatingFilter";
 import "../producs.css"
 import AlphabeticalOrder from "./AlphabeticalOrder";
 import PriceDropDownFilter from "./PriceDropDownFilter";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { minimumPrice, maximumPrice, alphabeticOrder, priceOrder, showAll } from "../../../redux/actions";
+function Filters ({category}) {
 
-function Filters (props) {
+  const dispatch = useDispatch()
+  const [ reset, setReset ] = useState(false);
+  const resetFilter = () => {
+    dispatch(minimumPrice(''))
+    dispatch(maximumPrice(''))
+    dispatch(alphabeticOrder('A-Z'))
+    dispatch(priceOrder(''))
+    dispatch(showAll('all'))
+    setReset(!reset)
+  }
     return (
-      <div class='mx-4 filtersContainer' >
+      <div class='mx-4 filtersContainer my-4' >
+        <h2 class='filter-title'>Filtros</h2>
+        <SearchBar reset={reset}/>
+        <PriceFilter reset={reset}/>
         <div class="subContainer">
-          <AlphabeticalOrder />
-          <PriceDropDownFilter />
-          <RatingFilter />
+          <AlphabeticalOrder reset={reset}/>
+          <PriceDropDownFilter reset={reset}/>
+          <RatingFilter reset={reset}/>
         </div>
-        <SearchBar search={props.search}/>
-        <PriceFilter />
+
+        {
+        category == undefined ? 
+          <Link to={`/products`}>
+            <button onClick={resetFilter} class='btn btn-dark'>restaurar</button>
+          </Link>
+          :
+          <Link to={`/products/${category}?search=`}>
+            <button onClick={resetFilter} class='btn btn-dark'>restaurar</button>
+          </Link>
+        }
+
       </div>
     )
 }
