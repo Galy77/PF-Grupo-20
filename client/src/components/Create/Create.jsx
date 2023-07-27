@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState  } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct, getAllCategories } from "../../redux/actions";
+import { addProduct,getAllCategories } from "../../redux/actions";
 import "../Create/Create.style.css";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-import Swal from "sweetalert2";
-import "./create.css";
-
+import Swal from "sweetalert2"
+import "./create.css"
 
 function Create(){
     const dispatch = useDispatch();
@@ -71,31 +70,55 @@ function Create(){
           error.image = "Ingrese una Imagen.";
         }
 
+        if (input.stock <= 0 || input.stock >= 5000) {
+          error.stock = "Ingrese stock válido (entre 0 y 5000).";
+        } else if (input.stock.trim().length === 0) {
+          error.stock = "Ingrese el stock disponible.";
+        }
 
-  const [success, setSuccess] = useState(false);
+        if (!/^\d+(\.\d{1,2})?$/.test(input.price)) {
+          error.price = "Ingrese un precio válido (número con hasta 2 decimales).";
+        } else if(input.price <= 0) {
+          error.price = "El precio del producto no puede ser 0 o negativo";
+        } else if(input.price.trim().length === 0){
+          error.price = "Ingrese un precio."
+        }
 
-  useEffect(() => {
-    dispatch(getAllCategories());
-  }, [dispatch]);
+        return error;  
+        
+      }
 
-  useEffect(() => {
-    if (usuarioActual) {
-      setIsUser(usuarioActual);
-    } else {
-      setIsUser(user);
-    }
-  }, []);
-
-  const [input, setInput] = useState({
-    name: "",
-    description: "",
-    price: "",
-    image: null,
-    stock: "",
-    rating: "",
-    CategoryId: "",
-  });
-
+    const handleChange = (event) => {
+      
+      console.log(event.target.value)
+        setInput({
+          ...input,
+          [event.target.name]: event.target.value
+        });
+        
+        setError(
+          validate({
+            ...input,
+            [event.target.name]: event.target.value
+          })
+        );
+        console.log("all Inputs", input);
+      }
+      
+      const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        setInput({
+          ...input,
+          image: file,
+        });
+    
+        setError(
+          validate({
+            ...input,
+            image: file,
+          })
+        );
+      };
 
     const handleSubmit = (event) => {
       console.log("all Inputs", input);
@@ -135,34 +158,15 @@ function Create(){
         }
       };
 
+      if (!isUser && !usuarioActual) {
+        navigate("/login");
+        return null;
+      }
+  
 
-  const validate = (input) => {
-    let error = {};
-
-    if (input.name.trim().length === 0) {
-      error.name = "Ingrese un nombre.";
+      const goBack = () => {
+        window.history.back();
     }
-
-    if (input.description.trim().length === 0) {
-      error.description = "Ingrese una descripción.";
-    } else if (
-      input.description.length < 20 ||
-      input.description.length > 500
-    ) {
-      error.description =
-        "La descripción debe tener entre 20 y 500 caracteres.";
-    }
-    if (input.image === null) {
-      error.image = "Ingrese una Imagen.";
-    }
-    if (input.rating <= 0 || input.rating >= 6) {
-      error.rating = "Ingrese una calificación válida (entre 1 y 5).";
-    } else if (input.rating.trim().length === 0) {
-      error.rating = "Ingrese una calificación.";
-    } else if (isNaN(parseFloat(input.rating))) {
-      error.rating = "Ingrese un número válido para la calificación.";
-    }
-
 
       return (
         <div>
@@ -216,8 +220,8 @@ function Create(){
                 <Form.Control as="select" name="CategoryId" value={input.CategoryId} onChange={handleChange}>
                   <option value="nn">Seleccione un valor</option>
                   { 
-                  allPayments.length ? allPayments.map(buy => <option key={buy.id} value={buy.id}>
-                                {buy.id}
+                  allCategories.length ? allCategories.map(buy => <option key={buy.id} value={buy.id}>
+                                {buy.name}
                             </option>
                   ) : <p>No hay compras recientes.</p>
                 }
@@ -253,6 +257,5 @@ function Create(){
           </div>
         </div>
       );
-
 }
 export default Create;

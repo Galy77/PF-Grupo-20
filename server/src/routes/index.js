@@ -50,8 +50,8 @@ router.post("/products", upload.single("image"), postProduct);
 
 router.get("/user/bdd", getUserBDD);
 router.get("/user/firebase", getFirebaseUser);
-router.get("/payment/:id", getPaymentByUserId); 
-router.get("/review_user/:id", getUserReviewsById);
+router.get("/payment/:id", getPaymentByUserId); //nuevo
+router.get("/review_user/:id", getUserReviewsById); //nuevo
 
 
 router.post("/user", postUser); //veo 1
@@ -60,6 +60,8 @@ router.post("/user/firebase", postUserFirebase);
 
 
 router.post("/create_preference", postPreference);
+
+
 
 
 

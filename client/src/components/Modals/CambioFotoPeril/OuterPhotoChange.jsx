@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-import "./OuterPhotoChange.style.css";
+import "./OuterPhotoChange.style.css"
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch } from  "react-redux"
 import { modifyUserPhoto } from "../../../redux/actions";
-
 import Swal from 'sweetalert2'
 function OuterPhotoChange ({estadoPhotoModal,setEstadoPhotoModal,datosUser}){
     const dispatch = useDispatch();
@@ -43,80 +42,59 @@ function OuterPhotoChange ({estadoPhotoModal,setEstadoPhotoModal,datosUser}){
               timer: 2000
             })
 
-
-      dispatch(modifyUserPhoto(modifiedUser)).then((res) => {
-        if (res) {
+            setInput({
+              image: input.image
+            });
+            setTimeout(() => {
+              window.location.reload();
+            }, 1800);
+          }
+        })
+        } else {
           Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "¡Foto de perfil actulizada!",
-            showConfirmButton: false,
-            timer: 2000,
+            icon: 'warning',
+            title:"No hay datos modificados."
           });
-
-          setInput({
-            image: input.image,
-          });
-          setTimeout(() => {
-            window.location.reload();
-          }, 1800);
         }
-      });
-    } else {
-      Swal.fire({
-        icon: "warning",
-        title: "No hay datos modificados.",
-      });
     }
-  };
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    setInput({
-      ...input,
-      image: file,
-    });
-
-    setError(
-      validate({
+    const handleImageChange = (event) => {
+      const file = event.target.files[0];
+      setInput({
         ...input,
         image: file,
-      })
-    );
-  };
-  return (
-    <>
-      {estadoPhotoModal && (
-        <div className="Outer-Overlay">
-          <div className="Outer-ContenedorModal">
-            <form onSubmit={handleSubmit}>
-              <h1 className="register-title-h1-prop">Modificar Perfil</h1>
-              <div className="mb-3">
-                <label htmlFor="full_name" className="form-label">
-                  Cambiar foto de perfil
-                </label>
-                <input
-                  type="file"
-                  name="image"
-                  onChange={handleImageChange}
-                  accept="image/*"
-                />
+      });
+  
+      setError(
+        validate({
+          ...input,
+          image: file,
+        })
+      );
+    };
+    return (
+        <>
+          {estadoPhotoModal && (
+            <div className="Outer-Overlay">
+              <div className="Outer-ContenedorModal">
+                <form onSubmit={handleSubmit}>
+                  <h1 className="register-title-h1-prop">Modificar Perfil</h1>
+                  <div className="mb-3">
+                    <label htmlFor="full_name" className="form-label">
+                      Cambiar foto de perfil
+                    </label>
+                    <input type="file" name="image" onChange={handleImageChange} accept="image/*" />
+                  </div>
+                  {error.image && <p className="error-inputs">{error.image}</p>}
+                  
+                  <button type="submit" className="btn-register">
+                    Modificar
+                  </button>
+                </form>
+                <button className="Outer-BotonCerrar" onClick={() => setEstadoPhotoModal(false)}>X</button>
               </div>
-              {error.image && <p className="error-inputs">{error.image}</p>}
-
-              <button type="submit" className="btn-register">
-                Modificar
-              </button>
-            </form>
-            <button
-              className="Outer-BotonCerrar"
-              onClick={() => setEstadoPhotoModal(false)}
-            >
-              X
-            </button>
-          </div>
-        </div>
-      )}
-    </>
-  );
+            </div>
+          )}
+        </>
+      );
 }
-export default OuterPhotoChange;
+export default OuterPhotoChange
