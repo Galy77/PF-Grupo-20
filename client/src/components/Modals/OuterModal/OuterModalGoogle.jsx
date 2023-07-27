@@ -21,7 +21,9 @@ function OuterModalGoogle({
     phone: "",
     direction_shipping: "",
   });
-
+  function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
   const validate = (input) => {
     let error = {};
 
@@ -32,8 +34,27 @@ function OuterModalGoogle({
         "El número de teléfono solo puede contener números, guiones, espacios en blanco o paréntesis.";
     }
 
-    if (input.direction_shipping.trim().length === 0) {
+    const inputDirectionShipping = input.direction_shipping
+      .trim()
+      .toLowerCase();
+    const normalizedDirectionShipping = removeAccents(inputDirectionShipping);
+    const validKeywords = [
+      "calle",
+      "departamento",
+      "dpto",
+      "barrio",
+      "casa",
+      "dpto",
+    ];
+
+    if (normalizedDirectionShipping.length === 0) {
       error.direction_shipping = "Ingrese una dirección de envío.";
+    } else if (
+      !validKeywords.some((keyword) =>
+        normalizedDirectionShipping.includes(keyword)
+      )
+    ) {
+      error.direction_shipping = "Ingrese una dirección de envío válida.";
     }
 
     return error;

@@ -33,7 +33,7 @@ export function Register() {
 
     if (input.full_name.trim().length === 0) {
       error.full_name = "Ingrese un nombre.";
-    } else if (!/^[a-zA-Z\s]+$/.test(input.full_name)) {
+    } else if (!/^[a-zA-Z\s]+$/.test(input.full_name.trim())) {
       error.full_name = "El nombre solo debe contener letras y espacios.";
     } else if (input.full_name.trim().split(" ").length < 2) {
       error.full_name = "Ingrese un nombre y apellido.";
