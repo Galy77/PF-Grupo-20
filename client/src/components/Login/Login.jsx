@@ -69,7 +69,7 @@ export function Login() {
   const handleGoogleSignin = async () => {
     try {
       const response = await loginWithGoogle();
-      console.log("este es mi user de google: ", response)
+      console.log("este es mi user de google:", response)
       try {
         dispatch(addFirebaseUser(response));
         if(usuarioActual){

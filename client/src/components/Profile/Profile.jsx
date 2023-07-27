@@ -33,10 +33,11 @@ export function Profile() {
   const [AllPaymentsData,setAllPaymentsData] = useState([]);
 
   useEffect(() => {
+    clearData();
     if (usuarioActual) {
       setIsUser(usuarioActual);
       setLoading(false);
-      dispatch(getPaymentsById(usuarioActual.id))
+      dispatch(getPaymentsById(usuarioActual.id));
     } else {
       setIsUser(user);
       setLoading(false);
@@ -91,24 +92,25 @@ export function Profile() {
           showConfirmButton: false
         }
         );
-      } 
+      }
+      clearData(); 
     } catch (error) {
       console.error(error.message);
     }
   };
-
+  const clearData = () => {
+    setAllPaymentsData([]); // Limpiar los datos de compras u otros datos que desees vaciar
+    // Limpiar otros estados locales si es necesario
+  };
   
   const handleModalClick = (modalName) => {
     setModalCompras(false);
-    setModalPublicaciones(false);
+
     setModalDatos(false);
 
     switch (modalName) {
       case "compras":
         setModalCompras(true);
-        break;
-      case "publicaciones":
-        setModalPublicaciones(true);
         break;
       case "datos":
         setModalDatos(true);
@@ -143,9 +145,6 @@ export function Profile() {
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
-            <button onClick={() => handleModalClick("publicaciones")} className="btn-lateral">
-              Comentarios
-            </button>
             <button onClick={() => handleModalClick("datos")} className="btn-lateral">
               Mis datos
             </button>
@@ -158,15 +157,7 @@ export function Profile() {
             <ShowModal estadoShowModal={modalCompras}>
               <h1>Compras</h1>
             </ShowModal>
-            <ShowModal estadoShowModal={modalPublicaciones}>
-              <h1>Comentarios</h1>
-              <Link to="/create">
-                <button className="btn-lateral">+Añadir publicacion</button>
-              </Link>
-            </ShowModal>
-            {isUser.role === 2 && (
-              <button className="btn-lateral">Dashboard</button>
-            )}
+            
             <ShowModal estadoShowModal={modalDatos}>
               <div>
                 <h1>Tu Datos</h1>
@@ -197,7 +188,9 @@ export function Profile() {
             <button onClick={() => handleModalClick("datos")} className="btn-lateral">
               Mis Datos
             </button>
-
+            {isUser.role === 2 && (
+              <button className="btn-lateral">Dashboard</button>
+            )}
             <button className="btn-cerrar-sesion" onClick={handleLogout}>
               Cerrar Sesion
             </button>
@@ -223,10 +216,10 @@ export function Profile() {
             <ShowModal estadoShowModal={modalDatos}>
               <div>
                 <h1>Tu Informacion</h1>
-                <h1>{isUser.name}</h1>
-                <h1>{isUser.email}</h1>
-                <h1>{isUser.direction_shipping}</h1>
-                <h1>{isUser.phone}</h1>
+                <h5>{isUser.name}</h5>
+                <h5>{isUser.email}</h5>
+                <h5>{isUser.direction_shipping}</h5>
+                <h5>{isUser.phone}</h5>
               </div>
               <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
             </ShowModal>
