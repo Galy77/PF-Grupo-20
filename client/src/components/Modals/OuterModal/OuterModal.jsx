@@ -24,13 +24,15 @@ function OuterModal({
     phone: "",
     direction_shipping: "",
   });
-
+  function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
   const validate = (input) => {
     let error = {};
 
     if (input.full_name.trim().length === 0) {
       error.full_name = "Ingrese un nombre.";
-    } else if (!/^[a-zA-Z\s]+$/.test(input.name)) {
+    } else if (!/^[a-zA-Z\s]+$/.test(input.full_name.trim())) {
       error.full_name = "El nombre solo debe contener letras y espacios.";
     } else if (input.full_name.trim().split(" ").length < 2) {
       error.full_name = "Ingrese un nombre y apellido.";
@@ -49,11 +51,30 @@ function OuterModal({
       error.phone = "Ingrese un número de teléfono.";
     } else if (!/^[\d\s()+-]+$/.test(input.phone)) {
       error.phone =
-        "El número de teléfono solo puede contener números, guiones, espacios en blanco o paréntesis.";
+        "El número de teléfono invalido.";
     }
 
-    if (input.direction_shipping.trim().length === 0) {
+    const inputDirectionShipping = input.direction_shipping
+      .trim()
+      .toLowerCase();
+    const normalizedDirectionShipping = removeAccents(inputDirectionShipping);
+    const validKeywords = [
+      "calle",
+      "departamento",
+      "dpto",
+      "barrio",
+      "casa",
+      "dpto",
+    ];
+
+    if (normalizedDirectionShipping.length === 0) {
       error.direction_shipping = "Ingrese una dirección de envío.";
+    } else if (
+      !validKeywords.some((keyword) =>
+        normalizedDirectionShipping.includes(keyword)
+      )
+    ) {
+      error.direction_shipping = "Ingrese una dirección de envío válida.";
     }
 
     return error;

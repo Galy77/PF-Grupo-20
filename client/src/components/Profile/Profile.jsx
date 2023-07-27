@@ -194,7 +194,6 @@ export function Profile() {
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
             <h1>{isUser.full_name}</h1>
-
             <div className="image-container">
               <img
                 src={isUser.image === null ? "fondo-login2.jpg" : isUser.image}
@@ -224,7 +223,9 @@ export function Profile() {
               Mis Datos
             </button>
             {isUser.role === 2 && (
-              <button className="btn-lateral">Dashboard</button>
+              <a href="#">
+                <button className="btn-lateral">Dashboard</button>
+              </a>
             )}
             <button className="btn-cerrar-sesion" onClick={handleLogout}>
               Cerrar Sesion
