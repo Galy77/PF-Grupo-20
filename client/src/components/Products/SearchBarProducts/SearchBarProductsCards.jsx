@@ -1,21 +1,23 @@
 /* eslint-disable react/jsx-key */
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
-import style from "../Products.module.css";
 import '../producs.css'
 import { useState,useEffect } from 'react';
 
 function SearchBarProductsCards (props) {
     let products = props.productsFiltered
- 
-
     const [dataProducts, setDataProducts] = useState()
     const [productsToShow , setProductsToShow] = useState(products)
     const [page,setPage] = useState(1)
+    const [isLoadedPage, setIsLoadedPage] = useState(1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentPage = urlParams.get('page');
+
     let productsQuantityToShow = 12
     let lastPage = Math.ceil(productsToShow.length/productsQuantityToShow)
     /// setDataProducts
     const sliceProducts = (categoryProducts, page) => {
+        const newUrl = `${window.location.pathname}?page=${page}`;
+        window.history.replaceState(null, null, newUrl);
         if(categoryProducts.length <= productsQuantityToShow) setPage(1)
         lastPage = Math.ceil(categoryProducts.length/productsQuantityToShow)
         if(page > lastPage){
@@ -24,15 +26,29 @@ function SearchBarProductsCards (props) {
         let numToSlice = productsQuantityToShow * page
         setDataProducts(categoryProducts.slice(numToSlice - productsQuantityToShow,numToSlice))
     }
-
-    const paginado = () => {
+    const paginado = (currentPage) => {
+        if(currentPage){
+            sliceProducts(products,currentPage)
+            setProductsToShow(products)
+            setPage(parseInt(currentPage))
+            return
+        }
         sliceProducts(products,page)
         setProductsToShow(products)
     }
+
     useEffect(() => {
-        console.log(products)
-        paginado()
-    },[products])
+
+        if(isLoadedPage == 4){
+            sliceProducts(props.productsFiltered,1)
+            setProductsToShow(props.productsFiltered)
+            setPage(1)
+        }else{
+            setIsLoadedPage(isLoadedPage + 1)
+            paginado(currentPage)
+        }
+    },[props.productsFiltered])
+
     
 
     const handlePage = (order) => {
@@ -44,6 +60,12 @@ function SearchBarProductsCards (props) {
             sliceProducts(productsToShow,page - 1)
         }
     }
+
+    useEffect(() => {
+        sliceProducts(props.productsFiltered,1)
+        setProductsToShow(props.productsFiltered)
+        setPage(1)
+    },[props.productsFiltered])
 
     return (
         <>
@@ -62,7 +84,7 @@ function SearchBarProductsCards (props) {
             </div>
             <div class='d-flex align-items-center'>
                 {
-                    page > 1 ? <p class='m-4 border btn btn-primary' onClick={handlePage} >Anterior</p>:''
+                    page > 1 ? <p class='m-4 border btn btn-dark' onClick={handlePage} >Anterior</p>:''
                 }
                 {
                     lastPage > 1 ? 
@@ -70,7 +92,7 @@ function SearchBarProductsCards (props) {
 
                 }
                 {
-                    page < lastPage ? <p class='m-4 border btn btn-primary' onClick={() => handlePage('next')} >Siguiente</p>:''
+                    page < lastPage ? <p class='m-4 border btn btn-dark' onClick={() => handlePage('next')} >Siguiente</p>:''
                 }
             </div>
         </>

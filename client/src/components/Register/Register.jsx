@@ -4,9 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import './Register.style.css'
 import { addUser } from "../../redux/actions";
 import {useDispatch} from  "react-redux"
-
+import Swal from 'sweetalert2'
 export function Register() {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -26,16 +25,19 @@ export function Register() {
     direction_shipping:"",
   });
 
+  function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
   const validate = (input) => {
     let error = {};
 
     if (input.full_name.trim().length === 0) {
       error.full_name = "Ingrese un nombre.";
-    } else if (!/^[a-zA-Z\s]+$/.test(input.name)) {
+    } else if (!/^[a-zA-Z\s]+$/.test(input.full_name)) {
       error.full_name = "El nombre solo debe contener letras y espacios.";
     } else if (input.full_name.trim().split(" ").length < 2) {
       error.full_name = "Ingrese un nombre y apellido.";
-    }
+    } 
 
     if (input.email.trim().length === 0) {
       error.email = "Ingrese un correo electrónico.";
@@ -52,15 +54,21 @@ export function Register() {
     if (input.phone.trim().length === 0) {
       error.phone = "Ingrese un número de teléfono.";
     } else if (!/^[\d\s()+-]+$/.test(input.phone)) {
-      error.phone = "El número de teléfono solo puede contener números, guiones, espacios en blanco o paréntesis.";
-    }
+      error.phone = "Ingrese un número de teléfono válido.";
+    } 
 
-    if (input.direction_shipping.trim().length === 0) {
-      error.direction_shipping = "Ingrese una dirección de envío.";
-    }
-
+      const inputDirectionShipping = input.direction_shipping.trim().toLowerCase();
+      const normalizedDirectionShipping = removeAccents(inputDirectionShipping);
+      const validKeywords = [ "calle" , "departamento", "dpto", "barrio", "casa", "dpto"];
+      
+      if (normalizedDirectionShipping.length === 0) {
+        error.direction_shipping = "Ingrese una dirección de envío.";
+      } else if (!validKeywords.some(keyword => normalizedDirectionShipping.includes(keyword))) {
+        error.direction_shipping = "Ingrese una dirección de envío válida.";
+      }
     return error;
   };
+
   const handleChange = (event) => {
     setInput({
       ...input,
@@ -84,7 +92,13 @@ export function Register() {
         .then((res) => {
           console.log("respuesta: ", res);
           if (res) {
-            alert("¡El usuario se registró exitosamente!");
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: "¡El usuario se registró exitosamente!",
+              showConfirmButton: false,
+              timer: 2000
+            })
             setInput({
               full_name: "",
               email: "",
@@ -93,14 +107,20 @@ export function Register() {
               direction_shipping: ""
             });
             navigate("/");
+          }else{
+            Swal.fire({
+              icon: 'error',
+              title: 'Este usuario ya esta registrado.',
+              text: error.message,
+            })
           }
         })
-        .catch((error) => {
-          alert("Error al agregar el usuario.");
-          console.log(error);
-        });
+
     } else {
-      alert("Faltan datos.");
+      Swal.fire({
+        icon: 'error',
+        title: 'Faltan Datos.',
+      })
     }
   };
 
@@ -187,9 +207,17 @@ export function Register() {
           />
         </div>
         {error.direction_shipping && <p className="error-inputs">{error.direction_shipping}</p>}
-        <button type="submit" className="btn-register">
-          Registrarse
-        </button>
+        <hr className="espacio"></hr>
+        {Object.keys(error).length === 0 ?(
+          <button type="submit" className="btn-register" >
+            Registrarse
+          </button>
+        ):(
+          <button type="submit" className="btn-register-dis" disabled >
+            Registrarse
+          </button>
+        )}
+        
       </form>
       <p>
         Ya tienes una cuenta? <Link to="/login" className="linkR">iniciar Sesion</Link>

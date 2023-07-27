@@ -1,7 +1,6 @@
 import CreatedCarousel from "../../Carousel/Carousel";
 import Filters from "../Filters/Filters";
 import SearchBarProductsCards from "./SearchBarProductsCards";
-import style from "../Products.module.css";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -48,10 +47,20 @@ function SearchBarProducts () {
   
       return productos;
   };
+
+  function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
     
-    const searchProducts = flatProducts.filter((product) => product.name.includes(search))
+    const searchProducts = flatProducts.filter((product) =>
+        removeAccents(product.name.toUpperCase()).includes(
+        removeAccents(search.toUpperCase())
+        )
+    );
+
     const filteredsProducts = searchProducts.filter((product) => {
-        const matchSearch = product.name.includes(search);
+        const normal = removeAccents(product.name.toUpperCase())
+        const matchSearch = normal.includes(search.toUpperCase());
         const matchPrice = (min && max) ? (product.price >= min && product.price <= max) :
             (!min && max) ? (product.price <= max) :
             (min && !max) ? (product.price >= min) : true;
@@ -66,7 +75,7 @@ function SearchBarProducts () {
         <div class='d-flex flex-column' >
             <CreatedCarousel />
             <div class='filter-products d-flex my-4'>
-                <Filters />
+                <Filters search={search}/>
                 <div class='d-flex flex-column align-items-center w-100 px-4' >
                     <SearchBarProductsCards
                     productsFiltered={filteredProducts ? filteredProducts :alphabeticOrderFilter(searchProducts, alphabeticFilterValue, priceOrderValue)}                 

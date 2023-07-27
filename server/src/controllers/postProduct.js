@@ -20,14 +20,14 @@ const postProduct = async(req, res) => {
             stock,
             rating
         };
-        console.log(newProduct)
+        console.log(CategoryId)
         const createProduct = await Product.create(newProduct);
         await createProduct.addCategories(CategoryId);
         
         return res.status(200).send({ message: 'Register success'})
 
     } catch (error) {
-        res.status(404).send({ error: error.message })
+        res.status(404).send({ error: error })
     }
 };
 

@@ -5,6 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 
 import { useDispatch } from "react-redux";
 import { getUser,addFirebaseUser } from "../../redux/actions"
+import Swal from 'sweetalert2'
 
 import "./Login.style.css"
 export function Login() {
@@ -23,7 +24,6 @@ export function Login() {
   });
 
   useEffect(() => {
-    const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
     if (usuarioActual) {
       navigate("/");
     }else{
@@ -36,10 +36,24 @@ export function Login() {
     e.preventDefault();
     try {
       await dispatch(getUser(cUser));
+      Swal.fire({ 
+        width:'20em',
+        title:'Sesion iniciada.',
+        showConfirmButton: false,
+        icon:'success',
+        timer:2000,
+        timerProgressBar:true
+      })
       navigate("/");
     } catch (error) {
-      alert("Autenticación fallida");
-      setError(error.message);
+      Swal.fire({ 
+        width:'20em',
+        title:'No se pudo iniciar sesion',
+        icon:'error',
+        showConfirmButton: false,
+        timer:1000,
+      }
+      );
     }
   };
   
@@ -52,8 +66,6 @@ export function Login() {
     }));
   };
 
-
-
   const handleGoogleSignin = async () => {
     try {
       const response = await loginWithGoogle();
@@ -61,15 +73,29 @@ export function Login() {
       try {
         dispatch(addFirebaseUser(response));
         if(usuarioActual){
-          console.log("Action terminada",usuarioActual)
-        if(usuarioActual.password === usuarioActual.password){
-            setCurrentUser(usuarioActual)
-          }
+          setCurrentUser(usuarioActual)
         }
       } catch (error) {
         setError(error.message);
       }
       navigate("/")
+      Swal.fire({
+        title: 'Iniciando sesion',
+        html: '<div class="loader"></div>', // Usa una clase CSS llamada "loader" para el símbolo de carga
+        showCancelButton: false,
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+      });
+
+      setTimeout(() => {
+        Swal.close();
+      }, 3000); 
+
     } catch (error) {
       setError(error.message);
     }
@@ -90,7 +116,7 @@ export function Login() {
                 </label>
                 <input
                   value={cUser.email}
-                  type="email"
+                  type="text"
                   name="email"
                   id="email"
                   className="form-control"

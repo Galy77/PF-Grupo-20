@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
@@ -21,7 +21,7 @@ function PriceFilter (props){
     
     const handleMaxPrice = (e) => {
         const { value } = e.target;
-        if(value > 0){
+        if(value >= 0){
             setMaxPrice(value)
 
         }
@@ -32,24 +32,36 @@ function PriceFilter (props){
         dispatch(maximumPrice(maxPrice))
     }
 
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault()
+          dispatch(minimumPrice(minPrice))
+          dispatch(maximumPrice(maxPrice))
+        }
+      };
+
     return (
         <InputGroup size='sm' >
-            <InputGroup.Text>Precio</InputGroup.Text>
+            <InputGroup.Text class={style.precio}>Precio</InputGroup.Text>
             <Form.Control   
+
             aria-label="minimum"
             placeholder="Minimo"
             type='number'
             value={minPrice}
             onChange={handleMinPrice}
+            onKeyPress={handleKeyPress}
             />
-            <Form.Control 
+            <Form.Control
             aria-label="maximum"
             type='number'
             placeholder="Maximo"
             value={maxPrice}
             onChange={handleMaxPrice}
+            onKeyPress={handleKeyPress}
             />
-            <Button variant="secondary" size="sm" onClick={() => handleOnClick()}>Aplicar</Button>
+            <button variant="secondary" size="sm" class='btn border bg-white' onClick={() => handleOnClick()}>Aplicar</button>
         </InputGroup>
     )
 }

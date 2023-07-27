@@ -1,9 +1,23 @@
+:root{
+  --verde:#fff;
+  --verde-claro:#000;
+  --azul:#fff;
+  --azul-claro:white;
+  --fondo:#000;
+  --naranja:#F54C22;
+  --amarillo:#000;
+  --naranja-claro:#50c958;
+  --white:#000;
+  --black:#000;
+  --black-claro:#181717b7;
+  --createProduct:#929aa046;
+}
 #root {
   min-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   text-align: center;
-  background-color: #ebebeb;
+  background:url("https://media.discordapp.net/attachments/1125481005885694124/1133195800609042522/FondoPresentacion.jpg?width=893&height=670");
 }
 .cuerpo{
   background-color:white;

@@ -7,6 +7,10 @@ import { useState, useEffect } from "react";
 import "./Profile.style.css";
 import ShowModal from "../Modals/ShowModal/ShowModal";
 import OuterModal from "../Modals/OuterModal/OuterModal"
+import Swal from 'sweetalert2'
+import OuterModalGoogle from "../Modals/OuterModal/OuterModalGoogle";
+import OuterPhotoChange from "../Modals/CambioFotoPeril/OuterPhotoChange";
+
 export function Profile() {
   const dispatch = useDispatch();
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
@@ -14,12 +18,15 @@ export function Profile() {
   const navigate = useNavigate();
 
   const { logout, user } = useAuth();
+
   const [isUser, setIsUser] = useState();
   const [loading, setLoading] = useState(true);
   const [modalCompras, setModalCompras] = useState(false);
+
   const [modalPublicaciones, setModalPublicaciones] = useState(false);
   const [modalDatos, setModalDatos] = useState(true);
-  const [modificarDatos,setModificarDatos]  = useState(false)
+  const [modificarDatos,setModificarDatos]  = useState(false);
+  const [modificarFoto,setModificarFoto]  = useState(false);
 
   useEffect(() => {
     if (usuarioActual) {
@@ -33,9 +40,29 @@ export function Profile() {
 
   const handleLogout = async () => {
     try {
-      await logout();
-      dispatch(userLogout());
-      navigate("/");
+      const result = await Swal.fire({
+        title: '¿Estás seguro?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, cerrar sesión',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true,
+      });
+
+      if (result.isConfirmed) {
+        await logout();
+        dispatch(userLogout());
+        navigate("/");
+        Swal.fire({ 
+          width:'20em',
+          title:'Has cerrado sesión correctamente.',
+          icon:'success',
+          timer:1200,
+          timerProgressBar:true,
+          showConfirmButton: false
+        }
+        );
+      } 
     } catch (error) {
       console.error(error.message);
     }
@@ -62,11 +89,12 @@ export function Profile() {
   };
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return <div>Cargando usuario...</div>;
   }
 
   if (!loading) {
     if (!isUser && !usuarioActual) {
+      console.log("este es mi user",isUser)
       navigate("/login");
       return null;
     }
@@ -78,8 +106,10 @@ export function Profile() {
         <div className="profile-container">
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
-            <h6>¡sos!</h6>
-            <h1>{isUser.name ||isUser.displayName }</h1>
+            <h1>{isUser.name || isUser.displayName}</h1>
+            <div className="image-container-google">
+              <img src={isUser.image} alt="" className="profile-image" />
+            </div>
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
@@ -106,14 +136,14 @@ export function Profile() {
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
               <div>
-                <h1>Tu Informacion</h1>
-                <h2>{isUser.displayName}</h2>
-                <h2>{isUser.email}</h2>
-                <h2>Registrado mediante {providerActual}</h2>
+                <h1>Tu Datos</h1>
+                <h5>{isUser.displayName}</h5>
+                <h5>{isUser.email}</h5>
+                <h5>{isUser.phone}</h5>
+                <h5>{isUser.direction_shipping}</h5>
+                <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
               </div>
-              <Link to="/register">
-                <button className="btn-lateral">Completar registro</button>
-              </Link>
+              <OuterModalGoogle estadoOuterModal={modificarDatos} setEstadoOuterModal={setModificarDatos} datosUserGoogle={isUser}/>
             </ShowModal>
           </div>
         </div>
@@ -122,6 +152,12 @@ export function Profile() {
           <div className="lateral-profile-container">
             <h6>¡Bienvenido!</h6>
             <h1>{isUser.full_name}</h1>
+          
+            <div className="image-container">
+              <img src={isUser.image === null ? "fondo-login2.jpg" : isUser.image } alt="login" className="profile-image"/>
+              <div className="modify-button" onClick={()=>setModificarFoto(!modificarFoto)}>Modificar</div>
+            </div>
+
             <button onClick={() => handleModalClick("compras")} className="btn-lateral">
               Compras
             </button>
@@ -157,7 +193,7 @@ export function Profile() {
               <button onClick={()=>setModificarDatos(!modificarDatos)}className="btn-lateral">Modificar Datos</button>
             </ShowModal>
             <OuterModal estadoOuterModal={modificarDatos} setEstadoOuterModal={setModificarDatos} datosUser={isUser}/>
-
+            <OuterPhotoChange estadoPhotoModal={modificarFoto} setEstadoPhotoModal={setModificarFoto} datosUser={isUser}/>
           </div>
         </div>
       )}

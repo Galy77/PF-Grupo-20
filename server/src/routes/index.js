@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const {getCategory} = require("../controllers/getCategory");
-const { getProducts, getProductById, getReviewByIdProduct } = require("../controllers/getProduct");
+const { getProducts, getProductById, getReviewByIdProduct, getAllProducts } = require("../controllers/getProduct");
 const { postProduct } = require("../controllers/postProduct");
 
 
@@ -35,8 +35,9 @@ const router = Router();
 */
 const { putProduct } = require("../controllers/putProduct");
 const { putCategory } = require("../controllers/putCategory");
-const { getAllUsers } = require("../controllers/getAllUsers");
+const { getAllUsers, getUsers } = require("../controllers/getAllUsers");
 const { putUser } = require("../controllers/putUser");
+const {putFirebaseUser} = require("../controllers/putFirebaseUser")
 
 
 router.get("/", getCategory);
@@ -55,11 +56,12 @@ router.get("/user/firebase", getFirebaseUser);
 router.post("/user", postUser); //veo 1
 router.post("/user/firebase", postUserFirebase);
 
+
+
 router.post("/create_preference", postPreference);
 
 router.post("/user", postUser);
 
-router.post("/review",postReview)
 
 
 // Estas rutas necesito
@@ -68,6 +70,7 @@ router.get("/cart/:id", getCartById);
 router.get("/payment/:id", getPaymentByUserId);
 router.post("/payment",createPayment)
 router.post("/cart",postCart)
+router.post("/review",postReview)
 router.put("/cart/:id", putCartById);
 router.put("/rating/:id", putRatingProduct);
 router.put("/products/:id", putStockProduct);
@@ -84,6 +87,7 @@ router.post("/contacto", postContacto);
 // para el dashboard Productos , Usuarios y categorias
 
 //Categorias
+router.get("/productsAll", getAllProducts);
 router.post("/category",postCategory);
 router.put("/category/:id", upload.single("image"), putCategory);
 
@@ -91,8 +95,12 @@ router.put("/category/:id", upload.single("image"), putCategory);
 // router.put("/products/:id", upload.single("image"), putProduct);
 
 // User
-router.get("/user", getAllUsers);
+router.get("/user", getUsers);
+router.get("/userAll", getAllUsers);
 router.put("/user/:id", upload.single("image"), putUser);
+router.put("/firebase/:id", putFirebaseUser)
+
+//profile Routes
 
 
 module.exports = router;
