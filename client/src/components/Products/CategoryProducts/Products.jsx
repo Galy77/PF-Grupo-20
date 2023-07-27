@@ -79,10 +79,15 @@ function Products (){
 
     return productos;
 };
+
+function removeAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
     
     const categoryProducts = data.filter((product) => product.category === category);
     const filteredsProducts = categoryProducts.filter((product) => {
-        const matchSearch = product.name.includes(search);
+        const normal = removeAccents(product.name.toUpperCase())
+        const matchSearch = normal.includes(search.toUpperCase());
         const matchPrice = (min && max) ? (product.price >= min && product.price <= max) :
             (!min && max) ? (product.price <= max) :
             (min && !max) ? (product.price >= min) : true;
@@ -95,7 +100,7 @@ function Products (){
         <div class='d-flex flex-column' >
             <CreatedCarousel />
                 <div class='filter-products d-flex my-4'>
-                    <Filters />
+                    <Filters category={category}/>
                     <div class='d-flex flex-column align-items-center w-100 px-4' >
                                 <ProductsCards
                                     categoryProducts={alphabeticOrderFilter(categoryProducts, alphabeticFilterValue, priceOrderValue)}

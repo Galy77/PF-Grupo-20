@@ -19,9 +19,13 @@
     gap: 3rem;
 }
 .card-products{
-    background-color:white;
+    background-color:var(--azul);
     transition: 0.3s;
     border: 1px solid black;
+    border-radius: 10px !important;
+}
+.card-img-top{
+    border-radius: 10px 10px 0 0px;
 }
 .card-products:hover{
     -webkit-box-shadow: -1px 12px 31px -11px rgba(0,0,0,0.75);
@@ -31,14 +35,28 @@
 .p{
     margin: 0;
 }
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .card-title{
     margin-top: 0.5rem;
+    color: var(--white);
+    width: 200px; /* Establecemos un ancho fijo para el contenedor del texto */
+    text-align: center;
+    white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta el contenido que desborda del ancho establecido */
+    text-overflow: ellipsis;
 }
 .card-text{
     text-align: end;
+    color: var(--fondo);
     padding: 0 1rem 0 0rem;
     margin-top: 1rem;
-    font-size: 1.4rem;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 @media (max-width: 1500px){
     .g-4-products{
@@ -73,12 +91,17 @@
 .subContainer{
     display: flex;
 }
-
+.filter-title{
+    color: var(--verde-claro);
+}
 .filtersContainer{
     display: flex;
+    min-height: 300px;
     flex-direction: column;
+    justify-content: space-evenly;
     gap: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 200px;
     align-items: center;
+    background-color: var(--azul);
 }

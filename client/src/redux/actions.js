@@ -7,14 +7,17 @@ import {
    REMOVE_ORDER,
    REMOVE_PRODUCT,
    GET_ALL_CATEGORIES, 
-   MINIMUM_PRICE, 
-   MAXIMUM_PRICE, 
-   BETTER_QUALIFIED_FILTER, 
+   MINIMUM_PRICE,
+   MAXIMUM_PRICE,
+   BETTER_QUALIFIED_FILTER,
    ALL_FILTER,
-   GET_USER, 
+   GET_USER,
    LOGOUT_USER,
    GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
-   ALPHABETIC_ORDER, PRICE_ORDER
+   ALPHABETIC_ORDER, PRICE_ORDER,
+   MODIFY_USER,
+   MODIFY_FIREBASE_USER,
+   MODIFY_USER_PHOTO
 } from "./actionTypes";
 
 
@@ -73,17 +76,89 @@ export const addFirebaseUser = (user) => {
    return async(dispatch) => {
      try {
         const response = await axios.post(' http://localhost:3001/pf/user/firebase', user)
-        const localResponse = await axios.post(' http://localhost:3001/pf/user', user);
+      //   const localResponse = await axios.post(' http://localhost:3001/pf/user', user);
            dispatch({
               type: ADD_FIREBASEUSER,
               payload:response.data
            })
         return response;
      } catch (error) {
-        console.log("Error al crear el usuario", error.message);
+        return error.message;
      }
    };
 }
+export const modifyUser=(user)=>{
+   return async(dispatch) => {
+      try {
+         const response = await axios.put(`http://localhost:3001/PF/user/${user.id}`, user)
+         const payload = response.data;
+
+         localStorage.removeItem("usuarioActual");
+         localStorage.setItem("usuarioActual", JSON.stringify(payload));
+
+         dispatch({
+            type: MODIFY_USER,
+            payload:response.data
+         })
+            
+         return response;
+
+      } catch (error) {
+         console.log("Error al modificar el usuario", error.message);
+      }
+    };
+}
+export const modifyUserPhoto=(user)=>{
+   return async(dispatch) => {
+      try {
+         const formData = new FormData();
+         formData.append('image', user.image);
+         const response = await axios.put(`http://localhost:3001/PF/user/${user.id}`, formData, {
+            headers: {
+               'Content-Type': 'multipart/form-data', 
+            },
+         });
+         const payload = response.data;
+
+         localStorage.removeItem("usuarioActual");
+         localStorage.setItem("usuarioActual", JSON.stringify(payload));
+
+         dispatch({
+            type: MODIFY_USER_PHOTO,
+            payload:response.data
+         })
+            
+         return response;
+
+      } catch (error) {
+         console.log("Error al modificar el usuario", error.message);
+      }
+    };
+}
+export const modifyFirebaseUser = (user) => {
+  return async (dispatch) => {
+    try {
+      console.log("datos enviados", user);
+      const response = await axios.put(`http://localhost:3001/PF/firebase/${user.id}`, user);
+
+      const payload = response.data;
+      localStorage.removeItem("usuarioActual");
+      localStorage.setItem("usuarioActual", JSON.stringify(payload));
+
+      dispatch({
+        type: MODIFY_FIREBASE_USER,
+        payload: response.data,
+      });
+
+      return response;
+    } catch (error) {
+      console.log("Error al modificar el usuario", error.message);
+      throw error;
+    }
+  };
+};
+
+
 
 export const userLogout = () => {
    return {
@@ -104,8 +179,10 @@ export function addProduct(productData) {
        formData.append('stock', productData.stock);
        formData.append('rating', productData.rating);
        formData.append('image', productData.image); 
+
  
-       const response = await axios.post(' http://localhost:3001/PF/products', formData, {
+       const response = await axios.post('http://localhost:3001/PF/products', formData, {
+
          headers: {
            'Content-Type': 'multipart/form-data', 
          },

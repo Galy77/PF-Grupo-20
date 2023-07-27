@@ -1,45 +1,27 @@
 /* eslint-disable react/prop-types */
 import "./OuterModal.style.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from  "react-redux"
-import { modifyUser } from "../../../redux/actions";
+import { modifyFirebaseUser } from "../../../redux/actions";
 import Swal from 'sweetalert2'
-function OuterModal ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
+function OuterModalGoogle ({children,estadoOuterModal,setEstadoOuterModal,datosUserGoogle}){
     const dispatch = useDispatch();
+    useEffect(()=>{
+      console.log("outer",datosUserGoogle)
+    })
     const [input, setInput] = useState({
-        full_name: datosUser?.full_name || "",
-        password: datosUser?.password || "",
-        phone: datosUser?.phone || "",
-        direction_shipping: datosUser?.direction_shipping || "",
+        phone: datosUserGoogle?.phone || "",
+        direction_shipping: datosUserGoogle?.direction_shipping || "",
       });
     
       const [error, setError] = useState({
-        full_name: "",
-        password: "",
         phone: "",
         direction_shipping: "",
       });
   
     const validate = (input) => {
       let error = {};
-  
-      if (input.full_name.trim().length === 0) {
-        error.full_name = "Ingrese un nombre.";
-      } else if (!/^[a-zA-Z\s]+$/.test(input.name)) {
-        error.full_name = "El nombre solo debe contener letras y espacios.";
-      } else if (input.full_name.trim().split(" ").length < 2) {
-        error.full_name = "Ingrese un nombre y apellido.";
-      }
-
-  
-      if (input.password.trim().length === 0) {
-        error.password = "Ingrese una contraseña.";
-      } else if (input.password.trim().length < 8) {
-        error.password = "La contraseña debe tener al menos 8 caracteres.";
-      } else if (!/(?=.*[A-Z])(?=.*\d)/.test(input.password)) {
-        error.password = "La contraseña debe contener al menos una mayúscula y un número.";
-      }
-  
+      
       if (input.phone.trim().length === 0) {
         error.phone = "Ingrese un número de teléfono.";
       } else if (!/^[\d\s()+-]+$/.test(input.phone)) {
@@ -57,7 +39,7 @@ function OuterModal ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
         ...input,
         [event.target.name]: event.target.value
       });
-      
+      console.log("estas son mis entradas",input)
       setError(
         validate({
           ...input,
@@ -71,10 +53,10 @@ function OuterModal ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
       if (Object.keys(error).length === 0) {
         const modifiedUser = {
           ...input,
-          id: datosUser?.id || null,
+          id:datosUserGoogle.id
         };
         console.log("modificaciones", modifiedUser);
-        dispatch(modifyUser(modifiedUser))
+        dispatch(modifyFirebaseUser(modifiedUser))
         .then((res) => {
           console.log("respuesta: ", res);
           if (res) {
@@ -87,9 +69,6 @@ function OuterModal ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
             })
 
             setInput({
-              full_name: input.full_name,
-     
-              password: input.password,
               phone: input.phone,
               direction_shipping: input.direction_shipping
             });
@@ -114,35 +93,6 @@ function OuterModal ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
               <div className="Outer-ContenedorModal">
                 <form onSubmit={handleSubmit}>
                   <h1 className="register-title-h1-prop">Modificar Perfil</h1>
-                  <div className="mb-3">
-                    <label htmlFor="full_name" className="form-label">
-                      Nombre completo
-                    </label>
-                    <input
-                      name="full_name"
-                      value={input.full_name}
-                      onChange={handleChange}
-                      type="text"
-                      className="form-register-control"
-                      placeholder="Matias Nicolas Lanza"
-                    />
-                  </div>
-                  {error.full_name && <p className="error-inputs">{error.full_name}</p>}
-    
-                  <div className="mb-3">
-                    <label htmlFor="password" className="form-label">
-                      Contraseña
-                    </label>
-                    <input
-                      name="password"
-                      value={input.password}
-                      onChange={handleChange}
-                      type="password"
-                      className="form-register-control"
-                      placeholder="*************"
-                    />
-                  </div>
-                  {error.password && <p className="error-inputs">{error.password}</p>}
     
                   <div className="mb-3">
                     <label htmlFor="phone" className="form-label">
@@ -189,4 +139,4 @@ function OuterModal ({children,estadoOuterModal,setEstadoOuterModal,datosUser}){
         </>
       );
 }
-export default OuterModal
+export default OuterModalGoogle

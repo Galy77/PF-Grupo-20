@@ -3,6 +3,7 @@ const cloudinary = require('../utils/cloudinary');
 
 const putUser = async (req, res) => {
   const { id } = req.params;
+  console.log(req.body)
   const { status, full_name, email, password, phone, direction_shipping, role } = req.body;
   let image;
   
@@ -12,11 +13,11 @@ const putUser = async (req, res) => {
   
   try {    
     const usuario = await User.findByPk(id);
-
+    console.log("find del user", usuario)
     if (!usuario) {
+      console.log("No find del user", usuario)
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
-  
     if (full_name) {
       usuario.full_name = full_name;
     }

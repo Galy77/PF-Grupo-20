@@ -15,7 +15,6 @@ function CreatedCarousel (){
           alt="First slide"
           />
         <Carousel.Caption>
-          <p>{data.description}</p>
         </Carousel.Caption>
         </Carousel.Item>
           ))}
