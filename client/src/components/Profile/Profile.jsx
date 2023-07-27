@@ -99,8 +99,7 @@ export function Profile() {
     }
   };
   const clearData = () => {
-    setAllPaymentsData([]); // Limpiar los datos de compras u otros datos que desees vaciar
-    // Limpiar otros estados locales si es necesario
+    setAllPaymentsData([]); 
   };
   
   const handleModalClick = (modalName) => {
@@ -178,7 +177,7 @@ export function Profile() {
             <h1>{isUser.full_name}</h1>
           
             <div className="image-container">
-              <img src={isUser.image === null ? "fondo-login2.jpg" : isUser.image } alt="login" className="profile-image"/>
+              <img src={isUser.image === null ? "perfil.jpg" : isUser.image } alt="login" className="profile-image"/>
               <div className="modify-button" onClick={()=>setModificarFoto(!modificarFoto)}>Modificar</div>
             </div>
 

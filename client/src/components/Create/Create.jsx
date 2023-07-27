@@ -5,10 +5,8 @@ import "../Create/Create.style.css";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-
 import Swal from "sweetalert2"
 import "./create.css"
-
 function Create(){
     const dispatch = useDispatch();
     const allCategories = useSelector((state) => state.categories);
@@ -25,12 +23,12 @@ function Create(){
     }, [dispatch]);
     
     useEffect(() => {
-      if(usuarioActual){
+      if(usuarioActual !== null){
         setIsUser(usuarioActual);
       }else{
-          setIsUser(user);
+        setIsUser(user);
       }
-    }, []);
+    }, [user, usuarioActual]);
       
     const [input, setInput] = useState({
         name: "",
@@ -49,8 +47,11 @@ function Create(){
         stock: "",
         CategoryId:""
     })
-    
-    
+    if (!isUser) {
+      navigate("/login");
+      return null;
+    }
+
     const validate = (input) =>{
       
         let error = {}
@@ -58,14 +59,11 @@ function Create(){
         if (input.name.trim().length === 0) {
           error.name = "Ingrese un nombre.";
         } 
-      
-       
         if (input.description.trim().length === 0) {
           error.description = "Ingrese una descripción.";
         }else if(input.description.length < 20 ||input.description.length > 500){
           error.description = "La descripción debe tener entre 20 y 500 caracteres."
         }
-
         if(input.image === null){
           error.image = "Ingrese una Imagen.";
         }
@@ -144,7 +142,6 @@ function Create(){
                   stock: "",
                   CategoryId:""
                 });
-                navigate("/")
               }
           })
           .catch((error) => {
@@ -157,17 +154,9 @@ function Create(){
           alert("Faltan datos");
         }
       };
-
-      if (!isUser && !usuarioActual) {
-        navigate("/login");
-        return null;
-      }
-  
-
       const goBack = () => {
         window.history.back();
     }
-
       return (
         <div>
           <div class='w-50 d-flex mx-4'>
@@ -219,12 +208,11 @@ function Create(){
                 <Form.Label>Categoría</Form.Label>
                 <Form.Control as="select" name="CategoryId" value={input.CategoryId} onChange={handleChange}>
                   <option value="nn">Seleccione un valor</option>
-                  { 
-                  allPayments.length ? allPayments.map(buy => <option key={buy.id} value={buy.id}>
-                                {buy.id}
-                            </option>
-                  ) : <p>No hay compras recientes.</p>
-                }
+                  {allCategories.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
                 </Form.Control>
                 {error.CategoryId && <Form.Text className="text-danger">{error.CategoryId}</Form.Text>}
               </Form.Group>
@@ -247,7 +235,6 @@ function Create(){
                 />
                 {error.stock && <Form.Text className="text-danger">{error.stock}</Form.Text>}
               </Form.Group>
-  
     
               <Button variant="primary" type="submit">
                 Crear
