@@ -2,17 +2,18 @@ const { User } = require("../db");
 const transporter = require("../middleware/nodemailer");
 
 const postUser = async (req, res) => {
+  
   const { full_name, email, password, phone, direction_shipping, displayName, role } = req.body;
-  console.log("entro", full_name, email, password, phone, direction_shipping, displayName);
 
   try {
-
     const existingUser = await User.findOne({
       where: { email },
     });
 
     if (existingUser) {
-      return res.status(409).json({ status: 409, error: "Ya existe un usuario con ese email" });
+      return res
+        .status(409)
+        .json({ status: 409, error: "Ya existe un usuario con ese email" });
     }
     if(role){
       const newUser = {
@@ -54,8 +55,8 @@ const postUser = async (req, res) => {
     };
 
     await transporter.sendMail({
-      from: '"Onearket"<pf@gmail.com>', 
-      to: email, 
+      from: '"Onearket"<pf@gmail.com>',
+      to: email,
       subject: "¡Bienvenido a ONE!",
       html: `
         <h1>Hola ${full_name},</h1>
@@ -67,15 +68,12 @@ const postUser = async (req, res) => {
         <p>¡Gracias por unirte a nosotros!</p>
         <p>Atentamente,</p>
         <p>El equipo de ONE</p>
-      `});
-      
+      `});      
       
     const createUser = await User.create(newUser);
     return res.status(200).json(createUser);
   
   }
-    
-    
   } catch (error) {
     return res.status(500).json({ error: error });
   }

@@ -41,25 +41,27 @@ import {
   ALPHABETIC_ORDER, PRICE_ORDER,
   MODIFY_USER,
   MODIFY_FIREBASE_USER,
-  MODIFY_USER_PHOTO
+  MODIFY_USER_PHOTO,
+  GET_PAYMENTS_BY_ID
 } from "./actionTypes"
 
 const initialState = {
     categories:[],  
     products: [],
-      carouselPhotos:[{img:"fotoCarrussel.jpg", description: "Algun texto descriptivo"},
-                      {img:"C2.jpg", description: "Algun texto descriptivo"},
-      ],
+    carouselPhotos: [
+    { img: "fotoCarrussel.jpg", description: "Algun texto descriptivo" },
+    { img: "C2.jpg", description: "Algun texto descriptivo" },
+   ],
     orders:[],
     minimumPrice: "",
     maximumPrice: "",
     ratingFilterValue: "all",
     user:{},
     detailProduct: [],
-
     lettersOrder: "A-Z",
-
-    priceOrder: ""
+    priceOrder: "",
+    payments:[],
+    productsArray:[]
 }
 
 export const reducer = (state = initialState,{type,payload})=>{
@@ -212,11 +214,16 @@ export const reducer = (state = initialState,{type,payload})=>{
           }
 
             
-          case GET_ALL_CATEGORIES:
+        case GET_ALL_CATEGORIES:
             return{
               ...state,
               categories:payload
-            }
+          }
+          case GET_PAYMENTS_BY_ID:
+            return{
+              ...state,
+              payments:payload
+          }
             
         case GET_ALL_PRODUCTS:
           return{
@@ -227,7 +234,11 @@ export const reducer = (state = initialState,{type,payload})=>{
         case GET_PRODUCT_BY_ID:
           return{
             ...state,
-            detailProduct: payload
+            detailProduct: payload,
+            productsArray:{
+              ...state.detailProduct,
+              payload
+            }
           }
 
         case ALPHABETIC_ORDER:

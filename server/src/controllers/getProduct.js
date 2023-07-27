@@ -1,9 +1,8 @@
-
-const {Product, User, Category} = require("../db")
+const { Product, User, Category } = require("../db");
 
 const Reviews = require("../models/Reviews");
 
-const productsData = require("../data/productsData")
+const productsData = require("../data/productsData");
 
 let productsCreated = false;
 
@@ -15,19 +14,21 @@ const getProducts = async (req, res) => {
     });
 
     if (productsDb.length === 0 || !productsCreated) {
-
       if (productsDb.length === 0) {
         const createdProducts = await Product.bulkCreate(productsData);
         await Promise.all(
           createdProducts.map(async (product) => {
-            const productData = productsData.find((prod) => prod.name === product.name);
+            const productData = productsData.find(
+              (prod) => prod.name === product.name
+            );
             if (productData) {
               const categoryName = productData.category;
-              const category = existingCategories.find((cat) => cat.name === categoryName);
+              const category = existingCategories.find(
+                (cat) => cat.name === categoryName
+              );
               if (category) {
                 await product.addCategory(category);
               } else {
-                console.log(`La categoría '${categoryName}' no existe en la base de datos.`);
               }
             }
           })
@@ -47,15 +48,15 @@ const getProducts = async (req, res) => {
   }
 };
 
-const getAllProducts= async (req, res) => {
+const getAllProducts = async (req, res) => {
   try {
-    const allproducts = await Product.findAll({ include: Category })
-    return res.status(200).json(allproducts)
+    const allproducts = await Product.findAll({ include: Category });
+    return res.status(200).json(allproducts);
   } catch (error) {
     console.error("Error al obtener los productos:", error);
-    res.status(500).json({ error: "Error al obtener los productos" });    
+    res.status(500).json({ error: "Error al obtener los productos" });
   }
-}
+};
 
 const getProductById = async (req, res) => {
   try {
@@ -72,11 +73,11 @@ const getReviewByIdProduct = async (req, res) => {
     const { id } = req.params;
     const request = await Product.findByPk(id);
     let reviews = await request.getReviews({
-      include:User
+      include: User,
     });
-    res.status(200).json({reviews});
+    res.status(200).json({ reviews });
   } catch (error) {
-    res.status(500).json({ error: 'Error al obtener el producto por ID' });
+    res.status(500).json({ error: "Error al obtener el producto por ID" });
   }
 };
 
@@ -84,5 +85,5 @@ module.exports = {
   getProducts,
   getAllProducts,
   getProductById,
-  getReviewByIdProduct
+  getReviewByIdProduct,
 };
