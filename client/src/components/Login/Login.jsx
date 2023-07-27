@@ -76,8 +76,10 @@ export function Login() {
       }
       navigate("/");
       Swal.fire({
-        title: "Iniciando sesion",
-        html: '<div class="loader"></div>', // Usa una clase CSS llamada "loader" para el símbolo de carga
+
+        title: 'Iniciando sesion',
+        html: '<div class="loader"></div>', 
+
         showCancelButton: false,
         showConfirmButton: false,
         allowOutsideClick: false,

@@ -3,37 +3,46 @@ import "./OuterPhotoChange.style.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { modifyUserPhoto } from "../../../redux/actions";
-import Swal from "sweetalert2";
-function OuterPhotoChange({
-  estadoPhotoModal,
-  setEstadoPhotoModal,
-  datosUser,
-}) {
-  const dispatch = useDispatch();
 
-  const [input, setInput] = useState({
-    image: datosUser?.image || null,
-  });
+import Swal from 'sweetalert2'
+function OuterPhotoChange ({estadoPhotoModal,setEstadoPhotoModal,datosUser}){
+    const dispatch = useDispatch();
 
-  const [error, setError] = useState({
-    image: "",
-  });
+    const [input, setInput] = useState({
+        image: datosUser?.image || null
+      });
+    
+      const [error, setError] = useState({
+        image: ""
+      });
+  
+    const validate = (input) => {
+      let error = {};
+      if(input.image === null){
+        error.image = "Ingrese una Imagen.";
+      }
+      return error;
+    };
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      if (Object.keys(error).length === 0) {
+        const modifiedUser = {
+          ...input,
+          id: datosUser?.id || null,
+        };
+         dispatch(modifyUserPhoto(modifiedUser))
+         .then((res) => {
 
-  const validate = (input) => {
-    let error = {};
-    if (input.image === null) {
-      error.image = "Ingrese una Imagen.";
-    }
-    return error;
-  };
+          if (res) {
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: '¡Foto de perfil actulizada!',
+              showConfirmButton: false,
+              timer: 2000
+            })
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (Object.keys(error).length === 0) {
-      const modifiedUser = {
-        ...input,
-        id: datosUser?.id || null,
-      };
 
       dispatch(modifyUserPhoto(modifiedUser)).then((res) => {
         if (res) {

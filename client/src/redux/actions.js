@@ -1,25 +1,26 @@
-import {
-  GET_FIREBASEUSER,
-  ADD_ORDER,
-  ADD_PRODUCT,
-  ADD_USER,
-  ADD_FIREBASEUSER,
-  REMOVE_ORDER,
-  REMOVE_PRODUCT,
-  GET_ALL_CATEGORIES,
-  MINIMUM_PRICE,
-  MAXIMUM_PRICE,
-  BETTER_QUALIFIED_FILTER,
-  ALL_FILTER,
-  GET_USER,
-  LOGOUT_USER,
-  GET_ALL_PRODUCTS,
-  GET_PRODUCT_BY_ID,
-  ALPHABETIC_ORDER,
-  PRICE_ORDER,
-  MODIFY_USER,
-  MODIFY_FIREBASE_USER,
-  MODIFY_USER_PHOTO,
+
+import { 
+   GET_FIREBASEUSER,
+   ADD_ORDER, 
+   ADD_PRODUCT,
+   ADD_USER,
+   ADD_FIREBASEUSER,
+   REMOVE_ORDER,
+   REMOVE_PRODUCT,
+   GET_ALL_CATEGORIES, 
+   MINIMUM_PRICE,
+   MAXIMUM_PRICE,
+   BETTER_QUALIFIED_FILTER,
+   ALL_FILTER,
+   GET_USER,
+   LOGOUT_USER,
+   GET_ALL_PRODUCTS, GET_PRODUCT_BY_ID,
+   ALPHABETIC_ORDER, PRICE_ORDER,
+   MODIFY_USER,
+   MODIFY_FIREBASE_USER,
+   MODIFY_USER_PHOTO,
+   GET_PAYMENTS_BY_ID
+
 } from "./actionTypes";
 
 import axios from "axios";
@@ -174,26 +175,36 @@ export const userLogout = () => {
 
 /////PRODUCTS//////
 export function addProduct(productData) {
-  return async function (dispatch) {
-    try {
-      const formData = new FormData();
-      formData.append("name", productData.name);
-      formData.append("description", productData.description);
-      formData.append("price", productData.price);
-      formData.append("CategoryId", productData.CategoryId);
-      formData.append("stock", productData.stock);
-      formData.append("rating", productData.rating);
-      formData.append("image", productData.image);
+   return async function(dispatch) {
+     try {
+       const formData = new FormData();
+       formData.append('name', productData.name);
+       formData.append('description', productData.description);
+       formData.append('price', productData.price);
+       formData.append('CategoryId', productData.CategoryId);
+       formData.append('stock', productData.stock);
+       formData.append('image', productData.image); 
 
-      const response = await axios.post(
-        "https://api-market-henry-jczt.onrender.com/PF/products",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+ 
+       const response = await axios.post('https://api-market-henry-jczt.onrender.com/PF/products', formData, {
+
+         headers: {
+           'Content-Type': 'multipart/form-data', 
+         },
+       });
+ 
+       dispatch({
+         type: ADD_PRODUCT,
+         payload: response.data,
+       });
+ 
+       return response;
+     } catch (error) {
+       alert(error);
+     }
+   };
+ }
+
 
       dispatch({
         type: ADD_PRODUCT,
@@ -320,16 +331,31 @@ export const getAllProducts = () => {
 };
 
 export const getProductById = (id) => {
-  return async function (dispatch) {
-    try {
-      const response = await axios.get(
-        ` https://api-market-henry-jczt.onrender.com/pf/products/${id}`
-      );
 
-      return dispatch({
-        type: GET_PRODUCT_BY_ID,
-        payload: response.data,
-      });
-    } catch (error) {}
-  };
+   return async function(dispatch){
+      try {
+         const response = await axios.get(` http://localhost:3001/pf/products/${id}`);
+         return dispatch({
+            type: GET_PRODUCT_BY_ID,
+            payload: response.data
+         })
+      } catch (error) {
+         console.log(error.message)
+      }
+   }
+}
+
+export const getPaymentsById = (id) => {
+   return async (dispatch) => {
+      try {
+         const response = await axios.get(`http://localhost:3001/pf/payment/${id}`);
+         return dispatch({
+            type: GET_PAYMENTS_BY_ID,
+            payload: response.data
+         });
+      } catch (error) {
+         console.log("Error al traer el usuario: ", error.message);
+      }
+   };
 };
+

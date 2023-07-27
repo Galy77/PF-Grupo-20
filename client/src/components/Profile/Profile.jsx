@@ -1,8 +1,8 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-import { userLogout } from "../../redux/actions";
-import { useDispatch } from "react-redux";
+import { userLogout, getPaymentsById, getProductById } from "../../redux/actions";
+import { useDispatch,useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import "./Profile.style.css";
 import ShowModal from "../Modals/ShowModal/ShowModal";
@@ -13,6 +13,8 @@ import OuterPhotoChange from "../Modals/CambioFotoPeril/OuterPhotoChange";
 
 export function Profile() {
   const dispatch = useDispatch();
+  const allPayments = useSelector((state) => state.payments);
+  const allProducts = useSelector((state) => state.productsArray);
   const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   const providerActual = localStorage.getItem("userProvider");
   const navigate = useNavigate();
@@ -28,15 +30,43 @@ export function Profile() {
   const [modificarDatos, setModificarDatos] = useState(false);
   const [modificarFoto, setModificarFoto] = useState(false);
 
+  const [AllPaymentsData,setAllPaymentsData] = useState([]);
+
   useEffect(() => {
+    clearData();
     if (usuarioActual) {
       setIsUser(usuarioActual);
       setLoading(false);
+      dispatch(getPaymentsById(usuarioActual.id));
     } else {
       setIsUser(user);
       setLoading(false);
     }
   }, []);
+
+  useEffect(() => {
+    if (allPayments && allPayments.length > 0) {
+      const fetchProducts = async () => {
+        const mappedPaymentsData = await Promise.all(
+          allPayments.map(async (payment) => {
+            const product = await dispatch(getProductById(payment.id_product));
+            return product;
+          })
+        );
+        setAllPaymentsData(mappedPaymentsData);
+      };
+      fetchProducts();
+    }
+  }, [allPayments, dispatch]);
+
+  useEffect(() => {
+    if (AllPaymentsData.length > 0) {
+      // Lógica a realizar cuando AllPaymentsData tiene datos
+      console.log("AllPaymentsData tiene datos:");
+      // Puedes hacer cualquier otra operación o mostrar contenido dinámico aquí
+    }
+  }, [AllPaymentsData]);
+
 
   const handleLogout = async () => {
     try {
@@ -53,31 +83,36 @@ export function Profile() {
         await logout();
         dispatch(userLogout());
         navigate("/");
-        Swal.fire({
-          width: "20em",
-          title: "Has cerrado sesión correctamente.",
-          icon: "success",
-          timer: 1200,
-          timerProgressBar: true,
-          showConfirmButton: false,
-        });
+
+        Swal.fire({ 
+          width:'20em',
+          title:'Has cerrado sesión correctamente.',
+          icon:'success',
+          timer:1200,
+          timerProgressBar:true,
+          showConfirmButton: false
+        }
+        );
       }
+      clearData(); 
+
     } catch (error) {
       console.error(error.message);
     }
   };
-
+  const clearData = () => {
+    setAllPaymentsData([]); // Limpiar los datos de compras u otros datos que desees vaciar
+    // Limpiar otros estados locales si es necesario
+  };
+  
   const handleModalClick = (modalName) => {
     setModalCompras(false);
-    setModalPublicaciones(false);
+
     setModalDatos(false);
 
     switch (modalName) {
       case "compras":
         setModalCompras(true);
-        break;
-      case "publicaciones":
-        setModalPublicaciones(true);
         break;
       case "datos":
         setModalDatos(true);
@@ -114,6 +149,7 @@ export function Profile() {
             >
               Compras
             </button>
+
             <button
               onClick={() => handleModalClick("publicaciones")}
               className="btn-lateral"
@@ -125,6 +161,7 @@ export function Profile() {
               className="btn-lateral"
             >
               Mis Datos
+
             </button>
 
             <button className="btn-cerrar-sesion" onClick={handleLogout}>
@@ -133,14 +170,9 @@ export function Profile() {
           </div>
           <div className="central-profile-container">
             <ShowModal estadoShowModal={modalCompras}>
-              <h1>Tus Compras</h1>
+              <h1>Compras</h1>
             </ShowModal>
-            <ShowModal estadoShowModal={modalPublicaciones}>
-              <h1>Tus Publicaciones</h1>
-              <Link to="/create">
-                <button className="btn-lateral">+ Añadir publicacion</button>
-              </Link>
-            </ShowModal>
+            
             <ShowModal estadoShowModal={modalDatos}>
               <div>
                 <h1>Tu Datos</h1>
@@ -189,6 +221,7 @@ export function Profile() {
             >
               Compras
             </button>
+
             <button
               onClick={() => handleModalClick("publicaciones")}
               className="btn-lateral"
@@ -199,30 +232,43 @@ export function Profile() {
               onClick={() => handleModalClick("datos")}
               className="btn-lateral"
             >
+
               Mis Datos
             </button>
-
+            {isUser.role === 2 && (
+              <button className="btn-lateral">Dashboard</button>
+            )}
             <button className="btn-cerrar-sesion" onClick={handleLogout}>
               Cerrar Sesion
             </button>
           </div>
           <div className="central-profile-container">
             <ShowModal estadoShowModal={modalCompras}>
+
+            <div className="containers-profile">
               <h1>Tus Compras</h1>
-            </ShowModal>
-            <ShowModal estadoShowModal={modalPublicaciones}>
-              <h1>Tus Publicaciones</h1>
-              <Link to="/create">
-                <button className="btn-lateral">+ Añadir publicacion</button>
-              </Link>
+              {AllPaymentsData.length > 0 ? (
+                AllPaymentsData.map((item) => (
+                  <div key={item.payload.id} className="producContainerProfile">
+                    <div><img src={item.payload.image} className="profile-image-product"/></div>
+                    <div className="profile-name-product">{item.payload.name}</div>
+                    <div className="profile-price-product">{item.payload.price}$</div>
+                  </div>
+                ))
+              ) : (
+                <p>No hay compras recientes.</p>
+              )}
+            </div>
+
+
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
               <div>
                 <h1>Tu Informacion</h1>
-                <h1>{isUser.name}</h1>
-                <h1>{isUser.email}</h1>
-                <h1>{isUser.direction_shipping}</h1>
-                <h1>{isUser.phone}</h1>
+                <h5>{isUser.name}</h5>
+                <h5>{isUser.email}</h5>
+                <h5>{isUser.direction_shipping}</h5>
+                <h5>{isUser.phone}</h5>
               </div>
               <button
                 onClick={() => setModificarDatos(!modificarDatos)}

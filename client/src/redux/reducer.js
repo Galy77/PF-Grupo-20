@@ -44,6 +44,7 @@ import {
   MODIFY_USER,
   MODIFY_FIREBASE_USER,
   MODIFY_USER_PHOTO,
+
 } from "./actionTypes";
 
 const initialState = {
@@ -59,6 +60,24 @@ const initialState = {
   ratingFilterValue: "all",
   user: {},
   detailProduct: [],
+    lettersOrder: "A-Z",
+    priceOrder: "",
+    payments:[],
+    productsArray:[]
+}
+
+export const reducer = (state = initialState,{type,payload})=>{
+    switch (type) {
+        //USER
+        case GET_USER: {
+            localStorage.setItem("usuarioActual", JSON.stringify(payload));
+            localStorage.setItem("userProvider","local")
+            return {
+              ...state,
+              user: payload,
+            };
+          }
+
 
   lettersOrder: "A-Z",
 
@@ -96,6 +115,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       // Instead of using a separate function, update the local storage directly
       localStorage.setItem("usuarioActual", JSON.stringify(payload));
       localStorage.setItem("userProvider", "google");
+
 
       // Since Redux reducers should be pure functions, avoid modifying local storage here
       // Instead, return the updated state with the new user payload
@@ -249,6 +269,33 @@ export const reducer = (state = initialState, { type, payload }) => {
         priceOrder: payload,
         lettersOrder: "",
       };
+             
+        case GET_ALL_CATEGORIES:
+            return{
+              ...state,
+              categories:payload
+          }
+          case GET_PAYMENTS_BY_ID:
+            return{
+              ...state,
+              payments:payload
+          }
+            
+        case GET_ALL_PRODUCTS:
+          return{
+            ...state,
+            products: payload
+          }
+        
+        case GET_PRODUCT_BY_ID:
+          return{
+            ...state,
+            detailProduct: payload,
+            productsArray:{
+              ...state.detailProduct,
+              payload
+            }
+          }
 
     default:
       return {
