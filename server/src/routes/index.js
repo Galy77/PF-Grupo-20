@@ -60,7 +60,7 @@ router.post("/user/firebase", postUserFirebase);
 
 router.post("/create_preference", postPreference);
 
-router.post("/user", postUser);
+
 
 
 

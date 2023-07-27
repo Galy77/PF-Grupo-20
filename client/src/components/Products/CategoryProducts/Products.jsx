@@ -98,7 +98,6 @@ function removeAccents(str) {
 
     return (
         <div class='d-flex flex-column' >
-            <CreatedCarousel />
                 <div class='filter-products d-flex my-4'>
                     <Filters category={category}/>
                     <div class='d-flex flex-column align-items-center w-100 px-4' >
