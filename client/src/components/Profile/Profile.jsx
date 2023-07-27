@@ -217,7 +217,7 @@ export function Profile() {
             </ShowModal>
             <ShowModal estadoShowModal={modalDatos}>
               <div>
-                <h1>Tu Informacion</h1>
+                <h1>Tu Informacion!</h1>
                 <h1>{isUser.name}</h1>
                 <h1>{isUser.email}</h1>
                 <h1>{isUser.direction_shipping}</h1>
