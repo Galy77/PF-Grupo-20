@@ -5,7 +5,7 @@ const path = require('path');
 
 const sequelize = new Sequelize('postgres://pf:JoZSCTFoPpDDxTwuc6amy663hZq1GUt9@dpg-cil2di95rnuvtgto0omg-a/ecommerce_uhbm', {
   logging: false, 
-  native: false, 
+  native: false,
 });
 const basename = path.basename(__filename);
 
