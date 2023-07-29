@@ -16,23 +16,26 @@
 .g-4-products{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 3rem;
+    gap: 1rem;
 }
 .card-products{
     background-color:var(--azul);
     transition: 0.3s;
-    border: 1px solid black;
-    border-radius: 10px !important;
+    border-radius: 5px !important;
+    width: 100%;
+    height: 100%;
 }
 .card-img-top{
     border-radius: 10px 10px 0 0px;
 }
+
 .card-products:hover{
     -webkit-box-shadow: -1px 12px 31px -11px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 12px 31px -11px rgba(0,0,0,0.75);
     box-shadow: -1px 12px 31px -11px rgba(0,0,0,0.75);    
 }
 .p{
+    
     margin: 0;
 }
 .card-body{
@@ -42,10 +45,11 @@
     justify-content: center;
 }
 .card-title{
-    margin-top: 0.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1rem;
     color: var(--white);
     width: 200px; /* Establecemos un ancho fijo para el contenedor del texto */
-    text-align: center;
+    text-align: left;
     white-space: nowrap; /* Impide que el texto se divida en varias líneas */
     overflow: hidden; /* Oculta el contenido que desborda del ancho establecido */
     text-overflow: ellipsis;

@@ -1,29 +1,63 @@
+@keyframes colorChange {
+    0% {
+
+         border-color: rgb(116, 86, 250); /* Empieza con el color gris */
+    }
+    50% {
+
+        border-color: red; /* Llega al color rojo a la mitad de la animación */
+    }
+    100% {
+
+        border-color: rgb(137, 172, 238); /* Vuelve al color gris al final de la animación */
+    }
+  }
+
+
 .container{
     display: flex;
     flex-direction: row;
     margin-top: 10px;
+    border: solid red 2px;
 }
 .filter-container{
-    width: 400px;
+    width: 400px; 
 }
 .precio{
-    background-color:  rgb(156, 157, 157);
-    border-radius: 10px 0 0 10px;
-    color: var(--white);
+    margin: 2px;
+    border-radius: 2px 0 0 2px; 
     font-size: 1rem;
-    padding: 0.2rem 0.5rem 0 ;
+    padding: 10px;
+    height: auto;
+    text-align: center;
 }
 .filter{
-    background-color: rgb(156, 157, 157);
+    transition: border-color 0.8s, background-color 0.5s;
+    background-color: rgb(230, 230, 230);
     color: var(--white);
-    margin: 0 2px;
+    margin: 2px;
+
 }
+.filter:hover {
+    transition: border-color 0.8s, background-color 0.5s;
+    background-color: rgb(255, 246, 246);
+    color: var(--white);
+    border-color: red;
+}
+.filter:focus {
+    transition: border-color 0.8s, background-color 0.5s;
+    background-color: rgb(255, 246, 246);
+    color: var(--white);
+    border-color: red;
+    animation: colorChange 4s infinite; /* Aplica la animación con duración de 2 segundos y se repite infinitamente */
+  }
+
 .cardsContainer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: 400px;
-    width: 70%;
+    width: 90%;
     padding-top: 10px;
     padding-bottom: 10px;
     gap: 10px;
