@@ -2,8 +2,9 @@ const { Sequelize } = require("sequelize");
 
 const fs = require('fs');
 const path = require('path');
+const { URL_DB } = process.env;
 
-const sequelize = new Sequelize('postgres://one_db_86ie_user:tdPYdNDbgYjVa4aBKP76aP31olBenbR5@dpg-clqd98ggqk6s738s2l50-a.oregon-postgres.render.com/one_db_86ie', {
+const sequelize = new Sequelize(URL_DB, {
   logging: false, 
   native: false,
   dialectOptions: {
