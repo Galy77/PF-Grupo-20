@@ -1,7 +1,9 @@
 const mercadopago = require("mercadopago");
+
+const { ACCESS_TOKEN } = proccess.env;
+
 mercadopago.configure({
-  access_token:
-    "TEST-1194489369448577-071110-a76042edb0c499b5794e0c45088b5e07-1420172305",
+  access_token: ACCESS_TOKEN,
 });
 
 const postPreference = (req, res) => {
