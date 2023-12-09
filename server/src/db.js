@@ -6,6 +6,12 @@ const path = require('path');
 const sequelize = new Sequelize('postgres://one_db_86ie_user:tdPYdNDbgYjVa4aBKP76aP31olBenbR5@dpg-clqd98ggqk6s738s2l50-a.oregon-postgres.render.com/one_db_86ie', {
   logging: false, 
   native: false,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    }
+  },
 });
 const basename = path.basename(__filename);
 
